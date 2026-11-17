@@ -29,6 +29,7 @@ CATEGORIES = [
     "Local Transport",
     "Others",
     "Pension - APY",
+    "Pot Transfer",
     "Rent",
     "Shopping",
     "Subscriptions",
@@ -430,7 +431,7 @@ with tab2:
             dash_df["Date_DT"] = pd.to_datetime(dash_df["Date"], format="%d-%m-%Y", errors="coerce")
             
             wealth_categories = [c for c in CATEGORIES if "Investment" in c or "Pension" in c]
-            ignored_categories = ["Credit Card Repayment", "Currency Transfer"]
+            ignored_categories = ["Credit Card Repayment", "Currency Transfer", "Pot Transfer"]
             
             expenses_df = dash_df[
                 (dash_df["Type"] == "Debit") & 
