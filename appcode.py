@@ -247,17 +247,14 @@ with tab1:
                 except:
                     formatted_date = date_raw[:10]
                 
-                # Auto-detect Name vs Description and proper Payment Method / Type
                 name_val = str(row.get("Name", "")).strip()
                 desc_val = str(row.get("Description", "")).strip()
                 final_desc = name_val if name_val and name_val.lower() != "nan" else (desc_val if desc_val and desc_val.lower() != "nan" else "Monzo Tx")
                 
                 amount = float(row.get("Amount", 0.0))
                 currency = str(row.get("Currency", "GBP"))
-                
                 tx_type = "Credit" if amount > 0 else "Debit"
                 
-                # Auto-assign payment method based on Monzo transaction patterns (P2P / Bank Transfers vs Card)
                 prod = str(row.get("Product", ""))
                 notes = str(row.get("Notes", ""))
                 combined_meta = f"{final_desc} {prod} {notes}".lower()
@@ -294,10 +291,8 @@ with tab1:
                 desc = str(row.get("Description", "Revolut Tx")).strip()
                 amount = float(row.get("Amount", 0.0))
                 currency = str(row.get("Currency", "GBP"))
-                
                 tx_type = "Credit" if amount > 0 else "Debit"
                 
-                # Auto-assign payment method for Revolut
                 desc_lower = desc.lower()
                 if "card" in desc_lower or "pos" in desc_lower:
                     pay_method = "Debit Card"
@@ -359,47 +354,59 @@ with tab1:
 
     if not st.session_state.transactions.empty:
         st.subheader("Review and Manage Transactions")
-        st.caption("Edit details in the table, or use the ➡️ (Split) and 🗑️ (Delete) buttons in each row.")
+        st.caption("Review your transactions below. Click ➡️ to split or 🗑️ to delete individual rows.")
         
+        # Header Row
+        h_cols = st.columns([2, 4, 2, 2, 3, 0.8, 0.8])
+        h_cols[0].markdown("**Date**")
+        h_cols[1].markdown("**Description**")
+        h_cols[2].markdown("**Amount**")
+        h_cols[3].markdown("**Currency**")
+        h_cols[4].markdown("**Category**")
+        h_cols[5].markdown("**Split**")
+        h_cols[6].markdown("**Del**")
+
         for idx, row in st.session_state.transactions.iterrows():
-            cols = st.columns([2, 4, 2, 2, 2, 1, 1])
+            cols = st.columns([2, 4, 2, 2, 3, 0.8, 0.8])
             
             with cols[0]:
-                new_date = st.text_input("Date", value=str(row["Date"]), key=f"date_{idx}", label_visibility="collapsed")
+                new_date = st.text_input(f"Date_{idx}", value=str(row["Date"]), key=f"date_{idx}", label_visibility="collapsed")
                 if new_date != row["Date"]:
                     st.session_state.transactions.at[idx, "Date"] = new_date
                     save_db(st.session_state.transactions)
             with cols[1]:
-                new_desc = st.text_input("Desc", value=str(row["Description"]), key=f"desc_{idx}", label_visibility="collapsed")
+                new_desc = st.text_input(f"Desc_{idx}", value=str(row["Description"]), key=f"desc_{idx}", label_visibility="collapsed")
                 if new_desc != row["Description"]:
                     st.session_state.transactions.at[idx, "Description"] = new_desc
                     save_db(st.session_state.transactions)
             with cols[2]:
-                new_amt = st.number_input("Amt", value=float(row["Amount"]), key=f"amt_{idx}", label_visibility="collapsed", step=1.0)
+                new_amt = st.number_input(f"Amt_{idx}", value=float(row["Amount"]), key=f"amt_{idx}", label_visibility="collapsed", step=1.0)
                 if new_amt != row["Amount"]:
                     st.session_state.transactions.at[idx, "Amount"] = new_amt
                     save_db(st.session_state.transactions)
             with cols[3]:
                 curr_idx = CURRENCIES.index(row["Currency"]) if row["Currency"] in CURRENCIES else 0
-                new_curr = st.selectbox("Curr", CURRENCIES, index=curr_idx, key=f"curr_{idx}", label_visibility="collapsed")
+                new_curr = st.selectbox(f"Curr_{idx}", CURRENCIES, index=curr_idx, key=f"curr_{idx}", label_visibility="collapsed")
                 if new_curr != row["Currency"]:
                     st.session_state.transactions.at[idx, "Currency"] = new_curr
                     save_db(st.session_state.transactions)
             with cols[4]:
                 cat_idx = CATEGORIES.index(row["Category"]) if row["Category"] in CATEGORIES else 0
-                new_cat = st.selectbox("Cat", CATEGORIES, index=cat_idx, key=f"cat_{idx}", label_visibility="collapsed")
+                new_cat = st.selectbox(f"Cat_{idx}", CATEGORIES, index=cat_idx, key=f"cat_{idx}", label_visibility="collapsed")
                 if new_cat != row["Category"]:
                     st.session_state.transactions.at[idx, "Category"] = new_cat
                     save_db(st.session_state.transactions)
             
-            if cols[5].button("➡️", key=f"split_btn_{idx}", help="Split this transaction"):
-                st.session_state.split_target_idx = idx
-                st.session_state.delete_target_idx = None
-            
-            if cols[6].button("🗑️", key=f"del_btn_{idx}", help="Delete this transaction"):
-                st.session_state.delete_target_idx = idx
-                st.session_state.split_target_idx = None
+            with cols[5]:
+                if st.button("➡️", key=f"split_btn_{idx}", help="Split this transaction"):
+                    st.session_state.split_target_idx = idx
+                    st.session_state.delete_target_idx = None
+            with cols[6]:
+                if st.button("🗑️", key=f"del_btn_{idx}", help="Delete this transaction"):
+                    st.session_state.delete_target_idx = idx
+                    st.session_state.split_target_idx = None
 
+        # Modal/Popup for Split Tool
         if st.session_state.split_target_idx is not None:
             target_idx = st.session_state.split_target_idx
             if target_idx in st.session_state.transactions.index:
@@ -448,6 +455,7 @@ with tab1:
             else:
                 st.session_state.split_target_idx = None
 
+        # Modal/Popup for Delete Confirmation
         if st.session_state.delete_target_idx is not None:
             del_idx = st.session_state.delete_target_idx
             if del_idx in st.session_state.transactions.index:
@@ -491,7 +499,7 @@ with tab2:
             
             expenses_df = dash_df[
                 (dash_df["Type"] == "Debit") & 
-                (~dash_df["Category"].isin(wealth_cards := wealth_categories)) & 
+                (~dash_df["Category"].isin(wealth_categories)) & 
                 (~dash_df["Category"].isin(ignored_categories))
             ]
             wealth_df = dash_df[(dash_df["Type"] == "Debit") & (dash_df["Category"].isin(wealth_categories))]
