@@ -31,6 +31,17 @@ def guess_category(description, mappings):
             return category
     return "Uncategorised"
 
+def sync_categories():
+    if "tx_editor" in st.session_state:
+        edited_rows = st.session_state.tx_editor.get("edited_rows", {})
+        for idx_str, edits in edited_rows.items():
+            if "Category" in edits:
+                new_cat = edits["Category"]
+                idx = int(idx_str)
+                desc = st.session_state.transactions.at[idx, "Description"]
+                mask = st.session_state.transactions["Description"] == desc
+                st.session_state.transactions.loc[mask, "Category"] = new_cat
+
 if 'transactions' not in st.session_state:
     st.session_state.transactions = pd.DataFrame(columns=[
         "Date", "Transaction ID", "Description", "Amount", "Type", "Payment Method", "Category"
@@ -47,55 +58,58 @@ if uploaded_file:
     
     with pdfplumber.open(uploaded_file) as pdf:
         for page in pdf.pages:
-            text = page.extract_text()
+            text = page.extract_text(keep_blank_chars=True)
             if text:
                 lines = [line.strip() for line in text.split('\n') if line.strip()]
                 i = 0
                 while i < len(lines):
-                    # Match compressed Date, Description, and Amount on the same line
-                    # Example: "20Aug,2026 PaidtoSubbaramanS ₹2,971"
-                    match1 = re.search(r'^(\d{1,2}[A-Za-z]{3},\d{4})\s*(.*?)\s*₹([\d,\.]+)', lines[i])
+                    match1 = re.search(r'^(\d{1,2}\s*[A-Za-z]{3}\s*,\s*\d{4})\s*(.*?)\s*₹\s*([\d,\.]+)', lines[i])
                     if match1:
                         date_str = match1.group(1)
-                        raw_desc = match1.group(2)
+                        raw_desc = match1.group(2).strip()
                         amount_str = match1.group(3).replace(",", "")
                         
                         tx_type = "Debit"
                         desc = raw_desc
-                        if desc.startswith("Paidto"):
+                        
+                        if desc.startswith("Paid to "):
+                            desc = desc[8:]
+                        elif desc.startswith("Paidto"):
                             desc = desc[6:]
+                        elif desc.startswith("Received from "):
+                            desc = desc[14:]
+                            tx_type = "Credit"
                         elif desc.startswith("Receivedfrom"):
                             desc = desc[12:]
                             tx_type = "Credit"
                             
-                        # Format date cleanly (e.g., "20Aug,2026" -> "20 Aug, 2026")
-                        date_clean = re.sub(r'^(\d{1,2})([A-Za-z]{3}),(\d{4})$', r'\1 \2, \3', date_str)
+                        desc = re.sub(r'([a-z])([A-Z])', r'\1 \2', desc)
+                        date_clean = re.sub(r'^(\d{1,2})\s*([A-Za-z]{3})\s*,\s*(\d{4})$', r'\1 \2, \3', date_str)
                         
-                        # Look at the next line for the Transaction ID
                         tx_id = "UNKNOWN"
                         if i + 1 < len(lines):
-                            match2 = re.search(r'UPITransactionID:(\d+)', lines[i+1])
+                            match2 = re.search(r'UPITransactionID:\s*(\d+)', lines[i+1].replace(" ", ""))
                             if match2:
                                 tx_id = match2.group(1)
                         
                         new_data.append({
                             "Date": date_clean,
                             "Transaction ID": tx_id,
-                            "Description": desc,
+                            "Description": desc.strip(),
                             "Amount": float(amount_str),
                             "Type": tx_type,
                             "Payment Method": "UPI",
                             "Category": guess_category(desc, mappings)
                         })
-                        i += 2  # Skip the next line as it contains the processed Time/ID
+                        i += 2  
                         continue
                     i += 1
                     
     if new_data:
         new_df = pd.DataFrame(new_data)
         st.session_state.transactions = pd.concat([st.session_state.transactions, new_df], ignore_index=True)
-        # Deduplication based on Transaction ID to prevent overlaps between GPay and Bank files
         st.session_state.transactions.drop_duplicates(subset=['Transaction ID'], keep='first', inplace=True)
+        st.session_state.transactions.reset_index(drop=True, inplace=True)
         st.success("PDF Processed and Deduplicated.")
     else:
         st.error("No transactions matched.")
@@ -125,6 +139,7 @@ with st.form("manual_entry_form"):
             "Category": m_cat
         }])
         st.session_state.transactions = pd.concat([st.session_state.transactions, manual_row], ignore_index=True)
+        st.session_state.transactions.reset_index(drop=True, inplace=True)
         st.success("Manual transaction added.")
 
 # Review and Edit Section
@@ -133,6 +148,8 @@ if not st.session_state.transactions.empty:
     
     edited_df = st.data_editor(
         st.session_state.transactions,
+        key="tx_editor",
+        on_change=sync_categories,
         column_config={
             "Category": st.column_config.SelectboxColumn(
                 "Category",
