@@ -21,6 +21,7 @@ CATEGORIES = [
     "Rent",
     "Shopping",
     "Subscriptions",
+    "Trip Expense",
     "Uncategorised"
 ]
 
