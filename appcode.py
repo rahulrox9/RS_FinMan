@@ -86,23 +86,6 @@ def guess_category(description, mappings):
             return category
     return "Uncategorised"
 
-def sync_selected_categories():
-    if "tx_editor" in st.session_state:
-        edited_rows = st.session_state.tx_editor.get("edited_rows", {})
-        for idx_str, edits in edited_rows.items():
-            idx = int(idx_str)
-            for col, val in edits.items():
-                st.session_state.transactions.at[idx, col] = val
-            
-            is_remembered = st.session_state.transactions.at[idx, "Remember Mapping"]
-            if is_remembered:
-                desc = st.session_state.transactions.at[idx, "Description"]
-                new_cat = st.session_state.transactions.at[idx, "Category"]
-                mask = st.session_state.transactions["Description"] == desc
-                st.session_state.transactions.loc[mask, "Category"] = new_cat
-                st.session_state.transactions.loc[mask, "Remember Mapping"] = True
-        save_db(st.session_state.transactions)
-
 def push_to_github():
     try:
         g = Github(st.secrets["GITHUB_TOKEN"])
@@ -264,21 +247,37 @@ with tab1:
                 except:
                     formatted_date = date_raw[:10]
                 
-                desc = str(row.get("Name", row.get("Description", "Monzo Tx")))
+                # Auto-detect Name vs Description and proper Payment Method / Type
+                name_val = str(row.get("Name", "")).strip()
+                desc_val = str(row.get("Description", "")).strip()
+                final_desc = name_val if name_val and name_val.lower() != "nan" else (desc_val if desc_val and desc_val.lower() != "nan" else "Monzo Tx")
+                
                 amount = float(row.get("Amount", 0.0))
                 currency = str(row.get("Currency", "GBP"))
                 
                 tx_type = "Credit" if amount > 0 else "Debit"
                 
+                # Auto-assign payment method based on Monzo transaction patterns (P2P / Bank Transfers vs Card)
+                prod = str(row.get("Product", ""))
+                notes = str(row.get("Notes", ""))
+                combined_meta = f"{final_desc} {prod} {notes}".lower()
+                
+                if "flex" in combined_meta:
+                    pay_method = "Credit Card - Monzo Flex"
+                elif "card" in combined_meta or "pos" in combined_meta or "purchase" in combined_meta:
+                    pay_method = "Debit Card"
+                else:
+                    pay_method = "Bank Transfer"
+                
                 new_data.append({
                     "Date": formatted_date,
                     "Transaction ID": tx_id,
-                    "Description": desc.strip(),
+                    "Description": final_desc,
                     "Amount": abs(amount),
                     "Currency": currency,
                     "Type": tx_type,
-                    "Payment Method": "Credit Card - Monzo Flex" if "Flex" in str(row.get("Product", "")) else "Bank Transfer",
-                    "Category": guess_category(desc, mappings),
+                    "Payment Method": pay_method,
+                    "Category": guess_category(final_desc, mappings),
                     "Remember Mapping": False
                 })
                 
@@ -292,20 +291,27 @@ with tab1:
                 except:
                     formatted_date = date_raw
                 
-                desc = str(row.get("Description", "Revolut Tx"))
+                desc = str(row.get("Description", "Revolut Tx")).strip()
                 amount = float(row.get("Amount", 0.0))
                 currency = str(row.get("Currency", "GBP"))
                 
                 tx_type = "Credit" if amount > 0 else "Debit"
                 
+                # Auto-assign payment method for Revolut
+                desc_lower = desc.lower()
+                if "card" in desc_lower or "pos" in desc_lower:
+                    pay_method = "Debit Card"
+                else:
+                    pay_method = "Bank Transfer"
+                
                 new_data.append({
                     "Date": formatted_date,
                     "Transaction ID": f"REV_{formatted_date}_{amount}_{desc[:10]}",
-                    "Description": desc.strip(),
+                    "Description": desc,
                     "Amount": abs(amount),
                     "Currency": currency,
                     "Type": tx_type,
-                    "Payment Method": "Bank Transfer",
+                    "Payment Method": pay_method,
                     "Category": guess_category(desc, mappings),
                     "Remember Mapping": False
                 })
@@ -355,42 +361,45 @@ with tab1:
         st.subheader("Review and Manage Transactions")
         st.caption("Edit details in the table, or use the ➡️ (Split) and 🗑️ (Delete) buttons in each row.")
         
-        edited_df = st.data_editor(
-            st.session_state.transactions,
-            key="tx_editor",
-            on_change=sync_selected_categories,
-            column_config={
-                "Category": st.column_config.SelectboxColumn("Category", options=CATEGORIES, required=True),
-                "Type": st.column_config.SelectboxColumn("Type", options=["Debit", "Credit"], required=True),
-                "Currency": st.column_config.SelectboxColumn("Currency", options=CURRENCIES, required=True),
-                "Payment Method": st.column_config.SelectboxColumn("Payment Method", options=PAYMENT_METHODS, required=True),
-                "Remember Mapping": st.column_config.CheckboxColumn("Remember Mapping", default=False)
-            },
-            hide_index=True,
-            use_container_width=True
-        )
-        st.session_state.transactions = edited_df
-        save_db(st.session_state.transactions)
-
-        st.divider()
-        st.subheader("Transaction Actions")
-
         for idx, row in st.session_state.transactions.iterrows():
-            cols = st.columns([3, 5, 2, 2, 0.8, 0.8])
-            cols[0].text(row["Date"])
-            cols[1].text(row["Description"])
-            cols[2].text(f"{row['Currency']} {row['Amount']}")
-            cols[3].text(row["Category"])
+            cols = st.columns([2, 4, 2, 2, 2, 1, 1])
             
-            if cols[4].button("➡️", key=f"split_btn_{idx}", help="Split this transaction"):
+            with cols[0]:
+                new_date = st.text_input("Date", value=str(row["Date"]), key=f"date_{idx}", label_visibility="collapsed")
+                if new_date != row["Date"]:
+                    st.session_state.transactions.at[idx, "Date"] = new_date
+                    save_db(st.session_state.transactions)
+            with cols[1]:
+                new_desc = st.text_input("Desc", value=str(row["Description"]), key=f"desc_{idx}", label_visibility="collapsed")
+                if new_desc != row["Description"]:
+                    st.session_state.transactions.at[idx, "Description"] = new_desc
+                    save_db(st.session_state.transactions)
+            with cols[2]:
+                new_amt = st.number_input("Amt", value=float(row["Amount"]), key=f"amt_{idx}", label_visibility="collapsed", step=1.0)
+                if new_amt != row["Amount"]:
+                    st.session_state.transactions.at[idx, "Amount"] = new_amt
+                    save_db(st.session_state.transactions)
+            with cols[3]:
+                curr_idx = CURRENCIES.index(row["Currency"]) if row["Currency"] in CURRENCIES else 0
+                new_curr = st.selectbox("Curr", CURRENCIES, index=curr_idx, key=f"curr_{idx}", label_visibility="collapsed")
+                if new_curr != row["Currency"]:
+                    st.session_state.transactions.at[idx, "Currency"] = new_curr
+                    save_db(st.session_state.transactions)
+            with cols[4]:
+                cat_idx = CATEGORIES.index(row["Category"]) if row["Category"] in CATEGORIES else 0
+                new_cat = st.selectbox("Cat", CATEGORIES, index=cat_idx, key=f"cat_{idx}", label_visibility="collapsed")
+                if new_cat != row["Category"]:
+                    st.session_state.transactions.at[idx, "Category"] = new_cat
+                    save_db(st.session_state.transactions)
+            
+            if cols[5].button("➡️", key=f"split_btn_{idx}", help="Split this transaction"):
                 st.session_state.split_target_idx = idx
                 st.session_state.delete_target_idx = None
             
-            if cols[5].button("🗑️", key=f"del_btn_{idx}", help="Delete this transaction"):
+            if cols[6].button("🗑️", key=f"del_btn_{idx}", help="Delete this transaction"):
                 st.session_state.delete_target_idx = idx
                 st.session_state.split_target_idx = None
 
-        # Modal/Popup for Split Tool
         if st.session_state.split_target_idx is not None:
             target_idx = st.session_state.split_target_idx
             if target_idx in st.session_state.transactions.index:
@@ -439,7 +448,6 @@ with tab1:
             else:
                 st.session_state.split_target_idx = None
 
-        # Modal/Popup for Delete Confirmation
         if st.session_state.delete_target_idx is not None:
             del_idx = st.session_state.delete_target_idx
             if del_idx in st.session_state.transactions.index:
@@ -483,7 +491,7 @@ with tab2:
             
             expenses_df = dash_df[
                 (dash_df["Type"] == "Debit") & 
-                (~dash_df["Category"].isin(wealth_categories)) & 
+                (~dash_df["Category"].isin(wealth_cards := wealth_categories)) & 
                 (~dash_df["Category"].isin(ignored_categories))
             ]
             wealth_df = dash_df[(dash_df["Type"] == "Debit") & (dash_df["Category"].isin(wealth_categories))]
