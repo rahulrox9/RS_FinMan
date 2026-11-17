@@ -9,15 +9,15 @@ from github import Github
 
 CATEGORIES = [
     "Bank Transfer",
-    "Bills & Utilities",
     "Cashbacks",
     "Credit Card Repayment",
     "Currency Transfer",
     "Distance Travel",
-    "Entertainment",
     "Family Remittances",
     "Food - dining & delivery",
-    "Groceries & Home Needs",
+    "Groceries",
+    "Health & Grooming",
+    "Housing & Utilities",
     "Income - Additional",
     "Income - GTA",
     "Income - Stipend",
