@@ -4,6 +4,7 @@ import json
 import os
 import pdfplumber
 import re
+from datetime import datetime
 
 CATEGORIES = [
     "Cashbacks",
@@ -13,6 +14,7 @@ CATEGORIES = [
     "Groceries",
     "Health & Grooming",
     "Housing & Utilities",
+    "Income",
     "Interest",
     "Investments",
     "Local Transport",
@@ -22,8 +24,7 @@ CATEGORIES = [
     "Shopping",
     "Subscriptions",
     "Trip Expenses",
-    "Uncategorised",
-    "Income"
+    "Uncategorised"
 ]
 
 MAPPING_FILE = "category_mapping.json"
@@ -132,7 +133,17 @@ with tab1:
                                 tx_type = "Credit"
                                 
                             desc = re.sub(r'([a-z])([A-Z])', r'\1 \2', desc)
-                            date_clean = re.sub(r'^(\d{1,2})\s*([A-Za-z]{3})\s*,\s*(\d{4})$', r'\1 \2, \3', date_str)
+                            
+                            # Convert date to DD-MM-YYYY format
+                            date_clean = date_str
+                            d_match = re.search(r'^(\d{1,2})\s*([A-Za-z]{3})\s*,\s*(\d{4})$', date_str)
+                            if d_match:
+                                try:
+                                    # Parse "20 Aug 2026" and format as "20-08-2026"
+                                    date_obj = datetime.strptime(f"{d_match.group(1)} {d_match.group(2)} {d_match.group(3)}", "%d %b %Y")
+                                    date_clean = date_obj.strftime("%d-%m-%Y")
+                                except ValueError:
+                                    pass
                             
                             tx_id = "UNKNOWN"
                             if i + 1 < len(lines):
@@ -166,7 +177,7 @@ with tab1:
     st.subheader("Manual Entry (Cash / Missing Transactions)")
     with st.form("manual_entry_form"):
         col1, col2, col3 = st.columns(3)
-        m_date = col1.text_input("Date (DD MMM, YYYY)")
+        m_date = col1.text_input("Date (DD-MM-YYYY)")
         m_desc = col2.text_input("Description")
         m_amount = col3.number_input("Amount", min_value=0.0, step=1.0)
         
@@ -255,7 +266,8 @@ with tab2:
         
         # Double safety net: force Amount column to numeric right before calculations
         dash_df["Amount"] = pd.to_numeric(dash_df["Amount"], errors="coerce")
-        dash_df["Date_DT"] = pd.to_datetime(dash_df["Date"], format="%d %b, %Y", errors="coerce")
+        # Ensure the date format matches the new DD-MM-YYYY setup
+        dash_df["Date_DT"] = pd.to_datetime(dash_df["Date"], format="%d-%m-%Y", errors="coerce")
         
         wealth_categories = ["Investments", "Pension"]
         
