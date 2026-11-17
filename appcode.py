@@ -59,11 +59,17 @@ def load_db():
         try:
             df = pd.read_csv(DB_FILE)
             df["Amount"] = pd.to_numeric(df["Amount"], errors="coerce")
-            df["Remember Mapping"] = df["Remember Mapping"].astype(bool)
-            if "Select" not in df.columns:
-                df["Select"] = False
+            
+            if "Select" in df.columns:
+                df["Select"] = df["Select"].astype(str).str.lower() == 'true'
             else:
-                df["Select"] = df["Select"].astype(bool)
+                df["Select"] = False
+                
+            if "Remember Mapping" in df.columns:
+                df["Remember Mapping"] = df["Remember Mapping"].astype(str).str.lower() == 'true'
+            else:
+                df["Remember Mapping"] = False
+                
             return df
         except Exception:
             pass
@@ -369,6 +375,19 @@ with tab1:
             use_container_width=True
         )
         
+        # Enforce exclusive (MCQ / single-select) behavior on "Select"
+        new_selects = edited_display_df["Select"]
+        old_selects = display_df["Select"]
+        
+        # Find which row was newly checked
+        newly_checked = edited_display_df.index[(new_selects == True) & (old_selects == False)].tolist()
+        
+        if newly_checked:
+            # Keep only the latest checked row, uncheck all others
+            target_idx = newly_checked[-1]
+            edited_display_df["Select"] = False
+            edited_display_df.loc[target_idx, "Select"] = True
+
         # Sync edits back to main dataframe
         for idx in edited_display_df.index:
             for col in edited_display_df.columns:
@@ -388,24 +407,20 @@ with tab1:
         st.subheader("Selected Row Actions")
         
         selected_indices = st.session_state.transactions[st.session_state.transactions["Select"] == True].index.tolist()
-        
+        has_selection = len(selected_indices) > 0
+        selected_idx = selected_indices[0] if has_selection else None
+
         col_btn1, col_btn2 = st.columns(2)
         with col_btn1:
-            if st.button("Split Selected Transaction"):
-                if len(selected_indices) == 1:
-                    st.session_state.split_target_idx = selected_indices[0]
+            if st.button("Split Selected Transaction", disabled=not has_selection):
+                if has_selection:
+                    st.session_state.split_target_idx = selected_idx
                     st.session_state.confirm_delete = False
-                elif len(selected_indices) == 0:
-                    st.warning("Please check the 'Select' box on a transaction row first.")
-                else:
-                    st.warning("Please select only one transaction to split at a time.")
         with col_btn2:
-            if st.button("Delete Selected Transaction(s)"):
-                if len(selected_indices) > 0:
+            if st.button("Delete Selected Transaction", disabled=not has_selection):
+                if has_selection:
                     st.session_state.confirm_delete = True
                     st.session_state.split_target_idx = None
-                else:
-                    st.warning("Please check the 'Select' box on at least one transaction to delete.")
 
         # Split form workflow
         if st.session_state.split_target_idx is not None:
@@ -451,14 +466,15 @@ with tab1:
                 st.session_state.split_target_idx = None
 
         # Delete confirmation prompt
-        if st.session_state.confirm_delete:
-            st.warning(f"Are you sure you want to delete {len(selected_indices)} selected transaction(s)?")
+        if st.session_state.confirm_delete and has_selection:
+            d_row = st.session_state.transactions.loc[selected_idx]
+            st.warning(f"Are you sure you want to delete: **{d_row['Date']} | {d_row['Description']} | {d_row['Currency']} {d_row['Amount']}**?")
             d_col1, d_col2 = st.columns(2)
             if d_col1.button("Yes, Delete"):
-                st.session_state.transactions = st.session_state.transactions.drop(selected_indices).reset_index(drop=True)
+                st.session_state.transactions = st.session_state.transactions.drop(selected_idx).reset_index(drop=True)
                 save_db(st.session_state.transactions)
                 st.session_state.confirm_delete = False
-                st.success("Transactions deleted successfully!")
+                st.success("Transaction deleted successfully!")
                 st.rerun()
             if d_col2.button("No, Cancel"):
                 st.session_state.confirm_delete = False
