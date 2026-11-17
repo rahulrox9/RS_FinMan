@@ -21,7 +21,7 @@ CATEGORIES = [
     "Rent",
     "Shopping",
     "Subscriptions",
-    "Trip Expense",
+    "Trip Expenses",
     "Uncategorised"
 ]
 
@@ -46,16 +46,26 @@ def guess_category(description, mappings):
             return category
     return "Uncategorised"
 
-def sync_categories():
+def sync_selected_categories():
     if "tx_editor" in st.session_state:
         edited_rows = st.session_state.tx_editor.get("edited_rows", {})
         for idx_str, edits in edited_rows.items():
-            if "Category" in edits:
-                new_cat = edits["Category"]
-                idx = int(idx_str)
+            idx = int(idx_str)
+            
+            # Apply the edits to the specific row in the underlying dataframe
+            for col, val in edits.items():
+                st.session_state.transactions.at[idx, col] = val
+            
+            # If the user ticked "Remember Mapping" for this row, sync all identical descriptions immediately
+            is_remembered = st.session_state.transactions.at[idx, "Remember Mapping"]
+            if is_remembered:
                 desc = st.session_state.transactions.at[idx, "Description"]
+                new_cat = st.session_state.transactions.at[idx, "Category"]
+                
+                # Apply changes to all rows with the exact same description
                 mask = st.session_state.transactions["Description"] == desc
                 st.session_state.transactions.loc[mask, "Category"] = new_cat
+                st.session_state.transactions.loc[mask, "Remember Mapping"] = True
 
 # Strictly define column types to prevent Pandas TypeErrors during mathematical operations
 if 'transactions' not in st.session_state:
@@ -186,7 +196,7 @@ with tab1:
         edited_df = st.data_editor(
             st.session_state.transactions,
             key="tx_editor",
-            on_change=sync_categories,
+            on_change=sync_selected_categories,
             column_config={
                 "Category": st.column_config.SelectboxColumn(
                     "Category",
@@ -205,7 +215,7 @@ with tab1:
                 ),
                 "Remember Mapping": st.column_config.CheckboxColumn(
                     "Remember Mapping",
-                    help="Check this box to permanently save this vendor's categorisation.",
+                    help="Check this box to instantly apply this category to all identical names on screen.",
                     default=False
                 )
             },
@@ -217,7 +227,7 @@ with tab1:
             st.session_state.transactions = edited_df
             mappings = load_mappings()
             
-            # Only update mappings if the user explicitly ticked the checkbox
+            # Only update mappings for future uploads if the user explicitly ticked the checkbox
             for index, row in edited_df.iterrows():
                 if row.get("Remember Mapping", False) and row["Category"] != "Uncategorised" and str(row["Description"]).strip():
                     keyword = str(row["Description"]).split()[0].lower()
