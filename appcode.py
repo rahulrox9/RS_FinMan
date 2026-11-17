@@ -22,7 +22,8 @@ CATEGORIES = [
     "Shopping",
     "Subscriptions",
     "Trip Expenses",
-    "Uncategorised"
+    "Uncategorised",
+    "Income"
 ]
 
 MAPPING_FILE = "category_mapping.json"
