@@ -60,11 +60,16 @@ def load_db():
             df = pd.read_csv(DB_FILE)
             df["Amount"] = pd.to_numeric(df["Amount"], errors="coerce")
             df["Remember Mapping"] = df["Remember Mapping"].astype(bool)
+            if "Select" not in df.columns:
+                df["Select"] = False
+            else:
+                df["Select"] = df["Select"].astype(bool)
             return df
         except Exception:
             pass
             
     return pd.DataFrame({
+        "Select": pd.Series(dtype='bool'),
         "Date": pd.Series(dtype='str'),
         "Transaction ID": pd.Series(dtype='str'),
         "Description": pd.Series(dtype='str'),
@@ -85,23 +90,6 @@ def guess_category(description, mappings):
         if keyword in desc_lower:
             return category
     return "Uncategorised"
-
-def sync_selected_categories():
-    if "tx_editor" in st.session_state:
-        edited_rows = st.session_state.tx_editor.get("edited_rows", {})
-        for idx_str, edits in edited_rows.items():
-            idx = int(idx_str)
-            for col, val in edits.items():
-                st.session_state.transactions.at[idx, col] = val
-            
-            is_remembered = st.session_state.transactions.at[idx, "Remember Mapping"]
-            if is_remembered:
-                desc = st.session_state.transactions.at[idx, "Description"]
-                new_cat = st.session_state.transactions.at[idx, "Category"]
-                mask = st.session_state.transactions["Description"] == desc
-                st.session_state.transactions.loc[mask, "Category"] = new_cat
-                st.session_state.transactions.loc[mask, "Remember Mapping"] = True
-        save_db(st.session_state.transactions)
 
 def push_to_github():
     try:
@@ -127,8 +115,8 @@ if 'transactions' not in st.session_state:
 if 'split_target_idx' not in st.session_state:
     st.session_state.split_target_idx = None
 
-if 'delete_target_idx' not in st.session_state:
-    st.session_state.delete_target_idx = None
+if 'confirm_delete' not in st.session_state:
+    st.session_state.confirm_delete = False
 
 st.set_page_config(layout="wide")
 st.title("Multi-Currency Financial Manager")
@@ -199,6 +187,7 @@ with tab1:
                                         tx_id = match2.group(1)
                                 
                                 new_data.append({
+                                    "Select": False,
                                     "Date": date_clean,
                                     "Transaction ID": f"GPAY_{tx_id}_{amount_str}",
                                     "Description": desc.strip(),
@@ -242,6 +231,7 @@ with tab1:
                     continue
                 
                 new_data.append({
+                    "Select": False,
                     "Date": formatted_date,
                     "Transaction ID": f"HDFC_{ref_no}_{amount}",
                     "Description": narration.strip(),
@@ -271,6 +261,7 @@ with tab1:
                 tx_type = "Credit" if amount > 0 else "Debit"
                 
                 new_data.append({
+                    "Select": False,
                     "Date": formatted_date,
                     "Transaction ID": tx_id,
                     "Description": desc.strip(),
@@ -299,6 +290,7 @@ with tab1:
                 tx_type = "Credit" if amount > 0 else "Debit"
                 
                 new_data.append({
+                    "Select": False,
                     "Date": formatted_date,
                     "Transaction ID": f"REV_{formatted_date}_{amount}_{desc[:10]}",
                     "Description": desc.strip(),
@@ -336,6 +328,7 @@ with tab1:
         submitted = st.form_submit_button("Add Transaction")
         if submitted and m_date and m_desc:
             manual_row = pd.DataFrame([{
+                "Select": False,
                 "Date": m_date,
                 "Transaction ID": "MANUAL_" + str(pd.Timestamp.now().timestamp()),
                 "Description": m_desc,
@@ -354,11 +347,18 @@ with tab1:
     if not st.session_state.transactions.empty:
         st.subheader("Review and Manage Transactions")
         
-        edited_df = st.data_editor(
-            st.session_state.transactions,
+        search_query = st.text_input("🔍 Search / Filter by Keyword (Description, Reference, etc.)")
+        
+        display_df = st.session_state.transactions.copy()
+        if search_query:
+            mask = display_df.astype(str).apply(lambda x: x.str.contains(search_query, case=False)).any(axis=1)
+            display_df = display_df[mask]
+        
+        edited_display_df = st.data_editor(
+            display_df,
             key="tx_editor",
-            on_change=sync_selected_categories,
             column_config={
+                "Select": st.column_config.CheckboxColumn("Select", default=False),
                 "Category": st.column_config.SelectboxColumn("Category", options=CATEGORIES, required=True),
                 "Type": st.column_config.SelectboxColumn("Type", options=["Debit", "Credit"], required=True),
                 "Currency": st.column_config.SelectboxColumn("Currency", options=CURRENCIES, required=True),
@@ -368,27 +368,46 @@ with tab1:
             hide_index=True,
             use_container_width=True
         )
-        st.session_state.transactions = edited_df
+        
+        # Sync edits back to main dataframe
+        for idx in edited_display_df.index:
+            for col in edited_display_df.columns:
+                val = edited_display_df.at[idx, col]
+                st.session_state.transactions.at[idx, col] = val
+                
+                if col == "Remember Mapping" and val:
+                    desc = st.session_state.transactions.at[idx, "Description"]
+                    new_cat = st.session_state.transactions.at[idx, "Category"]
+                    mask_desc = st.session_state.transactions["Description"] == desc
+                    st.session_state.transactions.loc[mask_desc, "Category"] = new_cat
+                    st.session_state.transactions.loc[mask_desc, "Remember Mapping"] = True
+                    
         save_db(st.session_state.transactions)
 
         st.divider()
-        st.subheader("Transaction Actions")
-        tx_options = {f"Row {idx}: {row['Date']} | {row['Description']} | {row['Currency']} {row['Amount']}": idx for idx, row in st.session_state.transactions.iterrows()}
+        st.subheader("Selected Row Actions")
         
-        selected_tx_label = st.selectbox("Select Transaction", list(tx_options.keys()))
-        target_idx = tx_options[selected_tx_label]
+        selected_indices = st.session_state.transactions[st.session_state.transactions["Select"] == True].index.tolist()
         
         col_btn1, col_btn2 = st.columns(2)
         with col_btn1:
-            if st.button("Split Transaction"):
-                st.session_state.split_target_idx = target_idx
-                st.session_state.delete_target_idx = None
+            if st.button("Split Selected Transaction"):
+                if len(selected_indices) == 1:
+                    st.session_state.split_target_idx = selected_indices[0]
+                    st.session_state.confirm_delete = False
+                elif len(selected_indices) == 0:
+                    st.warning("Please check the 'Select' box on a transaction row first.")
+                else:
+                    st.warning("Please select only one transaction to split at a time.")
         with col_btn2:
-            if st.button("Delete Transaction"):
-                st.session_state.delete_target_idx = target_idx
-                st.session_state.split_target_idx = None
+            if st.button("Delete Selected Transaction(s)"):
+                if len(selected_indices) > 0:
+                    st.session_state.confirm_delete = True
+                    st.session_state.split_target_idx = None
+                else:
+                    st.warning("Please check the 'Select' box on at least one transaction to delete.")
 
-        # Split tool workflow popup/form
+        # Split form workflow
         if st.session_state.split_target_idx is not None:
             s_idx = st.session_state.split_target_idx
             if s_idx in st.session_state.transactions.index:
@@ -413,11 +432,13 @@ with tab1:
                             row1["Amount"] = p1_amt
                             row1["Category"] = p1_cat
                             row1["Transaction ID"] = f"{base_id}_split1"
+                            row1["Select"] = False
                             
                             row2 = t_row.copy()
                             row2["Amount"] = p2_amt
                             row2["Category"] = p2_cat
                             row2["Transaction ID"] = f"{base_id}_split2"
+                            row2["Select"] = False
                             
                             st.session_state.transactions = st.session_state.transactions.drop(s_idx).reset_index(drop=True)
                             new_split_df = pd.DataFrame([row1, row2])
@@ -429,25 +450,19 @@ with tab1:
             else:
                 st.session_state.split_target_idx = None
 
-        # Delete safety confirmation prompt (Yes / No)
-        if st.session_state.delete_target_idx is not None:
-            d_idx = st.session_state.delete_target_idx
-            if d_idx in st.session_state.transactions.index:
-                t_row = st.session_state.transactions.loc[d_idx]
-                st.warning(f"Are you sure you want to delete: **{t_row['Date']} | {t_row['Description']} | {t_row['Currency']} {t_row['Amount']}**?")
-                
-                d_col1, d_col2 = st.columns(2)
-                if d_col1.button("Yes, Delete"):
-                    st.session_state.transactions = st.session_state.transactions.drop(d_idx).reset_index(drop=True)
-                    save_db(st.session_state.transactions)
-                    st.session_state.delete_target_idx = None
-                    st.success("Transaction deleted successfully!")
-                    st.rerun()
-                if d_col2.button("No, Cancel"):
-                    st.session_state.delete_target_idx = None
-                    st.rerun()
-            else:
-                st.session_state.delete_target_idx = None
+        # Delete confirmation prompt
+        if st.session_state.confirm_delete:
+            st.warning(f"Are you sure you want to delete {len(selected_indices)} selected transaction(s)?")
+            d_col1, d_col2 = st.columns(2)
+            if d_col1.button("Yes, Delete"):
+                st.session_state.transactions = st.session_state.transactions.drop(selected_indices).reset_index(drop=True)
+                save_db(st.session_state.transactions)
+                st.session_state.confirm_delete = False
+                st.success("Transactions deleted successfully!")
+                st.rerun()
+            if d_col2.button("No, Cancel"):
+                st.session_state.confirm_delete = False
+                st.rerun()
 
 with tab2:
     if st.session_state.transactions.empty:
