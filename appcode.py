@@ -9,6 +9,7 @@ from github import Github
 
 CATEGORIES = [
     "Bank Transfer",
+    "Bills & Utilities",
     "Cashbacks",
     "Credit Card Repayment",
     "Currency Transfer",
@@ -16,7 +17,7 @@ CATEGORIES = [
     "Entertainment",
     "Family Remittances",
     "Food - dining & delivery",
-    "Groceries,Housing & Utilities",
+    "Groceries & Housing",
     "Health & Grooming",
     "Income - Additional",
     "Income - GTA",
