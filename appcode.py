@@ -86,6 +86,23 @@ def guess_category(description, mappings):
             return category
     return "Uncategorised"
 
+def sync_selected_categories():
+    if "tx_editor" in st.session_state:
+        edited_rows = st.session_state.tx_editor.get("edited_rows", {})
+        for idx_str, edits in edited_rows.items():
+            idx = int(idx_str)
+            for col, val in edits.items():
+                st.session_state.transactions.at[idx, col] = val
+            
+            is_remembered = st.session_state.transactions.at[idx, "Remember Mapping"]
+            if is_remembered:
+                desc = st.session_state.transactions.at[idx, "Description"]
+                new_cat = st.session_state.transactions.at[idx, "Category"]
+                mask = st.session_state.transactions["Description"] == desc
+                st.session_state.transactions.loc[mask, "Category"] = new_cat
+                st.session_state.transactions.loc[mask, "Remember Mapping"] = True
+        save_db(st.session_state.transactions)
+
 def push_to_github():
     try:
         g = Github(st.secrets["GITHUB_TOKEN"])
@@ -107,11 +124,8 @@ def push_to_github():
 if 'transactions' not in st.session_state:
     st.session_state.transactions = load_db()
 
-if 'split_modal_idx' not in st.session_state:
-    st.session_state.split_modal_idx = None
-
-if 'delete_confirm_idx' not in st.session_state:
-    st.session_state.delete_confirm_idx = None
+if 'split_target_idx' not in st.session_state:
+    st.session_state.split_target_idx = None
 
 st.set_page_config(layout="wide")
 st.title("Multi-Currency Financial Manager")
@@ -337,96 +351,45 @@ with tab1:
     if not st.session_state.transactions.empty:
         st.subheader("Review and Manage Transactions")
         
-        # Header layout for custom row items
-        header_cols = st.columns([1.2, 1.8, 2.5, 1.2, 0.9, 1.3, 1.8, 0.8, 0.8])
-        header_cols[0].markdown("**Date**")
-        header_cols[1].markdown("**Tx ID**")
-        header_cols[2].markdown("**Description**")
-        header_cols[3].markdown("**Amount**")
-        header_cols[4].markdown("**Curr**")
-        header_cols[5].markdown("**Type**")
-        header_cols[6].markdown("**Category**")
-        header_cols[7].markdown("**Split**")
-        header_cols[8].markdown("**Del**")
-        
-        for idx, row in st.session_state.transactions.iterrows():
-            row_cols = st.columns([1.2, 1.8, 2.5, 1.2, 0.9, 1.3, 1.8, 0.8, 0.8])
-            
-            # Editable fields per row
-            new_date = row_cols[0].text_input(f"Date_{idx}", value=str(row["Date"]), label_visibility="collapsed")
-            new_txid = row_cols[1].text_input(f"ID_{idx}", value=str(row["Transaction ID"]), label_visibility="collapsed")
-            new_desc = row_cols[2].text_input(f"Desc_{idx}", value=str(row["Description"]), label_visibility="collapsed")
-            new_amt = row_cols[3].number_input(f"Amt_{idx}", value=float(row["Amount"]), step=1.0, label_visibility="collapsed")
-            
-            curr_idx = CURRENCIES.index(row["Currency"]) if row["Currency"] in CURRENCIES else 0
-            new_curr = row_cols[4].selectbox(f"Curr_{idx}", CURRENCIES, index=curr_idx, label_visibility="collapsed")
-            
-            type_options = ["Debit", "Credit"]
-            type_idx = type_options.index(row["Type"]) if row["Type"] in type_options else 0
-            new_type = row_cols[5].selectbox(f"Type_{idx}", type_options, index=type_idx, label_visibility="collapsed")
-            
-            cat_idx = CATEGORIES.index(row["Category"]) if row["Category"] in CATEGORIES else 0
-            new_cat = row_cols[6].selectbox(f"Cat_{idx}", CATEGORIES, index=cat_idx, label_visibility="collapsed")
-            
-            # Update session state immediately on change
-            st.session_state.transactions.loc[idx, "Date"] = new_date
-            st.session_state.transactions.loc[idx, "Transaction ID"] = new_txid
-            st.session_state.transactions.loc[idx, "Description"] = new_desc
-            st.session_state.transactions.loc[idx, "Amount"] = new_amt
-            st.session_state.transactions.loc[idx, "Currency"] = new_curr
-            st.session_state.transactions.loc[idx, "Type"] = new_type
-            st.session_state.transactions.loc[idx, "Category"] = new_cat
-            
-            # Split button with arrow icon
-            if row_cols[7].button("➡️", key=f"split_btn_{idx}", help="Split Transaction"):
-                st.session_state.split_modal_idx = idx
-            
-            # Delete button with dustbin icon
-            if row_cols[8].button("🗑️", key=f"del_btn_{idx}", help="Delete Transaction"):
-                st.session_state.delete_confirm_idx = idx
-
+        edited_df = st.data_editor(
+            st.session_state.transactions,
+            key="tx_editor",
+            on_change=sync_selected_categories,
+            column_config={
+                "Category": st.column_config.SelectboxColumn("Category", options=CATEGORIES, required=True),
+                "Type": st.column_config.SelectboxColumn("Type", options=["Debit", "Credit"], required=True),
+                "Currency": st.column_config.SelectboxColumn("Currency", options=CURRENCIES, required=True),
+                "Payment Method": st.column_config.SelectboxColumn("Payment Method", options=PAYMENT_METHODS, required=True),
+                "Remember Mapping": st.column_config.CheckboxColumn("Remember Mapping", default=False)
+            },
+            hide_index=True,
+            use_container_width=True
+        )
+        st.session_state.transactions = edited_df
         save_db(st.session_state.transactions)
 
-        # Handle Delete Confirmation Dialog / Section
-        if st.session_state.delete_confirm_idx is not None:
-            del_idx = st.session_state.delete_confirm_idx
-            if del_idx in st.session_state.transactions.index:
-                t_row = st.session_state.transactions.loc[del_idx]
-                st.warning(f"Are you sure you want to delete transaction: **{t_row['Date']} - {t_row['Description']} ({t_row['Currency']} {t_row['Amount']})**?")
-                col_y, col_n = st.columns(2)
-                if col_y.button("Yes, Delete"):
-                    st.session_state.transactions = st.session_state.transactions.drop(del_idx).reset_index(drop=True)
-                    save_db(st.session_state.transactions)
-                    st.session_state.delete_confirm_idx = None
-                    st.success("Transaction deleted.")
-                    st.rerun()
-                if col_n.button("No, Cancel"):
-                    st.session_state.delete_confirm_idx = None
-                    st.rerun()
-            else:
-                st.session_state.delete_confirm_idx = None
+        st.divider()
+        st.subheader("Split Transaction Workflow")
+        tx_options = {f"Row {idx}: {row['Date']} | {row['Description']} | {row['Currency']} {row['Amount']}": idx for idx, row in st.session_state.transactions.iterrows()}
+        
+        selected_tx_label = st.selectbox("Choose a transaction to split", list(tx_options.keys()))
+        if st.button("Split Transaction"):
+            st.session_state.split_target_idx = tx_options[selected_tx_label]
 
-        # Handle Split Tool Modal / Section
-        if st.session_state.split_modal_idx is not None:
-            split_idx = st.session_state.split_modal_idx
-            if split_idx in st.session_state.transactions.index:
-                t_row = st.session_state.transactions.loc[split_idx]
-                st.divider()
-                st.markdown(f"### Split Transaction: {t_row['Date']} | {t_row['Description']} | {t_row['Currency']} {t_row['Amount']}")
+        if st.session_state.split_target_idx is not None:
+            target_idx = st.session_state.split_target_idx
+            if target_idx in st.session_state.transactions.index:
+                t_row = st.session_state.transactions.loc[target_idx]
+                st.markdown(f"**Splitting:** {t_row['Date']} - {t_row['Description']} ({t_row['Currency']} {t_row['Amount']})")
                 
-                with st.form(f"inline_split_form_{split_idx}"):
-                    s_col1, s_col2 = st.columns(2)
-                    p1_amt = s_col1.number_input("Part 1 Amount", min_value=0.0, value=float(t_row['Amount'])/2, step=1.0)
-                    p1_cat = s_col2.selectbox("Part 1 Category", CATEGORIES, index=0, key=f"p1_cat_{split_idx}")
+                with st.form("popup_split_form"):
+                    p1_amt = st.number_input("Part 1 Amount", min_value=0.0, value=float(t_row['Amount'])/2, step=1.0)
+                    p1_cat = st.selectbox("Part 1 Category", CATEGORIES, index=0)
                     
-                    s_col3, s_col4 = st.columns(2)
-                    p2_amt = s_col3.number_input("Part 2 Amount", min_value=0.0, value=float(t_row['Amount'])/2, step=1.0)
-                    p2_cat = s_col4.selectbox("Part 2 Category", CATEGORIES, index=1 if len(CATEGORIES) > 1 else 0, key=f"p2_cat_{split_idx}")
+                    p2_amt = st.number_input("Part 2 Amount", min_value=0.0, value=float(t_row['Amount'])/2, step=1.0)
+                    p2_cat = st.selectbox("Part 2 Category", CATEGORIES, index=1 if len(CATEGORIES) > 1 else 0)
                     
-                    col_exec, col_cancel = st.columns(2)
-                    execute_split = col_exec.form_submit_button("Confirm Split")
-                    cancel_split = col_cancel.form_submit_button("Cancel")
-                    
+                    execute_split = st.form_submit_button("Confirm Split")
                     if execute_split:
                         orig_amt = float(t_row["Amount"])
                         if abs((p1_amt + p2_amt) - orig_amt) > 0.01:
@@ -443,18 +406,15 @@ with tab1:
                             row2["Category"] = p2_cat
                             row2["Transaction ID"] = f"{base_id}_split2"
                             
-                            st.session_state.transactions = st.session_state.transactions.drop(split_idx).reset_index(drop=True)
+                            st.session_state.transactions = st.session_state.transactions.drop(target_idx).reset_index(drop=True)
                             new_split_df = pd.DataFrame([row1, row2])
                             st.session_state.transactions = pd.concat([st.session_state.transactions, new_split_df], ignore_index=True)
                             save_db(st.session_state.transactions)
-                            st.session_state.split_modal_idx = None
+                            st.session_state.split_target_idx = None
                             st.success("Transaction split successfully!")
                             st.rerun()
-                    if cancel_split:
-                        st.session_state.split_modal_idx = None
-                        st.rerun()
             else:
-                st.session_state.split_modal_idx = None
+                st.session_state.split_target_idx = None
 
 with tab2:
     if st.session_state.transactions.empty:
@@ -529,3 +489,5 @@ with tab2:
                     st.dataframe(top_5[["Date", "Description", "Category", "Amount"]], hide_index=True, use_container_width=True)
                 else:
                     st.write("No variable expenses found.")
+
+update our memory with this
