@@ -489,5 +489,3 @@ with tab2:
                     st.dataframe(top_5[["Date", "Description", "Category", "Amount"]], hide_index=True, use_container_width=True)
                 else:
                     st.write("No variable expenses found.")
-
-update our memory with this
