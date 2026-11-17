@@ -36,7 +36,7 @@ CATEGORIES = [
     "Uncategorised"
 ]
 
-PAYMENT_METHODS = ["UPI", "Debit Card", "Credit Card - Pixel", "Credit Card - Appa", "Credit Card - Monzo Flex", "Cash"]
+PAYMENT_METHODS = ["UPI", "Bank Transfer", "Debit Card", "Credit Card - Pixel", "Credit Card - Appa", "Credit Card - Monzo Flex", "Cash"]
 CURRENCIES = ["INR", "GBP", "EUR"]
 
 MAPPING_FILE = "category_mapping.json"
@@ -273,7 +273,7 @@ with tab1:
                     "Amount": abs(amount),
                     "Currency": currency,
                     "Type": tx_type,
-                    "Payment Method": "Credit Card - Monzo Flex" if "Flex" in str(row.get("Product", "")) else "Debit Card",
+                    "Payment Method": "Credit Card - Monzo Flex" if "Flex" in str(row.get("Product", "")) else "Bank Transfer",
                     "Category": guess_category(desc, mappings),
                     "Remember Mapping": False
                 })
@@ -301,7 +301,7 @@ with tab1:
                     "Amount": abs(amount),
                     "Currency": currency,
                     "Type": tx_type,
-                    "Payment Method": "Debit Card",
+                    "Payment Method": "Bank Transfer",
                     "Category": guess_category(desc, mappings),
                     "Remember Mapping": False
                 })
