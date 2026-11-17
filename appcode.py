@@ -16,7 +16,7 @@ CATEGORIES = [
     "Entertainment",
     "Family Remittances",
     "Food - dining & delivery",
-    "Groceries,Housing & Utilities"",
+    "Groceries,Housing & Utilities",
     "Health & Grooming",
     "Income - Additional",
     "Income - GTA",
