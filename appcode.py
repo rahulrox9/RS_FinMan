@@ -6,10 +6,10 @@ import pdfplumber
 import re
 
 CATEGORIES = [
-    "Local Transport", "Distance Travel", "Dining & Delivery", "Groceries", 
+    "Local Transport", "Distance Travel", "Food - Dining & Delivery", "Groceries", 
     "Housing & Utilities", "Subscriptions", "Health & Grooming", 
     "Family Remittances", "Interest", "Pension", "Investments", 
-    "Cashbacks", "Others", "Uncategorised"
+    "Cashbacks", "Others", "Uncategorised", "Rent"
 ]
 MAPPING_FILE = "category_mapping.json"
 EXPORT_FILE = "Processed_Statement.xlsx"
