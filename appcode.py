@@ -6,15 +6,26 @@ import pdfplumber
 import re
 
 CATEGORIES = [
-    "Local Transport", "Distance Travel", "Food - dining & delivery", "Groceries", 
-    "Rent", "Housing & Utilities", "Subscriptions", "Health & Grooming", 
-    "Family Remittances", "Interest", "Pension", "Investments", 
-    "Cashbacks", "Others", "Uncategorised"
+    "Cashbacks",
+    "Distance Travel",
+    "Family Remittances",
+    "Food - dining & delivery",
+    "Groceries",
+    "Health & Grooming",
+    "Housing & Utilities",
+    "Interest",
+    "Investments",
+    "Local Transport",
+    "Others",
+    "Pension",
+    "Rent",
+    "Shopping",
+    "Subscriptions",
+    "Uncategorised"
 ]
 MAPPING_FILE = "category_mapping.json"
 EXPORT_FILE = "Processed_Statement.xlsx"
 
-# Terms to completely ignore during PDF parsing (wallet top-ups, self-transfers)
 EXCLUDED_TERMS = ["top-uptoupilite", "selftransfer"]
 
 def load_mappings():
@@ -50,12 +61,12 @@ if 'transactions' not in st.session_state:
         "Date", "Transaction ID", "Description", "Amount", "Type", "Payment Method", "Category"
     ])
 
+st.set_page_config(layout="wide")
 st.title("Local Secure Financial Manager")
 
-tab1, tab2 = st.tabs(["Data Entry & Review", "Interactive Dashboard"])
+tab1, tab2 = st.tabs(["Data Entry & Review", "Analytical Dashboard"])
 
 with tab1:
-    # File Upload Section
     uploaded_file = st.file_uploader("Upload Google Pay Statement (PDF)", type="pdf")
     
     if uploaded_file:
@@ -75,7 +86,6 @@ with tab1:
                             raw_desc = match1.group(2).strip()
                             amount_str = match1.group(3).replace(",", "")
                             
-                            # Check exclusions before processing
                             normalized_desc = raw_desc.lower().replace(" ", "")
                             is_excluded = False
                             for term in EXCLUDED_TERMS:
@@ -132,7 +142,6 @@ with tab1:
         else:
             st.error("No transactions matched.")
     
-    # Manual Entry Section
     st.subheader("Manual Entry (Cash / Missing Transactions)")
     with st.form("manual_entry_form"):
         col1, col2, col3 = st.columns(3)
@@ -160,7 +169,6 @@ with tab1:
             st.session_state.transactions.reset_index(drop=True, inplace=True)
             st.success("Manual transaction added.")
     
-    # Review and Edit Section
     if not st.session_state.transactions.empty:
         st.subheader("Review and Confirm Data")
         
@@ -210,42 +218,61 @@ with tab1:
                 )
 
 with tab2:
-    st.header("Financial Dashboard")
-    
     if st.session_state.transactions.empty:
-        st.info("No data available. Please upload a statement or add transactions manually in the other tab.")
+        st.info("No data available. Process a statement to generate dashboard.")
     else:
         dash_df = st.session_state.transactions.copy()
+        dash_df["Date_DT"] = pd.to_datetime(dash_df["Date"], format="%d %b, %Y", errors="coerce")
         
-        col_f1, col_f2 = st.columns(2)
-        selected_type = col_f1.multiselect("Filter by Type", ["Debit", "Credit"], default=["Debit", "Credit"])
-        selected_method = col_f2.multiselect("Filter by Payment Method", ["UPI", "Debit Card", "Credit Card", "Cash"], default=["UPI", "Debit Card", "Credit Card", "Cash"])
+        wealth_categories = ["Investments", "Pension"]
         
-        filtered_df = dash_df[
-            (dash_df["Type"].isin(selected_type)) & 
-            (dash_df["Payment Method"].isin(selected_method))
-        ]
+        expenses_df = dash_df[(dash_df["Type"] == "Debit") & (~dash_df["Category"].isin(wealth_categories))]
+        wealth_df = dash_df[(dash_df["Type"] == "Debit") & (dash_df["Category"].isin(wealth_categories))]
+        income_df = dash_df[dash_df["Type"] == "Credit"]
         
-        total_debit = filtered_df[filtered_df["Type"] == "Debit"]["Amount"].sum()
-        total_credit = filtered_df[filtered_df["Type"] == "Credit"]["Amount"].sum()
+        total_expenses = expenses_df["Amount"].sum()
+        total_wealth = wealth_df["Amount"].sum()
+        total_income = income_df["Amount"].sum()
+        total_rent = expenses_df[expenses_df["Category"] == "Rent"]["Amount"].sum()
         
-        col_m1, col_m2 = st.columns(2)
-        col_m1.metric("Total Expenses (Debit)", f"₹ {total_debit:,.2f}")
-        col_m2.metric("Total Income (Credit)", f"₹ {total_credit:,.2f}")
+        col_m1, col_m2, col_m3, col_m4 = st.columns(4)
+        col_m1.metric("Living Expenses", f"₹ {total_expenses:,.2f}")
+        col_m2.metric("Rent", f"₹ {total_rent:,.2f}")
+        col_m3.metric("Investments & Pension", f"₹ {total_wealth:,.2f}")
+        col_m4.metric("Income / Cashbacks", f"₹ {total_income:,.2f}")
         
         st.divider()
         
-        st.subheader("Expenses by Category")
-        expense_df = filtered_df[filtered_df["Type"] == "Debit"]
+        col_c1, col_c2 = st.columns(2)
         
-        if not expense_df.empty:
-            category_group = expense_df.groupby("Category")["Amount"].sum().reset_index()
-            category_group = category_group.sort_values(by="Amount", ascending=False)
-            
-            st.bar_chart(category_group.set_index("Category"))
-            
-            top_category = category_group.iloc[0]["Category"]
-            top_amount = category_group.iloc[0]["Amount"]
-            st.caption(f"Highest expense category: **{top_category}** (₹ {top_amount:,.2f})")
-        else:
-            st.write("No expense data available for the selected filters.")
+        with col_c1:
+            st.subheader("Expenses by Category")
+            if not expenses_df.empty:
+                cat_group = expenses_df.groupby("Category")["Amount"].sum().reset_index()
+                st.bar_chart(cat_group.set_index("Category"))
+                
+        with col_c2:
+            st.subheader("Daily Spending Trend")
+            if not expenses_df.empty:
+                daily_spend = expenses_df.groupby("Date_DT")["Amount"].sum().reset_index()
+                st.line_chart(daily_spend.set_index("Date_DT"))
+                
+        st.divider()
+        
+        col_t1, col_t2 = st.columns(2)
+        
+        with col_t1:
+            st.subheader("Wealth Building Log")
+            if not wealth_df.empty:
+                st.dataframe(wealth_df[["Date", "Description", "Category", "Amount"]], hide_index=True, use_container_width=True)
+            else:
+                st.write("No investments or pension recorded.")
+                
+        with col_t2:
+            st.subheader("Top 5 Variable Expenses")
+            non_rent_df = expenses_df[expenses_df["Category"] != "Rent"]
+            if not non_rent_df.empty:
+                top_5 = non_rent_df.nlargest(5, "Amount")
+                st.dataframe(top_5[["Date", "Description", "Category", "Amount"]], hide_index=True, use_container_width=True)
+            else:
+                st.write("No variable expenses recorded.")
