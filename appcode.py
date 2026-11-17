@@ -378,28 +378,36 @@ with tab1:
         # Enforce exclusive (MCQ / single-select) behavior on "Select"
         new_selects = edited_display_df["Select"]
         old_selects = display_df["Select"]
-        
-        # Find which row was newly checked
         newly_checked = edited_display_df.index[(new_selects == True) & (old_selects == False)].tolist()
         
         if newly_checked:
-            # Keep only the latest checked row, uncheck all others
             target_idx = newly_checked[-1]
             edited_display_df["Select"] = False
             edited_display_df.loc[target_idx, "Select"] = True
 
-        # Sync edits back to main dataframe
+        mappings = load_mappings()
+        mappings_updated = False
+
+        # Sync edits back to main dataframe & handle "Remember Mapping" batch propagation
         for idx in edited_display_df.index:
             for col in edited_display_df.columns:
                 val = edited_display_df.at[idx, col]
                 st.session_state.transactions.at[idx, col] = val
                 
                 if col == "Remember Mapping" and val:
-                    desc = st.session_state.transactions.at[idx, "Description"]
+                    desc = str(st.session_state.transactions.at[idx, "Description"]).strip()
                     new_cat = st.session_state.transactions.at[idx, "Category"]
-                    mask_desc = st.session_state.transactions["Description"] == desc
+                    
+                    # 1. Save rule globally
+                    mappings[desc.lower()] = new_cat
+                    mappings_updated = True
+                    
+                    # 2. Propagate category to ALL transactions with the same description name instantly
+                    mask_desc = st.session_state.transactions["Description"].str.strip().str.lower() == desc.lower()
                     st.session_state.transactions.loc[mask_desc, "Category"] = new_cat
-                    st.session_state.transactions.loc[mask_desc, "Remember Mapping"] = True
+                    
+        if mappings_updated:
+            save_mappings(mappings)
                     
         save_db(st.session_state.transactions)
 
