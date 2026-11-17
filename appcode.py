@@ -3,17 +3,22 @@ import pandas as pd
 import json
 import os
 import pdfplumber
+import re
 
-# Match the exact categories from Rahul_India_Expenses.xlsx
-CATEGORIES = ["Grocery", "Eat Out", "Bills", "Travel", "Transport", "Fun", "Shopping", "Others", "Rent", "Uncategorised"]
+CATEGORIES = [
+    "Local Transport", "Distance Travel", "Dining & Delivery", "Groceries", 
+    "Housing & Utilities", "Subscriptions", "Health & Grooming", 
+    "Family Remittances", "Interest", "Pension", "Investments", 
+    "Cashbacks", "Others", "Uncategorised"
+]
 MAPPING_FILE = "category_mapping.json"
+EXPORT_FILE = "Processed_Statement.xlsx"
 
 def load_mappings():
     if os.path.exists(MAPPING_FILE):
         with open(MAPPING_FILE, "r") as f:
             return json.load(f)
-    # Default starter guesses
-    return {"amazon": "Shopping", "swiggy": "Eat Out", "zomato": "Eat Out", "uber": "Transport", "jio": "Bills"}
+    return {}
 
 def save_mappings(mappings):
     with open(MAPPING_FILE, "w") as f:
@@ -26,77 +31,128 @@ def guess_category(description, mappings):
             return category
     return "Uncategorised"
 
-st.title("Local Secure Financial Manager")
-st.write("Data processed locally. No internet connection required.")
+if 'transactions' not in st.session_state:
+    st.session_state.transactions = pd.DataFrame(columns=[
+        "Date", "Transaction ID", "Description", "Amount", "Type", "Payment Method", "Category"
+    ])
 
-uploaded_file = st.file_uploader("Upload Bank Statement (PDF)", type="pdf")
+st.title("Local Secure Financial Manager")
+
+# File Upload Section
+uploaded_file = st.file_uploader("Upload Google Pay Statement (PDF)", type="pdf")
 
 if uploaded_file:
     mappings = load_mappings()
+    new_data = []
     
-    # PDF Parsing Logic (Generic Tabular Extraction)
-    # Note: Column indices [0, 1, 2] may need adjustment based on your specific bank's PDF layout
-    raw_data = []
     with pdfplumber.open(uploaded_file) as pdf:
         for page in pdf.pages:
-            table = page.extract_table()
-            if table:
-                for row in table:
-                    # Basic filter to skip empty rows or headers
-                    if row[0] and len(row) >= 3: 
-                        raw_data.append({
-                            "Date": row[0],
-                            "Description": row[1],
-                            "Amount": row[2]
-                        })
+            text = page.extract_text()
+            if text:
+                lines = [line.strip() for line in text.split('\n') if line.strip()]
+                i = 0
+                while i < len(lines):
+                    if re.match(r'^\d{1,2}\s+[A-Za-z]{3},\s+\d{4}$', lines[i]):
+                        if i + 5 < len(lines) and "₹" in lines[i+5]:
+                            date_str = lines[i]
+                            raw_desc = lines[i+2]
+                            raw_id = lines[i+3]
+                            amount_str = lines[i+5].replace("₹", "").replace(",", "")
+                            
+                            tx_type = "Credit" if "Received" in raw_desc else "Debit"
+                            desc = raw_desc.replace("Paid to ", "").replace("Received from ", "")
+                            tx_id = raw_id.replace("UPI Transaction ID: ", "").strip()
+                            
+                            new_data.append({
+                                "Date": date_str,
+                                "Transaction ID": tx_id,
+                                "Description": desc,
+                                "Amount": float(amount_str),
+                                "Type": tx_type,
+                                "Payment Method": "UPI",
+                                "Category": guess_category(desc, mappings)
+                            })
+                            i += 6
+                            continue
+                    i += 1
     
-    if not raw_data:
-        st.error("Could not find a standard table in this PDF. Bank formats vary.")
-    else:
-        df = pd.DataFrame(raw_data)
+    if new_data:
+        new_df = pd.DataFrame(new_data)
+        st.session_state.transactions = pd.concat([st.session_state.transactions, new_df], ignore_index=True)
+        # Deduplication based on Transaction ID to prevent overlaps between GPay and Bank files
+        st.session_state.transactions.drop_duplicates(subset=['Transaction ID'], keep='first', inplace=True)
+        st.success("PDF Processed and Deduplicated.")
+
+# Manual Entry Section
+st.subheader("Manual Entry (Cash / Missing Transactions)")
+with st.form("manual_entry_form"):
+    col1, col2, col3 = st.columns(3)
+    m_date = col1.text_input("Date (DD MMM, YYYY)")
+    m_desc = col2.text_input("Description")
+    m_amount = col3.number_input("Amount", min_value=0.0, step=1.0)
+    
+    col4, col5, col6 = st.columns(3)
+    m_type = col4.selectbox("Type", ["Debit", "Credit"])
+    m_method = col5.selectbox("Payment Method", ["Cash", "Credit Card", "Debit Card", "UPI"])
+    m_cat = col6.selectbox("Category", CATEGORIES)
+    
+    submitted = st.form_submit_button("Add Transaction")
+    if submitted and m_date and m_desc:
+        manual_row = pd.DataFrame([{
+            "Date": m_date,
+            "Transaction ID": "MANUAL_" + str(pd.Timestamp.now().timestamp()),
+            "Description": m_desc,
+            "Amount": m_amount,
+            "Type": m_type,
+            "Payment Method": m_method,
+            "Category": m_cat
+        }])
+        st.session_state.transactions = pd.concat([st.session_state.transactions, manual_row], ignore_index=True)
+        st.success("Manual transaction added.")
+
+# Review and Edit Section
+if not st.session_state.transactions.empty:
+    st.subheader("Review and Confirm Data")
+    
+    edited_df = st.data_editor(
+        st.session_state.transactions,
+        column_config={
+            "Category": st.column_config.SelectboxColumn(
+                "Category",
+                options=CATEGORIES,
+                required=True
+            ),
+            "Type": st.column_config.SelectboxColumn(
+                "Type",
+                options=["Debit", "Credit"],
+                required=True
+            ),
+            "Payment Method": st.column_config.SelectboxColumn(
+                "Payment Method",
+                options=["UPI", "Debit Card", "Credit Card", "Cash"],
+                required=True
+            )
+        },
+        hide_index=True,
+        use_container_width=True
+    )
+    
+    if st.button("Save Data & Export to Excel"):
+        st.session_state.transactions = edited_df
+        mappings = load_mappings()
         
-        # Apply smart guesses
-        df["Category"] = df["Description"].apply(lambda x: guess_category(x, mappings))
+        for index, row in edited_df.iterrows():
+            if row["Category"] != "Uncategorised" and str(row["Description"]).strip():
+                keyword = str(row["Description"]).split()[0].lower()
+                mappings[keyword] = row["Category"]
         
-        # Add column for Payment Method (UPI vs CARD) based on your Excel structure
-        df["Payment Method"] = df["Description"].apply(lambda x: "UPI" if "upi" in str(x).lower() else "CARD")
+        save_mappings(mappings)
+        edited_df.to_excel(EXPORT_FILE, index=False)
         
-        st.subheader("Review and Confirm Categories")
-        
-        # Make the dataframe editable
-        edited_df = st.data_editor(
-            df,
-            column_config={
-                "Category": st.column_config.SelectboxColumn(
-                    "Category",
-                    help="Select the correct category",
-                    options=CATEGORIES,
-                    required=True
-                )
-            },
-            hide_index=True,
-            use_container_width=True
-        )
-        
-        if st.button("Save Data & Export to Excel"):
-            # Update the learning database with new user-confirmed mappings
-            for index, row in edited_df.iterrows():
-                if row["Category"] != "Uncategorised":
-                    # Use the first word of the description as a simple keyword for future learning
-                    keyword = str(row["Description"]).split()[0].lower()
-                    mappings[keyword] = row["Category"]
-            
-            save_mappings(mappings)
-            st.success("Learning database updated with your confirmed categories!")
-            
-            # Export to Excel
-            export_file = "Processed_Statement.xlsx"
-            edited_df.to_excel(export_file, index=False)
-            
-            with open(export_file, "rb") as file:
-                st.download_button(
-                    label="Download Excel File",
-                    data=file,
-                    file_name=export_file,
-                    mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
-                )
+        with open(EXPORT_FILE, "rb") as file:
+            st.download_button(
+                label="Download Excel File",
+                data=file,
+                file_name=EXPORT_FILE,
+                mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+            )
