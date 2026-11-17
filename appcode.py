@@ -350,14 +350,12 @@ with tab1:
 
     if not st.session_state.transactions.empty:
         st.subheader("Review and Manage Transactions")
-        st.caption("Click any row in the table below to reveal row actions (Split ➡️ / Delete 🗑️).")
+        st.caption("Edit details directly in the table, or use the action buttons below each row to Split or Delete.")
         
         edited_df = st.data_editor(
             st.session_state.transactions,
             key="tx_editor",
             on_change=sync_selected_categories,
-            selection_mode="single-row",
-            on_select="rerun",
             column_config={
                 "Category": st.column_config.SelectboxColumn("Category", options=CATEGORIES, required=True),
                 "Type": st.column_config.SelectboxColumn("Type", options=["Debit", "Credit"], required=True),
@@ -371,29 +369,24 @@ with tab1:
         st.session_state.transactions = edited_df
         save_db(st.session_state.transactions)
 
-        # Handle row selection safely from Streamlit data_editor state
-        editor_state = st.session_state.get("tx_editor", {})
-        selected_rows = editor_state.get("selection", {}).get("rows", [])
+        st.divider()
+        st.subheader("Transaction Actions")
 
-        if selected_rows:
-            sel_idx = selected_rows[0]
-            if sel_idx < len(st.session_state.transactions):
-                s_row = st.session_state.transactions.loc[sel_idx]
-                
-                st.divider()
-                st.markdown(f"**Selected Row Actions:** `{s_row['Date']}` | `{s_row['Description']}` | **{s_row['Currency']} {s_row['Amount']}**")
-                
-                act_col1, act_col2 = st.columns(2)
-                with act_col1:
-                    if st.button("➡️ Split Transaction", key=f"action_split_{sel_idx}"):
-                        st.session_state.split_target_idx = sel_idx
-                        st.rerun()
-                with act_col2:
-                    if st.button("🗑️ Delete Transaction", key=f"action_del_{sel_idx}", type="primary"):
-                        st.session_state.transactions = st.session_state.transactions.drop(sel_idx).reset_index(drop=True)
-                        save_db(st.session_state.transactions)
-                        st.success("Transaction deleted successfully!")
-                        st.rerun()
+        for idx, row in st.session_state.transactions.iterrows():
+            cols = st.columns([3, 5, 2, 2, 1, 1])
+            cols[0].text(row["Date"])
+            cols[1].text(row["Description"])
+            cols[2].text(f"{row['Currency']} {row['Amount']}")
+            cols[3].text(row["Category"])
+            
+            if cols[4].button("➡️", key=f"split_btn_{idx}", help="Split this transaction"):
+                st.session_state.split_target_idx = idx
+            
+            if cols[5].button("🗑️", key=f"del_btn_{idx}", help="Delete this transaction"):
+                st.session_state.transactions = st.session_state.transactions.drop(idx).reset_index(drop=True)
+                save_db(st.session_state.transactions)
+                st.success(f"Deleted transaction: {row['Description']}")
+                st.rerun()
 
         if st.session_state.split_target_idx is not None:
             target_idx = st.session_state.split_target_idx
