@@ -59,17 +59,11 @@ def load_db():
         try:
             df = pd.read_csv(DB_FILE)
             df["Amount"] = pd.to_numeric(df["Amount"], errors="coerce")
-            
-            if "Select" in df.columns:
-                df["Select"] = df["Select"].astype(str).str.lower() == 'true'
-            else:
-                df["Select"] = False
-                
-            if "Remember Mapping" in df.columns:
-                df["Remember Mapping"] = df["Remember Mapping"].astype(str).str.lower() == 'true'
-            else:
-                df["Remember Mapping"] = False
-                
+            for col in ["Select", "Remember Mapping"]:
+                if col in df.columns:
+                    df[col] = df[col].astype(str).str.lower() == 'true'
+                else:
+                    df[col] = False
             return df
         except Exception:
             pass
@@ -91,7 +85,7 @@ def save_db(df):
     df.to_csv(DB_FILE, index=False)
 
 def guess_category(description, mappings):
-    desc_lower = str(description).lower()
+    desc_lower = str(description).strip().lower()
     for keyword, category in mappings.items():
         if keyword in desc_lower:
             return category
@@ -375,7 +369,7 @@ with tab1:
             use_container_width=True
         )
         
-        # Enforce exclusive (MCQ / single-select) behavior on "Select"
+        # Enforce single-select MCQ behavior on "Select"
         new_selects = edited_display_df["Select"]
         old_selects = display_df["Select"]
         newly_checked = edited_display_df.index[(new_selects == True) & (old_selects == False)].tolist()
@@ -388,24 +382,28 @@ with tab1:
         mappings = load_mappings()
         mappings_updated = False
 
-        # Sync edits back to main dataframe & handle "Remember Mapping" batch propagation
-        for idx in edited_display_df.index:
-            for col in edited_display_df.columns:
-                val = edited_display_df.at[idx, col]
-                st.session_state.transactions.at[idx, col] = val
+        # Sync edits back to main dataframe using Transaction ID as anchor
+        for idx, row in edited_display_df.iterrows():
+            tx_id = row["Transaction ID"]
+            main_mask = st.session_state.transactions["Transaction ID"] == tx_id
+            
+            if main_mask.any():
+                for col in edited_display_df.columns:
+                    val = row[col]
+                    st.session_state.transactions.loc[main_mask, col] = val
                 
-                if col == "Remember Mapping" and val:
-                    desc = str(st.session_state.transactions.at[idx, "Description"]).strip()
-                    new_cat = st.session_state.transactions.at[idx, "Category"]
+                # If Remember Mapping is checked, update mapping file & propagate globally
+                if row.get("Remember Mapping", False):
+                    desc = str(row["Description"]).strip().lower()
+                    new_cat = row["Category"]
                     
-                    # 1. Save rule globally
-                    mappings[desc.lower()] = new_cat
+                    mappings[desc] = new_cat
                     mappings_updated = True
                     
-                    # 2. Propagate category to ALL transactions with the same description name instantly
-                    mask_desc = st.session_state.transactions["Description"].str.strip().str.lower() == desc.lower()
-                    st.session_state.transactions.loc[mask_desc, "Category"] = new_cat
-                    
+                    desc_mask = st.session_state.transactions["Description"].str.strip().str.lower() == desc
+                    st.session_state.transactions.loc[desc_mask, "Category"] = new_cat
+                    st.session_state.transactions.loc[desc_mask, "Remember Mapping"] = True
+
         if mappings_updated:
             save_mappings(mappings)
                     
