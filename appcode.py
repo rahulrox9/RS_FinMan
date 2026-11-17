@@ -17,7 +17,11 @@ CATEGORIES = [
     "Groceries",
     "Health & Grooming",
     "Housing & Utilities",
-    "Income",
+    "Income - Stipend",
+    "Income - GTA",
+    "Income - Additional",
+    "Income - SNTPS",
+    "Income - Others",
     "Interest",
     "Investment - FD",
     "Investment - Groww",
@@ -121,7 +125,6 @@ if 'transactions' not in st.session_state:
 st.set_page_config(layout="wide")
 st.title("Multi-Currency Financial Manager")
 
-# Sidebar for GitHub Sync
 with st.sidebar:
     st.header("Cloud Controls")
     if st.button("Sync Database to GitHub"):
@@ -339,7 +342,48 @@ with tab1:
             st.session_state.transactions.reset_index(drop=True, inplace=True)
             save_db(st.session_state.transactions)
             st.success("Manual transaction added.")
-    
+
+    if not st.session_state.transactions.empty:
+        st.subheader("Split Transaction (Lump-sum Income/Expense)")
+        with st.form("split_form"):
+            tx_options = st.session_state.transactions["Transaction ID"] + " | " + st.session_state.transactions["Date"] + " | " + st.session_state.transactions["Description"] + " | " + st.session_state.transactions["Amount"].astype(str)
+            selected_tx_str = st.selectbox("Select Transaction to Split", tx_options)
+            
+            s_col1, s_col2 = st.columns(2)
+            part1_amt = s_col1.number_input("Part 1 Amount", min_value=0.0, step=1.0)
+            part1_cat = s_col2.selectbox("Part 1 Category", CATEGORIES, index=CATEGORIES.index("Income - Stipend") if "Income - Stipend" in CATEGORIES else 0)
+            
+            s_col3, s_col4 = st.columns(2)
+            part2_amt = s_col3.number_input("Part 2 Amount", min_value=0.0, step=1.0)
+            part2_cat = s_col4.selectbox("Part 2 Category", CATEGORIES, index=CATEGORIES.index("Income - Others") if "Income - Others" in CATEGORIES else 0)
+
+            split_submitted = st.form_submit_button("Execute Split")
+            if split_submitted:
+                selected_idx = tx_options[tx_options == selected_tx_str].index[0]
+                original_row = st.session_state.transactions.loc[selected_idx].copy()
+                orig_amount = float(original_row["Amount"])
+                
+                if abs((part1_amt + part2_amt) - orig_amount) > 0.01:
+                    st.error(f"Split amounts ({part1_amt + part2_amt}) do not match original transaction amount ({orig_amount}).")
+                else:
+                    st.session_state.transactions = st.session_state.transactions.drop(selected_idx).reset_index(drop=True)
+                    
+                    row1 = original_row.copy()
+                    row1["Amount"] = float(part1_amt)
+                    row1["Category"] = part1_cat
+                    row1["TransactionID"] = original_row["Transaction ID"] + "_split1"
+                    
+                    row2 = original_row.copy()
+                    row2["Amount"] = float(part2_amt)
+                    row2["Category"] = part2_cat
+                    row2["TransactionID"] = original_row["Transaction ID"] + "_split2"
+                    
+                    new_split_df = pd.DataFrame([row1, row2])
+                    st.session_state.transactions = pd.concat([st.session_state.transactions, new_split_df], ignore_index=True)
+                    save_db(st.session_state.transactions)
+                    st.success("Transaction successfully split and saved.")
+                    st.rerun()
+
     if not st.session_state.transactions.empty:
         st.subheader("Review and Confirm Data")
         
