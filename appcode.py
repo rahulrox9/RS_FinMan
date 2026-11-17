@@ -5,9 +5,12 @@ import os
 import pdfplumber
 import re
 from datetime import datetime
+from github import Github
 
 CATEGORIES = [
     "Cashbacks",
+    "Credit Card Repayment",
+    "Currency Transfer",
     "Distance Travel",
     "Family Remittances",
     "Food - dining & delivery",
@@ -16,10 +19,11 @@ CATEGORIES = [
     "Housing & Utilities",
     "Income",
     "Interest",
-    "Investments",
+    "Investment - FD",
+    "Investment - Groww",
     "Local Transport",
     "Others",
-    "Pension",
+    "Pension - APY",
     "Rent",
     "Shopping",
     "Subscriptions",
@@ -27,8 +31,11 @@ CATEGORIES = [
     "Uncategorised"
 ]
 
+PAYMENT_METHODS = ["UPI", "Debit Card", "Credit Card - Pixel", "Credit Card - Appa", "Credit Card - Monzo Flex", "Cash"]
+CURRENCIES = ["INR", "GBP", "EUR"]
+
 MAPPING_FILE = "category_mapping.json"
-EXPORT_FILE = "Processed_Statement.xlsx"
+DB_FILE = "transactions_db.csv"
 EXCLUDED_TERMS = ["top-uptoupilite", "selftransfer"]
 
 def load_mappings():
@@ -40,6 +47,31 @@ def load_mappings():
 def save_mappings(mappings):
     with open(MAPPING_FILE, "w") as f:
         json.dump(mappings, f, indent=4)
+
+def load_db():
+    if os.path.exists(DB_FILE):
+        try:
+            df = pd.read_csv(DB_FILE)
+            df["Amount"] = pd.to_numeric(df["Amount"], errors="coerce")
+            df["Remember Mapping"] = df["Remember Mapping"].astype(bool)
+            return df
+        except Exception:
+            pass
+            
+    return pd.DataFrame({
+        "Date": pd.Series(dtype='str'),
+        "Transaction ID": pd.Series(dtype='str'),
+        "Description": pd.Series(dtype='str'),
+        "Amount": pd.Series(dtype='float'),
+        "Currency": pd.Series(dtype='str'),
+        "Type": pd.Series(dtype='str'),
+        "Payment Method": pd.Series(dtype='str'),
+        "Category": pd.Series(dtype='str'),
+        "Remember Mapping": pd.Series(dtype='bool')
+    })
+
+def save_db(df):
+    df.to_csv(DB_FILE, index=False)
 
 def guess_category(description, mappings):
     desc_lower = str(description).lower()
@@ -53,138 +85,242 @@ def sync_selected_categories():
         edited_rows = st.session_state.tx_editor.get("edited_rows", {})
         for idx_str, edits in edited_rows.items():
             idx = int(idx_str)
-            
-            # Apply the edits to the specific row in the underlying dataframe
             for col, val in edits.items():
                 st.session_state.transactions.at[idx, col] = val
             
-            # If the user ticked "Remember Mapping" for this row, sync all identical descriptions immediately
             is_remembered = st.session_state.transactions.at[idx, "Remember Mapping"]
             if is_remembered:
                 desc = st.session_state.transactions.at[idx, "Description"]
                 new_cat = st.session_state.transactions.at[idx, "Category"]
-                
-                # Apply changes to all rows with the exact same description
                 mask = st.session_state.transactions["Description"] == desc
                 st.session_state.transactions.loc[mask, "Category"] = new_cat
                 st.session_state.transactions.loc[mask, "Remember Mapping"] = True
+        save_db(st.session_state.transactions)
 
-# Strictly define column types to prevent Pandas TypeErrors during mathematical operations
+def push_to_github():
+    try:
+        g = Github(st.secrets["GITHUB_TOKEN"])
+        repo = g.get_repo(st.secrets["REPO_NAME"])
+        
+        for file_name in [DB_FILE, MAPPING_FILE]:
+            if os.path.exists(file_name):
+                with open(file_name, "r") as f:
+                    content = f.read()
+                try:
+                    contents = repo.get_contents(file_name)
+                    repo.update_file(contents.path, f"Sync {file_name}", content, contents.sha)
+                except Exception:
+                    repo.create_file(file_name, f"Initial commit {file_name}", content)
+        st.success("Successfully pushed database and mappings to GitHub!")
+    except Exception as e:
+        st.error(f"GitHub Sync failed. Verify your Streamlit secrets. Error: {e}")
+
 if 'transactions' not in st.session_state:
-    st.session_state.transactions = pd.DataFrame({
-        "Date": pd.Series(dtype='str'),
-        "Transaction ID": pd.Series(dtype='str'),
-        "Description": pd.Series(dtype='str'),
-        "Amount": pd.Series(dtype='float'),
-        "Type": pd.Series(dtype='str'),
-        "Payment Method": pd.Series(dtype='str'),
-        "Category": pd.Series(dtype='str'),
-        "Remember Mapping": pd.Series(dtype='bool')
-    })
+    st.session_state.transactions = load_db()
 
 st.set_page_config(layout="wide")
-st.title("Local Secure Financial Manager")
+st.title("Multi-Currency Financial Manager")
+
+# Sidebar for GitHub Sync
+with st.sidebar:
+    st.header("Cloud Controls")
+    if st.button("Sync Database to GitHub"):
+        push_to_github()
 
 tab1, tab2 = st.tabs(["Data Entry & Review", "Analytical Dashboard"])
 
 with tab1:
-    uploaded_file = st.file_uploader("Upload Google Pay Statement (PDF)", type="pdf")
+    st.subheader("Statement Uploads")
+    bank_type = st.selectbox("Select Statement Source", ["Google Pay (PDF)", "HDFC (CSV)", "Monzo (CSV)", "Revolut (CSV)"])
+    uploaded_file = st.file_uploader(f"Upload {bank_type} file", type=["pdf", "csv"])
     
     if uploaded_file:
         mappings = load_mappings()
         new_data = []
         
-        with pdfplumber.open(uploaded_file) as pdf:
-            for page in pdf.pages:
-                text = page.extract_text(keep_blank_chars=True)
-                if text:
-                    lines = [line.strip() for line in text.split('\n') if line.strip()]
-                    i = 0
-                    while i < len(lines):
-                        match1 = re.search(r'^(\d{1,2}\s*[A-Za-z]{3}\s*,\s*\d{4})\s*(.*?)\s*₹\s*([\d,\.]+)', lines[i])
-                        if match1:
-                            date_str = match1.group(1)
-                            raw_desc = match1.group(2).strip()
-                            amount_str = match1.group(3).replace(",", "")
-                            
-                            normalized_desc = raw_desc.lower().replace(" ", "")
-                            is_excluded = False
-                            for term in EXCLUDED_TERMS:
-                                if term in normalized_desc:
-                                    is_excluded = True
-                                    break
-                            
-                            if is_excluded:
-                                i += 2
-                                continue
-                            
-                            tx_type = "Debit"
-                            desc = raw_desc
-                            
-                            if desc.startswith("Paid to "):
-                                desc = desc[8:]
-                            elif desc.startswith("Paidto"):
-                                desc = desc[6:]
-                            elif desc.startswith("Received from "):
-                                desc = desc[14:]
-                                tx_type = "Credit"
-                            elif desc.startswith("Receivedfrom"):
-                                desc = desc[12:]
-                                tx_type = "Credit"
+        if bank_type == "Google Pay (PDF)":
+            with pdfplumber.open(uploaded_file) as pdf:
+                for page in pdf.pages:
+                    text = page.extract_text(keep_blank_chars=True)
+                    if text:
+                        lines = [line.strip() for line in text.split('\n') if line.strip()]
+                        i = 0
+                        while i < len(lines):
+                            match1 = re.search(r'^(\d{1,2}\s*[A-Za-z]{3}\s*,\s*\d{4})\s*(.*?)\s*₹\s*([\d,\.]+)', lines[i])
+                            if match1:
+                                date_str = match1.group(1)
+                                raw_desc = match1.group(2).strip()
+                                amount_str = match1.group(3).replace(",", "")
                                 
-                            desc = re.sub(r'([a-z])([A-Z])', r'\1 \2', desc)
+                                normalized_desc = raw_desc.lower().replace(" ", "")
+                                if any(term in normalized_desc for term in EXCLUDED_TERMS):
+                                    i += 2
+                                    continue
+                                
+                                tx_type = "Debit"
+                                desc = raw_desc
+                                if desc.startswith("Paid to "):
+                                    desc = desc[8:]
+                                elif desc.startswith("Paidto"):
+                                    desc = desc[6:]
+                                elif desc.startswith("Received from "):
+                                    desc = desc[14:]
+                                    tx_type = "Credit"
+                                elif desc.startswith("Receivedfrom"):
+                                    desc = desc[12:]
+                                    tx_type = "Credit"
+                                    
+                                desc = re.sub(r'([a-z])([A-Z])', r'\1 \2', desc)
+                                
+                                date_clean = date_str
+                                d_match = re.search(r'^(\d{1,2})\s*([A-Za-z]{3})\s*,\s*(\d{4})$', date_str)
+                                if d_match:
+                                    try:
+                                        date_obj = datetime.strptime(f"{d_match.group(1)} {d_match.group(2)} {d_match.group(3)}", "%d %b %Y")
+                                        date_clean = date_obj.strftime("%d-%m-%Y")
+                                    except ValueError:
+                                        pass
+                                
+                                tx_id = "UNKNOWN"
+                                if i + 1 < len(lines):
+                                    match2 = re.search(r'UPITransactionID:\s*(\d+)', lines[i+1].replace(" ", ""))
+                                    if match2:
+                                        tx_id = match2.group(1)
+                                
+                                new_data.append({
+                                    "Date": date_clean,
+                                    "Transaction ID": f"GPAY_{tx_id}_{amount_str}",
+                                    "Description": desc.strip(),
+                                    "Amount": float(amount_str),
+                                    "Currency": "INR",
+                                    "Type": tx_type,
+                                    "Payment Method": "UPI",
+                                    "Category": guess_category(desc, mappings),
+                                    "Remember Mapping": False
+                                })
+                                i += 2  
+                                continue
+                            i += 1
                             
-                            # Convert date to DD-MM-YYYY format
-                            date_clean = date_str
-                            d_match = re.search(r'^(\d{1,2})\s*([A-Za-z]{3})\s*,\s*(\d{4})$', date_str)
-                            if d_match:
-                                try:
-                                    # Parse "20 Aug 2026" and format as "20-08-2026"
-                                    date_obj = datetime.strptime(f"{d_match.group(1)} {d_match.group(2)} {d_match.group(3)}", "%d %b %Y")
-                                    date_clean = date_obj.strftime("%d-%m-%Y")
-                                except ValueError:
-                                    pass
-                            
-                            tx_id = "UNKNOWN"
-                            if i + 1 < len(lines):
-                                match2 = re.search(r'UPITransactionID:\s*(\d+)', lines[i+1].replace(" ", ""))
-                                if match2:
-                                    tx_id = match2.group(1)
-                            
-                            new_data.append({
-                                "Date": date_clean,
-                                "Transaction ID": tx_id,
-                                "Description": desc.strip(),
-                                "Amount": float(amount_str),
-                                "Type": tx_type,
-                                "Payment Method": "UPI",
-                                "Category": guess_category(desc, mappings),
-                                "Remember Mapping": False
-                            })
-                            i += 2  
-                            continue
-                        i += 1
-                        
+        elif bank_type == "HDFC (CSV)":
+            df_hdfc = pd.read_csv(uploaded_file)
+            for _, row in df_hdfc.iterrows():
+                date_val = str(row.get("Date", ""))
+                if "*" in date_val or not date_val.strip():
+                    continue
+                narration = str(row.get("Narration", ""))
+                withdrawal = row.get("Withdrawal Amt.", 0)
+                deposit = row.get("Deposit Amt.", 0)
+                ref_no = str(row.get("Chq./Ref.No.", "UNKNOWN"))
+                
+                try:
+                    dt = datetime.strptime(date_val.strip(), "%d/%m/%y")
+                    formatted_date = dt.strftime("%d-%m-%Y")
+                except:
+                    formatted_date = date_val
+                
+                amount = 0.0
+                tx_type = "Debit"
+                if pd.notna(withdrawal) and str(withdrawal).strip() != "" and float(str(withdrawal).replace(",", "")) > 0:
+                    amount = float(str(withdrawal).replace(",", ""))
+                    tx_type = "Debit"
+                elif pd.notna(deposit) and str(deposit).strip() != "" and float(str(deposit).replace(",", "")) > 0:
+                    amount = float(str(deposit).replace(",", ""))
+                    tx_type = "Credit"
+                else:
+                    continue
+                
+                new_data.append({
+                    "Date": formatted_date,
+                    "Transaction ID": f"HDFC_{ref_no}_{amount}",
+                    "Description": narration.strip(),
+                    "Amount": amount,
+                    "Currency": "INR",
+                    "Type": tx_type,
+                    "Payment Method": "Debit Card",
+                    "Category": guess_category(narration, mappings),
+                    "Remember Mapping": False
+                })
+                
+        elif bank_type == "Monzo (CSV)":
+            df_monzo = pd.read_csv(uploaded_file)
+            for _, row in df_monzo.iterrows():
+                tx_id = str(row.get("Transaction ID", "MONZO_" + str(pd.Timestamp.now().timestamp())))
+                date_raw = str(row.get("Date", ""))
+                try:
+                    dt = datetime.fromisoformat(date_raw.replace("Z", "+00:00"))
+                    formatted_date = dt.strftime("%d-%m-%Y")
+                except:
+                    formatted_date = date_raw[:10]
+                
+                desc = str(row.get("Name", row.get("Description", "Monzo Tx")))
+                amount = float(row.get("Amount", 0.0))
+                currency = str(row.get("Currency", "GBP"))
+                
+                tx_type = "Credit" if amount > 0 else "Debit"
+                
+                new_data.append({
+                    "Date": formatted_date,
+                    "Transaction ID": tx_id,
+                    "Description": desc.strip(),
+                    "Amount": abs(amount),
+                    "Currency": currency,
+                    "Type": tx_type,
+                    "Payment Method": "Credit Card - Monzo Flex" if "Flex" in str(row.get("Product", "")) else "Debit Card",
+                    "Category": guess_category(desc, mappings),
+                    "Remember Mapping": False
+                })
+                
+        elif bank_type == "Revolut (CSV)":
+            df_rev = pd.read_csv(uploaded_file)
+            for _, row in df_rev.iterrows():
+                date_raw = str(row.get("Completed Date", row.get("Started Date", "")))
+                try:
+                    dt = datetime.strptime(date_raw.split()[0], "%Y-%m-%d")
+                    formatted_date = dt.strftime("%d-%m-%Y")
+                except:
+                    formatted_date = date_raw
+                
+                desc = str(row.get("Description", "Revolut Tx"))
+                amount = float(row.get("Amount", 0.0))
+                currency = str(row.get("Currency", "GBP"))
+                
+                tx_type = "Credit" if amount > 0 else "Debit"
+                
+                new_data.append({
+                    "Date": formatted_date,
+                    "Transaction ID": f"REV_{formatted_date}_{amount}_{desc[:10]}",
+                    "Description": desc.strip(),
+                    "Amount": abs(amount),
+                    "Currency": currency,
+                    "Type": tx_type,
+                    "Payment Method": "Debit Card",
+                    "Category": guess_category(desc, mappings),
+                    "Remember Mapping": False
+                })
+                
         if new_data:
             new_df = pd.DataFrame(new_data)
             st.session_state.transactions = pd.concat([st.session_state.transactions, new_df], ignore_index=True)
             st.session_state.transactions.drop_duplicates(subset=['Transaction ID'], keep='first', inplace=True)
             st.session_state.transactions.reset_index(drop=True, inplace=True)
-            st.success("PDF Processed and Deduplicated.")
+            save_db(st.session_state.transactions)
+            st.success("Statement processed, deduplicated, and auto-saved locally.")
         else:
-            st.error("No transactions matched.")
+            st.error("No valid transactions extracted.")
     
-    st.subheader("Manual Entry (Cash / Missing Transactions)")
+    st.subheader("Manual Entry")
     with st.form("manual_entry_form"):
         col1, col2, col3 = st.columns(3)
         m_date = col1.text_input("Date (DD-MM-YYYY)")
         m_desc = col2.text_input("Description")
         m_amount = col3.number_input("Amount", min_value=0.0, step=1.0)
         
-        col4, col5, col6 = st.columns(3)
-        m_type = col4.selectbox("Type", ["Debit", "Credit"])
-        m_method = col5.selectbox("Payment Method", ["Cash", "Credit Card", "Debit Card", "UPI"])
-        m_cat = col6.selectbox("Category", CATEGORIES)
+        col4, col5, col6, col7 = st.columns(4)
+        m_curr = col4.selectbox("Currency", CURRENCIES)
+        m_type = col5.selectbox("Type", ["Debit", "Credit"])
+        m_method = col6.selectbox("Payment Method", PAYMENT_METHODS)
+        m_cat = col7.selectbox("Category", CATEGORIES)
         
         submitted = st.form_submit_button("Add Transaction")
         if submitted and m_date and m_desc:
@@ -193,6 +329,7 @@ with tab1:
                 "Transaction ID": "MANUAL_" + str(pd.Timestamp.now().timestamp()),
                 "Description": m_desc,
                 "Amount": float(m_amount),
+                "Currency": m_curr,
                 "Type": m_type,
                 "Payment Method": m_method,
                 "Category": m_cat,
@@ -200,6 +337,7 @@ with tab1:
             }])
             st.session_state.transactions = pd.concat([st.session_state.transactions, manual_row], ignore_index=True)
             st.session_state.transactions.reset_index(drop=True, inplace=True)
+            save_db(st.session_state.transactions)
             st.success("Manual transaction added.")
     
     if not st.session_state.transactions.empty:
@@ -210,114 +348,89 @@ with tab1:
             key="tx_editor",
             on_change=sync_selected_categories,
             column_config={
-                "Category": st.column_config.SelectboxColumn(
-                    "Category",
-                    options=CATEGORIES,
-                    required=True
-                ),
-                "Type": st.column_config.SelectboxColumn(
-                    "Type",
-                    options=["Debit", "Credit"],
-                    required=True
-                ),
-                "Payment Method": st.column_config.SelectboxColumn(
-                    "Payment Method",
-                    options=["UPI", "Debit Card", "Credit Card", "Cash"],
-                    required=True
-                ),
-                "Remember Mapping": st.column_config.CheckboxColumn(
-                    "Remember Mapping",
-                    help="Check this box to instantly apply this category to all identical names on screen.",
-                    default=False
-                )
+                "Category": st.column_config.SelectboxColumn("Category", options=CATEGORIES, required=True),
+                "Type": st.column_config.SelectboxColumn("Type", options=["Debit", "Credit"], required=True),
+                "Currency": st.column_config.SelectboxColumn("Currency", options=CURRENCIES, required=True),
+                "Payment Method": st.column_config.SelectboxColumn("Payment Method", options=PAYMENT_METHODS, required=True),
+                "Remember Mapping": st.column_config.CheckboxColumn("Remember Mapping", default=False)
             },
             hide_index=True,
             use_container_width=True
         )
         
-        if st.button("Save Data & Export to Excel"):
-            st.session_state.transactions = edited_df
-            mappings = load_mappings()
-            
-            # Only update mappings for future uploads if the user explicitly ticked the checkbox
-            for index, row in edited_df.iterrows():
-                if row.get("Remember Mapping", False) and row["Category"] != "Uncategorised" and str(row["Description"]).strip():
-                    keyword = str(row["Description"]).split()[0].lower()
-                    mappings[keyword] = row["Category"]
-            
-            save_mappings(mappings)
-            
-            export_df = edited_df.drop(columns=["Remember Mapping"])
-            export_df.to_excel(EXPORT_FILE, index=False)
-            
-            with open(EXPORT_FILE, "rb") as file:
-                st.download_button(
-                    label="Download Excel File",
-                    data=file,
-                    file_name=EXPORT_FILE,
-                    mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
-                )
+        st.session_state.transactions = edited_df
+        save_db(st.session_state.transactions)
 
 with tab2:
     if st.session_state.transactions.empty:
-        st.info("No data available. Process a statement to generate dashboard.")
+        st.info("No data available.")
     else:
-        dash_df = st.session_state.transactions.copy()
+        selected_dashboard_curr = st.selectbox("Select Currency Filter for Dashboard", CURRENCIES)
         
-        # Double safety net: force Amount column to numeric right before calculations
-        dash_df["Amount"] = pd.to_numeric(dash_df["Amount"], errors="coerce")
-        # Ensure the date format matches the new DD-MM-YYYY setup
-        dash_df["Date_DT"] = pd.to_datetime(dash_df["Date"], format="%d-%m-%Y", errors="coerce")
+        dash_df = st.session_state.transactions[st.session_state.transactions["Currency"] == selected_dashboard_curr].copy()
         
-        wealth_categories = ["Investments", "Pension"]
-        
-        expenses_df = dash_df[(dash_df["Type"] == "Debit") & (~dash_df["Category"].isin(wealth_categories))]
-        wealth_df = dash_df[(dash_df["Type"] == "Debit") & (dash_df["Category"].isin(wealth_categories))]
-        income_df = dash_df[dash_df["Type"] == "Credit"]
-        
-        total_expenses = expenses_df["Amount"].sum()
-        total_wealth = wealth_df["Amount"].sum()
-        total_income = income_df["Amount"].sum()
-        total_rent = expenses_df[expenses_df["Category"] == "Rent"]["Amount"].sum()
-        
-        col_m1, col_m2, col_m3, col_m4 = st.columns(4)
-        col_m1.metric("Living Expenses", f"₹ {total_expenses:,.2f}")
-        col_m2.metric("Rent", f"₹ {total_rent:,.2f}")
-        col_m3.metric("Investments & Pension", f"₹ {total_wealth:,.2f}")
-        col_m4.metric("Income / Cashbacks", f"₹ {total_income:,.2f}")
-        
-        st.divider()
-        
-        col_c1, col_c2 = st.columns(2)
-        
-        with col_c1:
-            st.subheader("Expenses by Category")
-            if not expenses_df.empty:
-                cat_group = expenses_df.groupby("Category")["Amount"].sum().reset_index()
-                st.bar_chart(cat_group.set_index("Category"))
-                
-        with col_c2:
-            st.subheader("Daily Spending Trend")
-            if not expenses_df.empty:
-                daily_spend = expenses_df.groupby("Date_DT")["Amount"].sum().reset_index()
-                st.line_chart(daily_spend.set_index("Date_DT"))
-                
-        st.divider()
-        
-        col_t1, col_t2 = st.columns(2)
-        
-        with col_t1:
-            st.subheader("Wealth Building Log")
-            if not wealth_df.empty:
-                st.dataframe(wealth_df[["Date", "Description", "Category", "Amount"]], hide_index=True, use_container_width=True)
-            else:
-                st.write("No investments or pension recorded.")
-                
-        with col_t2:
-            st.subheader("Top 5 Variable Expenses")
-            non_rent_df = expenses_df[expenses_df["Category"] != "Rent"]
-            if not non_rent_df.empty:
-                top_5 = non_rent_df.nlargest(5, "Amount")
-                st.dataframe(top_5[["Date", "Description", "Category", "Amount"]], hide_index=True, use_container_width=True)
-            else:
-                st.write("No variable expenses recorded.")
+        if dash_df.empty:
+            st.warning(f"No transactions found for {selected_dashboard_curr}.")
+        else:
+            dash_df["Amount"] = pd.to_numeric(dash_df["Amount"], errors="coerce")
+            dash_df["Date_DT"] = pd.to_datetime(dash_df["Date"], format="%d-%m-%Y", errors="coerce")
+            
+            wealth_categories = [c for c in CATEGORIES if "Investment" in c or "Pension" in c]
+            ignored_categories = ["Credit Card Repayment", "Currency Transfer"]
+            
+            expenses_df = dash_df[
+                (dash_df["Type"] == "Debit") & 
+                (~dash_df["Category"].isin(wealth_categories)) & 
+                (~dash_df["Category"].isin(ignored_categories))
+            ]
+            wealth_df = dash_df[(dash_df["Type"] == "Debit") & (dash_df["Category"].isin(wealth_categories))]
+            income_df = dash_df[(dash_df["Type"] == "Credit") & (~dash_df["Category"].isin(ignored_categories))]
+            
+            total_expenses = expenses_df["Amount"].sum()
+            total_wealth = wealth_df["Amount"].sum()
+            total_income = income_df["Amount"].sum()
+            total_rent = expenses_df[expenses_df["Category"] == "Rent"]["Amount"].sum()
+            
+            col_m1, col_m2, col_m3, col_m4 = st.columns(4)
+            col_m1.metric(f"Living Expenses ({selected_dashboard_curr})", f"{total_expenses:,.2f}")
+            col_m2.metric(f"Rent ({selected_dashboard_curr})", f"{total_rent:,.2f}")
+            col_m3.metric(f"Investments & Pension ({selected_dashboard_curr})", f"{total_wealth:,.2f}")
+            col_m4.metric(f"Income ({selected_dashboard_curr})", f"{total_income:,.2f}")
+            
+            st.divider()
+            
+            col_c1, col_c2 = st.columns(2)
+            with col_c1:
+                st.subheader("Expenses by Category")
+                if not expenses_df.empty:
+                    cat_group = expenses_df.groupby("Category")["Amount"].sum().reset_index()
+                    st.bar_chart(cat_group.set_index("Category"))
+                else:
+                    st.write("No expenses recorded.")
+                    
+            with col_c2:
+                st.subheader("Daily Spending Trend")
+                if not expenses_df.empty:
+                    daily_spend = expenses_df.groupby("Date_DT")["Amount"].sum().reset_index()
+                    st.line_chart(daily_spend.set_index("Date_DT"))
+                else:
+                    st.write("No trend data available.")
+                    
+            st.divider()
+            
+            col_t1, col_t2 = st.columns(2)
+            with col_t1:
+                st.subheader("Granular Wealth Building Log")
+                if not wealth_df.empty:
+                    st.dataframe(wealth_df[["Date", "Description", "Category", "Amount"]], hide_index=True, use_container_width=True)
+                else:
+                    st.write("No investments or pension entries found.")
+                    
+            with col_t2:
+                st.subheader("Top 5 Variable Expenses")
+                non_rent_df = expenses_df[expenses_df["Category"] != "Rent"]
+                if not non_rent_df.empty:
+                    top_5 = non_rent_df.nlargest(5, "Amount")
+                    st.dataframe(top_5[["Date", "Description", "Category", "Amount"]], hide_index=True, use_container_width=True)
+                else:
+                    st.write("No variable expenses found.")
