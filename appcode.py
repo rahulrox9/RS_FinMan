@@ -127,6 +127,9 @@ if 'transactions' not in st.session_state:
 if 'split_target_idx' not in st.session_state:
     st.session_state.split_target_idx = None
 
+if 'delete_target_idx' not in st.session_state:
+    st.session_state.delete_target_idx = None
+
 st.set_page_config(layout="wide")
 st.title("Multi-Currency Financial Manager")
 
@@ -350,7 +353,7 @@ with tab1:
 
     if not st.session_state.transactions.empty:
         st.subheader("Review and Manage Transactions")
-        st.caption("Edit details directly in the table, or use the action buttons below each row to Split or Delete.")
+        st.caption("Edit details in the table, or use the ➡️ (Split) and 🗑️ (Delete) buttons in each row.")
         
         edited_df = st.data_editor(
             st.session_state.transactions,
@@ -373,7 +376,7 @@ with tab1:
         st.subheader("Transaction Actions")
 
         for idx, row in st.session_state.transactions.iterrows():
-            cols = st.columns([3, 5, 2, 2, 1, 1])
+            cols = st.columns([3, 5, 2, 2, 0.8, 0.8])
             cols[0].text(row["Date"])
             cols[1].text(row["Description"])
             cols[2].text(f"{row['Currency']} {row['Amount']}")
@@ -381,18 +384,19 @@ with tab1:
             
             if cols[4].button("➡️", key=f"split_btn_{idx}", help="Split this transaction"):
                 st.session_state.split_target_idx = idx
+                st.session_state.delete_target_idx = None
             
             if cols[5].button("🗑️", key=f"del_btn_{idx}", help="Delete this transaction"):
-                st.session_state.transactions = st.session_state.transactions.drop(idx).reset_index(drop=True)
-                save_db(st.session_state.transactions)
-                st.success(f"Deleted transaction: {row['Description']}")
-                st.rerun()
+                st.session_state.delete_target_idx = idx
+                st.session_state.split_target_idx = None
 
+        # Modal/Popup for Split Tool
         if st.session_state.split_target_idx is not None:
             target_idx = st.session_state.split_target_idx
             if target_idx in st.session_state.transactions.index:
                 t_row = st.session_state.transactions.loc[target_idx]
-                st.info(f"Splitting Transaction: {t_row['Date']} - {t_row['Description']} ({t_row['Currency']} {t_row['Amount']})")
+                st.markdown("---")
+                st.info(f"**Split Tool** — Splitting: {t_row['Date']} | {t_row['Description']} | {t_row['Currency']} {t_row['Amount']}")
                 
                 with st.form(f"popup_split_form_{target_idx}"):
                     p1_amt = st.number_input("Part 1 Amount", min_value=0.0, value=float(t_row['Amount'])/2, step=1.0)
@@ -434,6 +438,31 @@ with tab1:
                             st.rerun()
             else:
                 st.session_state.split_target_idx = None
+
+        # Modal/Popup for Delete Confirmation
+        if st.session_state.delete_target_idx is not None:
+            del_idx = st.session_state.delete_target_idx
+            if del_idx in st.session_state.transactions.index:
+                d_row = st.session_state.transactions.loc[del_idx]
+                st.markdown("---")
+                st.warning(f"Are you sure you want to delete this transaction? ({d_row['Date']} | {d_row['Description']} | {d_row['Currency']} {d_row['Amount']})")
+                
+                d_col1, d_col2 = st.columns(2)
+                confirm_del = d_col1.button("Yes, Delete", type="primary")
+                cancel_del = d_col2.button("No, Cancel")
+                
+                if confirm_del:
+                    desc_name = d_row['Description']
+                    st.session_state.transactions = st.session_state.transactions.drop(del_idx).reset_index(drop=True)
+                    save_db(st.session_state.transactions)
+                    st.session_state.delete_target_idx = None
+                    st.success(f"Deleted transaction: {desc_name}")
+                    st.rerun()
+                elif cancel_del:
+                    st.session_state.delete_target_idx = None
+                    st.rerun()
+            else:
+                st.session_state.delete_target_idx = None
 
 with tab2:
     if st.session_state.transactions.empty:
