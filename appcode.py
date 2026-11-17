@@ -350,7 +350,7 @@ with tab1:
 
     if not st.session_state.transactions.empty:
         st.subheader("Review and Manage Transactions")
-        st.caption("Click any row in the table below to show row actions (Split ➡️ / Delete 🗑️).")
+        st.caption("Click any row in the table below to reveal row actions (Split ➡️ / Delete 🗑️).")
         
         edited_df = st.data_editor(
             st.session_state.transactions,
@@ -371,7 +371,7 @@ with tab1:
         st.session_state.transactions = edited_df
         save_db(st.session_state.transactions)
 
-        # Retrieve selected row from data_editor selection state
+        # Handle row selection safely from Streamlit data_editor state
         editor_state = st.session_state.get("tx_editor", {})
         selected_rows = editor_state.get("selection", {}).get("rows", [])
 
@@ -384,7 +384,6 @@ with tab1:
                 st.markdown(f"**Selected Row Actions:** `{s_row['Date']}` | `{s_row['Description']}` | **{s_row['Currency']} {s_row['Amount']}**")
                 
                 act_col1, act_col2 = st.columns(2)
-                
                 with act_col1:
                     if st.button("➡️ Split Transaction", key=f"action_split_{sel_idx}"):
                         st.session_state.split_target_idx = sel_idx
