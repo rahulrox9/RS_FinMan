@@ -8,6 +8,7 @@ from datetime import datetime
 from github import Github
 
 CATEGORIES = [
+    "Bank Transfer",
     "Cashbacks",
     "Credit Card Repayment",
     "Currency Transfer",
@@ -17,9 +18,9 @@ CATEGORIES = [
     "Groceries",
     "Health & Grooming",
     "Housing & Utilities",
-    "Income - Stipend",
-    "Income - GTA",
     "Income - Additional",
+    "Income - GTA",
+    "Income - Stipend",
     "Income - SNTPS",
     "Income - Others",
     "Interest",
@@ -121,6 +122,9 @@ def push_to_github():
 
 if 'transactions' not in st.session_state:
     st.session_state.transactions = load_db()
+
+if 'split_target_idx' not in st.session_state:
+    st.session_state.split_target_idx = None
 
 st.set_page_config(layout="wide")
 st.title("Multi-Currency Financial Manager")
@@ -344,48 +348,7 @@ with tab1:
             st.success("Manual transaction added.")
 
     if not st.session_state.transactions.empty:
-        st.subheader("Split Transaction (Lump-sum Income/Expense)")
-        with st.form("split_form"):
-            tx_options = st.session_state.transactions["Transaction ID"] + " | " + st.session_state.transactions["Date"] + " | " + st.session_state.transactions["Description"] + " | " + st.session_state.transactions["Amount"].astype(str)
-            selected_tx_str = st.selectbox("Select Transaction to Split", tx_options)
-            
-            s_col1, s_col2 = st.columns(2)
-            part1_amt = s_col1.number_input("Part 1 Amount", min_value=0.0, step=1.0)
-            part1_cat = s_col2.selectbox("Part 1 Category", CATEGORIES, index=CATEGORIES.index("Income - Stipend") if "Income - Stipend" in CATEGORIES else 0)
-            
-            s_col3, s_col4 = st.columns(2)
-            part2_amt = s_col3.number_input("Part 2 Amount", min_value=0.0, step=1.0)
-            part2_cat = s_col4.selectbox("Part 2 Category", CATEGORIES, index=CATEGORIES.index("Income - Others") if "Income - Others" in CATEGORIES else 0)
-
-            split_submitted = st.form_submit_button("Execute Split")
-            if split_submitted:
-                selected_idx = tx_options[tx_options == selected_tx_str].index[0]
-                original_row = st.session_state.transactions.loc[selected_idx].copy()
-                orig_amount = float(original_row["Amount"])
-                
-                if abs((part1_amt + part2_amt) - orig_amount) > 0.01:
-                    st.error(f"Split amounts ({part1_amt + part2_amt}) do not match original transaction amount ({orig_amount}).")
-                else:
-                    st.session_state.transactions = st.session_state.transactions.drop(selected_idx).reset_index(drop=True)
-                    
-                    row1 = original_row.copy()
-                    row1["Amount"] = float(part1_amt)
-                    row1["Category"] = part1_cat
-                    row1["TransactionID"] = original_row["Transaction ID"] + "_split1"
-                    
-                    row2 = original_row.copy()
-                    row2["Amount"] = float(part2_amt)
-                    row2["Category"] = part2_cat
-                    row2["TransactionID"] = original_row["Transaction ID"] + "_split2"
-                    
-                    new_split_df = pd.DataFrame([row1, row2])
-                    st.session_state.transactions = pd.concat([st.session_state.transactions, new_split_df], ignore_index=True)
-                    save_db(st.session_state.transactions)
-                    st.success("Transaction successfully split and saved.")
-                    st.rerun()
-
-    if not st.session_state.transactions.empty:
-        st.subheader("Review and Confirm Data")
+        st.subheader("Review and Manage Transactions")
         
         edited_df = st.data_editor(
             st.session_state.transactions,
@@ -401,9 +364,56 @@ with tab1:
             hide_index=True,
             use_container_width=True
         )
-        
         st.session_state.transactions = edited_df
         save_db(st.session_state.transactions)
+
+        st.divider()
+        st.subheader("Split Transaction Workflow")
+        tx_options = {f"Row {idx}: {row['Date']} | {row['Description']} | {row['Currency']} {row['Amount']}": idx for idx, row in st.session_state.transactions.iterrows()}
+        
+        selected_tx_label = st.selectbox("Choose a transaction to split", list(tx_options.keys()))
+        if st.button("Split Transaction"):
+            st.session_state.split_target_idx = tx_options[selected_tx_label]
+
+        if st.session_state.split_target_idx is not None:
+            target_idx = st.session_state.split_target_idx
+            if target_idx in st.session_state.transactions.index:
+                t_row = st.session_state.transactions.loc[target_idx]
+                st.markdown(f"**Splitting:** {t_row['Date']} - {t_row['Description']} ({t_row['Currency']} {t_row['Amount']})")
+                
+                with st.form("popup_split_form"):
+                    p1_amt = st.number_input("Part 1 Amount", min_value=0.0, value=float(t_row['Amount'])/2, step=1.0)
+                    p1_cat = st.selectbox("Part 1 Category", CATEGORIES, index=0)
+                    
+                    p2_amt = st.number_input("Part 2 Amount", min_value=0.0, value=float(t_row['Amount'])/2, step=1.0)
+                    p2_cat = st.selectbox("Part 2 Category", CATEGORIES, index=1 if len(CATEGORIES) > 1 else 0)
+                    
+                    execute_split = st.form_submit_button("Confirm Split")
+                    if execute_split:
+                        orig_amt = float(t_row["Amount"])
+                        if abs((p1_amt + p2_amt) - orig_amt) > 0.01:
+                            st.error(f"Split total ({p1_amt + p2_amt}) does not match original amount ({orig_amt}).")
+                        else:
+                            base_id = str(t_row["Transaction ID"])
+                            row1 = t_row.copy()
+                            row1["Amount"] = p1_amt
+                            row1["Category"] = p1_cat
+                            row1["Transaction ID"] = f"{base_id}_split1"
+                            
+                            row2 = t_row.copy()
+                            row2["Amount"] = p2_amt
+                            row2["Category"] = p2_cat
+                            row2["Transaction ID"] = f"{base_id}_split2"
+                            
+                            st.session_state.transactions = st.session_state.transactions.drop(target_idx).reset_index(drop=True)
+                            new_split_df = pd.DataFrame([row1, row2])
+                            st.session_state.transactions = pd.concat([st.session_state.transactions, new_split_df], ignore_index=True)
+                            save_db(st.session_state.transactions)
+                            st.session_state.split_target_idx = None
+                            st.success("Transaction split successfully!")
+                            st.rerun()
+            else:
+                st.session_state.split_target_idx = None
 
 with tab2:
     if st.session_state.transactions.empty:
