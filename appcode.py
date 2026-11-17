@@ -23,9 +23,9 @@ CATEGORIES = [
     "Subscriptions",
     "Uncategorised"
 ]
+
 MAPPING_FILE = "category_mapping.json"
 EXPORT_FILE = "Processed_Statement.xlsx"
-
 EXCLUDED_TERMS = ["top-uptoupilite", "selftransfer"]
 
 def load_mappings():
@@ -56,10 +56,18 @@ def sync_categories():
                 mask = st.session_state.transactions["Description"] == desc
                 st.session_state.transactions.loc[mask, "Category"] = new_cat
 
+# Strictly define column types to prevent Pandas TypeErrors during mathematical operations
 if 'transactions' not in st.session_state:
-    st.session_state.transactions = pd.DataFrame(columns=[
-        "Date", "Transaction ID", "Description", "Amount", "Type", "Payment Method", "Category"
-    ])
+    st.session_state.transactions = pd.DataFrame({
+        "Date": pd.Series(dtype='str'),
+        "Transaction ID": pd.Series(dtype='str'),
+        "Description": pd.Series(dtype='str'),
+        "Amount": pd.Series(dtype='float'),
+        "Type": pd.Series(dtype='str'),
+        "Payment Method": pd.Series(dtype='str'),
+        "Category": pd.Series(dtype='str'),
+        "Remember Mapping": pd.Series(dtype='bool')
+    })
 
 st.set_page_config(layout="wide")
 st.title("Local Secure Financial Manager")
@@ -127,7 +135,8 @@ with tab1:
                                 "Amount": float(amount_str),
                                 "Type": tx_type,
                                 "Payment Method": "UPI",
-                                "Category": guess_category(desc, mappings)
+                                "Category": guess_category(desc, mappings),
+                                "Remember Mapping": False
                             })
                             i += 2  
                             continue
@@ -160,10 +169,11 @@ with tab1:
                 "Date": m_date,
                 "Transaction ID": "MANUAL_" + str(pd.Timestamp.now().timestamp()),
                 "Description": m_desc,
-                "Amount": m_amount,
+                "Amount": float(m_amount),
                 "Type": m_type,
                 "Payment Method": m_method,
-                "Category": m_cat
+                "Category": m_cat,
+                "Remember Mapping": False
             }])
             st.session_state.transactions = pd.concat([st.session_state.transactions, manual_row], ignore_index=True)
             st.session_state.transactions.reset_index(drop=True, inplace=True)
@@ -191,6 +201,11 @@ with tab1:
                     "Payment Method",
                     options=["UPI", "Debit Card", "Credit Card", "Cash"],
                     required=True
+                ),
+                "Remember Mapping": st.column_config.CheckboxColumn(
+                    "Remember Mapping",
+                    help="Check this box to permanently save this vendor's categorisation.",
+                    default=False
                 )
             },
             hide_index=True,
@@ -201,13 +216,16 @@ with tab1:
             st.session_state.transactions = edited_df
             mappings = load_mappings()
             
+            # Only update mappings if the user explicitly ticked the checkbox
             for index, row in edited_df.iterrows():
-                if row["Category"] != "Uncategorised" and str(row["Description"]).strip():
+                if row.get("Remember Mapping", False) and row["Category"] != "Uncategorised" and str(row["Description"]).strip():
                     keyword = str(row["Description"]).split()[0].lower()
                     mappings[keyword] = row["Category"]
             
             save_mappings(mappings)
-            edited_df.to_excel(EXPORT_FILE, index=False)
+            
+            export_df = edited_df.drop(columns=["Remember Mapping"])
+            export_df.to_excel(EXPORT_FILE, index=False)
             
             with open(EXPORT_FILE, "rb") as file:
                 st.download_button(
@@ -222,6 +240,9 @@ with tab2:
         st.info("No data available. Process a statement to generate dashboard.")
     else:
         dash_df = st.session_state.transactions.copy()
+        
+        # Double safety net: force Amount column to numeric right before calculations
+        dash_df["Amount"] = pd.to_numeric(dash_df["Amount"], errors="coerce")
         dash_df["Date_DT"] = pd.to_datetime(dash_df["Date"], format="%d %b, %Y", errors="coerce")
         
         wealth_categories = ["Investments", "Pension"]
