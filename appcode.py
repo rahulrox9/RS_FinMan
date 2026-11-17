@@ -79,9 +79,16 @@ if uploaded_file:
     if new_data:
         new_df = pd.DataFrame(new_data)
         st.session_state.transactions = pd.concat([st.session_state.transactions, new_df], ignore_index=True)
-        # Deduplication based on Transaction ID to prevent overlaps between GPay and Bank files
         st.session_state.transactions.drop_duplicates(subset=['Transaction ID'], keep='first', inplace=True)
         st.success("PDF Processed and Deduplicated.")
+    else:
+        st.error("No transactions matched. The PDF text structure might be aligned differently.")
+        # Debugging: Show exactly how the first 30 lines are being read
+        with pdfplumber.open(uploaded_file) as pdf:
+            debug_text = pdf.pages[0].extract_text()
+            debug_lines = [line.strip() for line in debug_text.split('\n') if line.strip()]
+            st.write("### Debugging Output: First 30 lines")
+            st.write(debug_lines[:30])
 
 # Manual Entry Section
 st.subheader("Manual Entry (Cash / Missing Transactions)")
