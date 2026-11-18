@@ -42,7 +42,7 @@
     "babylon": "Food - dining & delivery",
     "johnsons toffees": "Food - dining & delivery",
     "one catering": "Food - dining & delivery",
-    "trainline": "Distance Travel",
+    "trainline": "Trip Expenses",
     "simply delicious": "Food - dining & delivery",
     "pret": "Food - dining & delivery",
     "boots": "Groceries & Home Needs",
@@ -216,5 +216,10 @@
     "pepes wilmslow road": "Food - dining & delivery",
     "exchanged to inr": "Currency Transfer",
     "exchanged to gbp": "Currency Transfer",
-    "exchanged to eur": "Currency Transfer"
+    "exchanged to eur": "Currency Transfer",
+    "tripadvisor": "Trip Expenses",
+    "uber": "Local Transport",
+    "umami | \u3046\u307e\u307f": "Food - dining & delivery",
+    "transport for greater manchester": "Local Transport",
+    "trainpal": "Trip Expenses"
 }
