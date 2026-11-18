@@ -300,7 +300,7 @@ with tab1:
                     "Amount": abs(amount),
                     "Currency": currency,
                     "Type": tx_type,
-                    "Payment Method": "Credit Card - Monzo Flex" if "Flex" in str(row.get("Product", "")) else "Bank Transfer",
+                    "Payment Method": "Credit Card - Monzo Flex" if "Flex" in str(row.get("Product", "")) else "Debit Card",
                     "Category": guess_category(desc, mappings),
                     "Remember Mapping": False
                 })
