@@ -118,6 +118,41 @@ if 'split_target_idx' not in st.session_state:
 if 'confirm_delete' not in st.session_state:
     st.session_state.confirm_delete = False
 
+# Callback handler for data editor changes to ensure global propagation works instantly
+def handle_editor_change():
+    if "tx_editor" in st.session_state:
+        editor_state = st.session_state.tx_editor
+        edited_rows = editor_state.get("edited_rows", {})
+        
+        mappings = load_mappings()
+        mappings_updated = False
+        
+        for idx_str, edits in edited_rows.items():
+            idx = int(idx_str)
+            # Apply edits directly to session state master dataframe
+            for col, val in edits.items():
+                st.session_state.transactions.at[idx, col] = val
+            
+            # Check if remember mapping was toggled/true and category was adjusted
+            is_remembered = st.session_state.transactions.at[idx, "Remember Mapping"]
+            if is_remembered:
+                desc = str(st.session_state.transactions.at[idx, "Description"]).strip().lower()
+                new_cat = st.session_state.transactions.at[idx, "Category"]
+                
+                # Save mapping rule globally
+                mappings[desc] = new_cat
+                mappings_updated = True
+                
+                # Propagate category to ALL rows matching this description across the entire db
+                mask = st.session_state.transactions["Description"].str.strip().str.lower() == desc
+                st.session_state.transactions.loc[mask, "Category"] = new_cat
+                st.session_state.transactions.loc[mask, "Remember Mapping"] = True
+                
+        if mappings_updated:
+            save_mappings(mappings)
+            
+        save_db(st.session_state.transactions)
+
 st.set_page_config(layout="wide")
 st.title("Multi-Currency Financial Manager")
 
@@ -357,6 +392,7 @@ with tab1:
         edited_display_df = st.data_editor(
             display_df,
             key="tx_editor",
+            on_change=handle_editor_change,
             column_config={
                 "Select": st.column_config.CheckboxColumn("Select", default=False),
                 "Category": st.column_config.SelectboxColumn("Category", options=CATEGORIES, required=True),
@@ -378,36 +414,6 @@ with tab1:
             target_idx = newly_checked[-1]
             edited_display_df["Select"] = False
             edited_display_df.loc[target_idx, "Select"] = True
-
-        mappings = load_mappings()
-        mappings_updated = False
-
-        # Sync edits back to main dataframe using Transaction ID as anchor
-        for idx, row in edited_display_df.iterrows():
-            tx_id = row["Transaction ID"]
-            main_mask = st.session_state.transactions["Transaction ID"] == tx_id
-            
-            if main_mask.any():
-                for col in edited_display_df.columns:
-                    val = row[col]
-                    st.session_state.transactions.loc[main_mask, col] = val
-                
-                # If Remember Mapping is checked, update mapping file & propagate globally
-                if row.get("Remember Mapping", False):
-                    desc = str(row["Description"]).strip().lower()
-                    new_cat = row["Category"]
-                    
-                    mappings[desc] = new_cat
-                    mappings_updated = True
-                    
-                    desc_mask = st.session_state.transactions["Description"].str.strip().str.lower() == desc
-                    st.session_state.transactions.loc[desc_mask, "Category"] = new_cat
-                    st.session_state.transactions.loc[desc_mask, "Remember Mapping"] = True
-
-        if mappings_updated:
-            save_mappings(mappings)
-                    
-        save_db(st.session_state.transactions)
 
         st.divider()
         st.subheader("Selected Row Actions")
