@@ -236,6 +236,7 @@ with tab1:
                             
         elif bank_type == "HDFC (CSV)":
             df_hdfc = pd.read_csv(uploaded_file, encoding="latin-1")
+            df_hdfc.columns = df_hdfc.columns.str.strip()
             for _, row in df_hdfc.iterrows():
                 date_val = str(row.get("Date", ""))
                 if "*" in date_val or not date_val.strip():
@@ -277,6 +278,7 @@ with tab1:
                 
         elif bank_type == "Monzo (CSV)":
             df_monzo = pd.read_csv(uploaded_file, encoding="latin-1")
+            df_monzo.columns = df_monzo.columns.str.strip()
             for _, row in df_monzo.iterrows():
                 tx_id = str(row.get("Transaction ID", "MONZO_" + str(pd.Timestamp.now().timestamp())))
                 date_raw = str(row.get("Date", ""))
@@ -312,11 +314,17 @@ with tab1:
             except Exception:
                 uploaded_file.seek(0)
                 df_rev = pd.read_csv(uploaded_file, encoding="latin-1", skiprows=1, on_bad_lines="skip")
+            
+            df_rev.columns = df_rev.columns.str.strip()
 
             for _, row in df_rev.iterrows():
-                date_raw = str(row.get("Completed Date", row.get("Started Date", "")))
-                if not date_raw or date_raw == "nan":
+                date_raw = str(row.get("Completed Date", ""))
+                if not date_raw or date_raw == "nan" or date_raw.strip() == "":
+                    date_raw = str(row.get("Started Date", ""))
+                
+                if not date_raw or date_raw == "nan" or date_raw.strip() == "":
                     continue
+                
                 try:
                     dt = datetime.strptime(date_raw.split()[0], "%Y-%m-%d")
                     formatted_date = dt.strftime("%d-%m-%Y")
@@ -336,7 +344,7 @@ with tab1:
                 
                 currency = str(row.get("Currency", "GBP"))
                 state = str(row.get("State", "COMPLETED")).upper()
-                if state == "FAILED" or state == "REVERTED":
+                if state in ["FAILED", "REVERTED", "DECLINED"]:
                     continue
                 
                 tx_type = "Credit" if amount > 0 else "Debit"
