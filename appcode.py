@@ -276,7 +276,7 @@ with tab1:
                 })
                 
         elif bank_type == "Monzo (CSV)":
-            df_monzo = pd.read_csv(uploaded_file)
+            df_monzo = pd.read_csv(uploaded_file, encoding="latin-1")
             for _, row in df_monzo.iterrows():
                 tx_id = str(row.get("Transaction ID", "MONZO_" + str(pd.Timestamp.now().timestamp())))
                 date_raw = str(row.get("Date", ""))
@@ -306,7 +306,7 @@ with tab1:
                 })
                 
         elif bank_type == "Revolut (CSV)":
-            df_rev = pd.read_csv(uploaded_file)
+            df_rev = pd.read_csv(uploaded_file, encoding="latin-1")
             for _, row in df_rev.iterrows():
                 date_raw = str(row.get("Completed Date", row.get("Started Date", "")))
                 try:
