@@ -1839,9 +1839,9 @@ False,27/02/2024,tx_0000AfJRKz1VnnZE4EmVhy,The University of Manchester,199.34,G
 False,27/02/2024,tx_0000AfJT6I2D2KiapHnAB8,Earnings Pot,255.2,GBP,Debit,Bank Transfer,Uncategorised,False
 False,27/02/2024,tx_0000AfJTtvpXrjRNaWFDlZ,Regular Savings Pot,178.45,GBP,Credit,Bank Transfer,Uncategorised,False
 False,27/02/2024,tx_0000AfJTuwVAr2xs4ne3dp,Earnings Pot,178.45,GBP,Debit,Bank Transfer,Uncategorised,False
-False,27/02/2024,tx_0000AfJUDCykKfn9bOKPdh,nan,5.0,GBP,Debit,Bank Transfer,Uncategorised,False
-False,27/02/2024,tx_0000AfJVYIXEy8JXaFDWNd,nan,5.0,GBP,Credit,Bank Transfer,Uncategorised,False
-False,27/02/2024,tx_0000AfJVYIYIuBy0RrHraD,nan,5.0,GBP,Debit,Bank Transfer,Uncategorised,False
+False,27/02/2024,tx_0000AfJUDCykKfn9bOKPdh,,5.0,GBP,Debit,Bank Transfer,Uncategorised,False
+False,27/02/2024,tx_0000AfJVYIXEy8JXaFDWNd,,5.0,GBP,Credit,Bank Transfer,Uncategorised,False
+False,27/02/2024,tx_0000AfJVYIYIuBy0RrHraD,,5.0,GBP,Debit,Bank Transfer,Uncategorised,False
 False,27/02/2024,tx_0000AfJViEIJahC48eXnBR,Regular Savings Pot,25.82,GBP,Credit,Bank Transfer,Uncategorised,False
 False,27/02/2024,tx_0000AfJbfDRAv8g21Z8WXp,Morrisons,16.61,GBP,Debit,Bank Transfer,Uncategorised,False
 False,28/02/2024,tx_0000AfLZ0S0I2z9ZaViLUQ,Babylon,6.0,GBP,Debit,Bank Transfer,Uncategorised,False
@@ -2257,7 +2257,7 @@ False,29/05/2024,tx_0000AiO4i3nF2xheUSlLF3,Vault Pot,198.42,GBP,Debit,Bank Trans
 False,29/05/2024,tx_0000AiOWya5vW40qq5aJbG,Stagecoach,2.0,GBP,Debit,Bank Transfer,Uncategorised,False
 False,29/05/2024,tx_0000AiOX2P8yAoQ3NrrXrV,Morrisons,0.89,GBP,Debit,Bank Transfer,Uncategorised,False
 False,29/05/2024,tx_0000AiOfdVP4f5eOYKCVaj,Stagecoach,2.0,GBP,Debit,Bank Transfer,Uncategorised,False
-False,30/05/2024,tx_0000AiP8QSC4BKU0eTan6P,nan,220.3,GBP,Credit,Bank Transfer,Uncategorised,False
+False,30/05/2024,tx_0000AiP8QSC4BKU0eTan6P,,220.3,GBP,Credit,Bank Transfer,Uncategorised,False
 False,30/05/2024,tx_0000AiPGcGg7cWeWRtSGIr,Vault Pot,220.3,GBP,Debit,Bank Transfer,Uncategorised,False
 False,30/05/2024,tx_0000AiPrYBzumHr3jrNAq9,Wallet Pot,100.0,GBP,Credit,Bank Transfer,Uncategorised,False
 False,30/05/2024,tx_0000AiPrcQidzCK9Xwt8in,Regular Savings Pot,75.0,GBP,Credit,Bank Transfer,Uncategorised,False
@@ -4076,18 +4076,18 @@ False,26/11/2025,tx_0000B0e0JOdhwiOTEj943o,The University of Manchester,1730.97,
 False,26/11/2025,tx_0000B0e0SJi5dtpNLBit0r,The University of Manchester,529.25,GBP,Credit,Bank Transfer,Income - Stipend,True
 False,26/11/2025,tx_0000B0e0VZvBpFaS3CWbT8,Rahul Subbaraman,2260.22,GBP,Debit,Bank Transfer,Uncategorised,False
 False,27/11/2025,tx_0000B0gCPQvtv4UxaIhWte,Siv Shaji Deepa,6.9,GBP,Credit,Bank Transfer,Uncategorised,False
-False,27/11/2025,tx_0000B0gCTVHDi9jtoC70IT,nan,6.9,GBP,Debit,Bank Transfer,Uncategorised,False
+False,27/11/2025,tx_0000B0gCTVHDi9jtoC70IT,,6.9,GBP,Debit,Bank Transfer,Uncategorised,False
 False,28/11/2025,tx_0000B0guLKH584fYKmfsSh,Amazon,14.99,GBP,Credit,Bank Transfer,Uncategorised,False
-False,28/11/2025,tx_0000B0hD6VLBbL5tNiXakr,nan,14.99,GBP,Debit,Bank Transfer,Uncategorised,False
+False,28/11/2025,tx_0000B0hD6VLBbL5tNiXakr,,14.99,GBP,Debit,Bank Transfer,Uncategorised,False
 False,28/11/2025,tx_0000B0hfxpoP1AVvEf02QV,Rahul Subbaraman,4.0,GBP,Credit,Bank Transfer,Uncategorised,False
 False,28/11/2025,tx_0000B0hgPVpSuJG1Xaayii,Yuliia Anisimova,4.0,GBP,Debit,Bank Transfer,Uncategorised,False
 False,29/11/2025,tx_0000B0kTmvuVO5cygnC6Ur,Google,0.0,GBP,Debit,Bank Transfer,Uncategorised,False
 False,29/11/2025,tx_0000B0kTp4XOHbkcMLsejS,Uber,0.0,GBP,Debit,Bank Transfer,Uncategorised,False
 False,01/12/2025,tx_0000B0omxuoqScT4Z6PvMI,Rahul Subbaraman,281.34,GBP,Credit,Bank Transfer,Uncategorised,False
-False,01/12/2025,tx_0000B0omzFGJwHxa0PjfJS,nan,281.34,GBP,Debit,Bank Transfer,Uncategorised,False
+False,01/12/2025,tx_0000B0omzFGJwHxa0PjfJS,,281.34,GBP,Debit,Bank Transfer,Uncategorised,False
 False,01/12/2025,tx_0000B0on9daoKktBoAkY5K,Rahul Subbaraman,2.49,GBP,Credit,Bank Transfer,Uncategorised,False
 False,02/12/2025,tx_0000B0qamL8VygdErXRzQg,Rahul Subbaraman,7.0,GBP,Credit,Bank Transfer,Uncategorised,False
-False,02/12/2025,tx_0000B0qawUvWQpkdGzDLhS,nan,7.0,GBP,Debit,Bank Transfer,Uncategorised,False
+False,02/12/2025,tx_0000B0qawUvWQpkdGzDLhS,,7.0,GBP,Debit,Bank Transfer,Uncategorised,False
 False,02/12/2025,tx_0000B0qbOpIGInIa74A73R,Uber,0.0,GBP,Debit,Bank Transfer,Uncategorised,False
 False,02/12/2025,tx_0000B0qbQXOdoXRa7Ku3mu,Uber,0.0,GBP,Debit,Bank Transfer,Uncategorised,False
 False,02/12/2025,tx_0000B0qbSar3vWdhQGB3De,Uber,0.0,GBP,Debit,Bank Transfer,Uncategorised,False
@@ -4097,11 +4097,11 @@ False,06/12/2025,tx_0000B0yXxRSm39XbukMNub,Amazon Prime,0.0,GBP,Debit,Bank Trans
 False,11/12/2025,tx_0000B17lWadMzYv6C0h7mT,Amazon,18.69,GBP,Credit,Bank Transfer,Uncategorised,False
 False,11/12/2025,tx_0000B17qCDnWgcdiRQJTYl,Working Balance Pot,18.69,GBP,Debit,Bank Transfer,Uncategorised,False
 False,12/12/2025,tx_0000B1AWSYC9CdDZnhLZQ4,Working Balance Pot,18.69,GBP,Credit,Bank Transfer,Uncategorised,False
-False,12/12/2025,tx_0000B1AWhIPu9Dxs8QgToX,nan,18.69,GBP,Debit,Bank Transfer,Uncategorised,False
+False,12/12/2025,tx_0000B1AWhIPu9Dxs8QgToX,,18.69,GBP,Debit,Bank Transfer,Uncategorised,False
 False,15/12/2025,tx_0000B1Ga5RTLb3HhytG8sT,Rahul Subbaraman,15.0,GBP,Credit,Bank Transfer,Uncategorised,False
-False,15/12/2025,tx_0000B1GaB8UH5yCM9EJzgw,nan,15.0,GBP,Debit,Bank Transfer,Uncategorised,False
+False,15/12/2025,tx_0000B1GaB8UH5yCM9EJzgw,,15.0,GBP,Debit,Bank Transfer,Uncategorised,False
 False,16/12/2025,tx_0000B1HzJpbDNjzfmU61pq,Ritwick Sen,13.74,GBP,Credit,Bank Transfer,Uncategorised,False
-False,16/12/2025,tx_0000B1IZ5yikGiPIgLTzvN,nan,13.74,GBP,Debit,Bank Transfer,Uncategorised,False
+False,16/12/2025,tx_0000B1IZ5yikGiPIgLTzvN,,13.74,GBP,Debit,Bank Transfer,Uncategorised,False
 False,17/12/2025,tx_0000B1LUa4DuSRIVRfkbzd,The University of Manchester,417.8,GBP,Credit,Bank Transfer,Income - Stipend,True
 False,17/12/2025,tx_0000B1LUc2WZkGLHK4DKN7,The University of Manchester,1730.97,GBP,Credit,Bank Transfer,Income - Stipend,True
 False,17/12/2025,tx_0000B1LUle21fCWce9G1QY,Rahul Subbaraman,2148.77,GBP,Debit,Bank Transfer,Uncategorised,False
@@ -4112,21 +4112,21 @@ False,18/12/2025,tx_0000B1Nd3pp7kRmqQTOIGB,Rahul Subbaraman,87.87,GBP,Debit,Bank
 False,18/12/2025,tx_0000B1NeScJdCuyg0wkSzT,Working Balance Pot,2.35,GBP,Credit,Bank Transfer,Uncategorised,False
 False,18/12/2025,tx_0000B1NeTpKcIeStY3ccrJ,Northern Trains,2.35,GBP,Debit,Bank Transfer,Uncategorised,False
 False,19/12/2025,tx_0000B1P70zrd9YyTm2Qka1,Working Balance Pot,31.85,GBP,Credit,Bank Transfer,Uncategorised,False
-False,19/12/2025,tx_0000B1P72kFSBP5MYyxGjq,nan,31.85,GBP,Debit,Bank Transfer,Uncategorised,False
+False,19/12/2025,tx_0000B1P72kFSBP5MYyxGjq,,31.85,GBP,Debit,Bank Transfer,Uncategorised,False
 False,19/12/2025,tx_0000B1P8lGXBbbulNR4xqD,Northern Trains,2.35,GBP,Credit,Bank Transfer,Uncategorised,False
 False,19/12/2025,tx_0000B1P8n6KMWdOSIfxKgD,Working Balance Pot,2.35,GBP,Debit,Bank Transfer,Uncategorised,False
 False,24/12/2025,tx_0000B1aHqIn9fxlrgTVs7V,Working Balance Pot,5.1,GBP,Credit,Bank Transfer,Uncategorised,False
-False,24/12/2025,tx_0000B1aHt3n3uKIm1hmiDT,nan,4.49,GBP,Debit,Bank Transfer,Uncategorised,False
+False,24/12/2025,tx_0000B1aHt3n3uKIm1hmiDT,,4.49,GBP,Debit,Bank Transfer,Uncategorised,False
 False,24/12/2025,tx_0000B1aHvMFKGBx7utXsV1,Working Balance Pot,0.61,GBP,Debit,Bank Transfer,Uncategorised,False
-False,26/12/2025,tx_0000B1eOvmOIX09mQnEkQW,nan,4.49,GBP,Credit,Bank Transfer,Uncategorised,False
+False,26/12/2025,tx_0000B1eOvmOIX09mQnEkQW,,4.49,GBP,Credit,Bank Transfer,Uncategorised,False
 False,26/12/2025,tx_0000B1eP8fb16bw9N4GdDX,Working Balance Pot,4.49,GBP,Debit,Bank Transfer,Uncategorised,False
 False,27/12/2025,tx_0000B1eugFvS9PVizDnZ5Q,Amazon Prime,4.49,GBP,Credit,Bank Transfer,Uncategorised,False
 False,28/12/2025,tx_0000B1hN7AjsjFB8rRPzcJ,Working Balance Pot,60.0,GBP,Credit,Bank Transfer,Uncategorised,False
 False,28/12/2025,tx_0000B1hNCj3cYrMokHIc8w,Rahul Subbaraman,60.0,GBP,Debit,Bank Transfer,Uncategorised,False
 False,28/12/2025,tx_0000B1hNEZ8sOfnuerfUSw,Rahul Subbaraman,60.0,GBP,Credit,Bank Transfer,Uncategorised,False
 False,29/12/2025,tx_0000B1jgzdbhttyusG4bcQ,Siv Shaji Deepa,11.5,GBP,Credit,Bank Transfer,Uncategorised,False
-False,29/12/2025,tx_0000B1jvkHBCVBkKZD5L9v,nan,11.5,GBP,Debit,Bank Transfer,Uncategorised,False
-False,02/01/2026,tx_0000B1rU3bWNqxr34Bsxow,nan,7.0,GBP,Debit,Bank Transfer,Uncategorised,False
+False,29/12/2025,tx_0000B1jvkHBCVBkKZD5L9v,,11.5,GBP,Debit,Bank Transfer,Uncategorised,False
+False,02/01/2026,tx_0000B1rU3bWNqxr34Bsxow,,7.0,GBP,Debit,Bank Transfer,Uncategorised,False
 False,02/01/2026,tx_0000B1s5wQvQeBTLVyqSEj,Uber,0.0,GBP,Debit,Bank Transfer,Uncategorised,False
 False,02/01/2026,tx_0000B1t4cAuUZlHGGP9rMH,Working Balance Pot,57.49,GBP,Debit,Bank Transfer,Uncategorised,False
 False,02/01/2026,tx_0000B1t81AeswrBL5g2Ffe,Working Balance Pot,0.04,GBP,Credit,Bank Transfer,Uncategorised,False
@@ -4138,9 +4138,9 @@ False,02/01/2026,tx_0000B1t9mqD0No8xyQZHWw,Rahul Subbaraman,1213.19,GBP,Debit,Ba
 False,03/01/2026,tx_0000B1uHus807mMIgb5kOI,Working Balance Pot,12.0,GBP,Credit,Bank Transfer,Uncategorised,False
 False,03/01/2026,tx_0000B1uHyl1ySBhL7cUuO1,Khalil Mohamad,12.0,GBP,Debit,Bank Transfer,Uncategorised,False
 False,03/01/2026,tx_0000B1uOU1ZRblbTIfd0wW,Working Balance Pot,282.49,GBP,Credit,Bank Transfer,Uncategorised,False
-False,03/01/2026,tx_0000B1uOVWqKp7NCZzFJgH,nan,282.49,GBP,Debit,Bank Transfer,Uncategorised,False
+False,03/01/2026,tx_0000B1uOVWqKp7NCZzFJgH,,282.49,GBP,Debit,Bank Transfer,Uncategorised,False
 False,03/01/2026,tx_0000B1v0IsUsneSOlQ3Gbe,Working Balance Pot,42.1,GBP,Credit,Bank Transfer,Uncategorised,False
-False,03/01/2026,tx_0000B1v0LIiuGKm36IV9Vq,nan,42.1,GBP,Debit,Bank Transfer,Uncategorised,False
+False,03/01/2026,tx_0000B1v0LIiuGKm36IV9Vq,,42.1,GBP,Debit,Bank Transfer,Uncategorised,False
 False,13/01/2026,tx_0000B2Fk05rfMDxwNfA16f,Working Balance Pot,4.49,GBP,Credit,Bank Transfer,Uncategorised,False
 False,14/01/2026,tx_0000B2HUAZ0IfAmZRLKCup,Amazon Prime,0.0,GBP,Debit,Bank Transfer,Uncategorised,False
 False,14/01/2026,tx_0000B2HzANjTfOoLrBYKh8,Working Balance Pot,10.0,GBP,Credit,Bank Transfer,Uncategorised,False
@@ -4167,15 +4167,15 @@ False,28/01/2026,tx_0000B2j67BmtZAtBgFZECB,The University of Manchester,1730.97,
 False,28/01/2026,tx_0000B2jeMwJuEsaQsQun2a,Working Balance Pot,1730.97,GBP,Debit,Bank Transfer,Uncategorised,False
 False,28/01/2026,tx_0000B2kX93EvD64ZlKyRgf,The University of Manchester,719.61,GBP,Credit,Bank Transfer,Income - Stipend,True
 False,28/01/2026,tx_0000B2kXDiJsPzCWXbMWSx,Non-Stipend Income Pot,719.61,GBP,Debit,Bank Transfer,Uncategorised,False
-False,29/01/2026,tx_0000B2lCpNzmWk8WKDyMDJ,nan,4.49,GBP,Debit,Bank Transfer,Uncategorised,False
+False,29/01/2026,tx_0000B2lCpNzmWk8WKDyMDJ,,4.49,GBP,Debit,Bank Transfer,Uncategorised,False
 False,30/01/2026,tx_0000B2o8jZuPVJuX2cxfec,Working Balance Pot,1.0,GBP,Credit,Bank Transfer,Uncategorised,False
 False,30/01/2026,tx_0000B2o8oT5YHzI96CIGw5,Sanctuary Students,1.0,GBP,Debit,Bank Transfer,Uncategorised,False
 False,30/01/2026,tx_0000B2o8u6w5Z5CccBLcJ8,Sanctuary Students,1.0,GBP,Credit,Bank Transfer,Uncategorised,False
 False,30/01/2026,tx_0000B2pBtMOL6rXgT8IHEB,Working Balance Pot,1.0,GBP,Debit,Bank Transfer,Uncategorised,False
 False,01/02/2026,tx_0000B2rneb3IVM1dUcpeXS,Ant Trainpal,11.5,GBP,Credit,Bank Transfer,Uncategorised,False
-False,01/02/2026,tx_0000B2rvCJCU5DFD2sPk4v,nan,18.01,GBP,Credit,Bank Transfer,Uncategorised,False
-False,01/02/2026,tx_0000B2s5ckE1EAuK21LGRG,nan,11.5,GBP,Debit,Bank Transfer,Uncategorised,False
-False,01/02/2026,tx_0000B2s5keIZ99h5y1EoYU,nan,11.5,GBP,Debit,Bank Transfer,Uncategorised,False
+False,01/02/2026,tx_0000B2rvCJCU5DFD2sPk4v,,18.01,GBP,Credit,Bank Transfer,Uncategorised,False
+False,01/02/2026,tx_0000B2s5ckE1EAuK21LGRG,,11.5,GBP,Debit,Bank Transfer,Uncategorised,False
+False,01/02/2026,tx_0000B2s5keIZ99h5y1EoYU,,11.5,GBP,Debit,Bank Transfer,Uncategorised,False
 False,01/02/2026,tx_0000B2s5o0IlnMeuPPrgVF,Working Balance Pot,6.51,GBP,Debit,Bank Transfer,Uncategorised,False
 False,01/02/2026,tx_0000B2sFII2FKIG7GCOPBq,Rent Pot Pot,6.36,GBP,Credit,Bank Transfer,Uncategorised,False
 False,01/02/2026,tx_0000B2sFLaxNQuoDAJSCQr,Subsistence No Pay Pot,1.3,GBP,Credit,Bank Transfer,Uncategorised,False
@@ -4186,15 +4186,15 @@ False,01/02/2026,tx_0000B2sFkOXgj5s1yOlDT1,Stipend Savings Pot,735.65,GBP,Debit,
 False,01/02/2026,tx_0000B2sG8Gr0xlKCegvReF,Stipend Savings Pot,38.01,GBP,Credit,Bank Transfer,Uncategorised,False
 False,01/02/2026,tx_0000B2sGAVXfKAplDACYhm,Working Balance Pot,2162.06,GBP,Debit,Bank Transfer,Uncategorised,False
 False,01/02/2026,tx_0000B2sHgE3nxKZNOBlKHU,Working Balance Pot,6.51,GBP,Credit,Bank Transfer,Uncategorised,False
-False,01/02/2026,tx_0000B2sHvPGmYv0WUtMfgp,nan,6.51,GBP,Debit,Bank Transfer,Uncategorised,False
+False,01/02/2026,tx_0000B2sHvPGmYv0WUtMfgp,,6.51,GBP,Debit,Bank Transfer,Uncategorised,False
 False,01/02/2026,tx_0000B2sv2AdTGYeRLntrFJ,Working Balance Pot,7.0,GBP,Credit,Bank Transfer,Uncategorised,False
-False,02/02/2026,tx_0000B2tmDtIcqJqfs1X5QQ,nan,7.0,GBP,Debit,Bank Transfer,Uncategorised,False
+False,02/02/2026,tx_0000B2tmDtIcqJqfs1X5QQ,,7.0,GBP,Debit,Bank Transfer,Uncategorised,False
 False,08/02/2026,tx_0000B36WsPgcm7HbglXOY1,Working Balance Pot,379.78,GBP,Credit,Bank Transfer,Uncategorised,False
-False,08/02/2026,tx_0000B36Wtmp4EyOdt1Ul9N,nan,379.78,GBP,Debit,Bank Transfer,Uncategorised,False
+False,08/02/2026,tx_0000B36Wtmp4EyOdt1Ul9N,,379.78,GBP,Debit,Bank Transfer,Uncategorised,False
 False,11/02/2026,tx_0000B3DnBsvLFnpTrHJnJD,Rent Pot Pot,634.0,GBP,Credit,Bank Transfer,Uncategorised,False
 False,12/02/2026,tx_0000B3EBW9bTLZxxuUvlGD,Sanctuary Students,634.0,GBP,Debit,Bank Transfer,Uncategorised,False
 False,15/02/2026,tx_0000B3M93P6VzXK9Bc6mLS,Siv Shaji Deepa,1.48,GBP,Credit,Bank Transfer,Uncategorised,False
-False,16/02/2026,tx_0000B3NHXd9vIGZzzvYWrD,nan,1.48,GBP,Debit,Bank Transfer,Uncategorised,False
+False,16/02/2026,tx_0000B3NHXd9vIGZzzvYWrD,,1.48,GBP,Debit,Bank Transfer,Uncategorised,False
 False,20/02/2026,tx_0000B3WkhQPiBIM5ASxPRj,Amazon,0.0,GBP,Debit,Bank Transfer,Uncategorised,False
 False,23/02/2026,tx_0000B3cNrrYkyasj5Uk6Ft,Amazon Prime,0.0,GBP,Debit,Bank Transfer,Uncategorised,False
 False,25/02/2026,tx_0000B3gYUEkeyQ25WzIZCF,The University of Manchester,819.16,GBP,Credit,Bank Transfer,Income - Stipend,True
@@ -4218,18 +4218,18 @@ False,01/03/2026,tx_0000B3o7BjzzQi1eU99psQ,Non-Stipend Income Pot,1.34,GBP,Debit
 False,01/03/2026,tx_0000B3o7c7rjJePotbUP8j,Working Balance Pot,692.94,GBP,Credit,Bank Transfer,Uncategorised,False
 False,01/03/2026,tx_0000B3o7ddItunEovCpMwQ,Stipend Savings Pot,692.94,GBP,Debit,Bank Transfer,Uncategorised,False
 False,01/03/2026,tx_0000B3oxxC0QJTK7QyvFQ2,Working Balance Pot,7.0,GBP,Credit,Bank Transfer,Uncategorised,False
-False,02/03/2026,tx_0000B3pnvDy5F3AWsLnIe1,nan,7.0,GBP,Debit,Bank Transfer,Uncategorised,False
+False,02/03/2026,tx_0000B3pnvDy5F3AWsLnIe1,,7.0,GBP,Debit,Bank Transfer,Uncategorised,False
 False,04/03/2026,tx_0000B3uuD5cAbqmmLGfp0U,Working Balance Pot,20.0,GBP,Credit,Bank Transfer,Uncategorised,False
 False,04/03/2026,tx_0000B3uuHgpUBgjv6GFuRF,Khalil Mohamad,20.0,GBP,Debit,Bank Transfer,Uncategorised,False
 False,05/03/2026,tx_0000B3wde7tEwp6LkIFUp7,Working Balance Pot,20.99,GBP,Credit,Bank Transfer,Uncategorised,False
 False,05/03/2026,tx_0000B3wdykLRgP8fvSSRdZ,Kavya Girish,20.99,GBP,Debit,Bank Transfer,Uncategorised,False
 False,09/03/2026,tx_0000B45cUyrkmJc1M17L9d,Working Balance Pot,241.54,GBP,Credit,Bank Transfer,Uncategorised,False
-False,09/03/2026,tx_0000B45fdSpBZoEzjizwhw,nan,241.54,GBP,Debit,Bank Transfer,Uncategorised,False
+False,09/03/2026,tx_0000B45fdSpBZoEzjizwhw,,241.54,GBP,Debit,Bank Transfer,Uncategorised,False
 False,12/03/2026,tx_0000B4BFZbHekfpYSXH1GL,Amazon,0.0,GBP,Debit,Bank Transfer,Uncategorised,False
 False,15/03/2026,tx_0000B4HE5xbSGoHv3KWE8y,Rent Pot Pot,634.0,GBP,Credit,Bank Transfer,Uncategorised,False
 False,16/03/2026,tx_0000B4JUcThKSuZD5anjlJ,OpenAI,0.0,GBP,Debit,Bank Transfer,Uncategorised,False
 False,17/03/2026,tx_0000B4KafQ0LRmmehd6yXq,Sanctuary Students,634.0,GBP,Debit,Bank Transfer,Uncategorised,False
-False,18/03/2026,tx_0000B4MemS391u9i2YW9Ux,nan,0.1,GBP,Credit,Bank Transfer,Uncategorised,False
+False,18/03/2026,tx_0000B4MemS391u9i2YW9Ux,,0.1,GBP,Credit,Bank Transfer,Uncategorised,False
 False,18/03/2026,tx_0000B4MevtJh1OivbGivBq,Working Balance Pot,0.01,GBP,Debit,Bank Transfer,Uncategorised,False
 False,18/03/2026,tx_0000B4MewnwcTrHcatZGrJ,Working Balance Pot,0.09,GBP,Debit,Bank Transfer,Uncategorised,False
 False,18/03/2026,tx_0000B4NymPjDqwYnryzQfq,Working Balance Pot,19.0,GBP,Credit,Bank Transfer,Uncategorised,False
@@ -4244,13 +4244,13 @@ False,01/04/2026,tx_0000B4qKZyGLmYsClLdOQT,Working Balance Pot,9.55,GBP,Credit,B
 False,01/04/2026,tx_0000B4qKcKAjIKXXwksY7N,Non-Stipend Income Pot,29.91,GBP,Debit,Bank Transfer,Uncategorised,False
 False,01/04/2026,tx_0000B4qKtQT98Th1kGtdo3,Non-Stipend Income Pot,7.0,GBP,Credit,Bank Transfer,Uncategorised,False
 False,01/04/2026,tx_0000B4qKtQYSoi5nrZ3J22,Working Balance Pot,7.0,GBP,Debit,Bank Transfer,Uncategorised,False
-False,02/04/2026,tx_0000B4s5EnfiqyKcOVataU,nan,7.0,GBP,Debit,Bank Transfer,Uncategorised,False
+False,02/04/2026,tx_0000B4s5EnfiqyKcOVataU,,7.0,GBP,Debit,Bank Transfer,Uncategorised,False
 False,07/04/2026,tx_0000B52AoLBEhkfo9SyO3e,THE UNI OF MANCHES,13.5,GBP,Credit,Bank Transfer,Uncategorised,False
-False,07/04/2026,tx_0000B52Zyzb1n7yAJD7WBW,nan,13.5,GBP,Debit,Bank Transfer,Uncategorised,False
+False,07/04/2026,tx_0000B52Zyzb1n7yAJD7WBW,,13.5,GBP,Debit,Bank Transfer,Uncategorised,False
 False,07/04/2026,tx_0000B53qC5nBrH6NiP2NzV,Working Balance Pot,313.89,GBP,Credit,Bank Transfer,Uncategorised,False
-False,07/04/2026,tx_0000B53qDXEvINkruN9abK,nan,313.89,GBP,Debit,Bank Transfer,Uncategorised,False
+False,07/04/2026,tx_0000B53qDXEvINkruN9abK,,313.89,GBP,Debit,Bank Transfer,Uncategorised,False
 False,11/04/2026,tx_0000B5Bd1lFBepkJ7s62rK,Rahul Subbaraman,22.4,GBP,Credit,Bank Transfer,Uncategorised,False
-False,11/04/2026,tx_0000B5BdaxkV9jibjII8Zt,nan,22.4,GBP,Debit,Bank Transfer,Uncategorised,False
+False,11/04/2026,tx_0000B5BdaxkV9jibjII8Zt,,22.4,GBP,Debit,Bank Transfer,Uncategorised,False
 False,13/04/2026,tx_0000B5FyyUFNN38IsXe6gj,Rent Pot Pot,633.0,GBP,Credit,Bank Transfer,Uncategorised,False
 False,18/04/2026,tx_0000B5QLIaNYQHNGf7iqFd,Sanctuary Students,633.0,GBP,Debit,Bank Transfer,Uncategorised,False
 False,28/04/2026,tx_0000B5kJjFUnrNYVexhYE1,Working Balance Pot,5.0,GBP,Credit,Bank Transfer,Uncategorised,False
@@ -4263,7 +4263,7 @@ False,01/05/2026,tx_0000B5qUJRAM72fRtcBQDB,Rent Pot Pot,5.67,GBP,Credit,Bank Tra
 False,01/05/2026,tx_0000B5qUKVMM0TT6EwPyzs,Stipend Savings Pot,10.4,GBP,Credit,Bank Transfer,Uncategorised,False
 False,01/05/2026,tx_0000B5qULREYpbXLdTvxHF,Subsistence No Pay Pot,1.9,GBP,Credit,Bank Transfer,Uncategorised,False
 False,01/05/2026,tx_0000B5qUMvGsddSib8KvzN,Non-Stipend Income Pot,19.56,GBP,Debit,Bank Transfer,Uncategorised,False
-False,02/05/2026,tx_0000B5sFJzhQblGjsZ0fJL,nan,7.0,GBP,Debit,Bank Transfer,Uncategorised,False
+False,02/05/2026,tx_0000B5sFJzhQblGjsZ0fJL,,7.0,GBP,Debit,Bank Transfer,Uncategorised,False
 False,03/05/2026,tx_0000B5vT1MZ7LmyjbViyWX,Subsistence No Pay Pot,314.39,GBP,Credit,Bank Transfer,Uncategorised,False
 False,03/05/2026,tx_0000B5vT1MaXGWGns30sEL,Stipend Savings Pot,314.39,GBP,Debit,Bank Transfer,Uncategorised,False
 False,03/05/2026,tx_0000B5vT31DNhbCyPe6xak,Working Balance Pot,527.48,GBP,Credit,Bank Transfer,Uncategorised,False
@@ -4285,12 +4285,12 @@ False,09/05/2026,tx_0000B67Vceb9na9AeGuSsz,MR R SUBBARAMAN,250.0,GBP,Credit,Bank
 False,09/05/2026,tx_0000B67Vf9Sg1MYXpgvzUJ,Non-Stipend Income Pot,250.0,GBP,Debit,Bank Transfer,Uncategorised,False
 False,10/05/2026,tx_0000B69K22mwBh69hkAK13,Rent Pot Pot,634.0,GBP,Credit,Bank Transfer,Uncategorised,False
 False,10/05/2026,tx_0000B6ADkh6v7td98P7Zcl,Rahul Subbaraman,12.0,GBP,Credit,Bank Transfer,Uncategorised,False
-False,10/05/2026,tx_0000B6ADp4dDcMxF5RBS6c,nan,12.0,GBP,Debit,Bank Transfer,Uncategorised,False
+False,10/05/2026,tx_0000B6ADp4dDcMxF5RBS6c,,12.0,GBP,Debit,Bank Transfer,Uncategorised,False
 False,10/05/2026,tx_0000B6ADrm1RGOyRek5q7A,Working Balance Pot,315.89,GBP,Credit,Bank Transfer,Uncategorised,False
-False,10/05/2026,tx_0000B6ADtB2riL8m8ixqcN,nan,315.89,GBP,Debit,Bank Transfer,Uncategorised,False
+False,10/05/2026,tx_0000B6ADtB2riL8m8ixqcN,,315.89,GBP,Debit,Bank Transfer,Uncategorised,False
 False,11/05/2026,tx_0000B6CEgaXA7p54fcAjek,Amazon,0.0,GBP,Debit,Bank Transfer,Uncategorised,False
 False,11/05/2026,tx_0000B6CFQS0CB61vHkMb2X,Stipend Savings Pot,147.3,GBP,Credit,Bank Transfer,Uncategorised,False
-False,11/05/2026,tx_0000B6CFSoqME34IN0mlLF,nan,147.3,GBP,Debit,Bank Transfer,Uncategorised,False
+False,11/05/2026,tx_0000B6CFSoqME34IN0mlLF,,147.3,GBP,Debit,Bank Transfer,Uncategorised,False
 False,11/05/2026,tx_0000B6CZy8uHg8afbJdWC1,Sanctuary Students,634.0,GBP,Debit,Bank Transfer,Uncategorised,False
 False,24/05/2026,tx_0000B6cuMM39Vy52g0umwt,Subsistence No Pay Pot,20.0,GBP,Credit,Bank Transfer,Uncategorised,False
 False,24/05/2026,tx_0000B6cudZirvs1h1NZjJz,Rahul Subbaraman,20.0,GBP,Debit,Bank Transfer,Uncategorised,False
@@ -4300,7 +4300,7 @@ False,24/05/2026,tx_0000B6cvldYRfYxbRnu49M,Rahul Subbaraman,20.17,GBP,Debit,Bank
 False,24/05/2026,tx_0000B6cwG5hxYmf0AF8wPX,Rahul Subbaraman,0.19,GBP,Credit,Bank Transfer,Uncategorised,False
 False,24/05/2026,tx_0000B6dI3nECdkdxeZUuuJ,Subsistence No Pay Pot,0.19,GBP,Debit,Bank Transfer,Uncategorised,False
 False,26/05/2026,tx_0000B6gElcgZNh8kSzP7Fz,Split My Fare,35.3,GBP,Credit,Bank Transfer,Uncategorised,False
-False,26/05/2026,tx_0000B6gHVQRLRSc2e9yawu,nan,35.3,GBP,Debit,Bank Transfer,Uncategorised,False
+False,26/05/2026,tx_0000B6gHVQRLRSc2e9yawu,,35.3,GBP,Debit,Bank Transfer,Uncategorised,False
 False,27/05/2026,tx_0000B6j68C8RwcmpNNoZZy,The University of Manchester,282.51,GBP,Credit,Bank Transfer,Income - Stipend,True
 False,27/05/2026,tx_0000B6jAfVzfX3tQD8EBQS,Non-Stipend Income Pot,282.51,GBP,Debit,Bank Transfer,Uncategorised,False
 False,27/05/2026,tx_0000B6jAqjraJ0yePbnYSA,Subsistence No Pay Pot,5.21,GBP,Credit,Bank Transfer,Uncategorised,False
@@ -4322,7 +4322,7 @@ False,01/06/2026,tx_0000B6sbmTXzTLgKTIjpGz,Non-Stipend Income Pot,3.94,GBP,Debit
 False,01/06/2026,tx_0000B6sbpRBKiut60JYKVH,Working Balance Pot,0.31,GBP,Credit,Bank Transfer,Uncategorised,False
 False,01/06/2026,tx_0000B6sbpRCOeybqIl73Sr,Non-Stipend Income Pot,0.31,GBP,Debit,Bank Transfer,Uncategorised,False
 False,01/06/2026,tx_0000B6sbqKg4OLpIZcj5M4,Stipend Savings Pot,7.0,GBP,Credit,Bank Transfer,Uncategorised,False
-False,02/06/2026,tx_0000B6uVWS8Ekw7XIhbJe1,nan,7.0,GBP,Debit,Bank Transfer,Uncategorised,False
+False,02/06/2026,tx_0000B6uVWS8Ekw7XIhbJe1,,7.0,GBP,Debit,Bank Transfer,Uncategorised,False
 False,02/06/2026,tx_0000B6ve9IwZqQEIu8a5Ks,Mangopay S.A.,13.5,GBP,Credit,Bank Transfer,Uncategorised,False
 False,02/06/2026,tx_0000B6veVkedUusYkECk4H,Stipend Savings Pot,13.5,GBP,Debit,Bank Transfer,Uncategorised,False
 False,04/06/2026,tx_0000B70Ndmf1CBqpLnOO93,Mangopay S.A.,3.5,GBP,Credit,Bank Transfer,Uncategorised,False
@@ -4334,13 +4334,13 @@ False,07/06/2026,tx_0000B75ejg9CzgTDyuJOQk,Shivatemple,305.48,GBP,Debit,Bank Tra
 False,11/06/2026,tx_0000B7DX9dGf4wTXsbI257,Rent Pot Pot,634.0,GBP,Credit,Bank Transfer,Uncategorised,False
 False,11/06/2026,tx_0000B7EphRY19VmGeqplm0,Sanctuary Students,634.0,GBP,Debit,Bank Transfer,Uncategorised,False
 False,12/06/2026,tx_0000B7FzttDNJ3bawxsJxk,Working Balance Pot,293.84,GBP,Credit,Bank Transfer,Uncategorised,False
-False,12/06/2026,tx_0000B7FzvEOw1MXVmSaS73,nan,293.84,GBP,Debit,Bank Transfer,Uncategorised,False
+False,12/06/2026,tx_0000B7FzvEOw1MXVmSaS73,,293.84,GBP,Debit,Bank Transfer,Uncategorised,False
 False,14/06/2026,tx_0000B7KGWHbVS4X0fAunjP,Siv Sachin Shaji Deepa,15.95,GBP,Credit,Bank Transfer,Uncategorised,False
-False,14/06/2026,tx_0000B7KL6eglV3RK5TJX9v,nan,15.95,GBP,Debit,Bank Transfer,Uncategorised,False
+False,14/06/2026,tx_0000B7KL6eglV3RK5TJX9v,,15.95,GBP,Debit,Bank Transfer,Uncategorised,False
 False,14/06/2026,tx_0000B7KP962x9e7qMRYo7d,Ajmal Roshan,15.95,GBP,Credit,Bank Transfer,Uncategorised,False
-False,14/06/2026,tx_0000B7KPv7ZUmweqUtoyGI,nan,15.95,GBP,Debit,Bank Transfer,Uncategorised,False
+False,14/06/2026,tx_0000B7KPv7ZUmweqUtoyGI,,15.95,GBP,Debit,Bank Transfer,Uncategorised,False
 False,14/06/2026,tx_0000B7KTNBf3TaOm0a1Gpm,Kavya Girish,10.0,GBP,Credit,Bank Transfer,Uncategorised,False
-False,14/06/2026,tx_0000B7KgXUV3aWDSPtN0C4,nan,10.0,GBP,Debit,Bank Transfer,Uncategorised,False
+False,14/06/2026,tx_0000B7KgXUV3aWDSPtN0C4,,10.0,GBP,Debit,Bank Transfer,Uncategorised,False
 False,15/06/2026,tx_0000B7LuAgirZU1MFlD4U7,Stipend Savings Pot,480.45,GBP,Credit,Bank Transfer,Uncategorised,False
 False,15/06/2026,tx_0000B7LuAgi9c6ThzTITRZ,Working Balance Pot,480.45,GBP,Debit,Bank Transfer,Uncategorised,False
 False,17/06/2026,tx_0000B7QclTAa63VVudwyoM,Mangopay S.A.,6.0,GBP,Credit,Bank Transfer,Uncategorised,False
@@ -4362,7 +4362,7 @@ False,26/06/2026,tx_0000B7jIolfzRJL3TPrTOt,Non-Stipend Income Pot,831.43,GBP,Deb
 False,26/06/2026,tx_0000B7jmcPJTkwk1gNmHBZ,Mangopay S.A.,17.5,GBP,Credit,Bank Transfer,Uncategorised,False
 False,26/06/2026,tx_0000B7jmeXx4bpPydXtVR8,Non-Stipend Income Pot,17.5,GBP,Debit,Bank Transfer,Uncategorised,False
 False,26/06/2026,tx_0000B7joQazoh4oNx7ZZBJ,Stipend Savings Pot,10.5,GBP,Credit,Bank Transfer,Uncategorised,False
-False,26/06/2026,tx_0000B7joTszWFDmqdH0D2Y,nan,10.49,GBP,Debit,Bank Transfer,Uncategorised,False
+False,26/06/2026,tx_0000B7joTszWFDmqdH0D2Y,,10.49,GBP,Debit,Bank Transfer,Uncategorised,False
 False,26/06/2026,tx_0000B7jp4MFevsTmChRkh8,Stipend Savings Pot,0.01,GBP,Debit,Bank Transfer,Uncategorised,False
 False,30/06/2026,tx_0000B7raFT6bqU8gBTLGpV,World of Books,6.48,GBP,Credit,Bank Transfer,Uncategorised,False
 False,30/06/2026,tx_0000B7rmXrSFFoywRqM5Tw,Non-Stipend Income Pot,6.48,GBP,Debit,Bank Transfer,Uncategorised,False
@@ -4381,7 +4381,7 @@ False,01/07/2026,tx_0000B7u3c6thro28ostYnq,Mangopay S.A.,2.5,GBP,Credit,Bank Tra
 False,01/07/2026,tx_0000B7u3g6xVa4HSSKIQWh,Non-Stipend Income Pot,2.5,GBP,Debit,Bank Transfer,Uncategorised,False
 False,01/07/2026,tx_0000B7u99mHrV9vsCwV734,Mangopay S.A.,7.0,GBP,Credit,Bank Transfer,Uncategorised,False
 False,01/07/2026,tx_0000B7u9XoGHoOWRsNVJsi,Non-Stipend Income Pot,7.0,GBP,Debit,Bank Transfer,Uncategorised,False
-False,02/07/2026,tx_0000B7uhcxPqbK8rrwt5MK,nan,7.0,GBP,Debit,Bank Transfer,Uncategorised,False
+False,02/07/2026,tx_0000B7uhcxPqbK8rrwt5MK,,7.0,GBP,Debit,Bank Transfer,Uncategorised,False
 False,02/07/2026,tx_0000B7vEjTDoYb6pf0Oxc3,Working Balance Pot,20.0,GBP,Credit,Bank Transfer,Uncategorised,False
 False,02/07/2026,tx_0000B7vEn9W7lEId1LqODi,Khalil Mohamad,20.0,GBP,Debit,Bank Transfer,Uncategorised,False
 False,02/07/2026,tx_0000B7vKnwnJ9HOdkQuNmc,S Saha,10.0,GBP,Credit,Bank Transfer,Uncategorised,False
@@ -4413,7 +4413,7 @@ False,09/07/2026,tx_0000B8AXq4737i2JjPtCio,Mangopay S.A.,2.75,GBP,Credit,Bank Tr
 False,09/07/2026,tx_0000B8AY6gGZ2O8jO5VGTZ,Non-Stipend Income Pot,2.75,GBP,Debit,Bank Transfer,Uncategorised,False
 False,10/07/2026,tx_0000B8C8AKYLV2A47xLYYO,Rent Pot Pot,634.0,GBP,Credit,Bank Transfer,Uncategorised,False
 False,10/07/2026,tx_0000B8C8EhVY5z1rlQUyhP,Stipend Savings Pot,1037.16,GBP,Credit,Bank Transfer,Uncategorised,False
-False,10/07/2026,tx_0000B8C8G8ZWxP4vhEtSdP,nan,1037.16,GBP,Debit,Bank Transfer,Uncategorised,False
+False,10/07/2026,tx_0000B8C8G8ZWxP4vhEtSdP,,1037.16,GBP,Debit,Bank Transfer,Uncategorised,False
 False,10/07/2026,tx_0000B8CDPYQOhqnqR8my3w,Mangopay S.A.,6.5,GBP,Credit,Bank Transfer,Uncategorised,False
 False,10/07/2026,tx_0000B8CDToodhspgoJUMJI,Non-Stipend Income Pot,6.5,GBP,Debit,Bank Transfer,Uncategorised,False
 False,10/07/2026,tx_0000B8Cfw756BeyVTP8ef3,Working Balance Pot,28.0,GBP,Credit,Bank Transfer,Uncategorised,False
@@ -4463,7 +4463,7 @@ False,31/07/2026,tx_0000B8tR9HqUKhiIaokAbq,Google,0.0,GBP,Debit,Bank Transfer,Un
 False,01/08/2026,tx_0000B8v9WYvXa4HdF7a2kn,Stipend Savings Pot,7.87,GBP,Credit,Bank Transfer,Uncategorised,False
 False,01/08/2026,tx_0000B8v9WYshkbJz5O9z73,Non-Stipend Income Pot,7.87,GBP,Debit,Bank Transfer,Uncategorised,False
 False,01/08/2026,tx_0000B8v9ZNJfCqH25O6yI6,Stipend Savings Pot,368.52,GBP,Credit,Bank Transfer,Uncategorised,False
-False,01/08/2026,tx_0000B8v9arHNI1fasrHt6g,nan,368.52,GBP,Debit,Bank Transfer,Uncategorised,False
+False,01/08/2026,tx_0000B8v9arHNI1fasrHt6g,,368.52,GBP,Debit,Bank Transfer,Uncategorised,False
 False,01/08/2026,tx_0000B8v9qSRlNqnZ8XX76h,Stipend Savings Pot,100.0,GBP,Credit,Bank Transfer,Uncategorised,False
 False,01/08/2026,tx_0000B8vpXEVhAhRqGpOsgD,Mangopay S.A.,5.1,GBP,Credit,Bank Transfer,Uncategorised,False
 False,01/08/2026,tx_0000B8w2UrzvCUKcqzHVLg,Bee Network,4.0,GBP,Debit,Bank Transfer,Uncategorised,False
@@ -4535,5 +4535,5 @@ False,12/08/2026,tx_0000B9HT0oYkCIm1d5KSQt,Mangopay S.A.,3.0,GBP,Credit,Bank Tra
 False,12/08/2026,tx_0000B9HTSc1MPONyIp0D9o,Rahul Subbaraman,3.0,GBP,Debit,Bank Transfer,Uncategorised,False
 False,13/08/2026,tx_0000B9KT5d9GdIwJjhklak,Mangopay S.A.,5.0,GBP,Credit,Bank Transfer,Uncategorised,False
 False,13/08/2026,tx_0000B9Ksb0lZN2IWF2Z3eT,Rahul Subbaraman,5.0,GBP,Debit,Bank Transfer,Uncategorised,False
-False,17/08/2026,tx_0000B9Rj4AAdqSmvK6jmMs,nan,0.1,GBP,Credit,Bank Transfer,Uncategorised,False
+False,17/08/2026,tx_0000B9Rj4AAdqSmvK6jmMs,,0.1,GBP,Credit,Bank Transfer,Uncategorised,False
 False,17/08/2026,tx_0000B9S579uTT98TZpf8L8,Rahul Subbaraman,0.1,GBP,Debit,Bank Transfer,Uncategorised,False
