@@ -6,6 +6,7 @@ import pdfplumber
 import re
 from datetime import datetime
 from github import Github
+import plotly.express as px
 
 CATEGORIES = [
     "Bank Transfer",
@@ -118,7 +119,7 @@ if 'split_target_idx' not in st.session_state:
 if 'confirm_delete' not in st.session_state:
     st.session_state.confirm_delete = False
 
-# Callback handler for data editor changes to ensure global propagation works instantly
+# Callback handler for instant global rule propagation
 def handle_editor_change():
     if "tx_editor" in st.session_state:
         editor_state = st.session_state.tx_editor
@@ -129,21 +130,17 @@ def handle_editor_change():
         
         for idx_str, edits in edited_rows.items():
             idx = int(idx_str)
-            # Apply edits directly to session state master dataframe
             for col, val in edits.items():
                 st.session_state.transactions.at[idx, col] = val
             
-            # Check if remember mapping was toggled/true and category was adjusted
             is_remembered = st.session_state.transactions.at[idx, "Remember Mapping"]
             if is_remembered:
                 desc = str(st.session_state.transactions.at[idx, "Description"]).strip().lower()
                 new_cat = st.session_state.transactions.at[idx, "Category"]
                 
-                # Save mapping rule globally
                 mappings[desc] = new_cat
                 mappings_updated = True
                 
-                # Propagate category to ALL rows matching this description across the entire db
                 mask = st.session_state.transactions["Description"].str.strip().str.lower() == desc
                 st.session_state.transactions.loc[mask, "Category"] = new_cat
                 st.session_state.transactions.loc[mask, "Remember Mapping"] = True
@@ -532,10 +529,11 @@ with tab2:
             
             col_c1, col_c2 = st.columns(2)
             with col_c1:
-                st.subheader("Expenses by Category")
+                st.subheader("Category Spend Breakdown (%)")
                 if not expenses_df.empty:
                     cat_group = expenses_df.groupby("Category")["Amount"].sum().reset_index()
-                    st.bar_chart(cat_group.set_index("Category"))
+                    fig = px.pie(cat_group, values='Amount', names='Category', hole=0.4)
+                    st.plotly_chart(fig, use_container_width=True)
                 else:
                     st.write("No expenses recorded.")
                     
@@ -558,10 +556,9 @@ with tab2:
                     st.write("No investments or pension entries found.")
                     
             with col_t2:
-                st.subheader("Top 5 Variable Expenses")
-                non_rent_df = expenses_df[expenses_df["Category"] != "Rent"]
-                if not non_rent_df.empty:
-                    top_5 = non_rent_df.nlargest(5, "Amount")
-                    st.dataframe(top_5[["Date", "Description", "Category", "Amount"]], hide_index=True, use_container_width=True)
+                st.subheader("Income Tracker by Category")
+                if not income_df.empty:
+                    income_summary = income_df.groupby("Category")["Amount"].sum().reset_index()
+                    st.dataframe(income_summary, hide_index=True, use_container_width=True)
                 else:
-                    st.write("No variable expenses found.")
+                    st.write("No income entries found.")
