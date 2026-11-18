@@ -38,7 +38,7 @@ CATEGORIES = [
     "Uncategorised"
 ]
 
-PAYMENT_METHODS = ["UPI", "Bank Transfer", "Debit Card", "Credit Card - Pixel", "Credit Card - Appa", "Credit Card - Monzo Flex", "Cash"]
+PAYMENT_METHODS = ["Debit Card", "UPI", "Bank Transfer", "Credit Card - Pixel", "Credit Card - Appa", "Credit Card - Monzo Flex", "Cash"]
 CURRENCIES = ["INR", "GBP", "EUR"]
 
 MAPPING_FILE = "category_mapping.json"
@@ -226,7 +226,7 @@ with tab1:
                                     "Amount": float(amount_str),
                                     "Currency": "INR",
                                     "Type": tx_type,
-                                    "Payment Method": "UPI",
+                                    "Payment Method": "Debit Card",
                                     "Category": guess_category(desc, mappings),
                                     "Remember Mapping": False
                                 })
@@ -235,7 +235,7 @@ with tab1:
                             i += 1
                             
         elif bank_type == "HDFC (CSV)":
-            df_hdfc = pd.read_csv(uploaded_file)
+            df_hdfc = pd.read_csv(uploaded_file, encoding="latin-1")
             for _, row in df_hdfc.iterrows():
                 date_val = str(row.get("Date", ""))
                 if "*" in date_val or not date_val.strip():
@@ -291,6 +291,7 @@ with tab1:
                 currency = str(row.get("Currency", "GBP"))
                 
                 tx_type = "Credit" if amount > 0 else "Debit"
+                payment_method = "Credit Card - Monzo Flex" if "Flex" in str(row.get("Product", "")) else "Debit Card"
                 
                 new_data.append({
                     "Select": False,
@@ -300,36 +301,57 @@ with tab1:
                     "Amount": abs(amount),
                     "Currency": currency,
                     "Type": tx_type,
-                    "Payment Method": "Credit Card - Monzo Flex" if "Flex" in str(row.get("Product", "")) else "Debit Card",
+                    "Payment Method": payment_method,
                     "Category": guess_category(desc, mappings),
                     "Remember Mapping": False
                 })
                 
         elif bank_type == "Revolut (CSV)":
-            df_rev = pd.read_csv(uploaded_file, encoding="latin-1")
+            try:
+                df_rev = pd.read_csv(uploaded_file, encoding="latin-1", on_bad_lines="skip")
+            except Exception:
+                uploaded_file.seek(0)
+                df_rev = pd.read_csv(uploaded_file, encoding="latin-1", skiprows=1, on_bad_lines="skip")
+
             for _, row in df_rev.iterrows():
                 date_raw = str(row.get("Completed Date", row.get("Started Date", "")))
+                if not date_raw or date_raw == "nan":
+                    continue
                 try:
                     dt = datetime.strptime(date_raw.split()[0], "%Y-%m-%d")
                     formatted_date = dt.strftime("%d-%m-%Y")
                 except:
-                    formatted_date = date_raw
+                    try:
+                        dt = datetime.strptime(date_raw.split()[0], "%d/%m/%Y")
+                        formatted_date = dt.strftime("%d-%m-%Y")
+                    except:
+                        formatted_date = date_raw[:10]
                 
                 desc = str(row.get("Description", "Revolut Tx"))
-                amount = float(row.get("Amount", 0.0))
+                amount_val = row.get("Amount", 0.0)
+                try:
+                    amount = float(str(amount_val).replace(",", ""))
+                except:
+                    continue
+                
                 currency = str(row.get("Currency", "GBP"))
+                state = str(row.get("State", "COMPLETED")).upper()
+                if state == "FAILED" or state == "REVERTED":
+                    continue
                 
                 tx_type = "Credit" if amount > 0 else "Debit"
+                product = str(row.get("Product", "Current"))
+                payment_method = "Credit Card - Monzo Flex" if "Flex" in product else "Debit Card"
                 
                 new_data.append({
                     "Select": False,
                     "Date": formatted_date,
-                    "Transaction ID": f"REV_{formatted_date}_{amount}_{desc[:10]}",
+                    "Transaction ID": f"REV_{formatted_date}_{abs(amount)}_{desc[:10]}",
                     "Description": desc.strip(),
                     "Amount": abs(amount),
                     "Currency": currency,
                     "Type": tx_type,
-                    "Payment Method": "Bank Transfer",
+                    "Payment Method": payment_method,
                     "Category": guess_category(desc, mappings),
                     "Remember Mapping": False
                 })
@@ -354,7 +376,7 @@ with tab1:
         col4, col5, col6, col7 = st.columns(4)
         m_curr = col4.selectbox("Currency", CURRENCIES)
         m_type = col5.selectbox("Type", ["Debit", "Credit"])
-        m_method = col6.selectbox("Payment Method", PAYMENT_METHODS)
+        m_method = col6.selectbox("Payment Method", PAYMENT_METHODS, index=0)
         m_cat = col7.selectbox("Category", CATEGORIES)
         
         submitted = st.form_submit_button("Add Transaction")
