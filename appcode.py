@@ -171,7 +171,7 @@ tab1, tab2 = st.tabs(["Data Entry & Review", "Analytical Dashboard"])
 with tab1:
     st.subheader("Statement Uploads")
     bank_type = st.selectbox("Select Statement Source", ["Google Pay (PDF)", "HDFC (CSV)", "Monzo (CSV)", "Revolut (CSV)"])
-    uploaded_file = st.file_uploader(f"Upload {bank_type} file", type=["pdf", "csv"])
+    uploaded_file = st.file_uploader(f"Upload {bank_type} file", type=["pdf", "csv", "xlsx"])
 
     if uploaded_file:
         mappings = load_mappings()
@@ -244,7 +244,11 @@ with tab1:
                             i += 1
 
         elif bank_type == "HDFC (CSV)":
-            df_hdfc = pd.read_csv(uploaded_file, encoding="latin-1")
+            raw_bytes = uploaded_file.getvalue()
+            if raw_bytes.startswith(b"PK\x03\x04"):
+                df_hdfc = pd.read_excel(io.BytesIO(raw_bytes))
+            else:
+                df_hdfc = pd.read_csv(io.BytesIO(raw_bytes), encoding="latin-1")
             df_hdfc.columns = df_hdfc.columns.str.strip()
             debug_info = f"Detected columns: {list(df_hdfc.columns)}"
             for _, row in df_hdfc.iterrows():
@@ -287,7 +291,11 @@ with tab1:
                 })
 
         elif bank_type == "Monzo (CSV)":
-            df_monzo = pd.read_csv(uploaded_file, sep=None, engine="python", encoding="latin-1", on_bad_lines="skip")
+            raw_bytes = uploaded_file.getvalue()
+            if raw_bytes.startswith(b"PK\x03\x04"):
+                df_monzo = pd.read_excel(io.BytesIO(raw_bytes))
+            else:
+                df_monzo = pd.read_csv(io.BytesIO(raw_bytes), sep=None, engine="python", encoding="latin-1", on_bad_lines="skip")
             df_monzo.columns = df_monzo.columns.str.strip()
             debug_info = f"Detected columns: {list(df_monzo.columns)}"
             for _, row in df_monzo.iterrows():
@@ -338,33 +346,45 @@ with tab1:
 
         elif bank_type == "Revolut (CSV)":
             raw_bytes = uploaded_file.getvalue()
-            try:
-                text_content = raw_bytes.decode("utf-8-sig")
-            except UnicodeDecodeError:
-                text_content = raw_bytes.decode("latin-1")
+            if raw_bytes.startswith(b"PK\x03\x04"):
+                preview_df = pd.read_excel(io.BytesIO(raw_bytes), header=None, nrows=15)
+                header_idx = 0
+                for idx, row_vals in preview_df.iterrows():
+                    row_str = " ".join([str(v) for v in row_vals.values if pd.notna(v)])
+                    if "Description" in row_str and "Amount" in row_str:
+                        header_idx = idx
+                        break
+                df_rev = pd.read_excel(io.BytesIO(raw_bytes), skiprows=header_idx)
+                df_rev.columns = df_rev.columns.astype(str).str.strip()
+                debug_info = f"Format: XLSX, Header row: {header_idx}, Columns: {list(df_rev.columns)}"
+            else:
+                try:
+                    text_content = raw_bytes.decode("utf-8-sig")
+                except UnicodeDecodeError:
+                    text_content = raw_bytes.decode("latin-1")
 
-            lines = text_content.splitlines()
-            header_idx = 0
-            detected_sep = ","
-            for idx, line in enumerate(lines[:15]):
-                if "Description" in line and "Amount" in line:
-                    header_idx = idx
-                    if "\t" in line:
-                        detected_sep = "\t"
-                    elif ";" in line and "," not in line:
-                        detected_sep = ";"
-                    else:
-                        detected_sep = ","
-                    break
+                lines = text_content.splitlines()
+                header_idx = 0
+                detected_sep = ","
+                for idx, line in enumerate(lines[:15]):
+                    if "Description" in line and "Amount" in line:
+                        header_idx = idx
+                        if "\t" in line:
+                            detected_sep = "\t"
+                        elif ";" in line and "," not in line:
+                            detected_sep = ";"
+                        else:
+                            detected_sep = ","
+                        break
 
-            df_rev = pd.read_csv(
-                io.StringIO(text_content),
-                sep=detected_sep,
-                skiprows=header_idx,
-                on_bad_lines="skip"
-            )
-            df_rev.columns = df_rev.columns.str.strip()
-            debug_info = f"Header row: {header_idx}, Separator: {repr(detected_sep)}, Columns: {list(df_rev.columns)}"
+                df_rev = pd.read_csv(
+                    io.StringIO(text_content),
+                    sep=detected_sep,
+                    skiprows=header_idx,
+                    on_bad_lines="skip"
+                )
+                df_rev.columns = df_rev.columns.astype(str).str.strip()
+                debug_info = f"Format: CSV, Header row: {header_idx}, Separator: {repr(detected_sep)}, Columns: {list(df_rev.columns)}"
 
             for _, row in df_rev.iterrows():
                 date_raw = row.get("Completed Date")
