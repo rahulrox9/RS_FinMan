@@ -199,7 +199,13 @@ def handle_editor_change():
                 mappings[desc] = new_cat
                 mappings_updated = True
 
-                mask = st.session_state.transactions["Description"].str.strip().str.lower() == desc
+                same_desc = st.session_state.transactions["Description"].str.strip().str.lower() == desc
+                unprotected = (
+                    (st.session_state.transactions["Remember Mapping"] == True)
+                    | (st.session_state.transactions["Category"] == "Uncategorised")
+                )
+                mask = same_desc & unprotected
+                mask.loc[idx] = True
                 st.session_state.transactions.loc[mask, "Category"] = new_cat
                 st.session_state.transactions.loc[mask, "Remember Mapping"] = True
 
@@ -282,6 +288,7 @@ with tab1:
                                     if ("the university of manchester" in desc.lower() and tx_type == "Credit")
                                     else "Debit Card"
                                 )
+                                guessed_cat = guess_category(desc, mappings)
 
                                 new_data.append({
                                     "Select": False,
@@ -292,8 +299,8 @@ with tab1:
                                     "Currency": "INR",
                                     "Type": tx_type,
                                     "Payment Method": payment_method,
-                                    "Category": guess_category(desc, mappings),
-                                    "Remember Mapping": False
+                                    "Category": guessed_cat,
+                                    "Remember Mapping": guessed_cat != "Uncategorised"
                                 })
                                 i += 2
                                 continue
@@ -338,6 +345,7 @@ with tab1:
                     if ("the university of manchester" in narration.lower() and tx_type == "Credit")
                     else "Debit Card"
                 )
+                guessed_cat = guess_category(narration, mappings)
 
                 new_data.append({
                     "Select": False,
@@ -348,8 +356,8 @@ with tab1:
                     "Currency": "INR",
                     "Type": tx_type,
                     "Payment Method": payment_method,
-                    "Category": guess_category(narration, mappings),
-                    "Remember Mapping": False
+                    "Category": guessed_cat,
+                    "Remember Mapping": guessed_cat != "Uncategorised"
                 })
 
         elif bank_type == "Monzo (CSV)":
@@ -396,7 +404,12 @@ with tab1:
                     payment_method = "Credit Card - Monzo Flex"
                 else:
                     payment_method = "Debit Card"
-                category = "Pot Transfer" if "pot transfer" in type_val.lower() else guess_category(desc, mappings)
+                if "pot transfer" in type_val.lower():
+                    category = "Pot Transfer"
+                    remember_flag = False
+                else:
+                    category = guess_category(desc, mappings)
+                    remember_flag = category != "Uncategorised"
 
                 new_data.append({
                     "Select": False,
@@ -408,7 +421,7 @@ with tab1:
                     "Type": tx_type,
                     "Payment Method": payment_method,
                     "Category": category,
-                    "Remember Mapping": False
+                    "Remember Mapping": remember_flag
                 })
 
         elif bank_type == "Revolut (CSV)":
@@ -503,8 +516,10 @@ with tab1:
                 rev_type = str(rev_type_val).strip().lower() if pd.notna(rev_type_val) else ""
                 if "pot" in rev_type or "vault" in rev_type or "pocket" in rev_type:
                     category = "Pot Transfer"
+                    remember_flag = False
                 else:
                     category = guess_category(desc, mappings)
+                    remember_flag = category != "Uncategorised"
 
                 base_rev_key = f"REV_{formatted_date}_{abs(amount)}_{desc[:10]}"
                 occurrence = rev_id_counts.get(base_rev_key, 0) + 1
@@ -520,7 +535,7 @@ with tab1:
                     "Type": tx_type,
                     "Payment Method": payment_method,
                     "Category": category,
-                    "Remember Mapping": False
+                    "Remember Mapping": remember_flag
                 })
 
         if new_data:
@@ -768,7 +783,7 @@ with tab2:
 
             st.divider()
 
-            # Expenditure Pie Chart (Full Width for Maximum Space)
+            # Expenditure Pie Chart
             st.subheader("Expenditure Breakdown (%)")
             if not expenses_df.empty:
                 cat_group = expenses_df.groupby("Category", as_index=False)["Net_Amount"].sum()
