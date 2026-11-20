@@ -768,46 +768,19 @@ with tab2:
 
             st.divider()
 
-            # Three Isolated Pie Charts: Expenditure, Income, Wealth Building
-            col_p1, col_p2, col_p3 = st.columns(3)
-            with col_p1:
-                st.subheader("Expenditure Breakdown (%)")
-                if not expenses_df.empty:
-                    cat_group = expenses_df.groupby("Category", as_index=False)["Net_Amount"].sum()
-                    cat_group = cat_group[cat_group["Net_Amount"] > 0]
-                    if not cat_group.empty:
-                        fig_exp = px.pie(cat_group, values="Net_Amount", names="Category", hole=0.4)
-                        st.plotly_chart(fig_exp, use_container_width=True)
-                    else:
-                        st.write("No net positive expenses recorded.")
+            # Expenditure Pie Chart (Full Width for Maximum Space)
+            st.subheader("Expenditure Breakdown (%)")
+            if not expenses_df.empty:
+                cat_group = expenses_df.groupby("Category", as_index=False)["Net_Amount"].sum()
+                cat_group = cat_group[cat_group["Net_Amount"] > 0]
+                if not cat_group.empty:
+                    fig_exp = px.pie(cat_group, values="Net_Amount", names="Category", hole=0.4)
+                    fig_exp.update_layout(height=650, margin=dict(t=20, b=20, l=20, r=20))
+                    st.plotly_chart(fig_exp, use_container_width=True)
                 else:
-                    st.write("No expenses recorded.")
-
-            with col_p2:
-                st.subheader("Income Breakdown (%)")
-                if not income_df.empty:
-                    inc_group = income_df.groupby("Category", as_index=False)["Net_Income"].sum()
-                    inc_group = inc_group[inc_group["Net_Income"] > 0]
-                    if not inc_group.empty:
-                        fig_inc = px.pie(inc_group, values="Net_Income", names="Category", hole=0.4)
-                        st.plotly_chart(fig_inc, use_container_width=True)
-                    else:
-                        st.write("No positive income recorded.")
-                else:
-                    st.write("No income entries found.")
-
-            with col_p3:
-                st.subheader("Wealth Building Breakdown (%)")
-                if not wealth_df.empty:
-                    wlt_group = wealth_df.groupby("Category", as_index=False)["Net_Wealth"].sum()
-                    wlt_group = wlt_group[wlt_group["Net_Wealth"] > 0]
-                    if not wlt_group.empty:
-                        fig_wlt = px.pie(wlt_group, values="Net_Wealth", names="Category", hole=0.4)
-                        st.plotly_chart(fig_wlt, use_container_width=True)
-                    else:
-                        st.write("No net positive wealth entries recorded.")
-                else:
-                    st.write("No investments or pension entries found.")
+                    st.write("No net positive expenses recorded.")
+            else:
+                st.write("No expenses recorded.")
 
             st.divider()
 
