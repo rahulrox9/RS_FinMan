@@ -110,7 +110,7 @@ False,18/11/2022,tx_0000APk3zLKUOarqpxN1rF,Wallet Pot,120.0,GBP,Credit,Bank Tran
 False,18/11/2022,tx_0000APk42cdeUtobOAthPW,Rahul Subbaraman,120.0,GBP,Debit,Bank Transfer,Pot Transfer,True
 False,18/11/2022,tx_0000APk6IC9OwkixaPlIQO,Rahul Subbaraman,165.0,GBP,Credit,Bank Transfer,Pot Transfer,True
 False,18/11/2022,tx_0000APk6MmsaKdcAen5OHU,Wallet Pot,165.0,GBP,Debit,Bank Transfer,Pot Transfer,True
-False,19/11/2022,tx_0000APkxXe9SPvz8LO2bbd,Trainline,4.65,GBP,Debit,Debit Card,Trip Expenses,True
+False,19/11/2022,tx_0000APkxXe9SPvz8LO2bbd,Trainline,4.65,GBP,Debit,Debit Card,Local Transport,False
 False,19/11/2022,tx_0000APl1pDt9CWdqKwCScU,Bolt,4.0,GBP,Debit,Debit Card,Local Transport,True
 False,20/11/2022,tx_0000APn2ASGzIrcJEofVJL,Rahul Subbaraman,160.0,GBP,Debit,Bank Transfer,Pot Transfer,True
 False,20/11/2022,tx_0000APn2IHWh8vMMDykOcz,Rahul Subbaraman,160.0,GBP,Credit,Bank Transfer,Pot Transfer,True
@@ -163,7 +163,7 @@ False,01/12/2022,tx_0000AQAJTqxltj9sKZKBmc,Savings Pot,180.0,GBP,Credit,Debit Ca
 False,01/12/2022,tx_0000AQAchGhXPh6WZyoJal,Mamma Mia,5.0,GBP,Debit,Debit Card,Food - dining & delivery,True
 False,01/12/2022,tx_0000AQAmYBJ36MVeo9y3vt,Doey,8.0,GBP,Debit,Debit Card,Food - dining & delivery,True
 False,02/12/2022,tx_0000AQCbuBbXxjwrC9gXdF,Dixy Chicken,4.79,GBP,Debit,Debit Card,Food - dining & delivery,True
-False,03/12/2022,tx_0000AQEDctkP5nCSVKrK41,Trainline,7.45,GBP,Debit,Debit Card,Trip Expenses,True
+False,03/12/2022,tx_0000AQEDctkP5nCSVKrK41,Trainline,7.45,GBP,Debit,Debit Card,Local Transport,False
 False,03/12/2022,tx_0000AQEFCUx2rSFJTHRux0,Stagecoach,2.0,GBP,Debit,Debit Card,Local Transport,True
 False,03/12/2022,tx_0000AQETAprZXVqRuVH8JW,Tibetan Kitche,13.0,GBP,Debit,Debit Card,Food - dining & delivery,True
 False,03/12/2022,tx_0000AQEYxfstva5mcza8Qc,transdev,1.4,GBP,Debit,Debit Card,Local Transport,True
@@ -190,7 +190,7 @@ False,08/12/2022,tx_0000AQOzl30nGohFpPb7NB,Yummy Restaran,2.5,GBP,Debit,Debit Ca
 False,08/12/2022,tx_0000AQPIr1G8b5Yaet4wFh,Kaydee Barker,12.75,GBP,Debit,Debit Card,Entertainment,False
 False,08/12/2022,tx_0000AQPP6N20Wy8oFhAlU2,Stagecoach,1.6,GBP,Debit,Debit Card,Local Transport,True
 False,09/12/2022,tx_0000AQQC4tl8m1J8bbHG8f,VOXI,12.0,GBP,Debit,Debit Card,Bills & Utilities,True
-False,09/12/2022,tx_0000AQQb0chsjKY79x9uCo,Trainline,8.89,GBP,Debit,Debit Card,Trip Expenses,True
+False,09/12/2022,tx_0000AQQb0chsjKY79x9uCo,Trainline,8.89,GBP,Debit,Debit Card,Local Transport,False
 False,09/12/2022,tx_0000AQQbAMB92HZrdmHQY5,Trainline,13.29,GBP,Debit,Debit Card,Trip Expenses,True
 False,09/12/2022,tx_0000AQQdOtnl1XMAjLFiq2,Aswin Kuttykattil,13.29,GBP,Credit,Debit Card,Entertainment,False
 False,09/12/2022,tx_0000AQQeVnxjERgEbMm0Tz,Spotify,5.99,GBP,Debit,Debit Card,Subscriptions,True
@@ -218,7 +218,7 @@ False,19/12/2022,tx_0000AQlGp3SZWFogYXS5Uv,Morrisons,3.5,GBP,Debit,Debit Card,Gr
 False,19/12/2022,tx_0000AQlW5q8hnPxXVHjnmL,THE UNIVERSITY OF,170.0,GBP,Credit,Debit Card,Income - Additional,True
 False,19/12/2022,tx_0000AQlW92vSiGIrmCQtf9,Savings Pot,170.0,GBP,Debit,Debit Card,Pot Transfer,True
 False,20/12/2022,tx_0000AQnyFULCsmgiIjbyi5,Babylon,9.5,GBP,Debit,Debit Card,Food - dining & delivery,True
-False,21/12/2022,tx_0000AQpGHevWUMxR7JY51l,Trainline,4.65,GBP,Debit,Debit Card,Trip Expenses,True
+False,21/12/2022,tx_0000AQpGHevWUMxR7JY51l,Trainline,4.65,GBP,Debit,Debit Card,Local Transport,False
 False,21/12/2022,tx_0000AQpLy9gd0yIsM1I4JO,Bolt,3.9,GBP,Debit,Debit Card,Local Transport,True
 False,21/12/2022,tx_0000AQpxBEL4j0SnGZSw6L,The University of Manchester,1472.33,GBP,Credit,Bank Transfer,Income - Stipend,False
 False,21/12/2022,tx_0000AQpxNae1cRdTVT42tP,Savings Pot,760.0,GBP,Debit,Debit Card,Pot Transfer,True
@@ -235,7 +235,7 @@ False,22/12/2022,tx_0000AQseNTZaayaTws9DqU,Holiday Pot,200.0,GBP,Credit,Debit Ca
 False,22/12/2022,tx_0000AQseOJCKehUS20cVCF,Savings Pot,200.0,GBP,Debit,Debit Card,Pot Transfer,True
 False,23/12/2022,tx_0000AQtWSF47MBkcooAZ9v,Bolt,3.9,GBP,Debit,Debit Card,Local Transport,True
 False,23/12/2022,tx_0000AQtqvDKks8IlevLulN,Trainline,14.99,GBP,Debit,Debit Card,Trip Expenses,True
-False,23/12/2022,tx_0000AQtrRAjO5I2uW5oBL2,Trainline,8.89,GBP,Debit,Debit Card,Trip Expenses,True
+False,23/12/2022,tx_0000AQtrRAjO5I2uW5oBL2,Trainline,8.89,GBP,Debit,Debit Card,Local Transport,False
 False,23/12/2022,tx_0000AQttlSyGB7V0mpZNXG,Stagecoach,3.25,GBP,Debit,Debit Card,Local Transport,True
 False,23/12/2022,tx_0000AQtxlf3Hf3EiyasaUT,Kick Ass Hostels Greyf,74.0,GBP,Debit,Debit Card,Trip Expenses,True
 False,24/12/2022,tx_0000AQw8TArCfpckkfkLuz,York Support Office,10.0,GBP,Debit,Debit Card,Trip Expenses,True
@@ -247,13 +247,13 @@ False,27/12/2022,tx_0000AR2BRrZqKujNgl2Azq,Highlander,15.0,GBP,Debit,Debit Card,
 False,28/12/2022,tx_0000AR3ou5oX5W4NcvZXnf,Stagecoach,9.85,GBP,Debit,Debit Card,Local Transport,True
 False,28/12/2022,tx_0000AR3rKAXaKwhLmAjj9d,Stagecoach,5.1,GBP,Debit,Debit Card,Local Transport,True
 False,28/12/2022,tx_0000AR3xpqJ5hUIu0uRYJu,Trainline,19.59,GBP,Debit,Debit Card,Trip Expenses,True
-False,28/12/2022,tx_0000AR4LSFXCeQAIfoheHR,Trainline,4.2,GBP,Debit,Debit Card,Trip Expenses,True
+False,28/12/2022,tx_0000AR4LSFXCeQAIfoheHR,Trainline,4.2,GBP,Debit,Debit Card,Local Transport,False
 False,29/12/2022,tx_0000AR6pPXAxzSK84ZMVtp,Praveen Choudhary,5.76,GBP,Credit,Bank Transfer,Trip Expenses,False
 False,29/12/2022,tx_0000AR7ACQdL6LA6R4x7tD,Bolt,4.3,GBP,Debit,Debit Card,Local Transport,True
 False,29/12/2022,tx_0000AR7AeaNQTAo32svYMD,Bolt,4.3,GBP,Credit,Debit Card,Local Transport,True
 False,29/12/2022,tx_0000AR7Am7xjzrPIxCWAQl,Bolt,4.8,GBP,Debit,Debit Card,Local Transport,True
-False,30/12/2022,tx_0000AR87FC8rKdcWBialvw,Trainline,4.65,GBP,Debit,Debit Card,Trip Expenses,True
-False,30/12/2022,tx_0000AR87IqVLikOtzQXFjf,Trainline,7.1,GBP,Debit,Debit Card,Trip Expenses,True
+False,30/12/2022,tx_0000AR87FC8rKdcWBialvw,Trainline,4.65,GBP,Debit,Debit Card,Local Transport,False
+False,30/12/2022,tx_0000AR87IqVLikOtzQXFjf,Trainline,7.1,GBP,Debit,Debit Card,Local Transport,False
 False,30/12/2022,tx_0000AR8A46Gb8RdAOTIOtF,Stagecoach,2.0,GBP,Debit,Debit Card,Local Transport,True
 False,30/12/2022,tx_0000AR8AWO70NdDrZ6J1aT,Aswin Kuttykattil,7.1,GBP,Credit,Debit Card,Uncategorised,False
 False,30/12/2022,tx_0000AR8JrBJA4z7Ho2yPzP,Wallet Pot,50.0,GBP,Credit,Debit Card,Pot Transfer,True
@@ -306,17 +306,17 @@ False,24/01/2023,tx_0000ARyDkUN2JL76XOBEyw,Co-op,2.35,GBP,Debit,Debit Card,Groce
 False,25/01/2023,tx_0000AS0AUrU8h0oOhmBK9y,Savings Pot,100.0,GBP,Credit,Debit Card,Pot Transfer,True
 False,25/01/2023,tx_0000AS0Wrtn0UObVfyVGWP,The University of Manchester,1472.33,GBP,Credit,Bank Transfer,Income - Stipend,False
 False,25/01/2023,tx_0000AS0WuZz8ZtYmwzLhlB,Savings Pot,1472.33,GBP,Debit,Debit Card,Pot Transfer,True
-False,27/01/2023,tx_0000AS4a6VywMdoyXhLRZp,Trainline,5.34,GBP,Debit,Debit Card,Trip Expenses,True
-False,27/01/2023,tx_0000AS4aBUWxBhvfunEMcL,Trainline,7.79,GBP,Debit,Debit Card,Trip Expenses,True
+False,27/01/2023,tx_0000AS4a6VywMdoyXhLRZp,Trainline,5.34,GBP,Debit,Debit Card,Local Transport,False
+False,27/01/2023,tx_0000AS4aBUWxBhvfunEMcL,Trainline,7.79,GBP,Debit,Debit Card,Local Transport,False
 False,27/01/2023,tx_0000AS4cymfcjVEYPpjNxp,Morrisons,18.51,GBP,Debit,Debit Card,Groceries & Home Needs,True
-False,27/01/2023,tx_0000AS4y2TxOLh0ocYrMtV,Trainline,5.34,GBP,Debit,Debit Card,Trip Expenses,True
+False,27/01/2023,tx_0000AS4y2TxOLh0ocYrMtV,Trainline,5.34,GBP,Debit,Debit Card,Local Transport,False
 False,28/01/2023,tx_0000AS6AKA0Afp0GesJQO4,Google,1.59,GBP,Debit,Debit Card,Subscriptions,True
 False,28/01/2023,tx_0000AS6Lq08G0FhF3ErTMY,Vaishnavi Vikas Gangadhar,5.34,GBP,Credit,Bank Transfer,Food - dining & delivery,False
 False,28/01/2023,tx_0000AS73CZXHLkgt0rC0YO,Mosst Tasnim Binte Shawkat,7.79,GBP,Credit,Debit Card,Food - dining & delivery,False
 False,29/01/2023,tx_0000AS92E2hig0qBjBvhsv,Stagecoach,2.0,GBP,Debit,Debit Card,Local Transport,True
 False,30/01/2023,tx_0000ASApy0Mkn9maWJRpr7,Farah Ahmed,5.0,GBP,Debit,Bank Transfer,Uncategorised,False
 False,30/01/2023,tx_0000ASArppv5wjNYnK5vXd,Vaishnavi Gangadhar,7.69,GBP,Debit,Bank Transfer,Uncategorised,False
-False,30/01/2023,tx_0000ASB32kt14T5xNBQIMb,Trainline,9.39,GBP,Debit,Debit Card,Trip Expenses,True
+False,30/01/2023,tx_0000ASB32kt14T5xNBQIMb,Trainline,9.39,GBP,Debit,Debit Card,Local Transport,False
 False,30/01/2023,tx_0000ASB39O0gWUAqurkT6y,Trainline,13.89,GBP,Debit,Debit Card,Trip Expenses,True
 False,30/01/2023,tx_0000ASBInM7QTMRxTEYL59,My Lahore - Manchester,19.9,GBP,Debit,Debit Card,Food - dining & delivery,True
 False,30/01/2023,tx_0000ASBL159SYKnTIEZ76i,Ice Paradise,7.99,GBP,Debit,Debit Card,Food - dining & delivery,True
@@ -710,7 +710,7 @@ False,07/06/2023,tx_0000AWRGn8BpM1Mp7EiJcX,VOXI,12.0,GBP,Debit,Debit Card,Bills 
 False,07/06/2023,tx_0000AWSCbW4IXkuATvUSnq,UNIVERSITY OF MANCHESTER STUDENTS' UNION,20.99,GBP,Credit,Debit Card,Income - UoM Extras,True
 False,07/06/2023,tx_0000AWSZ7QUH1j8kZOqUEb,Deepti Bhardwaj,21.0,GBP,Debit,Debit Card,Uncategorised,False
 False,08/06/2023,tx_0000AWTafmymCeA4WUzBn1,Megan V Grand,20.99,GBP,Debit,Debit Card,Uncategorised,False
-False,08/06/2023,tx_0000AWU4u4wxBN7iQigjEw,Trainline,5.95,GBP,Debit,Debit Card,Trip Expenses,True
+False,08/06/2023,tx_0000AWU4u4wxBN7iQigjEw,Trainline,5.95,GBP,Debit,Debit Card,Local Transport,False
 False,08/06/2023,tx_0000AWUB24TTQws3CiuY9C,Morrisons,3.5,GBP,Debit,Debit Card,Groceries & Home Needs,True
 False,08/06/2023,tx_0000AWUhnd57mNXBdNb9sX,Babylon,9.0,GBP,Debit,Debit Card,Food - dining & delivery,True
 False,09/06/2023,tx_0000AWVu1rvSmNLS2kDpMh,Spotify,5.99,GBP,Debit,Debit Card,Subscriptions,True
@@ -736,7 +736,7 @@ False,14/06/2023,tx_0000AWgVgY0vM6lThFCI3F,Hello Oriental,4.5,GBP,Debit,Debit Ca
 False,16/06/2023,tx_0000AWk7g8FBXzG2fFJamQ,Regular Savings Pot,100.0,GBP,Credit,Debit Card,Pot Transfer,True
 False,16/06/2023,tx_0000AWk9C5ujqQWhtedgsT,Wetherspoon,6.41,GBP,Debit,Debit Card,Uncategorised,False
 False,16/06/2023,tx_0000AWkyVAlB9CNDuaAJGb,Kro Bar,5.2,GBP,Debit,Debit Card,Food - dining & delivery,True
-False,16/06/2023,tx_0000AWl9QVHmVKtHnWFRUf,Trainline,8.84,GBP,Debit,Debit Card,Trip Expenses,True
+False,16/06/2023,tx_0000AWl9QVHmVKtHnWFRUf,Trainline,8.84,GBP,Debit,Debit Card,Local Transport,False
 False,17/06/2023,tx_0000AWm9Saw6f4we7SbTik,Co-op,12.0,GBP,Debit,Debit Card,Groceries & Home Needs,True
 False,17/06/2023,tx_0000AWmIGo36ytngbUiJv7,Coffee No 1 Buxton,3.45,GBP,Debit,Debit Card,Uncategorised,False
 False,17/06/2023,tx_0000AWmIvVOzDQHXe8PKgD,Google,0.01,GBP,Debit,Debit Card,Subscriptions,True
@@ -752,7 +752,7 @@ False,21/06/2023,tx_0000AWvJQ1kpFAqsCUrR5d,Morrisons,21.94,GBP,Debit,Debit Card,
 False,22/06/2023,tx_0000AWwbjXp6EGDv8ZIEE5,Northern Trains,9.1,GBP,Debit,Debit Card,Local Transport,True
 False,23/06/2023,tx_0000AWy33g1iKXg1m63Uvp,Amazon,7.24,GBP,Credit,Debit Card,Shopping,True
 False,23/06/2023,tx_0000AWyzQJADILn9d9yNP7,Anshika Dasbajwa,2.5,GBP,Debit,Debit Card,Uncategorised,False
-False,24/06/2023,tx_0000AX0FpvE2iCQUELz4aH,Trainline,4.35,GBP,Credit,Debit Card,Trip Expenses,True
+False,24/06/2023,tx_0000AX0FpvE2iCQUELz4aH,Trainline,4.35,GBP,Credit,Debit Card,Local Transport,False
 False,24/06/2023,tx_0000AX1ehoPCsPE91E7B4N,Hello Oriental,9.0,GBP,Debit,Debit Card,Food - dining & delivery,True
 False,24/06/2023,tx_0000AX1el5UtmnCyvMGNBx,H Yousuf,4.0,GBP,Credit,Debit Card,Uncategorised,False
 False,24/06/2023,tx_0000AX1kXivcz7OE8NSjoX,Hawwa Yousuf,2.31,GBP,Debit,Debit Card,Uncategorised,False
@@ -869,8 +869,8 @@ False,29/07/2023,tx_0000AYBcKZFwpC5f6DfcvL,Monkey Haven,36.45,GBP,Debit,Debit Ca
 False,29/07/2023,tx_0000AYBknPQhEpIB2Ek5Sr,Monkey Haven,0.5,GBP,Debit,Debit Card,Uncategorised,False
 False,30/07/2023,tx_0000AYD9F7ZFplyTh1SjHV,Regular Savings Pot,100.0,GBP,Credit,Debit Card,Pot Transfer,True
 False,30/07/2023,tx_0000AYDKPfCWjudL28GSGp,Co-op,3.5,GBP,Debit,Debit Card,Groceries & Home Needs,True
-False,30/07/2023,tx_0000AYDPQv6PbUFaKUPdDd,Trainline,2.6,GBP,Debit,Debit Card,Trip Expenses,True
-False,30/07/2023,tx_0000AYDPoC4Wg3UwCeQSzR,Trainline,4.0,GBP,Debit,Debit Card,Trip Expenses,True
+False,30/07/2023,tx_0000AYDPQv6PbUFaKUPdDd,Trainline,2.6,GBP,Debit,Debit Card,Local Transport,False
+False,30/07/2023,tx_0000AYDPoC4Wg3UwCeQSzR,Trainline,4.0,GBP,Debit,Debit Card,Local Transport,False
 False,30/07/2023,tx_0000AYE2rpcryB7lxUDPof,Uber,7.99,GBP,Debit,Debit Card,Local Transport,True
 False,30/07/2023,tx_0000AYE7vgfViM3OY4AIdN,Tesco,3.4,GBP,Debit,Debit Card,Uncategorised,False
 False,30/07/2023,tx_0000AYEg0ew6ymE0QCDXl3,Uber,5.98,GBP,Debit,Debit Card,Local Transport,True
@@ -915,7 +915,7 @@ False,09/08/2023,tx_0000AYYU9b2tV6tgfZbC7t,Regular Savings Pot,200.0,GBP,Credit,
 False,09/08/2023,tx_0000AYYUIozp0EaRL6k5Fy,Airbnb,141.6,GBP,Debit,Debit Card,Rent,True
 False,11/08/2023,tx_0000AYc7Hm0r5XJUGEsdwf,Morrisons,4.7,GBP,Debit,Debit Card,Groceries & Home Needs,True
 False,11/08/2023,tx_0000AYc7Qwre712KWRwp5V,ATM,20.0,GBP,Debit,Debit Card,Uncategorised,False
-False,11/08/2023,tx_0000AYcBYQqbQw3kacQ8aR,Trainline,2.7,GBP,Debit,Debit Card,Trip Expenses,True
+False,11/08/2023,tx_0000AYcBYQqbQw3kacQ8aR,Trainline,2.7,GBP,Debit,Debit Card,Local Transport,False
 False,11/08/2023,tx_0000AYcCei1ca1FYfQka1a,Stagecoach,2.0,GBP,Debit,Debit Card,Local Transport,True
 False,11/08/2023,tx_0000AYcNLO0TsmiAETRxMA,Pret,3.45,GBP,Debit,Debit Card,Food - dining & delivery,True
 False,11/08/2023,tx_0000AYcjZMTWZVgMWukuu1,Min Soc Bursary Pot,260.0,GBP,Credit,Debit Card,Uncategorised,False
@@ -1317,7 +1317,7 @@ False,01/12/2023,tx_0000AcNQ6jgCajji8HuQ7P,Regular Savings Pot,50.0,GBP,Credit,D
 False,01/12/2023,tx_0000AcNUdr3YaMwWcxgBPd,Tesco,9.1,GBP,Debit,Debit Card,Uncategorised,False
 False,01/12/2023,tx_0000AcNZnOmD5Fo2cneRKj,NX Bus,2.0,GBP,Debit,Debit Card,Uncategorised,False
 False,02/12/2023,tx_0000AcOYx6iLBkVv9dpvZh,NX Bus,4.5,GBP,Debit,Debit Card,Uncategorised,False
-False,02/12/2023,tx_0000AcOjoCiyZXfd9Ixlir,Trainline,1.9,GBP,Debit,Debit Card,Trip Expenses,True
+False,02/12/2023,tx_0000AcOjoCiyZXfd9Ixlir,Trainline,1.9,GBP,Debit,Debit Card,Local Transport,False
 False,02/12/2023,tx_0000AcOoc6xSgXuZVngp2Q,University Of Birmingham,6.4,GBP,Debit,Debit Card,Uncategorised,False
 False,02/12/2023,tx_0000AcOtKp7CGsot4NvAKP,University Of Birmingham,2.0,GBP,Debit,Debit Card,Uncategorised,False
 False,02/12/2023,tx_0000AcOwt8zjAKwmTt7U81,University Of Birmingham,4.5,GBP,Debit,Debit Card,Uncategorised,False
@@ -2064,7 +2064,7 @@ False,18/06/2024,tx_0000Aj3mD98jTpZqSQa0xt,Regular Savings Pot,10.0,GBP,Credit,D
 False,18/06/2024,tx_0000Aj3mP5Fjl3YFpcHZHW,Jollibee,14.99,GBP,Debit,Debit Card,Uncategorised,False
 False,19/06/2024,tx_0000Aj5m27JeJGD9D8ZA5S,Regular Savings Pot,10.0,GBP,Credit,Debit Card,Pot Transfer,True
 False,19/06/2024,tx_0000Aj5mAfo7xGMP26c3aD,Pump,4.0,GBP,Debit,Debit Card,Uncategorised,False
-False,19/06/2024,tx_0000Aj67SjJTl2HW8Khn3R,Trainline,6.1,GBP,Debit,Debit Card,Trip Expenses,True
+False,19/06/2024,tx_0000Aj67SjJTl2HW8Khn3R,Trainline,6.1,GBP,Debit,Debit Card,Local Transport,False
 False,20/06/2024,tx_0000Aj6vBpGxLKLm7kXHcH,Spar,1.75,GBP,Debit,Debit Card,Uncategorised,False
 False,20/06/2024,tx_0000Aj7gUSKvXRUnZIwzrB,Ice Cream Food Bar,3.5,GBP,Debit,Debit Card,Uncategorised,False
 False,20/06/2024,tx_0000Aj7paqZLFqODdjbKi1,Regular Savings Pot,20.0,GBP,Credit,Debit Card,Pot Transfer,True
@@ -2832,7 +2832,7 @@ False,28/12/2024,tx_0000ApVSKe04rOjMODjezp,Dipaknashi Patel,284.12,GBP,Debit,Deb
 False,29/12/2024,tx_0000ApXnQRotXuNSZfMhcX,Sea City Museum,2.0,GBP,Debit,Debit Card,Uncategorised,False
 False,29/12/2024,tx_0000ApXofMbJKgoHsb0flh,Muse Coffee Co,6.0,GBP,Debit,Debit Card,Uncategorised,False
 False,30/12/2024,tx_0000ApZMeUIOpR1u3YgGBe,Tesco,3.05,GBP,Debit,Debit Card,Uncategorised,False
-False,30/12/2024,tx_0000ApZMlZMqN2onPSwN2P,Trainline,9.65,GBP,Debit,Debit Card,Trip Expenses,True
+False,30/12/2024,tx_0000ApZMlZMqN2onPSwN2P,Trainline,9.65,GBP,Debit,Debit Card,Local Transport,False
 False,30/12/2024,tx_0000ApZQdmGOwHEPXYAQuP,Regular Savings Pot,21.3,GBP,Credit,Debit Card,Pot Transfer,True
 False,30/12/2024,tx_0000ApZaxYlPq6PVPfyTeD,Icanseethesea.,1.0,GBP,Debit,Debit Card,Uncategorised,False
 False,30/12/2024,tx_0000ApZr1QNWYYfpaRfSxV,Regular Savings Pot,15.0,GBP,Credit,Debit Card,Pot Transfer,True
