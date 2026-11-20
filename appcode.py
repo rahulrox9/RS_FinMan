@@ -775,7 +775,7 @@ with tab2:
                 cat_group = cat_group[cat_group["Net_Amount"] > 0]
                 if not cat_group.empty:
                     fig_exp = px.pie(cat_group, values="Net_Amount", names="Category", hole=0.4)
-                    fig_exp.update_layout(height=650, margin=dict(t=20, b=20, l=20, r=20))
+                    fig_exp.update_layout(height=400, margin=dict(t=20, b=20, l=20, r=20))
                     st.plotly_chart(fig_exp, use_container_width=True)
                 else:
                     st.write("No net positive expenses recorded.")
