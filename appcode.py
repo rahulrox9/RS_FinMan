@@ -20,8 +20,8 @@ CATEGORIES = [
     "Family Remittances",
     "Food - dining & delivery",
     "Groceries & Home Needs",
-    "Income - UoM GTA",
-    "Income - UoM Extras",
+    "Income - Additional",
+    "Income - GTA",
     "Income - Stipend",
     "Income - SNTPS",
     "Income - Others",
@@ -540,6 +540,10 @@ with tab1:
                 if has_selection:
                     st.session_state.split_target_idx = selected_idx
                     st.session_state.confirm_delete = False
+                    init_amt = float(st.session_state.transactions.loc[selected_idx, "Amount"])
+                    half_amt = round(init_amt / 2, 2)
+                    st.session_state.split_p1_amt = half_amt
+                    st.session_state.split_p2_amt = round(init_amt - half_amt, 2)
         with col_btn2:
             if st.button("Delete Selected Transaction", disabled=not has_selection):
                 if has_selection:
@@ -550,20 +554,46 @@ with tab1:
             s_idx = st.session_state.split_target_idx
             if s_idx in st.session_state.transactions.index:
                 t_row = st.session_state.transactions.loc[s_idx]
-                st.markdown(f"**Splitting:** {t_row['Date']} - {t_row['Description']} ({t_row['Currency']} {t_row['Amount']})")
+                orig_amt = float(t_row["Amount"])
 
-                with st.form("popup_split_form"):
-                    p1_amt = st.number_input("Part 1 Amount", min_value=0.0, value=float(t_row["Amount"]) / 2, step=1.0)
-                    p1_cat = st.selectbox("Part 1 Category", CATEGORIES, index=0)
+                if "split_p1_amt" not in st.session_state or "split_p2_amt" not in st.session_state:
+                    half_amt = round(orig_amt / 2, 2)
+                    st.session_state.split_p1_amt = half_amt
+                    st.session_state.split_p2_amt = round(orig_amt - half_amt, 2)
 
-                    p2_amt = st.number_input("Part 2 Amount", min_value=0.0, value=float(t_row["Amount"]) / 2, step=1.0)
-                    p2_cat = st.selectbox("Part 2 Category", CATEGORIES, index=1 if len(CATEGORIES) > 1 else 0)
+                def update_p2():
+                    st.session_state.split_p2_amt = round(max(0.0, orig_amt - float(st.session_state.split_p1_amt)), 2)
 
-                    execute_split = st.form_submit_button("Confirm Split")
+                def update_p1():
+                    st.session_state.split_p1_amt = round(max(0.0, orig_amt - float(st.session_state.split_p2_amt)), 2)
+
+                st.markdown(f"**Splitting:** {t_row['Date']} - {t_row['Description']} ({t_row['Currency']} {orig_amt:.2f})")
+
+                with st.container(border=True):
+                    p1_amt = st.number_input(
+                        "Part 1 Amount",
+                        min_value=0.0,
+                        max_value=orig_amt,
+                        step=0.01,
+                        key="split_p1_amt",
+                        on_change=update_p2
+                    )
+                    p1_cat = st.selectbox("Part 1 Category", CATEGORIES, index=0, key="split_p1_cat")
+
+                    p2_amt = st.number_input(
+                        "Part 2 Amount",
+                        min_value=0.0,
+                        max_value=orig_amt,
+                        step=0.01,
+                        key="split_p2_amt",
+                        on_change=update_p1
+                    )
+                    p2_cat = st.selectbox("Part 2 Category", CATEGORIES, index=1 if len(CATEGORIES) > 1 else 0, key="split_p2_cat")
+
+                    execute_split = st.button("Confirm Split")
                     if execute_split:
-                        orig_amt = float(t_row["Amount"])
                         if abs((p1_amt + p2_amt) - orig_amt) > 0.01:
-                            st.error(f"Split total ({p1_amt + p2_amt}) does not match original amount ({orig_amt}).")
+                            st.error(f"Split total ({p1_amt + p2_amt:.2f}) does not match original amount ({orig_amt:.2f}).")
                         else:
                             base_id = str(t_row["Transaction ID"])
                             row1 = t_row.copy()
@@ -583,6 +613,8 @@ with tab1:
                             st.session_state.transactions = pd.concat([st.session_state.transactions, new_split_df], ignore_index=True)
                             save_db(st.session_state.transactions)
                             st.session_state.split_target_idx = None
+                            st.session_state.pop("split_p1_amt", None)
+                            st.session_state.pop("split_p2_amt", None)
                             st.success("Transaction split successfully!")
                             st.rerun()
             else:
