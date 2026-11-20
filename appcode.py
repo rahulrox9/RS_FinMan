@@ -67,12 +67,6 @@ EXPENDITURE_CATEGORIES = [
     if c not in INCOME_CATEGORIES and c not in WEALTH_CATEGORIES and c not in EXCLUDED_CATEGORIES
 ]
 
-CATEGORY_MIGRATIONS = {
-    "Distance Travel": "Trip Expenses",
-    "Income - GTA": "Income - UoM GTA",
-    "Income - Additional": "Income - UoM Extras"
-}
-
 PAYMENT_METHODS = ["Debit Card", "UPI", "Bank Transfer", "Credit Card - Pixel", "Credit Card - Appa", "Credit Card - Monzo Flex", "Cash"]
 CURRENCIES = ["INR", "GBP", "EUR"]
 
@@ -84,7 +78,7 @@ def load_mappings():
     if os.path.exists(MAPPING_FILE):
         with open(MAPPING_FILE, "r") as f:
             raw_map = json.load(f)
-        return {k: CATEGORY_MIGRATIONS.get(str(v).strip(), str(v).strip()) for k, v in raw_map.items()}
+        return {k: ("Trip Expenses" if v == "Distance Travel" else v) for k, v in raw_map.items()}
     return {}
 
 def save_mappings(mappings):
@@ -97,14 +91,7 @@ def load_db():
             df = pd.read_csv(DB_FILE)
             df["Amount"] = pd.to_numeric(df["Amount"], errors="coerce")
             if "Category" in df.columns:
-                df["Category"] = (
-                    df["Category"]
-                    .fillna("Uncategorised")
-                    .astype(str)
-                    .str.strip()
-                    .replace(CATEGORY_MIGRATIONS)
-                    .replace({"": "Uncategorised", "nan": "Uncategorised"})
-                )
+                df["Category"] = df["Category"].replace({"Distance Travel": "Trip Expenses"}).fillna("Uncategorised")
             for col in ["Select", "Remember Mapping"]:
                 if col in df.columns:
                     df[col] = df[col].astype(str).str.lower() == "true"
@@ -188,9 +175,6 @@ def handle_editor_change():
             for col, val in edits.items():
                 st.session_state.transactions.at[idx, col] = val
 
-            if edits.get("Category") in INCOME_CATEGORIES and "Type" not in edits:
-                st.session_state.transactions.at[idx, "Type"] = "Credit"
-
             is_remembered = st.session_state.transactions.at[idx, "Remember Mapping"]
             if is_remembered:
                 desc = str(st.session_state.transactions.at[idx, "Description"]).strip().lower()
@@ -202,8 +186,6 @@ def handle_editor_change():
                 mask = st.session_state.transactions["Description"].str.strip().str.lower() == desc
                 st.session_state.transactions.loc[mask, "Category"] = new_cat
                 st.session_state.transactions.loc[mask, "Remember Mapping"] = True
-                if new_cat in INCOME_CATEGORIES:
-                    st.session_state.transactions.loc[mask, "Type"] = "Credit"
 
         if mappings_updated:
             save_mappings(mappings)
@@ -528,7 +510,6 @@ with tab1:
 
         submitted = st.form_submit_button("Add Transaction")
         if submitted and m_date and m_desc:
-            effective_type = "Credit" if m_cat in INCOME_CATEGORIES else m_type
             manual_row = pd.DataFrame([{
                 "Select": False,
                 "Date": m_date,
@@ -536,7 +517,7 @@ with tab1:
                 "Description": m_desc,
                 "Amount": float(m_amount),
                 "Currency": m_curr,
-                "Type": effective_type,
+                "Type": m_type,
                 "Payment Method": m_method,
                 "Category": m_cat,
                 "Remember Mapping": False
@@ -708,14 +689,7 @@ with tab2:
             st.warning(f"No transactions found for {selected_dashboard_curr}.")
         else:
             dash_df["Amount"] = pd.to_numeric(dash_df["Amount"], errors="coerce").fillna(0.0)
-            dash_df["Category"] = (
-                dash_df["Category"]
-                .fillna("Uncategorised")
-                .astype(str)
-                .str.strip()
-                .replace(CATEGORY_MIGRATIONS)
-                .replace({"": "Uncategorised", "nan": "Uncategorised"})
-            )
+            dash_df["Category"] = dash_df["Category"].replace({"Distance Travel": "Trip Expenses"}).fillna("Uncategorised").replace("", "Uncategorised")
             dash_df["Type"] = dash_df["Type"].astype(str).str.strip()
             dash_df["Payment Method"] = dash_df["Payment Method"].astype(str).str.strip()
             dash_df["Date_DT"] = pd.to_datetime(dash_df["Date"], dayfirst=True, errors="coerce")
@@ -728,7 +702,9 @@ with tab2:
 
             # 2. Income (Strictly specified income categories)
             income_df = dash_df[dash_df["Category"].isin(INCOME_CATEGORIES)].copy()
-            income_df["Net_Income"] = income_df["Amount"]
+            income_df["Net_Income"] = income_df.apply(
+                lambda r: r["Amount"] if r["Type"] == "Credit" else -r["Amount"], axis=1
+            )
 
             # 3. Wealth Building (Investments & Pension)
             wealth_df = dash_df[dash_df["Category"].isin(WEALTH_CATEGORIES)].copy()
@@ -749,84 +725,46 @@ with tab2:
 
             st.divider()
 
-            # Row 1: Expenditure Pie Chart (Full Width for Precision)
-            st.subheader("Expenditure Breakdown (%)")
-            if not expenses_df.empty:
-                cat_group = expenses_df.groupby("Category", as_index=False)["Net_Amount"].sum()
-                cat_group = cat_group[cat_group["Net_Amount"] > 0].sort_values("Net_Amount", ascending=False)
-                if not cat_group.empty:
-                    cat_group["Share (%)"] = (cat_group["Net_Amount"] / cat_group["Net_Amount"].sum()) * 100
-                    fig_exp = px.pie(
-                        cat_group,
-                        values="Net_Amount",
-                        names="Category",
-                        hole=0.4,
-                        custom_data=["Share (%)"]
-                    )
-                    fig_exp.update_traces(
-                        textposition="auto",
-                        texttemplate="%{label}<br>%{value:,.2f} (%{customdata[0]:.2f}%)",
-                        hovertemplate="<b>%{label}</b><br>Amount: %{value:,.2f}<br>Share: %{customdata[0]:.2f}%<extra></extra>"
-                    )
-                    st.plotly_chart(fig_exp, use_container_width=True)
+            # Three Isolated Pie Charts: Expenditure, Income, Wealth Building
+            col_p1, col_p2, col_p3 = st.columns(3)
+            with col_p1:
+                st.subheader("Expenditure Breakdown (%)")
+                if not expenses_df.empty:
+                    cat_group = expenses_df.groupby("Category", as_index=False)["Net_Amount"].sum()
+                    cat_group = cat_group[cat_group["Net_Amount"] > 0]
+                    if not cat_group.empty:
+                        fig_exp = px.pie(cat_group, values="Net_Amount", names="Category", hole=0.4)
+                        st.plotly_chart(fig_exp, use_container_width=True)
+                    else:
+                        st.write("No net positive expenses recorded.")
                 else:
-                    st.write("No net positive expenses recorded.")
-            else:
-                st.write("No expenses recorded.")
+                    st.write("No expenses recorded.")
 
-            st.divider()
-
-            # Row 2: Income Pie Chart (Full Width for Precision)
-            st.subheader("Income Breakdown (%)")
-            if not income_df.empty:
-                inc_group = income_df.groupby("Category", as_index=False)["Net_Income"].sum()
-                inc_group = inc_group[inc_group["Net_Income"] > 0].sort_values("Net_Income", ascending=False)
-                if not inc_group.empty:
-                    inc_group["Share (%)"] = (inc_group["Net_Income"] / inc_group["Net_Income"].sum()) * 100
-                    fig_inc = px.pie(
-                        inc_group,
-                        values="Net_Income",
-                        names="Category",
-                        hole=0.4,
-                        custom_data=["Share (%)"]
-                    )
-                    fig_inc.update_traces(
-                        textposition="auto",
-                        texttemplate="%{label}<br>%{value:,.2f} (%{customdata[0]:.2f}%)",
-                        hovertemplate="<b>%{label}</b><br>Amount: %{value:,.2f}<br>Share: %{customdata[0]:.2f}%<extra></extra>"
-                    )
-                    st.plotly_chart(fig_inc, use_container_width=True)
+            with col_p2:
+                st.subheader("Income Breakdown (%)")
+                if not income_df.empty:
+                    inc_group = income_df.groupby("Category", as_index=False)["Net_Income"].sum()
+                    inc_group = inc_group[inc_group["Net_Income"] > 0]
+                    if not inc_group.empty:
+                        fig_inc = px.pie(inc_group, values="Net_Income", names="Category", hole=0.4)
+                        st.plotly_chart(fig_inc, use_container_width=True)
+                    else:
+                        st.write("No positive income recorded.")
                 else:
-                    st.write("No positive income recorded.")
-            else:
-                st.write("No income entries found.")
+                    st.write("No income entries found.")
 
-            st.divider()
-
-            # Row 3: Wealth Building Pie Chart (Full Width for Precision)
-            st.subheader("Wealth Building Breakdown (%)")
-            if not wealth_df.empty:
-                wlt_group = wealth_df.groupby("Category", as_index=False)["Net_Wealth"].sum()
-                wlt_group = wlt_group[wlt_group["Net_Wealth"] > 0].sort_values("Net_Wealth", ascending=False)
-                if not wlt_group.empty:
-                    wlt_group["Share (%)"] = (wlt_group["Net_Wealth"] / wlt_group["Net_Wealth"].sum()) * 100
-                    fig_wlt = px.pie(
-                        wlt_group,
-                        values="Net_Wealth",
-                        names="Category",
-                        hole=0.4,
-                        custom_data=["Share (%)"]
-                    )
-                    fig_wlt.update_traces(
-                        textposition="auto",
-                        texttemplate="%{label}<br>%{value:,.2f} (%{customdata[0]:.2f}%)",
-                        hovertemplate="<b>%{label}</b><br>Amount: %{value:,.2f}<br>Share: %{customdata[0]:.2f}%<extra></extra>"
-                    )
-                    st.plotly_chart(fig_wlt, use_container_width=True)
+            with col_p3:
+                st.subheader("Wealth Building Breakdown (%)")
+                if not wealth_df.empty:
+                    wlt_group = wealth_df.groupby("Category", as_index=False)["Net_Wealth"].sum()
+                    wlt_group = wlt_group[wlt_group["Net_Wealth"] > 0]
+                    if not wlt_group.empty:
+                        fig_wlt = px.pie(wlt_group, values="Net_Wealth", names="Category", hole=0.4)
+                        st.plotly_chart(fig_wlt, use_container_width=True)
+                    else:
+                        st.write("No net positive wealth entries recorded.")
                 else:
-                    st.write("No net positive wealth entries recorded.")
-            else:
-                st.write("No investments or pension entries found.")
+                    st.write("No investments or pension entries found.")
 
             st.divider()
 
@@ -861,6 +799,7 @@ with tab2:
                     lambda r: r["Amount"] if r["Type"] == "Debit" else -r["Amount"], axis=1
                 )
 
+                # Summary metrics per credit card
                 card_totals = cc_df.groupby("Payment Method")["Usage_Amount"].sum()
                 cc_metric_cols = st.columns(len(credit_card_methods) + 1)
                 cc_metric_cols[0].metric("All Credit Cards Total", f"{cc_df['Usage_Amount'].sum():,.2f}")
