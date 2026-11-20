@@ -85,6 +85,15 @@ def save_mappings(mappings):
     with open(MAPPING_FILE, "w") as f:
         json.dump(mappings, f, indent=4)
 
+def apply_uom_credit_rule(df):
+    if not df.empty and {"Description", "Type", "Payment Method"}.issubset(df.columns):
+        uom_mask = (
+            df["Description"].astype(str).str.lower().str.contains("the university of manchester", na=False)
+            & (df["Type"].astype(str).str.strip() == "Credit")
+        )
+        df.loc[uom_mask, "Payment Method"] = "Bank Transfer"
+    return df
+
 def load_db():
     if os.path.exists(DB_FILE):
         try:
@@ -97,7 +106,7 @@ def load_db():
                     df[col] = df[col].astype(str).str.lower() == "true"
                 else:
                     df[col] = False
-            return df
+            return apply_uom_credit_rule(df)
         except Exception:
             pass
 
@@ -144,6 +153,8 @@ def push_to_github():
 
 if "transactions" not in st.session_state:
     st.session_state.transactions = load_db()
+else:
+    st.session_state.transactions = apply_uom_credit_rule(st.session_state.transactions)
 
 if "split_target_idx" not in st.session_state:
     st.session_state.split_target_idx = None
@@ -174,6 +185,11 @@ def handle_editor_change():
 
             for col, val in edits.items():
                 st.session_state.transactions.at[idx, col] = val
+
+            row_desc = str(st.session_state.transactions.at[idx, "Description"]).strip().lower()
+            row_type = str(st.session_state.transactions.at[idx, "Type"]).strip()
+            if "the university of manchester" in row_desc and row_type == "Credit":
+                st.session_state.transactions.at[idx, "Payment Method"] = "Bank Transfer"
 
             is_remembered = st.session_state.transactions.at[idx, "Remember Mapping"]
             if is_remembered:
@@ -261,6 +277,12 @@ with tab1:
                                     if match2:
                                         tx_id = match2.group(1)
 
+                                payment_method = (
+                                    "Bank Transfer"
+                                    if ("the university of manchester" in desc.lower() and tx_type == "Credit")
+                                    else "Debit Card"
+                                )
+
                                 new_data.append({
                                     "Select": False,
                                     "Date": date_clean,
@@ -269,7 +291,7 @@ with tab1:
                                     "Amount": float(amount_str),
                                     "Currency": "INR",
                                     "Type": tx_type,
-                                    "Payment Method": "Debit Card",
+                                    "Payment Method": payment_method,
                                     "Category": guess_category(desc, mappings),
                                     "Remember Mapping": False
                                 })
@@ -311,6 +333,12 @@ with tab1:
                 else:
                     continue
 
+                payment_method = (
+                    "Bank Transfer"
+                    if ("the university of manchester" in narration.lower() and tx_type == "Credit")
+                    else "Debit Card"
+                )
+
                 new_data.append({
                     "Select": False,
                     "Date": formatted_date,
@@ -319,7 +347,7 @@ with tab1:
                     "Amount": amount,
                     "Currency": "INR",
                     "Type": tx_type,
-                    "Payment Method": "Debit Card",
+                    "Payment Method": payment_method,
                     "Category": guess_category(narration, mappings),
                     "Remember Mapping": False
                 })
@@ -362,7 +390,12 @@ with tab1:
 
                 currency = str(row.get("Currency", "GBP")).strip()
                 tx_type = "Credit" if amount > 0 else "Debit"
-                payment_method = "Credit Card - Monzo Flex" if "flex" in type_val.lower() else "Debit Card"
+                if "the university of manchester" in desc.lower() and tx_type == "Credit":
+                    payment_method = "Bank Transfer"
+                elif "flex" in type_val.lower():
+                    payment_method = "Credit Card - Monzo Flex"
+                else:
+                    payment_method = "Debit Card"
                 category = "Pot Transfer" if "pot transfer" in type_val.lower() else guess_category(desc, mappings)
 
                 new_data.append({
@@ -459,7 +492,12 @@ with tab1:
                 tx_type = "Credit" if amount > 0 else "Debit"
                 product_val = row.get("Product")
                 product = str(product_val).strip() if pd.notna(product_val) else "Current"
-                payment_method = "Credit Card - Monzo Flex" if "Flex" in product else "Debit Card"
+                if "the university of manchester" in desc.lower() and tx_type == "Credit":
+                    payment_method = "Bank Transfer"
+                elif "Flex" in product:
+                    payment_method = "Credit Card - Monzo Flex"
+                else:
+                    payment_method = "Debit Card"
 
                 rev_type_val = row.get("Type")
                 rev_type = str(rev_type_val).strip().lower() if pd.notna(rev_type_val) else ""
@@ -510,6 +548,11 @@ with tab1:
 
         submitted = st.form_submit_button("Add Transaction")
         if submitted and m_date and m_desc:
+            effective_method = (
+                "Bank Transfer"
+                if ("the university of manchester" in m_desc.strip().lower() and m_type == "Credit")
+                else m_method
+            )
             manual_row = pd.DataFrame([{
                 "Select": False,
                 "Date": m_date,
@@ -518,7 +561,7 @@ with tab1:
                 "Amount": float(m_amount),
                 "Currency": m_curr,
                 "Type": m_type,
-                "Payment Method": m_method,
+                "Payment Method": effective_method,
                 "Category": m_cat,
                 "Remember Mapping": False
             }])
