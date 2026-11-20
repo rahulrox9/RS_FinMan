@@ -3987,7 +3987,7 @@ False,24/05/2026,tx_0000B6cwG5hxYmf0AF8wPX,Rahul Subbaraman,0.19,GBP,Credit,Debi
 False,24/05/2026,tx_0000B6dI3nECdkdxeZUuuJ,Subsistence No Pay Pot,0.19,GBP,Debit,Debit Card,Pot Transfer,True
 False,26/05/2026,tx_0000B6gElcgZNh8kSzP7Fz,Split My Fare,35.3,GBP,Credit,Debit Card,Uncategorised,False
 False,26/05/2026,tx_0000B6gHVQRLRSc2e9yawu,,35.3,GBP,Debit,Debit Card,Uncategorised,False
-False,27/05/2026,tx_0000B6j68C8RwcmpNNoZZy,The University of Manchester,282.51,GBP,Credit,Debit Card,Income - Stipend,True
+True,27/05/2026,tx_0000B6j68C8RwcmpNNoZZy,The University of Manchester,282.51,GBP,Credit,Debit Card,Income - Stipend,True
 False,27/05/2026,tx_0000B6jAfVzfX3tQD8EBQS,Non-Stipend Income Pot,282.51,GBP,Debit,Debit Card,Pot Transfer,True
 False,27/05/2026,tx_0000B6jAqjraJ0yePbnYSA,Subsistence No Pay Pot,5.21,GBP,Credit,Debit Card,Pot Transfer,True
 False,27/05/2026,tx_0000B6jAqjqsLePUNPSzLd,Non-Stipend Income Pot,5.21,GBP,Debit,Debit Card,Pot Transfer,True
@@ -4043,7 +4043,6 @@ False,26/06/2026,tx_0000B7j8sPotdyBVJCYXKL,Mangopay S.A.,13.5,GBP,Credit,Debit C
 False,26/06/2026,tx_0000B7j8tn9OO1yGORzWJV,Non-Stipend Income Pot,13.5,GBP,Debit,Debit Card,Pot Transfer,True
 False,26/06/2026,tx_0000B7jIiUrZ2R00A8RfOd,Mangopay S.A.,12.5,GBP,Credit,Debit Card,Uncategorised,False
 False,26/06/2026,tx_0000B7jIkFh2PTcL7sctda,Non-Stipend Income Pot,12.5,GBP,Debit,Debit Card,Pot Transfer,True
-False,26/06/2026,tx_0000B7jIlB9ilVvUNbAhLY,The University of Manchester,831.43,GBP,Credit,Debit Card,Income - Stipend,True
 False,26/06/2026,tx_0000B7jIolfzRJL3TPrTOt,Non-Stipend Income Pot,831.43,GBP,Debit,Debit Card,Pot Transfer,True
 False,26/06/2026,tx_0000B7jmcPJTkwk1gNmHBZ,Mangopay S.A.,17.5,GBP,Credit,Debit Card,Uncategorised,False
 False,26/06/2026,tx_0000B7jmeXx4bpPydXtVR8,Non-Stipend Income Pot,17.5,GBP,Debit,Debit Card,Pot Transfer,True
@@ -4133,7 +4132,6 @@ False,27/07/2026,tx_0000B8lUH4rfE1djc3OcfF,Non-Stipend Income Pot,1.0,GBP,Debit,
 False,27/07/2026,tx_0000B8lUMnpTTVtrLNVOvy,Mangopay S.A.,2.85,GBP,Credit,Debit Card,Uncategorised,False
 False,27/07/2026,tx_0000B8lUPJEJhOrycwSk3H,Non-Stipend Income Pot,2.85,GBP,Debit,Debit Card,Pot Transfer,True
 False,28/07/2026,tx_0000B8nDDzKW2LOZmbAcNP,Mangopay S.A.,3.6,GBP,Credit,Debit Card,Uncategorised,False
-False,29/07/2026,tx_0000B8peujabWOFOsL4Tly,The University of Manchester,441.89,GBP,Credit,Debit Card,Income - Stipend,True
 False,29/07/2026,tx_0000B8pf5NaleBb1CRHCpH,Non-Stipend Income Pot,445.49,GBP,Debit,Debit Card,Pot Transfer,True
 False,30/07/2026,tx_0000B8qxomDCwy7t3zv8rZ,Mangopay S.A.,4.0,GBP,Credit,Debit Card,Uncategorised,False
 False,30/07/2026,tx_0000B8qxrRb03bvvhEDqp0,Non-Stipend Income Pot,4.0,GBP,Debit,Debit Card,Pot Transfer,True
@@ -4838,5 +4836,14 @@ False,11-09-2026,REV_11-09-2026_22.5_Transfer f,Transfer from DISHA HEGDE,22.5,G
 False,11-10-2026,REV_11-10-2026_45.0_LoveToVisi,LoveToVisit,45.0,GBP,Debit,Debit Card,Uncategorised,False
 False,13/06/2023,tx_0000AWeVdoyLSXchuLSIV7_split1,Regular Savings Pot,1472.33,GBP,Debit,Debit Card,Income - Stipend,True
 False,13/06/2023,tx_0000AWeVdoyLSXchuLSIV7_split2,Regular Savings Pot,1472.33,GBP,Debit,Debit Card,Income - Stipend,True
-False,29/01/2025,tx_0000AqZzxq0iGDEHTQNkqf_split1,The University of Manchester,100.0,GBP,Credit,Debit Card,Income - Additional,True
+False,29/01/2025,tx_0000AqZzxq0iGDEHTQNkqf_split1,The University of Manchester,100.0,GBP,Credit,Debit Card,Income - Stipend,True
 False,29/01/2025,tx_0000AqZzxq0iGDEHTQNkqf_split2,The University of Manchester,1603.09,GBP,Credit,Debit Card,Income - Stipend,True
+False,07-11-2026,MANUAL_1795180012.602918,Lac Bangle CHarminar,450.0,INR,Debit,Cash,Shopping,False
+False,08-11-2026,MANUAL_1795180059.363844,Swarnagiri Food,70.0,INR,Debit,Cash,Food - dining & delivery,False
+False,10-11-2026,MANUAL_1795180098.799262,Chai Train,20.0,INR,Debit,Cash,Food - dining & delivery,False
+False,08-11-2026,MANUAL_1795180131.019361,Periappa Gift,500.0,INR,Credit,Cash,Income - Others,False
+False,14-11-2026,MANUAL_1795180159.063923,Anjali Son Gift,200.0,INR,Debit,Cash,Others,False
+False,29/07/2026,tx_0000B8peujabWOFOsL4Tly_split1,The University of Manchester,417.8,GBP,Credit,Debit Card,Income - Stipend,True
+False,29/07/2026,tx_0000B8peujabWOFOsL4Tly_split2,The University of Manchester,24.09,GBP,Credit,Debit Card,Income - Stipend,True
+False,26/06/2026,tx_0000B7jIlB9ilVvUNbAhLY_split1,The University of Manchester,139.27,GBP,Credit,Debit Card,Income - Stipend,True
+False,26/06/2026,tx_0000B7jIlB9ilVvUNbAhLY_split2,The University of Manchester,692.16,GBP,Credit,Debit Card,Income - Stipend,True
