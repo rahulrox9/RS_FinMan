@@ -138,6 +138,9 @@ def handle_editor_change():
                 continue
             idx = filtered_indices[pos]
 
+            if edits.get("Select") is True:
+                st.session_state.transactions["Select"] = False
+
             for col, val in edits.items():
                 st.session_state.transactions.at[idx, col] = val
 
@@ -386,6 +389,7 @@ with tab1:
                 df_rev.columns = df_rev.columns.astype(str).str.strip()
                 debug_info = f"Format: CSV, Header row: {header_idx}, Separator: {repr(detected_sep)}, Columns: {list(df_rev.columns)}"
 
+            rev_id_counts = {}
             for _, row in df_rev.iterrows():
                 date_raw = row.get("Completed Date")
                 if pd.isna(date_raw) or str(date_raw).strip() == "":
@@ -433,10 +437,14 @@ with tab1:
                 else:
                     category = guess_category(desc, mappings)
 
+                base_rev_key = f"REV_{formatted_date}_{abs(amount)}_{desc[:10]}"
+                occurrence = rev_id_counts.get(base_rev_key, 0) + 1
+                rev_id_counts[base_rev_key] = occurrence
+
                 new_data.append({
                     "Select": False,
                     "Date": formatted_date,
-                    "Transaction ID": f"REV_{formatted_date}_{abs(amount)}_{desc[:10]}",
+                    "Transaction ID": f"{base_rev_key}_{occurrence}",
                     "Description": desc,
                     "Amount": abs(amount),
                     "Currency": currency,
@@ -500,7 +508,7 @@ with tab1:
 
         st.session_state.filtered_indices = display_df.index.tolist()
 
-        edited_display_df = st.data_editor(
+        st.data_editor(
             display_df,
             key="tx_editor",
             on_change=handle_editor_change,
@@ -515,17 +523,6 @@ with tab1:
             hide_index=True,
             use_container_width=True
         )
-
-        new_selects = edited_display_df["Select"]
-        old_selects = display_df["Select"]
-        newly_checked = edited_display_df.index[(new_selects == True) & (old_selects == False)].tolist()
-
-        if newly_checked:
-            target_idx = newly_checked[-1]
-            st.session_state.transactions["Select"] = False
-            st.session_state.transactions.loc[target_idx, "Select"] = True
-            save_db(st.session_state.transactions)
-            st.rerun()
 
         st.divider()
         st.subheader("Selected Row Actions")
@@ -635,18 +632,35 @@ with tab1:
                 st.rerun()
 
 with tab2:
+    col_top1, col_top2 = st.columns([3, 1])
+    with col_top2:
+        if st.button("Refresh Dashboard Data", use_container_width=True):
+            if os.path.exists(DB_FILE):
+                st.session_state.transactions = load_db()
+            st.rerun()
+
     if st.session_state.transactions.empty:
         st.info("No data available.")
     else:
-        selected_dashboard_curr = st.selectbox("Select Currency Filter for Dashboard", CURRENCIES)
+        curr_counts = st.session_state.transactions["Currency"].dropna().astype(str).str.strip().value_counts()
+        default_curr_idx = 0
+        if not curr_counts.empty and curr_counts.index[0] in CURRENCIES:
+            default_curr_idx = CURRENCIES.index(curr_counts.index[0])
 
-        dash_df = st.session_state.transactions[st.session_state.transactions["Currency"] == selected_dashboard_curr].copy()
+        with col_top1:
+            selected_dashboard_curr = st.selectbox("Select Currency Filter for Dashboard", CURRENCIES, index=default_curr_idx)
+
+        dash_df = st.session_state.transactions[
+            st.session_state.transactions["Currency"].astype(str).str.strip() == selected_dashboard_curr
+        ].copy()
 
         if dash_df.empty:
             st.warning(f"No transactions found for {selected_dashboard_curr}.")
         else:
-            dash_df["Amount"] = pd.to_numeric(dash_df["Amount"], errors="coerce")
-            dash_df["Date_DT"] = pd.to_datetime(dash_df["Date"], format="%d-%m-%Y", errors="coerce")
+            dash_df["Amount"] = pd.to_numeric(dash_df["Amount"], errors="coerce").fillna(0.0)
+            dash_df["Category"] = dash_df["Category"].fillna("Uncategorised").replace("", "Uncategorised")
+            dash_df["Type"] = dash_df["Type"].astype(str).str.strip()
+            dash_df["Date_DT"] = pd.to_datetime(dash_df["Date"], dayfirst=True, errors="coerce")
 
             wealth_categories = [c for c in CATEGORIES if "Investment" in c or "Pension" in c]
             ignored_categories = ["Credit Card Repayment", "Currency Transfer", "Pot Transfer"]
@@ -676,7 +690,7 @@ with tab2:
             with col_c1:
                 st.subheader("Category Spend Breakdown (%)")
                 if not expenses_df.empty:
-                    cat_group = expenses_df.groupby("Category")["Amount"].sum().reset_index()
+                    cat_group = expenses_df.groupby("Category", as_index=False)["Amount"].sum()
                     fig = px.pie(cat_group, values="Amount", names="Category", hole=0.4)
                     st.plotly_chart(fig, use_container_width=True)
                 else:
@@ -684,9 +698,10 @@ with tab2:
 
             with col_c2:
                 st.subheader("Daily Spending Trend")
-                if not expenses_df.empty:
-                    daily_spend = expenses_df.groupby("Date_DT")["Amount"].sum().reset_index()
-                    st.line_chart(daily_spend.set_index("Date_DT"))
+                valid_trend_df = expenses_df.dropna(subset=["Date_DT"])
+                if not valid_trend_df.empty:
+                    daily_spend = valid_trend_df.groupby("Date_DT", as_index=False)["Amount"].sum().sort_values("Date_DT")
+                    st.line_chart(daily_spend.set_index("Date_DT")["Amount"])
                 else:
                     st.write("No trend data available.")
 
@@ -703,7 +718,7 @@ with tab2:
             with col_t2:
                 st.subheader("Income Tracker by Category")
                 if not income_df.empty:
-                    income_summary = income_df.groupby("Category")["Amount"].sum().reset_index()
+                    income_summary = income_df.groupby("Category", as_index=False)["Amount"].sum()
                     st.dataframe(income_summary, hide_index=True, use_container_width=True)
                 else:
                     st.write("No income entries found.")
