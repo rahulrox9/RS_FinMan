@@ -15,7 +15,6 @@ CATEGORIES = [
     "Cashbacks",
     "Credit Card Repayment",
     "Currency Transfer",
-    "Distance Travel",
     "Entertainment",
     "Family Remittances",
     "Food - dining & delivery",
@@ -39,6 +38,35 @@ CATEGORIES = [
     "Uncategorised"
 ]
 
+INCOME_CATEGORIES = [
+    "Income - UoM GTA",
+    "Income - UoM Extras",
+    "Income - Stipend",
+    "Income - SNTPS",
+    "Income - Others",
+    "Interest"
+]
+
+WEALTH_CATEGORIES = [
+    "Investment - FD",
+    "Investment - Groww",
+    "Pension - APY"
+]
+
+EXCLUDED_CATEGORIES = [
+    "Bank Transfer",
+    "Cashbacks",
+    "Credit Card Repayment",
+    "Currency Transfer",
+    "Family Remittances",
+    "Pot Transfer"
+]
+
+EXPENDITURE_CATEGORIES = [
+    c for c in CATEGORIES
+    if c not in INCOME_CATEGORIES and c not in WEALTH_CATEGORIES and c not in EXCLUDED_CATEGORIES
+]
+
 PAYMENT_METHODS = ["Debit Card", "UPI", "Bank Transfer", "Credit Card - Pixel", "Credit Card - Appa", "Credit Card - Monzo Flex", "Cash"]
 CURRENCIES = ["INR", "GBP", "EUR"]
 
@@ -49,7 +77,8 @@ EXCLUDED_TERMS = ["top-uptoupilite", "selftransfer"]
 def load_mappings():
     if os.path.exists(MAPPING_FILE):
         with open(MAPPING_FILE, "r") as f:
-            return json.load(f)
+            raw_map = json.load(f)
+        return {k: ("Trip Expenses" if v == "Distance Travel" else v) for k, v in raw_map.items()}
     return {}
 
 def save_mappings(mappings):
@@ -61,6 +90,8 @@ def load_db():
         try:
             df = pd.read_csv(DB_FILE)
             df["Amount"] = pd.to_numeric(df["Amount"], errors="coerce")
+            if "Category" in df.columns:
+                df["Category"] = df["Category"].replace({"Distance Travel": "Trip Expenses"}).fillna("Uncategorised")
             for col in ["Select", "Remember Mapping"]:
                 if col in df.columns:
                     df[col] = df[col].astype(str).str.lower() == "true"
@@ -658,52 +689,160 @@ with tab2:
             st.warning(f"No transactions found for {selected_dashboard_curr}.")
         else:
             dash_df["Amount"] = pd.to_numeric(dash_df["Amount"], errors="coerce").fillna(0.0)
-            dash_df["Category"] = dash_df["Category"].fillna("Uncategorised").replace("", "Uncategorised")
+            dash_df["Category"] = dash_df["Category"].replace({"Distance Travel": "Trip Expenses"}).fillna("Uncategorised").replace("", "Uncategorised")
             dash_df["Type"] = dash_df["Type"].astype(str).str.strip()
+            dash_df["Payment Method"] = dash_df["Payment Method"].astype(str).str.strip()
             dash_df["Date_DT"] = pd.to_datetime(dash_df["Date"], dayfirst=True, errors="coerce")
 
-            wealth_categories = [c for c in CATEGORIES if "Investment" in c or "Pension" in c]
-            ignored_categories = ["Credit Card Repayment", "Currency Transfer", "Pot Transfer"]
+            # 1. Real Expenditure (Debit adds, Credit refunds/splits subtract)
+            expenses_df = dash_df[dash_df["Category"].isin(EXPENDITURE_CATEGORIES)].copy()
+            expenses_df["Net_Amount"] = expenses_df.apply(
+                lambda r: r["Amount"] if r["Type"] == "Debit" else -r["Amount"], axis=1
+            )
 
-            expenses_df = dash_df[
-                (dash_df["Type"] == "Debit") &
-                (~dash_df["Category"].isin(wealth_categories)) &
-                (~dash_df["Category"].isin(ignored_categories))
-            ]
-            wealth_df = dash_df[(dash_df["Type"] == "Debit") & (dash_df["Category"].isin(wealth_categories))]
-            income_df = dash_df[(dash_df["Type"] == "Credit") & (~dash_df["Category"].isin(ignored_categories))]
+            # 2. Income (Strictly specified income categories)
+            income_df = dash_df[dash_df["Category"].isin(INCOME_CATEGORIES)].copy()
+            income_df["Net_Income"] = income_df.apply(
+                lambda r: r["Amount"] if r["Type"] == "Credit" else -r["Amount"], axis=1
+            )
 
-            total_expenses = expenses_df["Amount"].sum()
-            total_wealth = wealth_df["Amount"].sum()
-            total_income = income_df["Amount"].sum()
-            total_rent = expenses_df[expenses_df["Category"] == "Rent"]["Amount"].sum()
+            # 3. Wealth Building (Investments & Pension)
+            wealth_df = dash_df[dash_df["Category"].isin(WEALTH_CATEGORIES)].copy()
+            wealth_df["Net_Wealth"] = wealth_df.apply(
+                lambda r: r["Amount"] if r["Type"] == "Debit" else -r["Amount"], axis=1
+            )
+
+            total_expenses = expenses_df["Net_Amount"].sum()
+            total_rent = expenses_df[expenses_df["Category"] == "Rent"]["Net_Amount"].sum()
+            total_wealth = wealth_df["Net_Wealth"].sum()
+            total_income = income_df["Net_Income"].sum()
 
             col_m1, col_m2, col_m3, col_m4 = st.columns(4)
-            col_m1.metric(f"Living Expenses ({selected_dashboard_curr})", f"{total_expenses:,.2f}")
+            col_m1.metric(f"Real Expenditure ({selected_dashboard_curr})", f"{total_expenses:,.2f}")
             col_m2.metric(f"Rent ({selected_dashboard_curr})", f"{total_rent:,.2f}")
-            col_m3.metric(f"Investments & Pension ({selected_dashboard_curr})", f"{total_wealth:,.2f}")
-            col_m4.metric(f"Income ({selected_dashboard_curr})", f"{total_income:,.2f}")
+            col_m3.metric(f"Wealth Building ({selected_dashboard_curr})", f"{total_wealth:,.2f}")
+            col_m4.metric(f"Total Income ({selected_dashboard_curr})", f"{total_income:,.2f}")
 
             st.divider()
 
-            col_c1, col_c2 = st.columns(2)
-            with col_c1:
-                st.subheader("Category Spend Breakdown (%)")
+            # Three Isolated Pie Charts: Expenditure, Income, Wealth Building
+            col_p1, col_p2, col_p3 = st.columns(3)
+            with col_p1:
+                st.subheader("Expenditure Breakdown (%)")
                 if not expenses_df.empty:
-                    cat_group = expenses_df.groupby("Category", as_index=False)["Amount"].sum()
-                    fig = px.pie(cat_group, values="Amount", names="Category", hole=0.4)
-                    st.plotly_chart(fig, use_container_width=True)
+                    cat_group = expenses_df.groupby("Category", as_index=False)["Net_Amount"].sum()
+                    cat_group = cat_group[cat_group["Net_Amount"] > 0]
+                    if not cat_group.empty:
+                        fig_exp = px.pie(cat_group, values="Net_Amount", names="Category", hole=0.4)
+                        st.plotly_chart(fig_exp, use_container_width=True)
+                    else:
+                        st.write("No net positive expenses recorded.")
                 else:
                     st.write("No expenses recorded.")
 
-            with col_c2:
-                st.subheader("Daily Spending Trend")
-                valid_trend_df = expenses_df.dropna(subset=["Date_DT"])
-                if not valid_trend_df.empty:
-                    daily_spend = valid_trend_df.groupby("Date_DT", as_index=False)["Amount"].sum().sort_values("Date_DT")
-                    st.line_chart(daily_spend.set_index("Date_DT")["Amount"])
+            with col_p2:
+                st.subheader("Income Breakdown (%)")
+                if not income_df.empty:
+                    inc_group = income_df.groupby("Category", as_index=False)["Net_Income"].sum()
+                    inc_group = inc_group[inc_group["Net_Income"] > 0]
+                    if not inc_group.empty:
+                        fig_inc = px.pie(inc_group, values="Net_Income", names="Category", hole=0.4)
+                        st.plotly_chart(fig_inc, use_container_width=True)
+                    else:
+                        st.write("No positive income recorded.")
                 else:
-                    st.write("No trend data available.")
+                    st.write("No income entries found.")
+
+            with col_p3:
+                st.subheader("Wealth Building Breakdown (%)")
+                if not wealth_df.empty:
+                    wlt_group = wealth_df.groupby("Category", as_index=False)["Net_Wealth"].sum()
+                    wlt_group = wlt_group[wlt_group["Net_Wealth"] > 0]
+                    if not wlt_group.empty:
+                        fig_wlt = px.pie(wlt_group, values="Net_Wealth", names="Category", hole=0.4)
+                        st.plotly_chart(fig_wlt, use_container_width=True)
+                    else:
+                        st.write("No net positive wealth entries recorded.")
+                else:
+                    st.write("No investments or pension entries found.")
+
+            st.divider()
+
+            # Daily Real Expenditure Trend
+            st.subheader("Daily Expenditure Trend")
+            valid_trend_df = expenses_df.dropna(subset=["Date_DT"])
+            if not valid_trend_df.empty:
+                daily_spend = valid_trend_df.groupby("Date_DT", as_index=False)["Net_Amount"].sum().sort_values("Date_DT")
+                st.line_chart(daily_spend.set_index("Date_DT")["Net_Amount"])
+            else:
+                st.write("No expenditure trend data available.")
+
+            st.divider()
+
+            # Credit Card Usage Tracker (Daily vs. Cumulative Toggle)
+            cc_header_col1, cc_header_col2 = st.columns([3, 1])
+            with cc_header_col1:
+                st.subheader(f"Credit Card Usage Tracker ({selected_dashboard_curr})")
+            with cc_header_col2:
+                show_cumulative_cc = st.toggle("Cumulative Tracker", value=False)
+
+            credit_card_methods = [m for m in PAYMENT_METHODS if "Credit Card" in m]
+            cc_df = dash_df[
+                (dash_df["Payment Method"].isin(credit_card_methods)) &
+                (dash_df["Category"] != "Credit Card Repayment")
+            ].copy()
+
+            if cc_df.empty:
+                st.info(f"No credit card usage recorded in {selected_dashboard_curr}.")
+            else:
+                cc_df["Usage_Amount"] = cc_df.apply(
+                    lambda r: r["Amount"] if r["Type"] == "Debit" else -r["Amount"], axis=1
+                )
+
+                # Summary metrics per credit card
+                card_totals = cc_df.groupby("Payment Method")["Usage_Amount"].sum()
+                cc_metric_cols = st.columns(len(credit_card_methods) + 1)
+                cc_metric_cols[0].metric("All Credit Cards Total", f"{cc_df['Usage_Amount'].sum():,.2f}")
+                for idx_c, card_name in enumerate(credit_card_methods, start=1):
+                    card_val = card_totals.get(card_name, 0.0)
+                    short_label = card_name.replace("Credit Card - ", "")
+                    cc_metric_cols[idx_c].metric(f"{short_label} Usage", f"{card_val:,.2f}")
+
+                cc_valid = cc_df.dropna(subset=["Date_DT"]).copy()
+                if not cc_valid.empty:
+                    daily_cc = cc_valid.pivot_table(
+                        index="Date_DT",
+                        columns="Payment Method",
+                        values="Usage_Amount",
+                        aggfunc="sum",
+                        fill_value=0.0
+                    ).sort_index()
+
+                    active_cards = list(daily_cc.columns)
+                    if show_cumulative_cc:
+                        cum_cc = daily_cc.cumsum()
+                        cum_cc["Total All Cards"] = cum_cc[active_cards].sum(axis=1)
+                        plot_cc_df = cum_cc.reset_index()
+                        fig_cc = px.line(
+                            plot_cc_df,
+                            x="Date_DT",
+                            y=active_cards + ["Total All Cards"],
+                            markers=True,
+                            labels={"Date_DT": "Date", "value": f"Cumulative Usage ({selected_dashboard_curr})", "variable": "Card"}
+                        )
+                        st.plotly_chart(fig_cc, use_container_width=True)
+                    else:
+                        plot_cc_df = daily_cc.reset_index()
+                        fig_cc = px.bar(
+                            plot_cc_df,
+                            x="Date_DT",
+                            y=active_cards,
+                            barmode="stack",
+                            labels={"Date_DT": "Date", "value": f"Daily Usage ({selected_dashboard_curr})", "variable": "Card"}
+                        )
+                        st.plotly_chart(fig_cc, use_container_width=True)
+                else:
+                    st.write("No valid dates available for credit card timeline.")
 
             st.divider()
 
@@ -718,7 +857,7 @@ with tab2:
             with col_t2:
                 st.subheader("Income Tracker by Category")
                 if not income_df.empty:
-                    income_summary = income_df.groupby("Category", as_index=False)["Amount"].sum()
+                    income_summary = income_df.groupby("Category", as_index=False)["Net_Income"].sum().rename(columns={"Net_Income": "Amount"})
                     st.dataframe(income_summary, hide_index=True, use_container_width=True)
                 else:
                     st.write("No income entries found.")
