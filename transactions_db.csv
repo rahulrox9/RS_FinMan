@@ -49,7 +49,7 @@ False,25/10/2022,tx_0000AOukNTrIQey9xNZNYo,Devisha Bijwe,12.0,GBP,Credit,Debit C
 False,25/10/2022,tx_0000AOvPcPeYRYEoGmqEar,University Retail,18.48,GBP,Debit,Debit Card,Shopping,True
 False,25/10/2022,tx_0000AOvh1U9GZ7TSMwLmR0,Morrisons,6.4,GBP,Debit,Debit Card,Groceries & Home Needs,True
 False,25/10/2022,tx_0000AOvtJIDyptI9SfDZAY,Gauri Vaidya,9.0,GBP,Debit,Debit Card,Food - dining & delivery,False
-False,26/10/2022,tx_0000AOxoy0adC9xWyx7yhl,The University of Manchester,1472.33,GBP,Credit,Debit Card,Income - Stipend,False
+False,26/10/2022,tx_0000AOxoy0adC9xWyx7yhl,The University of Manchester,1472.33,GBP,Credit,Bank Transfer,Income - Stipend,False
 False,27/10/2022,tx_0000AOzKaCw91rJiDn2rYH,Manchester Internation,6.0,GBP,Debit,Debit Card,Entertainment,True
 False,27/10/2022,tx_0000AOzlsLViaX0qaCMFDG,Stephanie Halwa,10.0,GBP,Debit,Debit Card,Food - dining & delivery,False
 False,27/10/2022,tx_0000AP0CHqVN5Q76l411NN,Ziya Asian Grill,25.25,GBP,Debit,Debit Card,Food - dining & delivery,True
@@ -69,8 +69,8 @@ False,01/11/2022,tx_0000APA0t0t6BsXo0dryU5,Seitans Kebab,7.5,GBP,Debit,Debit Car
 False,02/11/2022,tx_0000APC1sfyWQolCYBKZ4l,Yummy Restaran,3.45,GBP,Debit,Debit Card,Food - dining & delivery,True
 False,03/11/2022,tx_0000APDfq0uSKeFG8PFie9,Wallet Pot,100.0,GBP,Debit,Debit Card,Pot Transfer,True
 False,03/11/2022,tx_0000APE9jTsfDWKFobQAr5,Manchester Internation,27.0,GBP,Debit,Debit Card,Entertainment,True
-False,03/11/2022,tx_0000APEIwqhAbS6uEdqGVl,The University of Manchester,1.0,GBP,Debit,Debit Card,Income - Stipend,False
-False,03/11/2022,tx_0000APEL0gNj5gL4RXyAAT,The University of Manchester,2.0,GBP,Debit,Debit Card,Income - Stipend,False
+False,03/11/2022,tx_0000APEIwqhAbS6uEdqGVl,The University of Manchester,1.0,GBP,Debit,Debit Card,Groceries & Home Needs,False
+False,03/11/2022,tx_0000APEL0gNj5gL4RXyAAT,The University of Manchester,2.0,GBP,Debit,Debit Card,Food - dining & delivery,False
 False,04/11/2022,tx_0000APFsYoJ7cYAaXEtxXJ,Morrisons,3.99,GBP,Debit,Debit Card,Groceries & Home Needs,True
 False,04/11/2022,tx_0000APGJ9QtSEZ8iaKymgr,Alan Gilbert Learning Cafe,7.55,GBP,Debit,Debit Card,Food - dining & delivery,True
 False,05/11/2022,tx_0000API1SYe4E9PApGNl1X,Wallet Pot,100.0,GBP,Debit,Debit Card,Pot Transfer,True
@@ -126,7 +126,7 @@ False,22/11/2022,tx_0000APrsRzp7mwzcCusrab,Morrisons,10.04,GBP,Debit,Debit Card,
 False,22/11/2022,tx_0000APrsbf4lmamZ7MIoy1,Morrisons,6.0,GBP,Debit,Debit Card,Groceries & Home Needs,True
 False,22/11/2022,tx_0000APs3LIQfJYFrNcS1q5,Soham Wani,15.57,GBP,Debit,Debit Card,Groceries & Home Needs,False
 False,23/11/2022,tx_0000APsp4cJWvQnc6YtnAg,Trainline,24.9,GBP,Credit,Debit Card,Trip Expenses,True
-False,23/11/2022,tx_0000APtvRBlUardg2BcvBt,The University of Manchester,1472.33,GBP,Credit,Debit Card,Income - Stipend,False
+False,23/11/2022,tx_0000APtvRBlUardg2BcvBt,The University of Manchester,1472.33,GBP,Credit,Bank Transfer,Income - Stipend,False
 False,23/11/2022,tx_0000APtvfwx9whpyehvBE9,Wallet Pot,106.6,GBP,Debit,Debit Card,Pot Transfer,True
 False,23/11/2022,tx_0000APtvhW3YuykGQQQQrr,Rent Pot,760.0,GBP,Debit,Debit Card,Pot Transfer,True
 False,24/11/2022,tx_0000APw5f8udNrRECfFF0k,Arizona Fried Chicken,6.5,GBP,Debit,Debit Card,Food - dining & delivery,True
@@ -220,7 +220,7 @@ False,19/12/2022,tx_0000AQlW92vSiGIrmCQtf9,Savings Pot,170.0,GBP,Debit,Debit Car
 False,20/12/2022,tx_0000AQnyFULCsmgiIjbyi5,Babylon,9.5,GBP,Debit,Debit Card,Food - dining & delivery,True
 False,21/12/2022,tx_0000AQpGHevWUMxR7JY51l,Trainline,4.65,GBP,Debit,Debit Card,Trip Expenses,True
 False,21/12/2022,tx_0000AQpLy9gd0yIsM1I4JO,Bolt,3.9,GBP,Debit,Debit Card,Local Transport,True
-False,21/12/2022,tx_0000AQpxBEL4j0SnGZSw6L,The University of Manchester,1472.33,GBP,Credit,Debit Card,Income - Stipend,False
+False,21/12/2022,tx_0000AQpxBEL4j0SnGZSw6L,The University of Manchester,1472.33,GBP,Credit,Bank Transfer,Income - Stipend,False
 False,21/12/2022,tx_0000AQpxNae1cRdTVT42tP,Savings Pot,760.0,GBP,Debit,Debit Card,Pot Transfer,True
 False,21/12/2022,tx_0000AQpxckmMDoQlNSZBcP,Holiday Pot,200.0,GBP,Debit,Debit Card,Pot Transfer,True
 False,21/12/2022,tx_0000AQpxxQu9JE1iRusxTV,Savings Pot,300.0,GBP,Debit,Debit Card,Pot Transfer,True
@@ -304,7 +304,7 @@ False,24/01/2023,tx_0000ARxcJ6Mxk4Mao7ESO1,Savings Pot,160.0,GBP,Debit,Debit Car
 False,24/01/2023,tx_0000ARy8lfAb939jr7Hr0b,Seitans Kebab,7.0,GBP,Debit,Debit Card,Food - dining & delivery,True
 False,24/01/2023,tx_0000ARyDkUN2JL76XOBEyw,Co-op,2.35,GBP,Debit,Debit Card,Groceries & Home Needs,True
 False,25/01/2023,tx_0000AS0AUrU8h0oOhmBK9y,Savings Pot,100.0,GBP,Credit,Debit Card,Pot Transfer,True
-False,25/01/2023,tx_0000AS0Wrtn0UObVfyVGWP,The University of Manchester,1472.33,GBP,Credit,Debit Card,Income - Stipend,False
+False,25/01/2023,tx_0000AS0Wrtn0UObVfyVGWP,The University of Manchester,1472.33,GBP,Credit,Bank Transfer,Income - Stipend,False
 False,25/01/2023,tx_0000AS0WuZz8ZtYmwzLhlB,Savings Pot,1472.33,GBP,Debit,Debit Card,Pot Transfer,True
 False,27/01/2023,tx_0000AS4a6VywMdoyXhLRZp,Trainline,5.34,GBP,Debit,Debit Card,Trip Expenses,True
 False,27/01/2023,tx_0000AS4aBUWxBhvfunEMcL,Trainline,7.79,GBP,Debit,Debit Card,Trip Expenses,True
@@ -397,7 +397,7 @@ False,20/02/2023,tx_0000ASsN5kHQ8PTV84BCdu,Yummy Restaran,2.75,GBP,Debit,Debit C
 False,20/02/2023,tx_0000ASsXSuM7q0u7MtVwAr,Lidl,11.68,GBP,Debit,Debit Card,Groceries & Home Needs,True
 False,20/02/2023,tx_0000ASsZaD6Kk2rRWlnWK1,Sanskruti Gare,5.5,GBP,Debit,Bank Transfer,Groceries & Home Needs,True
 False,21/02/2023,tx_0000ASuQdmWF0LsShqarA2,Megan Priestley,6.5,GBP,Debit,Debit Card,Entertainment,False
-False,22/02/2023,tx_0000ASwYaCCwjxpLR29yBl,The University of Manchester,1472.33,GBP,Credit,Debit Card,Income - Stipend,False
+False,22/02/2023,tx_0000ASwYaCCwjxpLR29yBl,The University of Manchester,1472.33,GBP,Credit,Bank Transfer,Income - Stipend,False
 False,22/02/2023,tx_0000ASwYdCChDC92I7TOcd,Savings Pot,500.0,GBP,Debit,Debit Card,Pot Transfer,True
 False,22/02/2023,tx_0000ASwYh7aAKtxJ1vGKQr,Savings Pot,100.0,GBP,Debit,Debit Card,Pot Transfer,True
 False,22/02/2023,tx_0000ASwYkw0vHzaOJFb1u5,Rahul Subbaraman,872.33,GBP,Debit,Debit Card,Pot Transfer,True
@@ -408,7 +408,7 @@ False,23/02/2023,tx_0000ASyzElpogZWblQl4Yj,Anwar Hussain,3.0,GBP,Debit,Bank Tran
 False,23/02/2023,tx_0000ASzA0nUynki9SFsV29,Icestone Gelato,4.99,GBP,Debit,Debit Card,Food - dining & delivery,True
 False,23/02/2023,tx_0000ASzBbjsTKMGAakAYan,Manchester Internation,37.0,GBP,Debit,Debit Card,Entertainment,True
 False,24/02/2023,tx_0000AT07Y3jtKq7MAbsvJa,Wallet Pot,100.0,GBP,Credit,Debit Card,Pot Transfer,True
-False,24/02/2023,tx_0000AT0moYs5RzHQf8PQSv,The University of Manchester,148.52,GBP,Credit,Debit Card,Income - Stipend,False
+False,24/02/2023,tx_0000AT0moYs5RzHQf8PQSv,The University of Manchester,148.52,GBP,Credit,Bank Transfer,Income - UoM GTA,False
 False,24/02/2023,tx_0000AT0mzGvEWepMwMi5oI,Regular Savings Pot,148.52,GBP,Debit,Debit Card,Pot Transfer,True
 False,24/02/2023,tx_0000AT0tGUuwLPpVE1WSbC,Morrisons,16.31,GBP,Debit,Debit Card,Groceries & Home Needs,True
 False,25/02/2023,tx_0000AT24Q6huVNtjru44Qc,Stagecoach,2.0,GBP,Debit,Debit Card,Local Transport,True
@@ -527,10 +527,10 @@ False,26/03/2023,tx_0000AU1C4gNdqOS2G7Towb,Manchester Internation,8.0,GBP,Debit,
 False,26/03/2023,tx_0000AU1D1QagC2lD9ceLj7,Trainline,21.89,GBP,Debit,Debit Card,Trip Expenses,True
 False,27/03/2023,tx_0000AU2O7wrSPzaAw5FXUX,Google,1.59,GBP,Debit,Debit Card,Subscriptions,True
 False,28/03/2023,tx_0000AU4zeIGuR2cUGpQpkn,Morrisons,19.04,GBP,Debit,Debit Card,Groceries & Home Needs,True
-False,29/03/2023,tx_0000AU71d0FoWksMR8m13Z,The University of Manchester,1472.33,GBP,Credit,Debit Card,Income - Stipend,False
-False,29/03/2023,tx_0000AU71fAYDDODMu67sOn,The University of Manchester,158.56,GBP,Credit,Debit Card,Income - Stipend,False
+False,29/03/2023,tx_0000AU71d0FoWksMR8m13Z,The University of Manchester,1472.33,GBP,Credit,Bank Transfer,Income - Stipend,False
+False,29/03/2023,tx_0000AU71fAYDDODMu67sOn,The University of Manchester,158.56,GBP,Credit,Bank Transfer,Income - UoM GTA,False
 False,29/03/2023,tx_0000AU71iVhx0gh8QXVRLd,Regular Savings Pot,1630.0,GBP,Debit,Debit Card,Pot Transfer,True
-False,31/03/2023,tx_0000AUBeMDMDEL1MPVT30F,The University of Manchester,12.7,GBP,Debit,Debit Card,Income - Stipend,False
+False,31/03/2023,tx_0000AUBeMDMDEL1MPVT30F,The University of Manchester,12.7,GBP,Debit,Debit Card,Food - dining & delivery,False
 False,01/04/2023,tx_0000AUDHDcX4Lp8tg2gHQY,Regular Savings Pot,100.0,GBP,Credit,Debit Card,Pot Transfer,True
 False,01/04/2023,tx_0000AUDJwhEluADaibHn1z,Lidl,1.45,GBP,Debit,Debit Card,Groceries & Home Needs,True
 False,01/04/2023,tx_0000AUDKwctGAPjXDBx2bB,Worldwide Foods Rushol,16.87,GBP,Debit,Debit Card,Groceries & Home Needs,True
@@ -541,7 +541,7 @@ False,04/04/2023,tx_0000AUImbbYPhzy4vtRhFx,Amazon,702.98,GBP,Debit,Debit Card,Sh
 False,04/04/2023,tx_0000AUJck9oNQ3tMaNETbN,Sports Direct,30.13,GBP,Debit,Debit Card,Uncategorised,False
 False,04/04/2023,tx_0000AUJl9EDux5sd1HpOtt,Morrisons,11.49,GBP,Debit,Debit Card,Groceries & Home Needs,True
 False,04/04/2023,tx_0000AUK4OVA49qLVK36US1,Stagecoach,2.0,GBP,Debit,Debit Card,Local Transport,True
-False,05/04/2023,tx_0000AULOkeQAbTUN9t0I6r,The University of Manchester,5.3,GBP,Debit,Debit Card,Income - Stipend,False
+False,05/04/2023,tx_0000AULOkeQAbTUN9t0I6r,The University of Manchester,5.3,GBP,Debit,Debit Card,Food - dining & delivery,False
 False,05/04/2023,tx_0000AULtQSh7aeReGEydKD,Saajan,17.8,GBP,Debit,Debit Card,Food - dining & delivery,True
 False,05/04/2023,tx_0000AULu5kRMW5HX3V0XPV,Pelvan Original Lahori,9.0,GBP,Debit,Debit Card,Food - dining & delivery,True
 False,05/04/2023,tx_0000AULw3hHBVefzi3eibh,Ajmal Roshan,13.4,GBP,Credit,Bank Transfer,Food - dining & delivery,False
@@ -596,8 +596,8 @@ False,22/04/2023,tx_0000AUuPC5Soy2Y8Ba9T86,Starbucks,3.3,GBP,Debit,Debit Card,Un
 False,24/04/2023,tx_0000AUygWFSfyvq4vGtbU1,Rahul Subbaraman,9.0,GBP,Debit,Debit Card,Pot Transfer,True
 False,24/04/2023,tx_0000AUygva6gMOc6NNWZxR,Rahul Subbaraman,11.83,GBP,Credit,Debit Card,Pot Transfer,True
 False,26/04/2023,tx_0000AV1lsZvrdQXRjHAQPh,Circuit Laundry,7.8,GBP,Credit,Debit Card,Bills & Utilities,True
-False,26/04/2023,tx_0000AV32hBa5iyGw4d64e2,The University of Manchester,1472.33,GBP,Credit,Debit Card,Income - Stipend,False
-False,26/04/2023,tx_0000AV32jhlr0z6BvD04Ml,The University of Manchester,153.54,GBP,Credit,Debit Card,Income - Stipend,False
+False,26/04/2023,tx_0000AV32hBa5iyGw4d64e2,The University of Manchester,1472.33,GBP,Credit,Bank Transfer,Income - Stipend,False
+False,26/04/2023,tx_0000AV32jhlr0z6BvD04Ml,The University of Manchester,153.54,GBP,Credit,Bank Transfer,Income - UoM GTA,False
 False,26/04/2023,tx_0000AV32qOTn8boOW0yqTB,Regular Savings Pot,1625.0,GBP,Debit,Debit Card,Pot Transfer,True
 False,27/04/2023,tx_0000AV4e3S5qu4ujMMt638,Google,1.59,GBP,Debit,Debit Card,Subscriptions,True
 False,27/04/2023,tx_0000AV4jxAbjbNuJtopEp7,Trainline,34.49,GBP,Debit,Debit Card,Trip Expenses,True
@@ -669,7 +669,7 @@ False,23/05/2023,tx_0000AVx4Vnnaszh74UnXYg,Trainline,21.09,GBP,Debit,Debit Card,
 False,23/05/2023,tx_0000AVxH36sCBk3w9tpwxO,Wphi Cic,4.0,GBP,Debit,Debit Card,Entertainment,True
 False,24/05/2023,tx_0000AVxxz5EicyumVqQR8L,Stagecoach,2.0,GBP,Debit,Debit Card,Local Transport,True
 False,24/05/2023,tx_0000AVy0F4RZXi1XIqcgeP,Stagecoach,1.8,GBP,Debit,Debit Card,Local Transport,True
-False,24/05/2023,tx_0000AVz4prDMHkxkDIC23Y,The University of Manchester,1472.33,GBP,Credit,Debit Card,Income - Stipend,False
+False,24/05/2023,tx_0000AVz4prDMHkxkDIC23Y,The University of Manchester,1472.33,GBP,Credit,Bank Transfer,Income - Stipend,False
 False,24/05/2023,tx_0000AVz4tEqEtfcdCbRjdb,Regular Savings Pot,1472.33,GBP,Debit,Debit Card,Pot Transfer,True
 False,24/05/2023,tx_0000AVzDCDN9NnC3Rxaexd,Amazon Marketplace,7.24,GBP,Debit,Debit Card,Uncategorised,False
 False,24/05/2023,tx_0000AVzDo586TdjkNYxmin,Sainsbury’s,3.5,GBP,Debit,Debit Card,Groceries & Home Needs,True
@@ -681,7 +681,7 @@ False,25/05/2023,tx_0000AW0Stw6gd5leeIUSK9,Stagecoach,1.8,GBP,Debit,Debit Card,L
 False,25/05/2023,tx_0000AW0XdjZtwXAevfFUEj,Nisa Yesilgul,12.72,GBP,Credit,Debit Card,Uncategorised,False
 False,25/05/2023,tx_0000AW1oY4ubbWC7lncdyU,Stagecoach,2.0,GBP,Debit,Debit Card,Local Transport,True
 False,26/05/2023,tx_0000AW2wTnmiKngVNNOPCc,House Of Habes,6.5,GBP,Debit,Debit Card,Food - dining & delivery,True
-False,26/05/2023,tx_0000AW3GiBENxN5b90GEVd,The University of Manchester,153.54,GBP,Credit,Debit Card,Income - Stipend,False
+False,26/05/2023,tx_0000AW3GiBENxN5b90GEVd,The University of Manchester,153.54,GBP,Credit,Bank Transfer,Income - UoM GTA,False
 False,26/05/2023,tx_0000AW3Gl0IL4d1ZA2RjfN,Regular Savings Pot,153.54,GBP,Debit,Debit Card,Pot Transfer,True
 False,26/05/2023,tx_0000AW3PySzGbfGkLP12dW,Gong Cha Oxford Road,5.5,GBP,Debit,Debit Card,Food - dining & delivery,True
 False,26/05/2023,tx_0000AW3WSe1YjdtL7DtcUj,Morrisons,9.6,GBP,Debit,Debit Card,Groceries & Home Needs,True
@@ -749,7 +749,7 @@ False,18/06/2023,tx_0000AWoabyJQCmgic6gebR,Anshika Dasbajwa,7.62,GBP,Debit,Debit
 False,20/06/2023,tx_0000AWt1ddLsa581NjCo1h,Kro Bar,11.9,GBP,Debit,Debit Card,Food - dining & delivery,True
 False,21/06/2023,tx_0000AWvHRd1Py9w2rMXWx0,Regular Savings Pot,100.0,GBP,Credit,Debit Card,Pot Transfer,True
 False,21/06/2023,tx_0000AWvJQ1kpFAqsCUrR5d,Morrisons,21.94,GBP,Debit,Debit Card,Groceries & Home Needs,True
-False,22/06/2023,tx_0000AWwbjXp6EGDv8ZIEE5,Northern Trains,9.1,GBP,Debit,Debit Card,Uncategorised,False
+False,22/06/2023,tx_0000AWwbjXp6EGDv8ZIEE5,Northern Trains,9.1,GBP,Debit,Debit Card,Local Transport,True
 False,23/06/2023,tx_0000AWy33g1iKXg1m63Uvp,Amazon,7.24,GBP,Credit,Debit Card,Shopping,True
 False,23/06/2023,tx_0000AWyzQJADILn9d9yNP7,Anshika Dasbajwa,2.5,GBP,Debit,Debit Card,Uncategorised,False
 False,24/06/2023,tx_0000AX0FpvE2iCQUELz4aH,Trainline,4.35,GBP,Credit,Debit Card,Trip Expenses,True
@@ -763,8 +763,8 @@ False,27/06/2023,tx_0000AX75PE8aeOUx2WUqZd,Google,1.59,GBP,Debit,Debit Card,Subs
 False,28/06/2023,tx_0000AX99Q3Jv8svxyyJ2bR,Stagecoach,1.8,GBP,Debit,Debit Card,Local Transport,True
 False,28/06/2023,tx_0000AX99kZ2AwPHv8U1P8L,Lebara,2.78,GBP,Debit,Debit Card,Bills & Utilities,True
 False,28/06/2023,tx_0000AX9KrexoOMu9IranXF,Stagecoach,2.0,GBP,Debit,Debit Card,Local Transport,True
-False,28/06/2023,tx_0000AX9eRjoZjQPpu1Bn9N,The University of Manchester,89.82,GBP,Credit,Debit Card,Income - Stipend,False
-False,29/06/2023,tx_0000AXAzXvOXskpQV5Gowz,Northern Trains,6.6,GBP,Debit,Debit Card,Uncategorised,False
+False,28/06/2023,tx_0000AX9eRjoZjQPpu1Bn9N,The University of Manchester,89.82,GBP,Credit,Bank Transfer,Income - UoM GTA,False
+False,29/06/2023,tx_0000AXAzXvOXskpQV5Gowz,Northern Trains,6.6,GBP,Debit,Debit Card,Local Transport,True
 False,29/06/2023,tx_0000AXBSGU1tGpNUvKP9tp,Oodles Noodles,16.5,GBP,Debit,Debit Card,Uncategorised,False
 False,29/06/2023,tx_0000AXBTbKrCfTFWz6Wymn,Lidl,16.27,GBP,Debit,Debit Card,Groceries & Home Needs,True
 False,29/06/2023,tx_0000AXBjBhk4YewZS9DPsY,Regular Savings Pot,89.82,GBP,Debit,Debit Card,Pot Transfer,True
@@ -818,7 +818,7 @@ False,12/07/2023,tx_0000AXcQeW44OwpKtS737R,Regular Savings Pot,200.0,GBP,Credit,
 False,12/07/2023,tx_0000AXcQg0yyw1JkStr3yc,Mountain Warehouse,54.98,GBP,Debit,Debit Card,Shopping,True
 False,12/07/2023,tx_0000AXcRWBXWvbeOtggPTd,Amazon,91.48,GBP,Debit,Debit Card,Shopping,True
 False,13/07/2023,tx_0000AXdu71qav414dodQbS,Stagecoach,2.0,GBP,Debit,Debit Card,Local Transport,True
-False,13/07/2023,tx_0000AXeTmGPbAbU79AldVR,Northern Trains,5.2,GBP,Debit,Debit Card,Uncategorised,False
+False,13/07/2023,tx_0000AXeTmGPbAbU79AldVR,Northern Trains,5.2,GBP,Debit,Debit Card,Local Transport,True
 False,13/07/2023,tx_0000AXf8WAZLDqlo9WmW4f,Mist LTD 88851xxx Nig,1.0,GBP,Debit,Debit Card,Uncategorised,False
 False,13/07/2023,tx_0000AXfETSaONXozD2q87H,Pepes Wilmslow Road,21.98,GBP,Debit,Debit Card,Food - dining & delivery,True
 False,14/07/2023,tx_0000AXfp8v6GrhuhXsLPU1,Stagecoach,2.0,GBP,Debit,Debit Card,Local Transport,True
@@ -853,8 +853,8 @@ False,26/07/2023,tx_0000AY60TnbS5JzDtVzKeR,Anika Dubey,1.8,GBP,Debit,Debit Card,
 False,27/07/2023,tx_0000AY7GoUnD0e8p7Pfk8q,Google,1.59,GBP,Debit,Debit Card,Subscriptions,True
 False,27/07/2023,tx_0000AY8B2O04egVPqW7TlZ,Habesha Bar,11.1,GBP,Debit,Debit Card,Uncategorised,False
 False,28/07/2023,tx_0000AY916SX6wIjOyxZMnq,Stagecoach,2.0,GBP,Debit,Debit Card,Local Transport,True
-False,28/07/2023,tx_0000AY9E1U88s8yyK5zRB5,Airbnb,34.0,GBP,Debit,Debit Card,Uncategorised,False
-False,28/07/2023,tx_0000AY9EERH6ndF2dLSRbG,Airbnb,5.0,GBP,Debit,Debit Card,Uncategorised,False
+False,28/07/2023,tx_0000AY9E1U88s8yyK5zRB5,Airbnb,34.0,GBP,Debit,Debit Card,Rent,True
+False,28/07/2023,tx_0000AY9EERH6ndF2dLSRbG,Airbnb,5.0,GBP,Debit,Debit Card,Rent,True
 False,28/07/2023,tx_0000AY9EuDC1XxAPEFXgf4,Transport for London,2.7,GBP,Debit,Debit Card,Trip Expenses,True
 False,28/07/2023,tx_0000AY9WMgaJYoQ1ivwlyz,Go South Coast,3.8,GBP,Debit,Debit Card,Local Transport,True
 False,28/07/2023,tx_0000AY9ywX1bNXCW84L5QA,Chatime,5.3,GBP,Debit,Debit Card,Food - dining & delivery,True
@@ -886,7 +886,7 @@ False,02/08/2023,tx_0000AYKX9Gar7ZSUNHzadw,Regular Savings Pot,100.0,GBP,Credit,
 False,03/08/2023,tx_0000AYLUSeph7QRU1n4N7Z,Lebara,2.78,GBP,Debit,Debit Card,Bills & Utilities,True
 False,03/08/2023,tx_0000AYMDiQmdcLKfwInpdh,Lidl,1.0,GBP,Debit,Debit Card,Groceries & Home Needs,True
 False,03/08/2023,tx_0000AYMElXl8EofabGwRlZ,Morrisons,3.04,GBP,Debit,Debit Card,Groceries & Home Needs,True
-False,03/08/2023,tx_0000AYMO76M3ht0iRqVPZx,Airbnb,35.4,GBP,Debit,Debit Card,Uncategorised,False
+False,03/08/2023,tx_0000AYMO76M3ht0iRqVPZx,Airbnb,35.4,GBP,Debit,Debit Card,Rent,True
 False,04/08/2023,tx_0000AYOcUq5HdhS2KloYbZ,Chitnchaat,17.9,GBP,Debit,Debit Card,Food - dining & delivery,True
 False,05/08/2023,tx_0000AYPEWIWHCQKnCpZWNO,Mountain Warehouse,23.49,GBP,Credit,Debit Card,Shopping,True
 False,05/08/2023,tx_0000AYPewkG1I6KliICyGn,Morrisons,3.5,GBP,Debit,Debit Card,Groceries & Home Needs,True
@@ -908,11 +908,11 @@ False,09/08/2023,tx_0000AYYRMT7hy3IdB6DSgD,Regular Savings Pot,488.0,GBP,Credit,
 False,09/08/2023,tx_0000AYYSgTXMEsEulzOMlN,Q3,150.0,GBP,Debit,Debit Card,Rent,True
 False,09/08/2023,tx_0000AYYSpEDGaBykuGM8Gn,Q3,488.0,GBP,Debit,Debit Card,Rent,True
 False,09/08/2023,tx_0000AYYT48SSGJFfGWEbL7,Regular Savings Pot,156.0,GBP,Credit,Debit Card,Pot Transfer,True
-False,09/08/2023,tx_0000AYYTEAjIfdSl9jHmoz,Airbnb,156.0,GBP,Debit,Debit Card,Uncategorised,False
+False,09/08/2023,tx_0000AYYTEAjIfdSl9jHmoz,Airbnb,156.0,GBP,Debit,Debit Card,Rent,True
 False,09/08/2023,tx_0000AYYTU8kFojPgGvL8rZ,Regular Savings Pot,260.0,GBP,Credit,Debit Card,Pot Transfer,True
 False,09/08/2023,tx_0000AYYTVCaH1sHAxlwbRZ,Min Soc Bursary Pot,260.0,GBP,Debit,Debit Card,Uncategorised,False
 False,09/08/2023,tx_0000AYYU9b2tV6tgfZbC7t,Regular Savings Pot,200.0,GBP,Credit,Debit Card,Pot Transfer,True
-False,09/08/2023,tx_0000AYYUIozp0EaRL6k5Fy,Airbnb,141.6,GBP,Debit,Debit Card,Uncategorised,False
+False,09/08/2023,tx_0000AYYUIozp0EaRL6k5Fy,Airbnb,141.6,GBP,Debit,Debit Card,Rent,True
 False,11/08/2023,tx_0000AYc7Hm0r5XJUGEsdwf,Morrisons,4.7,GBP,Debit,Debit Card,Groceries & Home Needs,True
 False,11/08/2023,tx_0000AYc7Qwre712KWRwp5V,ATM,20.0,GBP,Debit,Debit Card,Uncategorised,False
 False,11/08/2023,tx_0000AYcBYQqbQw3kacQ8aR,Trainline,2.7,GBP,Debit,Debit Card,Trip Expenses,True
@@ -937,15 +937,15 @@ False,18/08/2023,tx_0000AYq8YHtp7fMwYRVwsE,Amazon,9.99,GBP,Credit,Debit Card,Sho
 False,19/08/2023,tx_0000AYt4gyNFGpw0IEDFVE,Halendismidstodin,9.24,GBP,Debit,Debit Card,Uncategorised,False
 False,19/08/2023,tx_0000AYtb1p8tz6IyNUNzyz,icelandia.com - pos bs,6.56,GBP,Debit,Debit Card,Uncategorised,False
 False,19/08/2023,tx_0000AYtmRVGPcCuY1dzhQY,Xich Lo Express,13.06,GBP,Debit,Debit Card,Uncategorised,False
-False,20/08/2023,tx_0000AYv9VmEWxMMxFkGbHF,Northern Trains,3.0,GBP,Debit,Debit Card,Uncategorised,False
+False,20/08/2023,tx_0000AYv9VmEWxMMxFkGbHF,Northern Trains,3.0,GBP,Debit,Debit Card,Local Transport,True
 False,20/08/2023,tx_0000AYvGiGxhEYoxrpjbQv,Stagecoach,2.0,GBP,Debit,Debit Card,Local Transport,True
 False,20/08/2023,tx_0000AYvLn1Mv8UDX9oNTxx,Morrisons,1.85,GBP,Debit,Debit Card,Groceries & Home Needs,True
 False,20/08/2023,tx_0000AYvMBDj6qDIG2Nbn51,McDonald’s,6.97,GBP,Debit,Debit Card,Food - dining & delivery,True
 False,20/08/2023,tx_0000AYvnuyMR04W8rhThg1,Tesco,11.65,GBP,Debit,Debit Card,Uncategorised,False
 False,20/08/2023,tx_0000AYvo2ByqlGNIr0pFzt,Tesco,0.3,GBP,Debit,Debit Card,Uncategorised,False
-False,21/08/2023,tx_0000AYx2uUCwnklR60iRtZ,The University of Manchester,10.0,GBP,Debit,Debit Card,Income - Stipend,False
+False,21/08/2023,tx_0000AYx2uUCwnklR60iRtZ,The University of Manchester,10.0,GBP,Debit,Debit Card,Others,False
 False,21/08/2023,tx_0000AYxWgAsMsTE6nmTPwP,Babylon,10.0,GBP,Debit,Debit Card,Food - dining & delivery,True
-False,21/08/2023,tx_0000AYxeDkskjB78KJrPs1,Northern Trains,2.1,GBP,Debit,Debit Card,Uncategorised,False
+False,21/08/2023,tx_0000AYxeDkskjB78KJrPs1,Northern Trains,2.1,GBP,Debit,Debit Card,Local Transport,True
 False,21/08/2023,tx_0000AYxjX0eOpACw4SwIW9,Kro Bar,4.9,GBP,Debit,Debit Card,Food - dining & delivery,True
 False,21/08/2023,tx_0000AYy4GxXMjMFTxWLFw2,Min Soc Bursary Pot,122.88,GBP,Debit,Debit Card,Uncategorised,False
 False,22/08/2023,tx_0000AYzlEVOWsoMKUhPtre,Morrisons,3.12,GBP,Debit,Debit Card,Groceries & Home Needs,True
@@ -955,9 +955,9 @@ False,24/08/2023,tx_0000AZ4CvNiMmtF2hZdaSH,Ananya Singh,4.0,GBP,Credit,Debit Car
 False,25/08/2023,tx_0000AZ5J8j8RFfKqGkUYtv,Wetherspoon,4.04,GBP,Debit,Debit Card,Uncategorised,False
 False,25/08/2023,tx_0000AZ5h3OLHWt0pAxjx9V,Regular Savings Pot,100.0,GBP,Credit,Debit Card,Pot Transfer,True
 False,25/08/2023,tx_0000AZ5zuAZfFOxUp56JCD,Farah Ahmed,5.98,GBP,Debit,Debit Card,Uncategorised,False
-False,27/08/2023,tx_0000AZ9b6LI7VUu1JYRT1d,Airbnb,25.0,GBP,Credit,Debit Card,Uncategorised,False
+False,27/08/2023,tx_0000AZ9b6LI7VUu1JYRT1d,Airbnb,25.0,GBP,Credit,Debit Card,Rent,True
 False,27/08/2023,tx_0000AZ9m0kHmlPol9EgnfX,Eindhoven Mcairport,9.23,GBP,Debit,Debit Card,Uncategorised,False
-False,27/08/2023,tx_0000AZA78uemBg15wXLysM,Northern Trains,2.6,GBP,Debit,Debit Card,Uncategorised,False
+False,27/08/2023,tx_0000AZA78uemBg15wXLysM,Northern Trains,2.6,GBP,Debit,Debit Card,Local Transport,True
 False,27/08/2023,tx_0000AZA7VnA0DzjuqCCh86,WHSmith,4.99,GBP,Debit,Debit Card,Uncategorised,False
 False,27/08/2023,tx_0000AZA9S8bGlnGp651sBt,Google,15.99,GBP,Debit,Debit Card,Subscriptions,True
 False,27/08/2023,tx_0000AZACBDyRpvuMCkTbIQ,Stagecoach,2.0,GBP,Debit,Debit Card,Local Transport,True
@@ -968,7 +968,7 @@ False,28/08/2023,tx_0000AZCDFJCWphYNxISOKf,Regular Savings Pot,122.88,GBP,Debit,
 False,29/08/2023,tx_0000AZDs69P6BDAmESvcPb,Manchester Circle,7.0,GBP,Debit,Debit Card,Uncategorised,False
 False,29/08/2023,tx_0000AZEBSsx9PMMw2T9Bjd,Ajmal Roshan,22.81,GBP,Debit,Debit Card,Uncategorised,False
 False,30/08/2023,tx_0000AZFgqyaTP2VzEFqHE9,Tim Hortons,3.49,GBP,Debit,Debit Card,Food - dining & delivery,True
-False,30/08/2023,tx_0000AZGKVpOsMTpfBSdlI1,The University of Manchester,1472.33,GBP,Credit,Debit Card,Income - Stipend,False
+False,30/08/2023,tx_0000AZGKVpOsMTpfBSdlI1,The University of Manchester,1472.33,GBP,Credit,Bank Transfer,Income - Stipend,False
 False,30/08/2023,tx_0000AZGKZuwzfRf4wPRJyr,Regular Savings Pot,1472.33,GBP,Debit,Debit Card,Pot Transfer,True
 False,31/08/2023,tx_0000AZHhVKd3GDx1aTpLHN,Morrisons,11.78,GBP,Debit,Debit Card,Groceries & Home Needs,True
 False,31/08/2023,tx_0000AZIHdmeiXQe7Xw4jTd,Chris Horton,6.95,GBP,Debit,Debit Card,Uncategorised,False
@@ -992,7 +992,7 @@ False,03/09/2023,tx_0000AZOuP9irYWlNlh6FvO,Tesco,6.35,GBP,Debit,Debit Card,Uncat
 False,04/09/2023,tx_0000AZQ7OGNIpYtrAj98vB,Regular Savings Pot,100.0,GBP,Credit,Debit Card,Pot Transfer,True
 False,04/09/2023,tx_0000AZQ7QShBze41k4rcLy,Morrisons,16.2,GBP,Debit,Debit Card,Groceries & Home Needs,True
 False,04/09/2023,tx_0000AZQDfdm9gCc5DbUPZa,Asda,24.45,GBP,Debit,Debit Card,Groceries & Home Needs,True
-False,04/09/2023,tx_0000AZQIE4G27uYhpTvWjp,The University of Manchester,10.0,GBP,Debit,Debit Card,Income - Stipend,False
+False,04/09/2023,tx_0000AZQIE4G27uYhpTvWjp,The University of Manchester,10.0,GBP,Debit,Debit Card,Others,False
 False,04/09/2023,tx_0000AZQZYv7N09VlRrX17b,DASBAJWA A,2.29,GBP,Credit,Debit Card,Uncategorised,False
 False,05/09/2023,tx_0000AZReluOZh0J56FJkSi,Asda,41.8,GBP,Credit,Debit Card,Groceries & Home Needs,True
 False,05/09/2023,tx_0000AZSA64As8pYq8wR3bu,Amazon,14.0,GBP,Debit,Debit Card,Shopping,True
@@ -1008,11 +1008,11 @@ False,07/09/2023,tx_0000AZWEYnVqLSi4yFbXoQ,Circuit Laundry,10.6,GBP,Debit,Debit 
 False,07/09/2023,tx_0000AZWbnCjTfmYGGqdjgP,Benugo @ University of Manchester,3.0,GBP,Debit,Debit Card,Food - dining & delivery,True
 False,09/09/2023,tx_0000AZaOSEaJ4PvTi8swOy,Regular Savings Pot,100.0,GBP,Credit,Debit Card,Pot Transfer,True
 False,09/09/2023,tx_0000AZaOTnG7dY5YzaA9R3,Ryanair,121.98,GBP,Debit,Debit Card,Uncategorised,False
-False,09/09/2023,tx_0000AZaa3o0PRBpmY7ACQb,Northern Trains,2.1,GBP,Debit,Debit Card,Uncategorised,False
+False,09/09/2023,tx_0000AZaa3o0PRBpmY7ACQb,Northern Trains,2.1,GBP,Debit,Debit Card,Local Transport,True
 False,09/09/2023,tx_0000AZabInIWS2lOuyUAld,Spotify,5.99,GBP,Debit,Debit Card,Subscriptions,True
 False,09/09/2023,tx_0000AZb9XgmWME3SBsMIj3,Bee Network,4.3,GBP,Debit,Debit Card,Local Transport,True
 False,09/09/2023,tx_0000AZbDtopnUtUMzJCIja,Stagecoach,2.0,GBP,Debit,Debit Card,Local Transport,True
-False,09/09/2023,tx_0000AZbKTW7V9blglTom3f,Northern Trains,17.9,GBP,Debit,Debit Card,Uncategorised,False
+False,09/09/2023,tx_0000AZbKTW7V9blglTom3f,Northern Trains,17.9,GBP,Debit,Debit Card,Trip Expenses,False
 False,10/09/2023,tx_0000AZcOnxoIVQJ7PXnh6v,Sainsbury’s,2.45,GBP,Debit,Debit Card,Groceries & Home Needs,True
 False,10/09/2023,tx_0000AZcmyvMKMCpSkvnflp,The Penny Pot Cafe,2.0,GBP,Debit,Debit Card,Uncategorised,False
 False,10/09/2023,tx_0000AZdLGht0aJaQAyIcvi,Temu,0.03,GBP,Debit,Debit Card,Uncategorised,False
@@ -1040,7 +1040,7 @@ False,16/09/2023,tx_0000AZpwJ4COcqjoKQgGOY,Rai Vending P4m,2.46,GBP,Debit,Debit 
 False,17/09/2023,tx_0000AZrOcjHT6Ht7vt8Hcv,Lsp Sano,22.92,GBP,Debit,Debit Card,Uncategorised,False
 False,17/09/2023,tx_0000AZrOpB8HNEkRL6JYEk,Regular Savings Pot,100.0,GBP,Credit,Debit Card,Pot Transfer,True
 False,18/09/2023,tx_0000AZtQQ0LquPoct4hsyQ,Bs Central Portal,6.01,GBP,Debit,Debit Card,Uncategorised,False
-False,18/09/2023,tx_0000AZtmatZMfA4B6GhdNh,Northern Trains,2.1,GBP,Debit,Debit Card,Uncategorised,False
+False,18/09/2023,tx_0000AZtmatZMfA4B6GhdNh,Northern Trains,2.1,GBP,Debit,Debit Card,Local Transport,True
 False,19/09/2023,tx_0000AZumqU8JCFspUrjDBx,Ryanair,2.59,GBP,Debit,Debit Card,Uncategorised,False
 False,19/09/2023,tx_0000AZvbfJxrl34kXI8yWH,Morrisons,18.73,GBP,Debit,Debit Card,Groceries & Home Needs,True
 False,19/09/2023,tx_0000AZvnLkU4eFTKCKKbFh,Temu,0.89,GBP,Debit,Debit Card,Uncategorised,False
@@ -1049,7 +1049,7 @@ False,20/09/2023,tx_0000AZwVEoX7ahjkrGhnPe,Temu,0.03,GBP,Credit,Debit Card,Uncat
 False,20/09/2023,tx_0000AZwVF4KEsNndoKfBej,Temu,2.33,GBP,Credit,Debit Card,Uncategorised,False
 False,20/09/2023,tx_0000AZwVF8MrqXQ0NG3tCr,Temu,1.28,GBP,Credit,Debit Card,Uncategorised,False
 False,20/09/2023,tx_0000AZxC4bzPfZKCISa3hh,Regular Savings Pot,63.21,GBP,Debit,Debit Card,Pot Transfer,True
-False,20/09/2023,tx_0000AZxkxUEZbQKA9vkD5O,The University of Manchester,1551.86,GBP,Credit,Debit Card,Income - Stipend,False
+False,20/09/2023,tx_0000AZxkxUEZbQKA9vkD5O,The University of Manchester,1551.86,GBP,Credit,Bank Transfer,Income - Stipend,False
 False,20/09/2023,tx_0000AZxkzs6BqRMzCsE3Hd,Regular Savings Pot,1551.86,GBP,Debit,Debit Card,Pot Transfer,True
 False,20/09/2023,tx_0000AZxs6jzZ5FSFlnLirq,Regular Savings Pot,2058.0,GBP,Credit,Debit Card,Pot Transfer,True
 False,20/09/2023,tx_0000AZxsBIzKuTi4FD5MG1,Q3,2058.0,GBP,Debit,Debit Card,Rent,True
@@ -1069,8 +1069,8 @@ False,26/09/2023,tx_0000AaATVNUNujDkObchHN,Morrisons,3.22,GBP,Debit,Debit Card,G
 False,27/09/2023,tx_0000AaCW93B1RUIoIyzTQf,Umami | うまみ,8.96,GBP,Debit,Debit Card,Food - dining & delivery,True
 False,27/09/2023,tx_0000AaCYGPEq15I3b1BBWz,Morrisons,6.48,GBP,Debit,Debit Card,Groceries & Home Needs,True
 False,28/09/2023,tx_0000AaD5SoRvPAvJkVpAfJ,Temu,0.89,GBP,Credit,Debit Card,Uncategorised,False
-False,29/09/2023,tx_0000AaGUQo1t4lpDMmL4ZV,Tesco Petrol,2.55,GBP,Debit,Debit Card,Uncategorised,False
-False,29/09/2023,tx_0000AaGp2qcps31h31WI7N,Tesco Petrol,2.6,GBP,Debit,Debit Card,Uncategorised,False
+False,29/09/2023,tx_0000AaGUQo1t4lpDMmL4ZV,Tesco Petrol,2.55,GBP,Debit,Debit Card,Groceries & Home Needs,True
+False,29/09/2023,tx_0000AaGp2qcps31h31WI7N,Tesco Petrol,2.6,GBP,Debit,Debit Card,Groceries & Home Needs,True
 False,30/09/2023,tx_0000AaI0fqoGPdQA0wrhzN,Morrisons,1.02,GBP,Debit,Debit Card,Groceries & Home Needs,True
 False,30/09/2023,tx_0000AaIG55WeKpZGk0hOY0,Kargo MKT,11.99,GBP,Debit,Debit Card,Uncategorised,False
 False,30/09/2023,tx_0000AaIQeKU9hoo4AYYHj7,Stagecoach,2.0,GBP,Debit,Debit Card,Local Transport,True
@@ -1084,7 +1084,7 @@ False,02/10/2023,tx_0000AaMN9vOktNALTAYw7v,Regular Savings Pot,100.0,GBP,Credit,
 False,02/10/2023,tx_0000AaMNwG4rJKAQgPQZMX,Monkey Trio Lt,14.0,GBP,Debit,Debit Card,Uncategorised,False
 False,02/10/2023,tx_0000AaMV4q4G5BunlqqCS9,Regular Savings Pot,400.0,GBP,Credit,Debit Card,Pot Transfer,True
 False,02/10/2023,tx_0000AaMV86XfHvbOGPUsvx,Anshika Dasbajwa,400.0,GBP,Debit,Debit Card,Uncategorised,False
-False,02/10/2023,tx_0000AaMqeuvtZOASTBv0Nd,Tesco Petrol,7.7,GBP,Debit,Debit Card,Uncategorised,False
+False,02/10/2023,tx_0000AaMqeuvtZOASTBv0Nd,Tesco Petrol,7.7,GBP,Debit,Debit Card,Groceries & Home Needs,True
 False,03/10/2023,tx_0000AaNzOITZsRBLLf2d7J,Circuit Laundry,11.8,GBP,Debit,Debit Card,Bills & Utilities,True
 False,03/10/2023,tx_0000AaOg36zXg1JkEaQgZl,Pret,3.45,GBP,Debit,Debit Card,Food - dining & delivery,True
 False,03/10/2023,tx_0000AaOrvbCoel8LqSthEf,Manchester Su,3.0,GBP,Debit,Debit Card,Entertainment,True
@@ -1096,7 +1096,7 @@ False,04/10/2023,tx_0000AaR04ygBwGFPriUQdt,Palmyra,5.5,GBP,Debit,Debit Card,Unca
 False,05/10/2023,tx_0000AaSc5750hI5hJdiOJN,Tortilla,8.28,GBP,Debit,Debit Card,Uncategorised,False
 False,06/10/2023,tx_0000AaULtxeuArC2nWRmFO,Kro Bar,6.5,GBP,Debit,Debit Card,Food - dining & delivery,True
 False,06/10/2023,tx_0000AaUXtVA1KR6mCs8HTO,Kavya Girish,17.65,GBP,Credit,Debit Card,Uncategorised,False
-False,06/10/2023,tx_0000AaVIYUutjhcbinlL1N,Tesco Petrol,5.8,GBP,Debit,Debit Card,Uncategorised,False
+False,06/10/2023,tx_0000AaVIYUutjhcbinlL1N,Tesco Petrol,5.8,GBP,Debit,Debit Card,Groceries & Home Needs,True
 False,07/10/2023,tx_0000AaWvT7LE3HzHlHCFkJ,Morrisons,15.67,GBP,Debit,Debit Card,Groceries & Home Needs,True
 False,07/10/2023,tx_0000AaWx69Zfmd2yMcCLYp,Lidl,3.28,GBP,Debit,Debit Card,Groceries & Home Needs,True
 False,07/10/2023,tx_0000AaWz2WXEfqTuKDSHNy,Worldwide Foods Rushol,2.9,GBP,Debit,Debit Card,Groceries & Home Needs,True
@@ -1140,7 +1140,7 @@ False,19/10/2023,tx_0000AavqqYXPSZBLHxA6G9,Monira Jahan,14.4,GBP,Credit,Debit Ca
 False,20/10/2023,tx_0000Aay4XPSklR7sjbpo8n,Vue,6.5,GBP,Debit,Debit Card,Uncategorised,False
 False,20/10/2023,tx_0000AayTUSKi8KtQfW84or,Sainsbury’s,5.0,GBP,Debit,Debit Card,Groceries & Home Needs,True
 False,21/10/2023,tx_0000Ab0RsyZa6gq7YA4oDJ,Stagecoach,2.0,GBP,Debit,Debit Card,Local Transport,True
-False,22/10/2023,tx_0000Ab1RGjSI3lDFHfsmHa,Northern Trains,14.7,GBP,Debit,Debit Card,Uncategorised,False
+False,22/10/2023,tx_0000Ab1RGjSI3lDFHfsmHa,Northern Trains,14.7,GBP,Debit,Debit Card,Local Transport,True
 False,22/10/2023,tx_0000Ab1RZVHD040GWPBckD,DEEPTE BHARDWAJ,8.85,GBP,Credit,Debit Card,Uncategorised,False
 False,22/10/2023,tx_0000Ab1YHjB7H4pyyLiEvC,Stagecoach,1.8,GBP,Debit,Debit Card,Local Transport,True
 False,22/10/2023,tx_0000Ab1YK2Ahd2TUSTcQd7,Stagecoach,1.8,GBP,Debit,Debit Card,Local Transport,True
@@ -1158,9 +1158,9 @@ False,25/10/2023,tx_0000Ab8EhQy6xitGjq4b1l,Tesco,2.3,GBP,Debit,Debit Card,Uncate
 False,25/10/2023,tx_0000Ab8F1tsfB3YGVmOLx3,Lidl,2.22,GBP,Debit,Debit Card,Groceries & Home Needs,True
 False,25/10/2023,tx_0000Ab8FgkuLRWxeYVexk1,Worldwide Foods Rushol,5.17,GBP,Debit,Debit Card,Groceries & Home Needs,True
 False,25/10/2023,tx_0000Ab8G9jYrWolJqfKSaf,Tesco,2.2,GBP,Debit,Debit Card,Uncategorised,False
-False,25/10/2023,tx_0000Ab8HGDlQFTSNcCY29R,Tesco Petrol,2.2,GBP,Debit,Debit Card,Uncategorised,False
+False,25/10/2023,tx_0000Ab8HGDlQFTSNcCY29R,Tesco Petrol,2.2,GBP,Debit,Debit Card,Groceries & Home Needs,True
 False,25/10/2023,tx_0000Ab8KGr8YA0UfBgfnfO,ANISIMOVA Y,8.5,GBP,Credit,Debit Card,Uncategorised,False
-False,25/10/2023,tx_0000Ab8KJUKvO8fdp7b0Bm,The University of Manchester,1551.83,GBP,Credit,Debit Card,Income - Stipend,False
+False,25/10/2023,tx_0000Ab8KJUKvO8fdp7b0Bm,The University of Manchester,1551.83,GBP,Credit,Bank Transfer,Income - Stipend,False
 False,25/10/2023,tx_0000Ab8KMmC7Rui9fKvnqF,Regular Savings Pot,1601.83,GBP,Debit,Debit Card,Pot Transfer,True
 False,25/10/2023,tx_0000Ab8NywgTCIO9OnwP0T,MISS F FRADGLEY,8.5,GBP,Credit,Debit Card,Uncategorised,False
 False,25/10/2023,tx_0000Ab8PpANXcsHRSVibTP,Yuliia Anisimova,2.2,GBP,Debit,Debit Card,Uncategorised,False
@@ -1183,7 +1183,7 @@ False,27/10/2023,tx_0000AbCFbk8Fg1RSldeWNW,Trainline,30.0,GBP,Debit,Debit Card,T
 False,27/10/2023,tx_0000AbCFjP45t5kZow0OMj,Trainline,43.77,GBP,Debit,Debit Card,Trip Expenses,True
 False,27/10/2023,tx_0000AbCFtX8OjyrOAbuwHi,Regular Savings Pot,100.0,GBP,Credit,Debit Card,Pot Transfer,True
 False,27/10/2023,tx_0000AbCG5opykOvHlYzEJP,Trainline,19.09,GBP,Debit,Debit Card,Trip Expenses,True
-False,27/10/2023,tx_0000AbCRosSXE8xkQIsqzx,The University of Manchester,210.8,GBP,Credit,Debit Card,Income - UoM GTA,False
+False,27/10/2023,tx_0000AbCRosSXE8xkQIsqzx,The University of Manchester,210.8,GBP,Credit,Bank Transfer,Income - UoM GTA,False
 False,27/10/2023,tx_0000AbCS2wiICseZ27K9AX,Earnings Pot,210.8,GBP,Debit,Debit Card,Pot Transfer,True
 False,27/10/2023,tx_0000AbCTTExT5zgFwm3HQ9,Kavya Girish,9.95,GBP,Credit,Debit Card,Uncategorised,False
 False,27/10/2023,tx_0000AbCTXjYHI70FvdyeDB,Regular Savings Pot,289.22,GBP,Credit,Debit Card,Pot Transfer,True
@@ -1270,7 +1270,7 @@ False,20/11/2023,tx_0000Ac0LbIKLMxnzsXfLOL,Kro Bar,3.95,GBP,Debit,Debit Card,Foo
 False,20/11/2023,tx_0000Ac0iYEG8KqPFL6Ch73,Monira Jahan,13.8,GBP,Debit,Debit Card,Uncategorised,False
 False,21/11/2023,tx_0000Ac2ehhC87137VTzes6,Regular Savings Pot,50.0,GBP,Credit,Debit Card,Pot Transfer,True
 False,21/11/2023,tx_0000Ac2epBMoKa7cS76eRN,Trainline,24.44,GBP,Debit,Debit Card,Trip Expenses,True
-False,22/11/2023,tx_0000Ac4dpUFMQOXZhgD5aV,Northern Trains,15.8,GBP,Debit,Debit Card,Uncategorised,False
+False,22/11/2023,tx_0000Ac4dpUFMQOXZhgD5aV,Northern Trains,15.8,GBP,Debit,Debit Card,Trip Expenses,False
 False,22/11/2023,tx_0000Ac4eLaON6zy7GHnmOg,Kavya Girish,7.9,GBP,Credit,Debit Card,Uncategorised,False
 False,23/11/2023,tx_0000Ac5rRibF0DIRv2Co7d,Regular Savings Pot,100.0,GBP,Credit,Debit Card,Pot Transfer,True
 False,23/11/2023,tx_0000Ac5raHwBV7p0SFOqjR,KLM,98.6,GBP,Debit,Debit Card,Uncategorised,False
@@ -1294,10 +1294,10 @@ False,26/11/2023,tx_0000AcDJ8lMQfbbQGXmxIg,Regular Savings Pot,50.0,GBP,Credit,D
 False,26/11/2023,tx_0000AcDJDnJip9CFQSeDS5,Mountain Warehouse,25.19,GBP,Debit,Debit Card,Shopping,True
 False,27/11/2023,tx_0000AcF5BTUuWzvy7mKOyP,Red Chili (Oxford Road,30.69,GBP,Debit,Debit Card,Uncategorised,False
 False,27/11/2023,tx_0000AcF5NgpInh1lsntFj8,Ananya Singh,16.61,GBP,Credit,Debit Card,Uncategorised,False
-False,28/11/2023,tx_0000AcGp05ycQmdeooewCH,The University of Manchester,210.8,GBP,Credit,Debit Card,Income - UoM GTA,False
+False,28/11/2023,tx_0000AcGp05ycQmdeooewCH,The University of Manchester,210.8,GBP,Credit,Bank Transfer,Income - UoM GTA,False
 False,28/11/2023,tx_0000AcGp1rDcGviRUdT9gf,Earnings Pot,210.8,GBP,Debit,Debit Card,Pot Transfer,True
 False,28/11/2023,tx_0000AcGqcJnTb0KT4vo8bh,Morrisons,8.65,GBP,Debit,Debit Card,Groceries & Home Needs,True
-False,29/11/2023,tx_0000AcIyqAlx8LWtUULGIj,The University of Manchester,1551.83,GBP,Credit,Debit Card,Income - Stipend,False
+False,29/11/2023,tx_0000AcIyqAlx8LWtUULGIj,The University of Manchester,1551.83,GBP,Credit,Bank Transfer,Income - Stipend,False
 False,29/11/2023,tx_0000AcIysexdrdQBMiut4j,Regular Savings Pot,1551.83,GBP,Debit,Debit Card,Pot Transfer,True
 False,29/11/2023,tx_0000AcJK7Ycnnn5gych75e,Regular Savings Pot,35.2,GBP,Credit,Debit Card,Pot Transfer,True
 False,29/11/2023,tx_0000AcJKFgm7Nq3UyPQkOv,Teleperformanceuk,35.2,GBP,Debit,Debit Card,Uncategorised,False
@@ -1364,24 +1364,24 @@ False,15/12/2023,tx_0000AcqOiHf4e53Vm6hxqs,Hot Buttered L,5.7,GBP,Debit,Debit Ca
 False,16/12/2023,tx_0000AcqkgmmKBFlDegOZaT,ANISIMOVA Y,14.0,GBP,Credit,Debit Card,Uncategorised,False
 False,16/12/2023,tx_0000AcscFEH1wvvQ0Ei3IP,Regular Savings Pot,50.0,GBP,Credit,Debit Card,Pot Transfer,True
 False,16/12/2023,tx_0000AcscQepZYEjfQpreYT,Vaisakh Vinod,26.09,GBP,Debit,Debit Card,Uncategorised,False
-False,16/12/2023,tx_0000AcsjrgvEaDNRPqLmpl,Northern Trains,31.7,GBP,Debit,Debit Card,Uncategorised,False
+False,16/12/2023,tx_0000AcsjrgvEaDNRPqLmpl,Northern Trains,31.7,GBP,Debit,Debit Card,Trip Expenses,False
 False,17/12/2023,tx_0000Acu2os5ugHxwjrdvJB,Ajmal Roshan,16.74,GBP,Credit,Debit Card,Uncategorised,False
 False,17/12/2023,tx_0000AcuQuzGVKZaMA6eZfd,Stagecoach,2.0,GBP,Debit,Debit Card,Local Transport,True
 False,18/12/2023,tx_0000AcvdFb4hrFo0XRnjcH,Transport for Greater Manchester,5.0,GBP,Debit,Debit Card,Local Transport,True
 False,18/12/2023,tx_0000Acw3uP4VzHuIzqKADp,Regular Savings Pot,50.0,GBP,Credit,Debit Card,Pot Transfer,True
 False,18/12/2023,tx_0000Acw3vEujEvmjCXZkZN,Vietnamese Foods Nw,59.8,GBP,Debit,Debit Card,Uncategorised,False
-False,18/12/2023,tx_0000Acw5o6dZoVWDM4XGOv,Northern Trains,21.7,GBP,Credit,Debit Card,Uncategorised,False
+False,18/12/2023,tx_0000Acw5o6dZoVWDM4XGOv,Northern Trains,21.7,GBP,Credit,Debit Card,Trip Expenses,False
 False,18/12/2023,tx_0000Acw5s3gYjLm3OuBArR,Regular Savings Pot,30.0,GBP,Debit,Debit Card,Pot Transfer,True
 False,18/12/2023,tx_0000Acw6eH8vzxp6RzvkAr,N Lam,15.2,GBP,Credit,Debit Card,Uncategorised,False
 False,18/12/2023,tx_0000Acw6hjtRYwVW5JuwFd,Leon Tandela,16.2,GBP,Credit,Debit Card,Uncategorised,False
 False,18/12/2023,tx_0000Acw8pnKSs7j1yGpvA9,Regular Savings Pot,33.12,GBP,Debit,Debit Card,Pot Transfer,True
 False,18/12/2023,tx_0000AcwGShAIQGzUozGVIP,Rekha Chhetri,13.2,GBP,Credit,Debit Card,Uncategorised,False
-False,18/12/2023,tx_0000AcwGWxpYP26rqqGXfF,The University of Manchester,1551.83,GBP,Credit,Debit Card,Income - Stipend,False
+False,18/12/2023,tx_0000AcwGWxpYP26rqqGXfF,The University of Manchester,1551.83,GBP,Credit,Bank Transfer,Income - Stipend,False
 False,18/12/2023,tx_0000AcwGcGHZE7Shkwyb2n,Regular Savings Pot,1551.83,GBP,Debit,Debit Card,Pot Transfer,True
 False,18/12/2023,tx_0000AcwbBdkJylx0KepArS,Sainsbury’s,5.35,GBP,Debit,Debit Card,Groceries & Home Needs,True
 False,19/12/2023,tx_0000AcxvjALNzibsSimsQT,Greggs,1.95,GBP,Debit,Debit Card,Food - dining & delivery,True
 False,19/12/2023,tx_0000AcyFLT0Ywr9UC0OTib,Rent Pot Pot,1456.91,GBP,Credit,Debit Card,Pot Transfer,True
-False,19/12/2023,tx_0000AcyN2CIFfV6xmciViT,The University of Manchester,356.75,GBP,Credit,Debit Card,Income - Stipend,False
+False,19/12/2023,tx_0000AcyN2CIFfV6xmciViT,The University of Manchester,356.75,GBP,Credit,Bank Transfer,Income - Stipend,False
 False,19/12/2023,tx_0000AcyN9KHUMuB3Zbk0wt,Earnings Pot,356.75,GBP,Debit,Debit Card,Pot Transfer,True
 False,19/12/2023,tx_0000AcyNPrspCj5SQ58fw2,studentfm.co.uk,1456.91,GBP,Debit,Debit Card,Rent,True
 False,20/12/2023,tx_0000AczBy13sa5f1DCVSF8,Manchester Su,1.0,GBP,Credit,Debit Card,Entertainment,True
@@ -1434,9 +1434,9 @@ False,02/01/2024,tx_0000AdRv8gyvVwKYyQ7bSz,Ritwick Sen,1.2,GBP,Debit,Debit Card,
 False,03/01/2024,tx_0000AdSlHAFPmcXb1WwQqn,Sainsbury’s,3.5,GBP,Debit,Debit Card,Groceries & Home Needs,True
 False,03/01/2024,tx_0000AdTxMT1Ko42rKbH9gf,Grain Barge,32.06,GBP,Debit,Debit Card,Uncategorised,False
 False,05/01/2024,tx_0000AdWLqMz4bJbSXUVOHx,Manchester Su,2.0,GBP,Credit,Debit Card,Entertainment,True
-False,05/01/2024,tx_0000AdWo8WIHWVCsVeVVtC,Northern Trains,1.0,GBP,Debit,Debit Card,Uncategorised,False
-False,05/01/2024,tx_0000AdWptBIZV7RixTSNAg,Northern Trains,1.55,GBP,Debit,Debit Card,Uncategorised,False
-False,05/01/2024,tx_0000AdWqWA63u2w5DuAGf4,Northern Trains,1.0,GBP,Debit,Debit Card,Uncategorised,False
+False,05/01/2024,tx_0000AdWo8WIHWVCsVeVVtC,Northern Trains,1.0,GBP,Debit,Debit Card,Local Transport,True
+False,05/01/2024,tx_0000AdWptBIZV7RixTSNAg,Northern Trains,1.55,GBP,Debit,Debit Card,Local Transport,True
+False,05/01/2024,tx_0000AdWqWA63u2w5DuAGf4,Northern Trains,1.0,GBP,Debit,Debit Card,Local Transport,True
 False,05/01/2024,tx_0000AdXnIxTXPcOAb8VHxC,Regular Savings Pot,25.0,GBP,Credit,Debit Card,Pot Transfer,True
 False,05/01/2024,tx_0000AdXo98v26vP1W8b3WU,Taco Bell,6.96,GBP,Debit,Debit Card,Uncategorised,False
 False,06/01/2024,tx_0000AdZ4o02PpLzzxRTIdV,First West of England,2.0,GBP,Debit,Debit Card,Uncategorised,False
@@ -1455,7 +1455,7 @@ False,08/01/2024,tx_0000AdeLz2mEebLQeJYTh3,DUDANI,10.14,GBP,Credit,Debit Card,Un
 False,09/01/2024,tx_0000AdgHmwUsAMb8uXpUdV,Ohio Fried Chicken Mcr,12.98,GBP,Debit,Debit Card,Uncategorised,False
 False,10/01/2024,tx_0000Adhic175YQcKKf2r8z,Max Spielmann,2.0,GBP,Debit,Debit Card,Uncategorised,False
 False,10/01/2024,tx_0000AdhsYNGGGXFLFoINLV,Cafe Manchester Museum,5.5,GBP,Debit,Debit Card,Uncategorised,False
-False,11/01/2024,tx_0000AdjYuBWKzM4iE21oBt,Northern Trains,7.9,GBP,Debit,Debit Card,Uncategorised,False
+False,11/01/2024,tx_0000AdjYuBWKzM4iE21oBt,Northern Trains,7.9,GBP,Debit,Debit Card,Local Transport,True
 False,11/01/2024,tx_0000Adk9USPTGiVDJdU1XW,Xc-240102-Bgvv,55.4,GBP,Credit,Debit Card,Uncategorised,False
 False,11/01/2024,tx_0000Adk9WJg6hhQrbXyKiw,Earnings Pot,50.0,GBP,Debit,Debit Card,Pot Transfer,True
 False,12/01/2024,tx_0000AdlWTxpLSyyCZLHNwp,Regular Savings Pot,50.0,GBP,Credit,Debit Card,Pot Transfer,True
@@ -1491,7 +1491,7 @@ False,22/01/2024,tx_0000Ae6u6zBsi1o1JRKMRn,Regular Savings Pot,25.0,GBP,Credit,D
 False,22/01/2024,tx_0000Ae6uToyiqOcFOtYG6k,Navarro Lounge,5.95,GBP,Debit,Debit Card,Uncategorised,False
 False,23/01/2024,tx_0000Ae8XopHqyywCE3Kxwv,Rent Pot Pot,2.07,GBP,Credit,Debit Card,Pot Transfer,True
 False,24/01/2024,tx_0000Ae9pNO8fnqgM4ugJph,Stagecoach,2.0,GBP,Debit,Debit Card,Local Transport,True
-False,24/01/2024,tx_0000AeAzuXPzW7SqjFtSzp,The University of Manchester,1551.83,GBP,Credit,Debit Card,Income - Stipend,False
+False,24/01/2024,tx_0000AeAzuXPzW7SqjFtSzp,The University of Manchester,1551.83,GBP,Credit,Bank Transfer,Income - Stipend,False
 False,24/01/2024,tx_0000AeAzwKPSqxa3pxfwHp,Regular Savings Pot,525.0,GBP,Credit,Debit Card,Pot Transfer,True
 False,24/01/2024,tx_0000AeAzxbHNcNx7SwFNRp,Temp Pot,525.0,GBP,Debit,Debit Card,Pot Transfer,True
 False,24/01/2024,tx_0000AeAzzWUyMcXEJjF08R,Regular Savings Pot,1551.83,GBP,Debit,Debit Card,Pot Transfer,True
@@ -1523,7 +1523,7 @@ False,28/01/2024,tx_0000AeJKbZqhuJNCY5w9fl,Shakesbeer,5.47,GBP,Debit,Debit Card,
 False,28/01/2024,tx_0000AeJPTUlHRF0kqFRWpF,Shakesbeer,2.82,GBP,Debit,Debit Card,Uncategorised,False
 False,29/01/2024,tx_0000AeKnaUvBpnuM1Mvg9q,McDonald’s,5.81,GBP,Debit,Debit Card,Food - dining & delivery,True
 False,29/01/2024,tx_0000AeL1WxaogwH4J7P30k,Temp Pot,50.0,GBP,Credit,Debit Card,Pot Transfer,True
-False,29/01/2024,tx_0000AeLMntIU0wNLe4J6Qr,The University of Manchester,210.8,GBP,Credit,Debit Card,Income - UoM GTA,False
+False,29/01/2024,tx_0000AeLMntIU0wNLe4J6Qr,The University of Manchester,210.8,GBP,Credit,Bank Transfer,Income - UoM GTA,False
 False,29/01/2024,tx_0000AeLMpXysErfpzKENPd,Earnings Pot,210.8,GBP,Debit,Debit Card,Pot Transfer,True
 False,29/01/2024,tx_0000AeLSix6f1VpREKNsjy,Sainsbury’s,2.9,GBP,Debit,Debit Card,Groceries & Home Needs,True
 False,30/01/2024,tx_0000AeMgeD2nvsZN9xvvGs,Lebara,6.95,GBP,Debit,Debit Card,Bills & Utilities,True
@@ -1551,7 +1551,7 @@ False,04/02/2024,tx_0000AeYLs9P2V8lVC9PNjw,Siv Sachin Shaji Deepa,1.49,GBP,Debit
 False,05/02/2024,tx_0000AeZwyUyD7PamhE7O9h,Regular Savings Pot,50.0,GBP,Credit,Debit Card,Pot Transfer,True
 False,05/02/2024,tx_0000AeZx19U7SNnDdIcSqg,Morrisons,20.86,GBP,Debit,Debit Card,Groceries & Home Needs,True
 False,05/02/2024,tx_0000AeZxEQtQ2se4aS9rsZ,Sainsbury’s,1.0,GBP,Debit,Debit Card,Groceries & Home Needs,True
-False,06/02/2024,tx_0000Aealb4EjRUCygk76Qu,THE UNI OF MANCHES,140.0,GBP,Credit,Debit Card,Uncategorised,False
+False,06/02/2024,tx_0000Aealb4EjRUCygk76Qu,THE UNI OF MANCHES,140.0,GBP,Credit,Bank Transfer,Others,False
 False,06/02/2024,tx_0000AealeyK5N4lN6Gca8n,Earnings Pot,140.0,GBP,Debit,Debit Card,Pot Transfer,True
 False,06/02/2024,tx_0000AecDyWRNjpXw8b6d17,Shawarma Abo Al Abed,17.35,GBP,Debit,Debit Card,Uncategorised,False
 False,07/02/2024,tx_0000AedHSqUmEXc2hsa6y3,Rahul Subbaraman,9.99,GBP,Debit,Debit Card,Pot Transfer,True
@@ -1602,7 +1602,7 @@ False,24/02/2024,tx_0000AfD5YNknnolyu6xSV7,Siv Sachin Shaji Deepa,27.56,GBP,Debi
 False,26/02/2024,tx_0000AfH1aBkrlMEke8O9NC,DOWLI J,51.75,GBP,Credit,Debit Card,Uncategorised,False
 False,26/02/2024,tx_0000AfH1tCASS6XgaNjjeL,Earnings Pot,51.75,GBP,Debit,Debit Card,Pot Transfer,True
 False,27/02/2024,tx_0000AfIHl0vOA9YjGPr7iO,THE UNI OF MANCHES,55.86,GBP,Credit,Debit Card,Uncategorised,False
-False,27/02/2024,tx_0000AfJRKz1VnnZE4EmVhy,The University of Manchester,199.34,GBP,Credit,Debit Card,Income - Stipend,False
+False,27/02/2024,tx_0000AfJRKz1VnnZE4EmVhy,The University of Manchester,199.34,GBP,Credit,Bank Transfer,Income - Stipend,False
 False,27/02/2024,tx_0000AfJT6I2D2KiapHnAB8,Earnings Pot,255.2,GBP,Debit,Debit Card,Pot Transfer,True
 False,27/02/2024,tx_0000AfJTtvpXrjRNaWFDlZ,Regular Savings Pot,178.45,GBP,Credit,Debit Card,Pot Transfer,True
 False,27/02/2024,tx_0000AfJTuwVAr2xs4ne3dp,Earnings Pot,178.45,GBP,Debit,Debit Card,Pot Transfer,True
@@ -1612,7 +1612,7 @@ False,27/02/2024,tx_0000AfJVYIYIuBy0RrHraD,,5.0,GBP,Debit,Debit Card,Uncategoris
 False,27/02/2024,tx_0000AfJViEIJahC48eXnBR,Regular Savings Pot,25.82,GBP,Credit,Debit Card,Pot Transfer,True
 False,27/02/2024,tx_0000AfJbfDRAv8g21Z8WXp,Morrisons,16.61,GBP,Debit,Debit Card,Groceries & Home Needs,True
 False,28/02/2024,tx_0000AfLZ0S0I2z9ZaViLUQ,Babylon,6.0,GBP,Debit,Debit Card,Food - dining & delivery,True
-False,28/02/2024,tx_0000AfLdyLlSlxayO2nmyY,The University of Manchester,1551.83,GBP,Credit,Debit Card,Income - Stipend,False
+False,28/02/2024,tx_0000AfLdyLlSlxayO2nmyY,The University of Manchester,1551.83,GBP,Credit,Bank Transfer,Income - Stipend,False
 False,29/02/2024,tx_0000AfMsAL9STDhhRtDMiP,Regular Savings Pot,1551.83,GBP,Debit,Debit Card,Pot Transfer,True
 False,29/02/2024,tx_0000AfMsdKVDxiE7QfaxD0,Lebara,6.95,GBP,Debit,Debit Card,Bills & Utilities,True
 False,29/02/2024,tx_0000AfMxKEUoZOW8Yqx7Jb,Regular Savings Pot,100.0,GBP,Credit,Debit Card,Pot Transfer,True
@@ -1630,7 +1630,7 @@ False,01/03/2024,tx_0000AfPYaImwSpEYUZxWtN,Regular Savings Pot,2.05,GBP,Credit,D
 False,01/03/2024,tx_0000AfPYcdojFZf4uYgLUP,Earnings Pot,4.41,GBP,Debit,Debit Card,Pot Transfer,True
 False,01/03/2024,tx_0000AfPYgIl1UYfzUdfGhm,Regular Savings Pot,686.0,GBP,Credit,Debit Card,Pot Transfer,True
 False,01/03/2024,tx_0000AfPYhjO3y84PI6072A,Rent Pot Pot,686.0,GBP,Debit,Debit Card,Pot Transfer,True
-False,02/03/2024,tx_0000AfRI1cC574B85lfxli,Tesco Petrol,1.25,GBP,Debit,Debit Card,Uncategorised,False
+False,02/03/2024,tx_0000AfRI1cC574B85lfxli,Tesco Petrol,1.25,GBP,Debit,Debit Card,Groceries & Home Needs,True
 False,02/03/2024,tx_0000AfRve2ctBNvzwrUUZm,Chaiiwala Oxford Road,3.3,GBP,Debit,Debit Card,Food - dining & delivery,True
 False,02/03/2024,tx_0000AfRwPMTnBcaBa1OFTm,Chaiiwala Oxford Road,2.5,GBP,Debit,Debit Card,Food - dining & delivery,True
 False,02/03/2024,tx_0000AfSPIy7VjqCO6FUQ9h,Regular Savings Pot,20.0,GBP,Credit,Debit Card,Pot Transfer,True
@@ -1716,7 +1716,7 @@ False,26/03/2024,tx_0000AgFYnETzt1wbs2gB6H,Earnings Pot,264.99,GBP,Debit,Debit C
 False,26/03/2024,tx_0000AgFh5tRT8g0rh32qkD,Regular Savings Pot,30.0,GBP,Credit,Debit Card,Pot Transfer,True
 False,26/03/2024,tx_0000AgFhPKLnJmWQnsJO65,Devisha Bijwe,15.54,GBP,Debit,Debit Card,Uncategorised,False
 False,26/03/2024,tx_0000AgFm56TngCtjoYsWVF,Manchester Super Store,9.43,GBP,Debit,Debit Card,Groceries & Home Needs,True
-False,27/03/2024,tx_0000AgHnuy4Igbeqvdtyxl,The University of Manchester,1551.83,GBP,Credit,Debit Card,Income - Stipend,False
+False,27/03/2024,tx_0000AgHnuy4Igbeqvdtyxl,The University of Manchester,1551.83,GBP,Credit,Bank Transfer,Income - Stipend,False
 False,27/03/2024,tx_0000AgHnxY8lXfjixGpWjK,Regular Savings Pot,1551.83,GBP,Debit,Debit Card,Pot Transfer,True
 False,27/03/2024,tx_0000AgHoEIka10TTmF7DxB,Kro Bar,10.5,GBP,Debit,Debit Card,Food - dining & delivery,True
 False,27/03/2024,tx_0000AgHzJyqo0tlPJtDJcP,Morrisons,6.34,GBP,Debit,Debit Card,Groceries & Home Needs,True
@@ -1822,7 +1822,7 @@ False,19/04/2024,tx_0000Ah2nLbxy08yXDmRLKD,Regular Savings Pot,20.0,GBP,Credit,D
 False,19/04/2024,tx_0000Ah2oHHHl3APgaryBn7,Morrisons,8.93,GBP,Debit,Debit Card,Groceries & Home Needs,True
 False,19/04/2024,tx_0000Ah2oNeOq1bwtxJBFpp,Morrisons,9.39,GBP,Debit,Debit Card,Groceries & Home Needs,True
 False,19/04/2024,tx_0000Ah2pbRs3VGKs8On9MH,ANISIMOVA Y,14.5,GBP,Credit,Debit Card,Uncategorised,False
-False,20/04/2024,tx_0000Ah4X4LJDTAWa8yVhR5,Northern Trains,5.2,GBP,Debit,Debit Card,Uncategorised,False
+False,20/04/2024,tx_0000Ah4X4LJDTAWa8yVhR5,Northern Trains,5.2,GBP,Debit,Debit Card,Local Transport,True
 False,20/04/2024,tx_0000Ah4kdMzIWDefFtJp45,Sainsbury’s,1.6,GBP,Debit,Debit Card,Groceries & Home Needs,True
 False,20/04/2024,tx_0000Ah5eSWH5FFXsPm47sH,Regular Savings Pot,15.0,GBP,Credit,Debit Card,Pot Transfer,True
 False,20/04/2024,tx_0000Ah5gffgFmiuDTQpGTJ,Mugdha Chimote,17.4,GBP,Debit,Debit Card,Uncategorised,False
@@ -1840,7 +1840,7 @@ False,22/04/2024,tx_0000Ah93KEOutaqHeyQ8mI,Morrisons,18.53,GBP,Debit,Debit Card,
 False,22/04/2024,tx_0000Ah96qARFSkTJjMgF8b,Vault Pot,137.99,GBP,Credit,Debit Card,Pot Transfer,True
 False,22/04/2024,tx_0000Ah96sLO3j8s3QToDfW,Vault Pot,165.0,GBP,Credit,Debit Card,Pot Transfer,True
 False,22/04/2024,tx_0000Ah9PnirWuwCUfHFjHu,Regular Savings Pot,290.0,GBP,Debit,Debit Card,Pot Transfer,True
-False,24/04/2024,tx_0000AhDbMbhDQhK5Jy0ode,The University of Manchester,1551.83,GBP,Credit,Debit Card,Income - Stipend,False
+False,24/04/2024,tx_0000AhDbMbhDQhK5Jy0ode,The University of Manchester,1551.83,GBP,Credit,Bank Transfer,Income - Stipend,False
 False,24/04/2024,tx_0000AhDbOteHeYQCfktJ6v,Regular Savings Pot,1551.83,GBP,Debit,Debit Card,Pot Transfer,True
 False,24/04/2024,tx_0000AhDbUWADskrxmyVb1d,Regular Savings Pot,1551.83,GBP,Credit,Debit Card,Pot Transfer,True
 False,24/04/2024,tx_0000AhDbVfeU5hp8JphPAx,Vault Pot,1551.83,GBP,Debit,Debit Card,Pot Transfer,True
@@ -1849,7 +1849,7 @@ False,25/04/2024,tx_0000AhFmp7WIBsvHXAwfnG,Regular Savings Pot,25.0,GBP,Credit,D
 False,25/04/2024,tx_0000AhFmtUsJIadkPchVVS,Yuliia Anisimova,6.79,GBP,Debit,Debit Card,Uncategorised,False
 False,26/04/2024,tx_0000AhGb0vs6JtBaagyKSf,Regular Savings Pot,60.0,GBP,Credit,Debit Card,Pot Transfer,True
 False,26/04/2024,tx_0000AhHYgBI7myAAGCJSzZ,Smullers A'dam Westtun,4.34,GBP,Debit,Debit Card,Uncategorised,False
-False,26/04/2024,tx_0000AhHmc2lkvl6QjNyS4f,The University of Manchester,158.1,GBP,Credit,Debit Card,Income - UoM GTA,False
+False,26/04/2024,tx_0000AhHmc2lkvl6QjNyS4f,The University of Manchester,158.1,GBP,Credit,Bank Transfer,Income - UoM GTA,False
 False,26/04/2024,tx_0000AhHn34dC7Fuq2O3Rxa,Vault Pot,158.1,GBP,Debit,Debit Card,Pot Transfer,True
 False,26/04/2024,tx_0000AhHwl3UUcGA5WvdOGg,Regular Savings Pot,50.0,GBP,Credit,Debit Card,Pot Transfer,True
 False,27/04/2024,tx_0000AhIZ5z4m1QS0UPV1sH,GVB,5.65,GBP,Debit,Debit Card,Uncategorised,False
@@ -1900,9 +1900,9 @@ False,07/05/2024,tx_0000AheQhr2LjchXsB5JTe,Regular Savings Pot,40.0,GBP,Credit,D
 False,07/05/2024,tx_0000AheRjkUJ9fy8JEROOg,ATM,40.0,GBP,Debit,Debit Card,Uncategorised,False
 False,07/05/2024,tx_0000Ahechxyz6r4GRjHBOU,Morrisons,13.04,GBP,Debit,Debit Card,Groceries & Home Needs,True
 False,08/05/2024,tx_0000AhfvPbXPucrpXijhvG,Regular Savings Pot,50.0,GBP,Credit,Debit Card,Pot Transfer,True
-False,08/05/2024,tx_0000AhfvkHikmqqfcEbSt7,Northern Trains,11.9,GBP,Debit,Debit Card,Uncategorised,False
-False,08/05/2024,tx_0000AhfwKPYx6mAkYDtFYo,Northern Trains,12.6,GBP,Debit,Debit Card,Uncategorised,False
-False,08/05/2024,tx_0000AhfwvlMH2HnhaVz9jl,Northern Trains,12.6,GBP,Debit,Debit Card,Uncategorised,False
+False,08/05/2024,tx_0000AhfvkHikmqqfcEbSt7,Northern Trains,11.9,GBP,Debit,Debit Card,Local Transport,True
+False,08/05/2024,tx_0000AhfwKPYx6mAkYDtFYo,Northern Trains,12.6,GBP,Debit,Debit Card,Local Transport,True
+False,08/05/2024,tx_0000AhfwvlMH2HnhaVz9jl,Northern Trains,12.6,GBP,Debit,Debit Card,Local Transport,True
 False,08/05/2024,tx_0000Ahfx626LdlYPFifhdC,Regular Savings Pot,20.0,GBP,Credit,Debit Card,Pot Transfer,True
 False,08/05/2024,tx_0000AhfxDuYZZjSfrMn9cn,Bee Network,18.2,GBP,Debit,Debit Card,Local Transport,True
 False,08/05/2024,tx_0000Ahg2YZ5L6I2saWNzmb,Morrisons,3.0,GBP,Debit,Debit Card,Groceries & Home Needs,True
@@ -1912,7 +1912,7 @@ False,09/05/2024,tx_0000AhivmIfaoRRQSkqeNF,Mnk Chit 'N' Chaat,15.1,GBP,Debit,Deb
 False,09/05/2024,tx_0000AhixTH9kPqc0amTli5,Worldwide Foods Rushol,6.1,GBP,Debit,Debit Card,Groceries & Home Needs,True
 False,09/05/2024,tx_0000AhiyKPgFSAy69yOqFl,Poundland,3.25,GBP,Debit,Debit Card,Groceries & Home Needs,True
 False,09/05/2024,tx_0000Ahj0tC2GNPhYY7XwrR,Regular Savings Pot,15.0,GBP,Credit,Debit Card,Pot Transfer,True
-False,09/05/2024,tx_0000Ahj1Oa05KGEpqtUgde,Northern Trains,3.75,GBP,Debit,Debit Card,Uncategorised,False
+False,09/05/2024,tx_0000Ahj1Oa05KGEpqtUgde,Northern Trains,3.75,GBP,Debit,Debit Card,Local Transport,True
 False,10/05/2024,tx_0000Ahl1WyjLeWshLA2jZZ,Regular Savings Pot,25.0,GBP,Credit,Debit Card,Pot Transfer,True
 False,10/05/2024,tx_0000Ahl26kJUjRAaRTONWt,Habesha Restaurant,21.0,GBP,Debit,Debit Card,Uncategorised,False
 False,11/05/2024,tx_0000Ahm89S5NkgeEOHrgIL,Regular Savings Pot,60.0,GBP,Credit,Debit Card,Pot Transfer,True
@@ -1986,8 +1986,8 @@ False,29/05/2024,tx_0000AiNL78ebW3IKPXehNJ,Lebara,6.95,GBP,Debit,Debit Card,Bill
 False,29/05/2024,tx_0000AiO1JY0PHVGx53hcA5,Regular Savings Pot,5.0,GBP,Credit,Debit Card,Pot Transfer,True
 False,29/05/2024,tx_0000AiO1KDOxN8Fw1qCVRy,Popolinos,4.0,GBP,Debit,Debit Card,Uncategorised,False
 False,29/05/2024,tx_0000AiO1LnqfLfkvyz9S9R,Regular Savings Pot,10.0,GBP,Credit,Debit Card,Pot Transfer,True
-False,29/05/2024,tx_0000AiO4JfscIuyRFOzGgU,The University of Manchester,198.42,GBP,Credit,Debit Card,Income - Stipend,False
-False,29/05/2024,tx_0000AiO4KqhpXTVKdvyGQc,The University of Manchester,1551.83,GBP,Credit,Debit Card,Income - Stipend,False
+False,29/05/2024,tx_0000AiO4JfscIuyRFOzGgU,The University of Manchester,198.42,GBP,Credit,Bank Transfer,Income - Stipend,False
+False,29/05/2024,tx_0000AiO4KqhpXTVKdvyGQc,The University of Manchester,1551.83,GBP,Credit,Bank Transfer,Income - Stipend,False
 False,29/05/2024,tx_0000AiO4gtUzpqZRM7l26E,Extra Pot,700.0,GBP,Debit,Debit Card,Pot Transfer,True
 False,29/05/2024,tx_0000AiO4guml3IHtfMnW2D,Vault Pot,851.83,GBP,Debit,Debit Card,Pot Transfer,True
 False,29/05/2024,tx_0000AiO4i3nF2xheUSlLF3,Vault Pot,198.42,GBP,Debit,Debit Card,Pot Transfer,True
@@ -2006,13 +2006,13 @@ False,30/05/2024,tx_0000AiQ9sQAHc2btWmpvpU,Sneha Mendiratta,100.0,GBP,Debit,Debi
 False,30/05/2024,tx_0000AiQDVIj5VDhAEoNKvx,Amazon,14.95,GBP,Debit,Debit Card,Shopping,True
 False,30/05/2024,tx_0000AiQDWYJF3Bu5dsa8Hb,Regular Savings Pot,39.05,GBP,Credit,Debit Card,Pot Transfer,True
 False,30/05/2024,tx_0000AiQEtoRrJPZjTeW5gX,Avanti West Coast,32.1,GBP,Debit,Debit Card,Uncategorised,False
-False,30/05/2024,tx_0000AiQGGQsVDCIk14EtWr,Northern Trains,4.0,GBP,Debit,Debit Card,Uncategorised,False
+False,30/05/2024,tx_0000AiQGGQsVDCIk14EtWr,Northern Trains,4.0,GBP,Debit,Debit Card,Local Transport,True
 False,31/05/2024,tx_0000AiS5zPRYgLJH1SM9PZ,Vault Pot,400.0,GBP,Credit,Debit Card,Pot Transfer,True
 False,31/05/2024,tx_0000AiS6NmIbMCYN9UwDCs,Regular Savings Pot,400.0,GBP,Debit,Debit Card,Pot Transfer,True
 False,31/05/2024,tx_0000AiSelZqwgDJ8Ek1qu9,Regular Savings Pot,20.0,GBP,Credit,Debit Card,Pot Transfer,True
 False,31/05/2024,tx_0000AiSqf7Nyo1mbPxQ3CD,McDonald’s,3.68,GBP,Debit,Debit Card,Food - dining & delivery,True
 False,01/06/2024,tx_0000AiTQFsKnE6hgsR4S7F,Vault Pot,3.44,GBP,Debit,Debit Card,Pot Transfer,True
-False,01/06/2024,tx_0000AiTf85Dew3FjaMs0XJ,Northern Trains,19.4,GBP,Debit,Debit Card,Uncategorised,False
+False,01/06/2024,tx_0000AiTf85Dew3FjaMs0XJ,Northern Trains,19.4,GBP,Debit,Debit Card,Trip Expenses,False
 False,01/06/2024,tx_0000AiTjxF44UQGVSIYX0k,Regular Savings Pot,28.39,GBP,Credit,Debit Card,Pot Transfer,True
 False,01/06/2024,tx_0000AiTk88TxIsnT2GyaFl,Temu,22.1,GBP,Debit,Debit Card,Uncategorised,False
 False,02/06/2024,tx_0000AiWKyZbVhCCdNQAKtl,Regular Savings Pot,20.0,GBP,Credit,Debit Card,Pot Transfer,True
@@ -2037,7 +2037,7 @@ False,08/06/2024,tx_0000AihZrXWqeHCmCBax4D,KFC,4.38,GBP,Debit,Debit Card,Uncateg
 False,08/06/2024,tx_0000AihfmXnaogmelbHzbm,Wallet Pot,100.0,GBP,Debit,Debit Card,Pot Transfer,True
 False,08/06/2024,tx_0000AihfrOgw6ZcqnNBCin,Isabel Dennis Thottam,16.5,GBP,Debit,Debit Card,Uncategorised,False
 False,08/06/2024,tx_0000AihpDoFCgFh40IyBbV,Stagecoach,9.9,GBP,Debit,Debit Card,Local Transport,True
-False,08/06/2024,tx_0000AihyuTYgMgE1t5V5oQ,Northern Trains,21.1,GBP,Debit,Debit Card,Uncategorised,False
+False,08/06/2024,tx_0000AihyuTYgMgE1t5V5oQ,Northern Trains,21.1,GBP,Debit,Debit Card,Trip Expenses,False
 False,08/06/2024,tx_0000Aii6zrODzGSdgW846z,Uber,4.83,GBP,Debit,Debit Card,Local Transport,True
 False,10/06/2024,tx_0000AimpLawOzrY81aLOTZ,South Manchester Den 0,26.8,GBP,Debit,Debit Card,Uncategorised,False
 False,11/06/2024,tx_0000AipAsNhri5HQyT5rnd,Ice Paradise,8.1,GBP,Debit,Debit Card,Food - dining & delivery,True
@@ -2094,9 +2094,9 @@ False,26/06/2024,tx_0000AjJZcCHmjMBfP5pB69,GetYourGuide,21.03,GBP,Debit,Debit Ca
 False,26/06/2024,tx_0000AjJZutZEY9OZwTTOLZ,GetYourGuide,58.28,GBP,Debit,Debit Card,Trip Expenses,True
 False,26/06/2024,tx_0000AjJv4zQ7k01mugNumQ,Vault Pot,150.0,GBP,Credit,Debit Card,Pot Transfer,True
 False,26/06/2024,tx_0000AjJxpKpoeejyYed3Yn,Regular Savings Pot,145.0,GBP,Debit,Debit Card,Pot Transfer,True
-False,26/06/2024,tx_0000AjKA9L3mj3PeTbhMqx,The University of Manchester,544.56,GBP,Credit,Debit Card,Income - Stipend,False
+False,26/06/2024,tx_0000AjKA9L3mj3PeTbhMqx,The University of Manchester,544.56,GBP,Credit,Bank Transfer,Income - Stipend,False
 False,26/06/2024,tx_0000AjKABODlwZbKsi7KMN,Vault Pot,544.56,GBP,Debit,Debit Card,Pot Transfer,True
-False,26/06/2024,tx_0000AjKACevPKD06dLd70j,The University of Manchester,1551.83,GBP,Credit,Debit Card,Income - Stipend,False
+False,26/06/2024,tx_0000AjKACevPKD06dLd70j,The University of Manchester,1551.83,GBP,Credit,Bank Transfer,Income - Stipend,False
 False,26/06/2024,tx_0000AjKALIV24UjhAf7lvV,Regular Savings Pot,251.83,GBP,Debit,Debit Card,Pot Transfer,True
 False,26/06/2024,tx_0000AjKALInowdGLyDmKEz,Extra Pot,700.0,GBP,Debit,Debit Card,Pot Transfer,True
 False,26/06/2024,tx_0000AjKALJmnHwiPRT1gVl,Vault Pot,600.0,GBP,Debit,Debit Card,Pot Transfer,True
@@ -2129,8 +2129,8 @@ False,02/07/2024,tx_0000AjWa5CmOV3GFlBKD7h,Morrisons,1.92,GBP,Debit,Debit Card,G
 False,02/07/2024,tx_0000AjWaLFbpkN1dAZ2KIs,McDonald’s,3.68,GBP,Debit,Debit Card,Food - dining & delivery,True
 False,02/07/2024,tx_0000AjX44V75qY3GLFuEJV,Regular Savings Pot,20.15,GBP,Debit,Debit Card,Pot Transfer,True
 False,03/07/2024,tx_0000AjYHJCt5NxtNPvloOp,Boss Barbers,13.0,GBP,Debit,Debit Card,Uncategorised,False
-False,03/07/2024,tx_0000AjYI67OSbIajOMnfU4,Tesco Petrol,6.0,GBP,Debit,Debit Card,Uncategorised,False
-False,03/07/2024,tx_0000AjYIDigqKbsrmFD3g1,Tesco Petrol,1.55,GBP,Debit,Debit Card,Uncategorised,False
+False,03/07/2024,tx_0000AjYI67OSbIajOMnfU4,Tesco Petrol,6.0,GBP,Debit,Debit Card,Groceries & Home Needs,True
+False,03/07/2024,tx_0000AjYIDigqKbsrmFD3g1,Tesco Petrol,1.55,GBP,Debit,Debit Card,Groceries & Home Needs,True
 False,04/07/2024,tx_0000AjZTIIxSit09YeG049,Amazon,14.95,GBP,Credit,Debit Card,Shopping,True
 False,04/07/2024,tx_0000Aja4feAdiZn7GBa34j,Regular Savings Pot,58.35,GBP,Credit,Debit Card,Pot Transfer,True
 False,04/07/2024,tx_0000Aja59gTTiUNEJbkO4f,Regular Savings Pot,58.35,GBP,Debit,Debit Card,Pot Transfer,True
@@ -2253,7 +2253,7 @@ False,22/07/2024,tx_0000AkBdgNqqZ0f4MnWTRp,Stagecoach,2.0,GBP,Debit,Debit Card,L
 False,22/07/2024,tx_0000AkBu1zdGt7mDpihorU,330530relaysc,3.04,GBP,Debit,Debit Card,Uncategorised,False
 False,23/07/2024,tx_0000AkEcKCzGl693BFAW8H,Rahul Subbaraman,20.0,GBP,Debit,Debit Card,Pot Transfer,True
 False,23/07/2024,tx_0000AkEdTBclINj4BpXhbN,Rahul Subbaraman,20.0,GBP,Credit,Debit Card,Pot Transfer,True
-False,24/07/2024,tx_0000AkGDa0sZR18cQIKcVd,The University of Manchester,1551.83,GBP,Credit,Debit Card,Income - Stipend,False
+False,24/07/2024,tx_0000AkGDa0sZR18cQIKcVd,The University of Manchester,1551.83,GBP,Credit,Bank Transfer,Income - Stipend,False
 False,24/07/2024,tx_0000AkGDbVvdTlMR3uPwjS,Extra Pot,700.0,GBP,Debit,Debit Card,Pot Transfer,True
 False,24/07/2024,tx_0000AkGDbWXDE2xWfjmKzy,Vault Pot,851.83,GBP,Debit,Debit Card,Pot Transfer,True
 False,25/07/2024,tx_0000AkHZepVhWWAF5yzZEP,Bounce,4.34,GBP,Debit,Debit Card,Uncategorised,False
@@ -2308,9 +2308,9 @@ False,14/08/2024,tx_0000AkxtRyohlljuVzcdsH,Hello Oriental,8.0,GBP,Debit,Debit Ca
 False,14/08/2024,tx_0000Aky43dVOS606fOQmg5,Uber,0.81,GBP,Credit,Debit Card,Local Transport,True
 False,15/08/2024,tx_0000Al0ByBwWgmxP0Wd2Uk,Regular Savings Pot,17.0,GBP,Credit,Debit Card,Pot Transfer,True
 False,15/08/2024,tx_0000Al0CBR9LShZsdepccj,Ritwick Sen,4.84,GBP,Debit,Debit Card,Uncategorised,False
-False,15/08/2024,tx_0000Al0Fq7DWm7IGG0Hj7Z,Northern Trains,7.65,GBP,Debit,Debit Card,Uncategorised,False
+False,15/08/2024,tx_0000Al0Fq7DWm7IGG0Hj7Z,Northern Trains,7.65,GBP,Debit,Debit Card,Local Transport,True
 False,15/08/2024,tx_0000Al0G3YYwPv6WQRPWBl,Regular Savings Pot,40.0,GBP,Credit,Debit Card,Pot Transfer,True
-False,15/08/2024,tx_0000Al0GKdzTUNgMyF2H7i,Northern Trains,27.55,GBP,Debit,Debit Card,Uncategorised,False
+False,15/08/2024,tx_0000Al0GKdzTUNgMyF2H7i,Northern Trains,27.55,GBP,Debit,Debit Card,Trip Expenses,False
 False,15/08/2024,tx_0000Al0HFLe6Mo20gFkxaT,Rahul Subbaraman,54.66,GBP,Credit,Debit Card,Pot Transfer,True
 False,15/08/2024,tx_0000Al0HGt29iVIzdOzn5F,Regular Savings Pot,55.0,GBP,Debit,Debit Card,Pot Transfer,True
 False,16/08/2024,tx_0000Al1en0JQgNnmgwJzRy,Vault Pot,700.0,GBP,Credit,Debit Card,Pot Transfer,True
@@ -2352,7 +2352,7 @@ False,24/08/2024,tx_0000AlIXYKqgeNG7kZFCfh,With Love From Liverpo,2.99,GBP,Debit
 False,24/08/2024,tx_0000AlIjptyOVkGEBReruD,Babylon,12.0,GBP,Debit,Debit Card,Food - dining & delivery,True
 False,24/08/2024,tx_0000AlIlnxKLGmF5JMs2an,Morrisons,0.56,GBP,Debit,Debit Card,Groceries & Home Needs,True
 False,25/08/2024,tx_0000AlKXwnWW4w2kwh7mAT,Regular Savings Pot,25.0,GBP,Debit,Debit Card,Pot Transfer,True
-False,26/08/2024,tx_0000AlLNXiwf9txL7hiewb,Northern Trains,3.1,GBP,Credit,Debit Card,Uncategorised,False
+False,26/08/2024,tx_0000AlLNXiwf9txL7hiewb,Northern Trains,3.1,GBP,Credit,Debit Card,Local Transport,True
 False,26/08/2024,tx_0000AlMPh9lVCpX9oi0t3i,Knoops,6.2,GBP,Debit,Debit Card,Uncategorised,False
 False,26/08/2024,tx_0000AlMPsz9GVLZUWZq89a,Stagecoach,2.0,GBP,Debit,Debit Card,Local Transport,True
 False,26/08/2024,tx_0000AlMh5WWfvpUyYiWT8T,Dixy Chicken,5.99,GBP,Debit,Debit Card,Food - dining & delivery,True
@@ -2365,7 +2365,7 @@ False,27/08/2024,tx_0000AlOuS75aMKMR8L35Wr,Morrisons,8.01,GBP,Debit,Debit Card,G
 False,28/08/2024,tx_0000AlPpmgx6QQOQRVHfBj,Google Play,15.99,GBP,Debit,Debit Card,Subscriptions,True
 False,28/08/2024,tx_0000AlQTsjOQGBSQP9JPkX,Regular Savings Pot,25.0,GBP,Credit,Debit Card,Pot Transfer,True
 False,28/08/2024,tx_0000AlQYtFw5lW42CD999d,Benugo @ University of Manchester,6.3,GBP,Debit,Debit Card,Food - dining & delivery,True
-False,28/08/2024,tx_0000AlQjNFAKC3UoLRLvPd,The University of Manchester,1551.84,GBP,Credit,Debit Card,Income - Stipend,False
+False,28/08/2024,tx_0000AlQjNFAKC3UoLRLvPd,The University of Manchester,1551.84,GBP,Credit,Bank Transfer,Income - Stipend,False
 False,28/08/2024,tx_0000AlQjR4efDJ74OOV1nN,Regular Savings Pot,301.84,GBP,Debit,Debit Card,Pot Transfer,True
 False,28/08/2024,tx_0000AlQjR4dxFwKsVkpbxx,Extra Pot,700.0,GBP,Debit,Debit Card,Pot Transfer,True
 False,28/08/2024,tx_0000AlQjR5Wtxf419H4TUv,Vault Pot,550.0,GBP,Debit,Debit Card,Pot Transfer,True
@@ -2402,7 +2402,7 @@ False,05/09/2024,tx_0000AlhWaOOHD6CBuYSPuD,Regular Savings Pot,40.0,GBP,Credit,D
 False,05/09/2024,tx_0000AlhZinkL7aXMJ3jjOM,Wp Fiera Dance Limited,40.0,GBP,Debit,Debit Card,Entertainment,True
 False,05/09/2024,tx_0000AlhdvjSelTNjIjmJKD,Morrisons,8.75,GBP,Debit,Debit Card,Groceries & Home Needs,True
 False,05/09/2024,tx_0000AlhgLzLKXTN5wSoxgv,Regular Savings Pot,15.0,GBP,Credit,Debit Card,Pot Transfer,True
-False,05/09/2024,tx_0000AlhgNcL92BiiC3deKH,Northern Trains,5.9,GBP,Debit,Debit Card,Uncategorised,False
+False,05/09/2024,tx_0000AlhgNcL92BiiC3deKH,Northern Trains,5.9,GBP,Debit,Debit Card,Local Transport,True
 False,06/09/2024,tx_0000AliBHvoaoM6I1jq1IH,Wp Fiera Dance Limited,9.0,GBP,Credit,Debit Card,Entertainment,True
 False,07/09/2024,tx_0000AlksJdywllt1UHBD4U,Transport for Greater Manchester,2.0,GBP,Debit,Debit Card,Local Transport,True
 False,07/09/2024,tx_0000AllGlChWBu8Bke8kXD,Strawbury Duck,2.75,GBP,Debit,Debit Card,Uncategorised,False
@@ -2415,8 +2415,8 @@ False,10/09/2024,tx_0000AlsAJ1yXEfJynhWKNF,Chinese Fan Painti,12.26,GBP,Debit,De
 False,10/09/2024,tx_0000AlsAJebratuOkFxjrV,B Aras,6.13,GBP,Credit,Debit Card,Uncategorised,False
 False,11/09/2024,tx_0000AltuZn20q8JAB1aRGb,Regular Savings Pot,25.0,GBP,Credit,Debit Card,Pot Transfer,True
 False,11/09/2024,tx_0000AltuaF7eOlS0PO3eCn,Appna Cash And Carry M,23.12,GBP,Debit,Debit Card,Uncategorised,False
-False,11/09/2024,tx_0000AltxUQH8JpnHaxXEG1,Tesco Petrol,3.1,GBP,Debit,Debit Card,Uncategorised,False
-False,11/09/2024,tx_0000AltxgL4xSsheZd41In,Tesco Petrol,6.5,GBP,Debit,Debit Card,Uncategorised,False
+False,11/09/2024,tx_0000AltxUQH8JpnHaxXEG1,Tesco Petrol,3.1,GBP,Debit,Debit Card,Groceries & Home Needs,True
+False,11/09/2024,tx_0000AltxgL4xSsheZd41In,Tesco Petrol,6.5,GBP,Debit,Debit Card,Groceries & Home Needs,True
 False,11/09/2024,tx_0000Altz6yNO54TEl9ZsVF,Regular Savings Pot,25.0,GBP,Credit,Debit Card,Pot Transfer,True
 False,11/09/2024,tx_0000AluB38HOW9nRI19iEb,Sanskruti Restaurant,15.85,GBP,Debit,Debit Card,Uncategorised,False
 False,11/09/2024,tx_0000AluD552riIlu2bx88v,Transport for Greater Manchester,2.0,GBP,Debit,Debit Card,Local Transport,True
@@ -2428,9 +2428,9 @@ False,13/09/2024,tx_0000AlyQsZqw2Jue06wydF,Kavya Girish,13.0,GBP,Credit,Debit Ca
 False,13/09/2024,tx_0000AlyQydimZAS3kVS1j7,Transport for Greater Manchester,2.0,GBP,Debit,Debit Card,Local Transport,True
 False,14/09/2024,tx_0000AlzQTuQcatdrwLWR3B,ODEON,12.0,GBP,Debit,Debit Card,Entertainment,True
 False,14/09/2024,tx_0000AlzQVG1LncRM3I2XNx,Ajmal Roshan,6.0,GBP,Credit,Debit Card,Uncategorised,False
-False,14/09/2024,tx_0000Am0EgzkN7tng9VdyEL,Tesco Petrol,7.43,GBP,Debit,Debit Card,Uncategorised,False
+False,14/09/2024,tx_0000Am0EgzkN7tng9VdyEL,Tesco Petrol,7.43,GBP,Debit,Debit Card,Groceries & Home Needs,True
 False,14/09/2024,tx_0000Am0EqOgHn7wM5fDRIn,Regular Savings Pot,20.0,GBP,Credit,Debit Card,Pot Transfer,True
-False,14/09/2024,tx_0000Am0Etz1D96WFVOIntR,Tesco Petrol,7.95,GBP,Debit,Debit Card,Uncategorised,False
+False,14/09/2024,tx_0000Am0Etz1D96WFVOIntR,Tesco Petrol,7.95,GBP,Debit,Debit Card,Groceries & Home Needs,True
 False,15/09/2024,tx_0000Am1rvWrat6BGMNN369,Ajmal Roshan,7.69,GBP,Credit,Debit Card,Uncategorised,False
 False,15/09/2024,tx_0000Am1whLV4q2k1tLNTyD,Regular Savings Pot,10.0,GBP,Debit,Debit Card,Pot Transfer,True
 False,16/09/2024,tx_0000Am3gsZKWYA9gUgleb3,Regular Savings Pot,37.0,GBP,Credit,Debit Card,Pot Transfer,True
@@ -2440,11 +2440,11 @@ False,16/09/2024,tx_0000Am4Qgtm1JNWileJmwj,Regular Savings Pot,22.0,GBP,Credit,D
 False,16/09/2024,tx_0000Am4Qhw04WCOXJjnMUz,Morrisons,22.64,GBP,Debit,Debit Card,Groceries & Home Needs,True
 False,16/09/2024,tx_0000Am4V4gMpCuE4iuZhxZ,Ajmal Roshan,1.3,GBP,Debit,Debit Card,Uncategorised,False
 False,16/09/2024,tx_0000Am4j7DC1X0zKUv83Bx,Regular Savings Pot,6.0,GBP,Credit,Debit Card,Pot Transfer,True
-False,17/09/2024,tx_0000Am5nmokLPIEhcOTvMn,SFM LTD RENT Q3,150.0,GBP,Credit,Debit Card,Uncategorised,False
+False,17/09/2024,tx_0000Am5nmokLPIEhcOTvMn,SFM LTD RENT Q3,150.0,GBP,Credit,Debit Card,Rent,True
 False,17/09/2024,tx_0000Am5nuXM7wsnXvlgJ1t,Vault Pot,150.0,GBP,Debit,Debit Card,Pot Transfer,True
 False,17/09/2024,tx_0000Am5rrcENlZBjbbxn2f,Vault Pot,150.0,GBP,Credit,Debit Card,Pot Transfer,True
 False,17/09/2024,tx_0000Am6E75I8CUbfqR3vwv,Regular Savings Pot,135.0,GBP,Debit,Debit Card,Pot Transfer,True
-False,18/09/2024,tx_0000Am8F6oAwKGYkXfVzjl,The University of Manchester,1603.11,GBP,Credit,Debit Card,Income - Stipend,False
+False,18/09/2024,tx_0000Am8F6oAwKGYkXfVzjl,The University of Manchester,1603.11,GBP,Credit,Bank Transfer,Income - Stipend,False
 False,18/09/2024,tx_0000Am8FARmdWKwvXqP6UD,Vault Pot,1503.11,GBP,Debit,Debit Card,Pot Transfer,True
 False,18/09/2024,tx_0000Am8FC11XyzVp8B7sh7,Regular Savings Pot,100.0,GBP,Debit,Debit Card,Pot Transfer,True
 False,19/09/2024,tx_0000Am9sLhSXfXLQltgU1B,Morrisons,4.42,GBP,Debit,Debit Card,Groceries & Home Needs,True
@@ -2454,7 +2454,7 @@ False,20/09/2024,tx_0000AmBsZE409CfvR6wuwb,Quaytickets,20.0,GBP,Debit,Debit Card
 False,20/09/2024,tx_0000AmBtrEP5ilhcz5CpBx,Quaytickets,10.0,GBP,Credit,Debit Card,Uncategorised,False
 False,21/09/2024,tx_0000AmD9Ic9fDRvdudHgby,Stagecoach,2.0,GBP,Debit,Debit Card,Local Transport,True
 False,21/09/2024,tx_0000AmDokrcFQDeTxFlxa5,Regular Savings Pot,40.0,GBP,Credit,Debit Card,Pot Transfer,True
-False,21/09/2024,tx_0000AmDoo0jlxuFD3ih150,Northern Trains,16.1,GBP,Debit,Debit Card,Uncategorised,False
+False,21/09/2024,tx_0000AmDoo0jlxuFD3ih150,Northern Trains,16.1,GBP,Debit,Debit Card,Trip Expenses,False
 False,21/09/2024,tx_0000AmDxXaLJENj9H3yjMA,Go South Coast,5.0,GBP,Debit,Debit Card,Local Transport,True
 False,21/09/2024,tx_0000AmEBv8Cgtxjw8qadof,Finleys Cafe,16.0,GBP,Debit,Debit Card,Uncategorised,False
 False,21/09/2024,tx_0000AmEIDLBRyqJfRzAuHZ,The Fossil Shop,3.5,GBP,Debit,Debit Card,Uncategorised,False
@@ -2478,7 +2478,7 @@ False,25/09/2024,tx_0000AmN7zDF3Sd6Sgv4rCM,Farah Ahmed,11.7,GBP,Debit,Debit Card
 False,26/09/2024,tx_0000AmO4NU5gGPm6e1WUb4,Lebara,6.95,GBP,Debit,Debit Card,Bills & Utilities,True
 False,26/09/2024,tx_0000AmOaHRfJZ4gNm5lWzZ,Vault Pot,300.0,GBP,Credit,Debit Card,Pot Transfer,True
 False,26/09/2024,tx_0000AmOaHZopFbw84cm7xx,Vault Pot,300.0,GBP,Credit,Debit Card,Pot Transfer,True
-False,26/09/2024,tx_0000AmP3eNEd6HyGARRVSb,The University of Manchester,27.98,GBP,Credit,Debit Card,Income - Stipend,False
+False,26/09/2024,tx_0000AmP3eNEd6HyGARRVSb,The University of Manchester,27.98,GBP,Credit,Bank Transfer,Income - UoM Extras,False
 False,26/09/2024,tx_0000AmP3fmCVlOX2ftXdGz,Vault Pot,27.98,GBP,Debit,Debit Card,Pot Transfer,True
 False,26/09/2024,tx_0000AmP3gSHxHY2ofKy5D7,Regular Savings Pot,600.0,GBP,Debit,Debit Card,Pot Transfer,True
 False,27/09/2024,tx_0000AmPqYI0MWpA2KJb5er,THE UNI OF MANCHES,86.33,GBP,Credit,Debit Card,Uncategorised,False
@@ -2489,7 +2489,7 @@ False,27/09/2024,tx_0000AmQUADYBR1ot3KPL7a,Vault Pot,100.0,GBP,Debit,Debit Card,
 False,27/09/2024,tx_0000AmQUBViZNFSuyNEpe5,Regular Savings Pot,50.0,GBP,Debit,Debit Card,Pot Transfer,True
 False,27/09/2024,tx_0000AmR038HpnuUKWaTEd1,Regular Savings Pot,25.0,GBP,Debit,Debit Card,Pot Transfer,True
 False,28/09/2024,tx_0000AmSFSkQMq4sNjXzBy5,Regular Savings Pot,20.0,GBP,Credit,Debit Card,Pot Transfer,True
-False,28/09/2024,tx_0000AmSFabr8ZyfvH8sz6g,Northern Trains,9.55,GBP,Debit,Debit Card,Uncategorised,False
+False,28/09/2024,tx_0000AmSFabr8ZyfvH8sz6g,Northern Trains,9.55,GBP,Debit,Debit Card,Local Transport,True
 False,28/09/2024,tx_0000AmSpiL6kKUYGvZDH8c,Mr Su's,13.39,GBP,Debit,Debit Card,Uncategorised,False
 False,28/09/2024,tx_0000AmSrSOyEOsV7ztkeRt,Stagecoach,2.0,GBP,Debit,Debit Card,Local Transport,True
 False,28/09/2024,tx_0000AmTALRfVruxwvLjEzx,Stagecoach,2.0,GBP,Debit,Debit Card,Local Transport,True
@@ -2509,14 +2509,14 @@ False,30/09/2024,tx_0000AmX9vtTscMMOzGnb2P,Elisa Biagioli,14.45,GBP,Debit,Debit 
 False,01/10/2024,tx_0000AmZcNncdBEe9tfdAH3,Regular Savings Pot,20.0,GBP,Credit,Debit Card,Pot Transfer,True
 False,01/10/2024,tx_0000AmZcOWTIQmnOwllltx,Popeyes,9.99,GBP,Debit,Debit Card,Uncategorised,False
 False,02/10/2024,tx_0000AmaHNGdttSu9rktJSd,Stagecoach,2.0,GBP,Debit,Debit Card,Local Transport,True
-False,02/10/2024,tx_0000AmatTsMINLKBI5rr4D,Northern Trains,5.25,GBP,Debit,Debit Card,Uncategorised,False
+False,02/10/2024,tx_0000AmatTsMINLKBI5rr4D,Northern Trains,5.25,GBP,Debit,Debit Card,Local Transport,True
 False,02/10/2024,tx_0000AmazcVamzN05miYH3J,Extra Pot,0.34,GBP,Credit,Debit Card,Pot Transfer,True
 False,02/10/2024,tx_0000AmbN41CbrxHDqa9u3l,Regular Savings Pot,15.0,GBP,Credit,Debit Card,Pot Transfer,True
 False,02/10/2024,tx_0000AmbN6hGaRl0hHcrawE,Mnk Chit 'N' Chaat,13.18,GBP,Debit,Debit Card,Uncategorised,False
 False,02/10/2024,tx_0000AmbRiwpHRdZGtL4Mmy,Regular Savings Pot,40.0,GBP,Credit,Debit Card,Pot Transfer,True
 False,02/10/2024,tx_0000AmbS9GGHo38gx5FiYT,Wp Fiera Dance Limited,24.6,GBP,Debit,Debit Card,Entertainment,True
 False,02/10/2024,tx_0000AmbaAA5t1RuO8mw1mk,Regular Savings Pot,14.24,GBP,Debit,Debit Card,Pot Transfer,True
-False,03/10/2024,tx_0000Amdlk4fw8KR2Cm12Qs,Northern Trains,7.9,GBP,Debit,Debit Card,Uncategorised,False
+False,03/10/2024,tx_0000Amdlk4fw8KR2Cm12Qs,Northern Trains,7.9,GBP,Debit,Debit Card,Local Transport,True
 False,03/10/2024,tx_0000Amdopz3kE5DLavIUcL,LEONG,7.9,GBP,Credit,Debit Card,Uncategorised,False
 False,04/10/2024,tx_0000AmeoV1wsU1EICX2i9a,Rahul Subbaraman,9.09,GBP,Debit,Debit Card,Pot Transfer,True
 False,04/10/2024,tx_0000Amf0NDYcdY9JAdxfmc,BIAGIOLI E,14.45,GBP,Credit,Debit Card,Uncategorised,False
@@ -2554,7 +2554,7 @@ False,12/10/2024,tx_0000AmwHl0MqKX8PuJ7Xww,Regular Savings Pot,20.0,GBP,Credit,D
 False,12/10/2024,tx_0000AmwHmy1nzy6a9r0Ukr,Listo Burrito Manchester,16.34,GBP,Debit,Debit Card,Uncategorised,False
 False,12/10/2024,tx_0000AmwQ0FgITXEwgKzjqT,BHARDWAJ D,2.23,GBP,Credit,Debit Card,Uncategorised,False
 False,12/10/2024,tx_0000AmwY8KUtFjnZL4deRl,Vaanee Sarihyan,17.32,GBP,Credit,Debit Card,Uncategorised,False
-False,13/10/2024,tx_0000AmxTAwy8sgXHWLrIsz,Northern Trains,5.25,GBP,Debit,Debit Card,Uncategorised,False
+False,13/10/2024,tx_0000AmxTAwy8sgXHWLrIsz,Northern Trains,5.25,GBP,Debit,Debit Card,Local Transport,True
 False,13/10/2024,tx_0000AmxUtftJK6M0CQdMiP,Stagecoach,2.0,GBP,Debit,Debit Card,Local Transport,True
 False,14/10/2024,tx_0000An0DnzEbNOtm169zyD,Sumup One Brand Grou,14.5,GBP,Debit,Debit Card,Uncategorised,False
 False,14/10/2024,tx_0000An0JTpp1GJB4woyaC9,Morrisons,0.98,GBP,Debit,Debit Card,Groceries & Home Needs,True
@@ -2581,8 +2581,8 @@ False,27/10/2024,tx_0000AnPyH8474l27DF8cyJ,Regular Savings Pot,200.0,GBP,Debit,D
 False,29/10/2024,tx_0000AnUpOGVSAA9aoKnBFx,Regular Savings Pot,100.0,GBP,Credit,Debit Card,Pot Transfer,True
 False,29/10/2024,tx_0000AnUpb0TJ5fVP23jqG9,Divyareshmi Thottungal Ravy,36.52,GBP,Debit,Debit Card,Income - GTA,False
 False,29/10/2024,tx_0000AnUphdxJCf7s1ulfQf,Thomas Pierce-Jones,36.52,GBP,Debit,Debit Card,Uncategorised,False
-False,29/10/2024,tx_0000AnVJPbItJzznbYtryT,The University of Manchester,474.68,GBP,Credit,Debit Card,Income - Stipend,False
-False,29/10/2024,tx_0000AnVJQqANY1CRwhzUDS,The University of Manchester,1603.08,GBP,Credit,Debit Card,Income - Stipend,False
+False,29/10/2024,tx_0000AnVJPbItJzznbYtryT,The University of Manchester,474.68,GBP,Credit,Bank Transfer,Income - Stipend,False
+False,29/10/2024,tx_0000AnVJQqANY1CRwhzUDS,The University of Manchester,1603.08,GBP,Credit,Bank Transfer,Income - Stipend,False
 False,29/10/2024,tx_0000AnVJSc1J79mPvLwOX3,Vault Pot,474.68,GBP,Debit,Debit Card,Pot Transfer,True
 False,29/10/2024,tx_0000AnVJWnTGTxFZtvfXmr,Regular Savings Pot,350.0,GBP,Debit,Debit Card,Pot Transfer,True
 False,29/10/2024,tx_0000AnVJWnqJ6HBoyd9616,Vault Pot,1253.08,GBP,Debit,Debit Card,Pot Transfer,True
@@ -2679,10 +2679,10 @@ False,26/11/2024,tx_0000AoRktZjrffKGsWpUOH,BHARDWAJ D,8.35,GBP,Credit,Debit Card
 False,26/11/2024,tx_0000AoRoi1tfYOU6A7WDo1,Regular Savings Pot,15.0,GBP,Credit,Debit Card,Pot Transfer,True
 False,26/11/2024,tx_0000AoRosThL2oTc0L0n7x,Split My Fare,25.97,GBP,Debit,Debit Card,Uncategorised,False
 False,27/11/2024,tx_0000AoTGkBfPBxB9jpnmQj,Cafe Manchester Museum,8.7,GBP,Debit,Debit Card,Uncategorised,False
-False,27/11/2024,tx_0000AoTUDUocNLk3S8KFuN,The University of Manchester,1603.08,GBP,Credit,Debit Card,Income - Stipend,False
+False,27/11/2024,tx_0000AoTUDUocNLk3S8KFuN,The University of Manchester,1603.08,GBP,Credit,Bank Transfer,Income - Stipend,False
 False,27/11/2024,tx_0000AoTUIU1OkrHDUIWhgA,Regular Savings Pot,100.0,GBP,Debit,Debit Card,Pot Transfer,True
 False,27/11/2024,tx_0000AoTUIV7SfnAYeO1GNt,Vault Pot,1503.08,GBP,Debit,Debit Card,Pot Transfer,True
-False,27/11/2024,tx_0000AoTUJUPIo4gYjNpsA5,The University of Manchester,467.67,GBP,Credit,Debit Card,Income - Stipend,False
+False,27/11/2024,tx_0000AoTUJUPIo4gYjNpsA5,The University of Manchester,467.67,GBP,Credit,Bank Transfer,Income - Stipend,False
 False,27/11/2024,tx_0000AoTUKwnWjhVksiu7VZ,Vault Pot,467.67,GBP,Debit,Debit Card,Pot Transfer,True
 False,28/11/2024,tx_0000AoUo5bEuncypH3DTbl,Regular Savings Pot,150.0,GBP,Credit,Debit Card,Pot Transfer,True
 False,28/11/2024,tx_0000AoVUaw2xgWPF9q9DqT,Regular Savings Pot,130.0,GBP,Debit,Debit Card,Pot Transfer,True
@@ -2700,7 +2700,7 @@ False,29/11/2024,tx_0000AoXgJeaOwBGvgEmUwT,Fever Candlelight Han,39.1,GBP,Debit,
 False,29/11/2024,tx_0000AoXgejomgE7slF187f,Rf Cafe & Patisserie,13.13,GBP,Debit,Debit Card,Uncategorised,False
 False,29/11/2024,tx_0000AoXjlciZmBjdc8NcCv,B Aras,27.0,GBP,Credit,Debit Card,Uncategorised,False
 False,30/11/2024,tx_0000AoYKN2VSSHq6c4l2h9,Regular Savings Pot,10.0,GBP,Debit,Debit Card,Pot Transfer,True
-False,30/11/2024,tx_0000AoZ3Uz7NQucZ4lqyZ7,Northern Trains,4.3,GBP,Debit,Debit Card,Uncategorised,False
+False,30/11/2024,tx_0000AoZ3Uz7NQucZ4lqyZ7,Northern Trains,4.3,GBP,Debit,Debit Card,Local Transport,True
 False,30/11/2024,tx_0000AoZ4Uzm35s4xLzeYaI,Bee Network,5.0,GBP,Debit,Debit Card,Local Transport,True
 False,30/11/2024,tx_0000AoZ9jmu7j1400wSVRy,Regular Savings Pot,30.0,GBP,Credit,Debit Card,Pot Transfer,True
 False,30/11/2024,tx_0000AoZ9mxudFm7xEH12Qb,Trainline,30.0,GBP,Debit,Debit Card,Trip Expenses,True
@@ -2742,7 +2742,7 @@ False,06/12/2024,tx_0000AomWHDu75KSfSFflr7,QIU W,15.53,GBP,Credit,Debit Card,Unc
 False,06/12/2024,tx_0000Aomb8gk6zfYhuWGbbt,Regular Savings Pot,15.0,GBP,Credit,Debit Card,Pot Transfer,True
 False,06/12/2024,tx_0000AombCXqlzvjsh97QEz,FNZ,15.0,GBP,Debit,Debit Card,Uncategorised,False
 False,08/12/2024,tx_0000Aop8xrHlF1PQ06S0lV,Wp Fiera Dance Limited,16.0,GBP,Credit,Debit Card,Entertainment,True
-False,08/12/2024,tx_0000Aoq386Vt4ekFvw4fkQ,Tesco Petrol,2.95,GBP,Debit,Debit Card,Uncategorised,False
+False,08/12/2024,tx_0000Aoq386Vt4ekFvw4fkQ,Tesco Petrol,2.95,GBP,Debit,Debit Card,Groceries & Home Needs,True
 False,08/12/2024,tx_0000AoqTZiRqjrmw6a5Se9,Regular Savings Pot,25.0,GBP,Debit,Debit Card,Pot Transfer,True
 False,10/12/2024,tx_0000Aou16mYuLPzBrrY6Ko,Regular Savings Pot,15.0,GBP,Credit,Debit Card,Pot Transfer,True
 False,10/12/2024,tx_0000Aou1FHbymqUXamZ7kQ,Morrisons,13.0,GBP,Debit,Debit Card,Groceries & Home Needs,True
@@ -2757,14 +2757,14 @@ False,11/12/2024,tx_0000AowavEd69K1vBIUFg9,Regular Savings Pot,20.0,GBP,Credit,D
 False,11/12/2024,tx_0000Aowb1Jio883izX7hNC,Tesco,10.7,GBP,Debit,Debit Card,Uncategorised,False
 False,12/12/2024,tx_0000AoyTu99uh1qpstQge9,Dixy Chicken Oxford Ro,6.49,GBP,Debit,Debit Card,Uncategorised,False
 False,12/12/2024,tx_0000AoyhOrH0XXCi8Gfqtd,Regular Savings Pot,15.0,GBP,Credit,Debit Card,Pot Transfer,True
-False,12/12/2024,tx_0000AoyibgN6U1h7Y5shqT,Tesco Petrol,6.04,GBP,Debit,Debit Card,Uncategorised,False
+False,12/12/2024,tx_0000AoyibgN6U1h7Y5shqT,Tesco Petrol,6.04,GBP,Debit,Debit Card,Groceries & Home Needs,True
 False,13/12/2024,tx_0000AozyMDWBGrFqNSjlUA,Ritwick Sen,6.05,GBP,Debit,Debit Card,Uncategorised,False
 False,13/12/2024,tx_0000Ap0lzgR6aE9hvZAJ73,Regular Savings Pot,10.0,GBP,Credit,Debit Card,Pot Transfer,True
-False,13/12/2024,tx_0000Ap0mBbFdgd5JK0U5L7,Northern Trains,10.55,GBP,Debit,Debit Card,Uncategorised,False
+False,13/12/2024,tx_0000Ap0mBbFdgd5JK0U5L7,Northern Trains,10.55,GBP,Debit,Debit Card,Local Transport,True
 False,13/12/2024,tx_0000Ap0pd2LXM5QPblypV5,Siv Sachin Shaji Deepa,25.65,GBP,Credit,Debit Card,Uncategorised,False
 False,13/12/2024,tx_0000Ap0phuyeBIRr5zvgLR,Regular Savings Pot,25.65,GBP,Credit,Debit Card,Pot Transfer,True
 False,13/12/2024,tx_0000Ap0pmFWFkSH74MNwyf,Regular Savings Pot,25.65,GBP,Credit,Debit Card,Pot Transfer,True
-False,13/12/2024,tx_0000Ap0q3kkyrSOesmzy79,LEONG,25.65,GBP,Credit,Debit Card,Uncategorised,False
+False,13/12/2024,tx_0000Ap0q3kkyrSOesmzy79,LEONG,25.65,GBP,Credit,Bank Transfer,Food - dining & delivery,False
 False,13/12/2024,tx_0000Ap0qIlltN2pyd7oK93,Split My Fare,76.95,GBP,Debit,Debit Card,Uncategorised,False
 False,13/12/2024,tx_0000Ap0uwuiNwENkZCyjmj,Regular Savings Pot,31.3,GBP,Debit,Debit Card,Pot Transfer,True
 False,14/12/2024,tx_0000Ap2smTIvBUoyv3NPso,Regular Savings Pot,10.0,GBP,Credit,Debit Card,Pot Transfer,True
@@ -2776,15 +2776,15 @@ False,15/12/2024,tx_0000Ap4sqMxb6MVAEWDv19,McDonald’s,8.17,GBP,Debit,Debit Car
 False,16/12/2024,tx_0000Ap69RP7FqHRsbai7NL,Dipaknashi Patel,5.0,GBP,Debit,Debit Card,Uncategorised,False
 False,16/12/2024,tx_0000Ap6gkfRSfDbXDsWfiu,Vault Pot,150.0,GBP,Credit,Debit Card,Pot Transfer,True
 False,16/12/2024,tx_0000Ap7FGvI0fvv3EbN4Fu,Regular Savings Pot,145.0,GBP,Debit,Debit Card,Pot Transfer,True
-False,17/12/2024,tx_0000Ap8sWUPoS1qDxGhJk9,The University of Manchester,1603.08,GBP,Credit,Debit Card,Income - Stipend,False
+False,17/12/2024,tx_0000Ap8sWUPoS1qDxGhJk9,The University of Manchester,1603.08,GBP,Credit,Bank Transfer,Income - Stipend,False
 False,17/12/2024,tx_0000Ap8scLVMUdrMTOOeY5,Regular Savings Pot,153.08,GBP,Debit,Debit Card,Pot Transfer,True
 False,17/12/2024,tx_0000Ap8scN3mi8CTvlrwiC,Vault Pot,1450.0,GBP,Debit,Debit Card,Pot Transfer,True
 False,18/12/2024,tx_0000ApAiv2AfzNWcrES7jV,B Aras,27.0,GBP,Credit,Debit Card,Uncategorised,False
 False,18/12/2024,tx_0000ApAiztKKIccXThKfi5,Split My Fare,26.76,GBP,Debit,Debit Card,Uncategorised,False
 False,18/12/2024,tx_0000ApAxYJXIl7O23S1ysb,FNZ Secs MZ Client Money Payments,14.94,GBP,Credit,Debit Card,Uncategorised,False
-False,18/12/2024,tx_0000ApAxg8ZXPGMGxEpLJh,The University of Manchester,397.72,GBP,Credit,Debit Card,Income - Stipend,False
+False,18/12/2024,tx_0000ApAxg8ZXPGMGxEpLJh,The University of Manchester,397.72,GBP,Credit,Bank Transfer,Income - Stipend,False
 False,18/12/2024,tx_0000ApAxhbMvpJkPu4lJuU,Vault Pot,397.72,GBP,Debit,Debit Card,Pot Transfer,True
-False,19/12/2024,tx_0000ApCs7XJnIYqkHzkNKD,Northern Trains,9.75,GBP,Debit,Debit Card,Uncategorised,False
+False,19/12/2024,tx_0000ApCs7XJnIYqkHzkNKD,Northern Trains,9.75,GBP,Debit,Debit Card,Local Transport,True
 False,19/12/2024,tx_0000ApDTSJJKGmsxlRJmkb,Temu,15.51,GBP,Debit,Debit Card,Uncategorised,False
 False,20/12/2024,tx_0000ApDucvexF4sK1ZezkR,Temu,15.51,GBP,Credit,Debit Card,Uncategorised,False
 False,20/12/2024,tx_0000ApEnE9MUehIUgTWE30,Mo Tea Limited,12.0,GBP,Debit,Debit Card,Uncategorised,False
@@ -2809,7 +2809,7 @@ False,22/12/2024,tx_0000ApJpStYas3oCHAWuJ9,Leong Chun Yu,14.95,GBP,Debit,Debit C
 False,22/12/2024,tx_0000ApJrBt35hrzhZPRez4,Transport for Greater Manchester,2.0,GBP,Debit,Debit Card,Local Transport,True
 False,23/12/2024,tx_0000ApLAsIDibQ9Gk9thJZ,Circuit Laundry,3.6,GBP,Debit,Debit Card,Bills & Utilities,True
 False,23/12/2024,tx_0000ApLFPupgSo6Z1Wourx,Circuit Laundry,2.1,GBP,Debit,Debit Card,Bills & Utilities,True
-False,23/12/2024,tx_0000ApLiP9i0Z9IhiFhLqz,Tesco Petrol,5.85,GBP,Debit,Debit Card,Uncategorised,False
+False,23/12/2024,tx_0000ApLiP9i0Z9IhiFhLqz,Tesco Petrol,5.85,GBP,Debit,Debit Card,Groceries & Home Needs,True
 False,24/12/2024,tx_0000ApMlIomXx7aej6ERLl,Regular Savings Pot,20.0,GBP,Credit,Debit Card,Pot Transfer,True
 False,24/12/2024,tx_0000ApMlJHLFlfx64k8W9p,Sainsbury’s,3.3,GBP,Debit,Debit Card,Groceries & Home Needs,True
 False,24/12/2024,tx_0000ApN02Zbk6JJkv27XNZ,Shri Venkateswara (bal,5.0,GBP,Debit,Debit Card,Uncategorised,False
@@ -2842,7 +2842,7 @@ False,01/01/2025,tx_0000Ape4hbA8vYcfG3uIvz,Bee Network,1.4,GBP,Debit,Debit Card,
 False,01/01/2025,tx_0000ApeSrDFb5IcKLI3iev,Regular Savings Pot,20.0,GBP,Credit,Debit Card,Pot Transfer,True
 False,01/01/2025,tx_0000ApeSxubwmfuKLH2Uk5,Uber,10.99,GBP,Debit,Debit Card,Local Transport,True
 False,03/01/2025,tx_0000AphyG63UeYW3jtfrvN,Vault Pot,250.0,GBP,Credit,Debit Card,Pot Transfer,True
-False,03/01/2025,tx_0000ApiTpK29lq4w9TDC8Q,Tesco Petrol,3.25,GBP,Debit,Debit Card,Uncategorised,False
+False,03/01/2025,tx_0000ApiTpK29lq4w9TDC8Q,Tesco Petrol,3.25,GBP,Debit,Debit Card,Groceries & Home Needs,True
 False,03/01/2025,tx_0000ApiVF6pbZzvlVtjraE,Morrisons,3.67,GBP,Debit,Debit Card,Groceries & Home Needs,True
 False,03/01/2025,tx_0000ApiWok4RmQJBiU26Hx,Revolut,207.65,GBP,Debit,Debit Card,Uncategorised,False
 False,03/01/2025,tx_0000ApiddqkHK4ggNeib2o,Regular Savings Pot,39.38,GBP,Debit,Debit Card,Pot Transfer,True
@@ -2854,7 +2854,7 @@ False,07/01/2025,tx_0000ApqDCtmyr79NVpokU5,Vault Pot,2672.0,GBP,Credit,Debit Car
 False,08/01/2025,tx_0000ApsWaC3nNPFDHniozZ,Vault Pot,200.0,GBP,Debit,Debit Card,Pot Transfer,True
 False,08/01/2025,tx_0000ApsWx2ZIphebKegGaQ,StuRents Ltd,2672.0,GBP,Debit,Debit Card,Rent,True
 False,08/01/2025,tx_0000ApsYHRWnqKtds1qZ29,Sanctuary Students,1.0,GBP,Debit,Debit Card,Uncategorised,False
-False,08/01/2025,tx_0000ApswhpiavOjeP85i6c,Northern Trains,4.3,GBP,Debit,Debit Card,Uncategorised,False
+False,08/01/2025,tx_0000ApswhpiavOjeP85i6c,Northern Trains,4.3,GBP,Debit,Debit Card,Local Transport,True
 False,08/01/2025,tx_0000Apszh7uW6Icn0R9zYf,Transport for Greater Manchester,2.0,GBP,Debit,Debit Card,Local Transport,True
 False,09/01/2025,tx_0000ApuIohfddWfQNn4VQf,Rahul Subbaraman,98.47,GBP,Credit,Debit Card,Pot Transfer,True
 False,09/01/2025,tx_0000ApuZinsZL5LAJKs3aE,Uber,5.49,GBP,Credit,Debit Card,Local Transport,True
@@ -2895,9 +2895,9 @@ False,20/01/2025,tx_0000AqHEv7Nt12tcpy5ac5,Vault Pot,100.0,GBP,Credit,Debit Card
 False,20/01/2025,tx_0000AqHk2xbOMnZuaAbouo,Regular Savings Pot,90.0,GBP,Debit,Debit Card,Pot Transfer,True
 False,20/01/2025,tx_0000AqHk6RWvYGLmGsBIwc,Yuliia Anisimova,9.49,GBP,Debit,Debit Card,Uncategorised,False
 False,21/01/2025,tx_0000AqIrVnTE0cQ31g7IqP,Regular Savings Pot,25.0,GBP,Credit,Debit Card,Pot Transfer,True
-False,21/01/2025,tx_0000AqIxZ6uOnGqHkMKzJp,Northern Trains,11.8,GBP,Debit,Debit Card,Uncategorised,False
+False,21/01/2025,tx_0000AqIxZ6uOnGqHkMKzJp,Northern Trains,11.8,GBP,Debit,Debit Card,Local Transport,True
 False,21/01/2025,tx_0000AqIxoVB2qWx31XXwvZ,Leong,1.82,GBP,Debit,Debit Card,Uncategorised,False
-False,21/01/2025,tx_0000AqIzZRh9i5Eou6MHVC,Northern Trains,5.25,GBP,Debit,Debit Card,Uncategorised,False
+False,21/01/2025,tx_0000AqIzZRh9i5Eou6MHVC,Northern Trains,5.25,GBP,Debit,Debit Card,Local Transport,True
 False,21/01/2025,tx_0000AqJChkBa91nKzJyJV3,Kaydee Barker,10.99,GBP,Debit,Debit Card,Uncategorised,False
 False,21/01/2025,tx_0000AqJVyN9OwN4qIjm8Bd,Regular Savings Pot,15.0,GBP,Credit,Debit Card,Pot Transfer,True
 False,21/01/2025,tx_0000AqJVykKsjqYVXl5tFS,Kro Bar,5.6,GBP,Debit,Debit Card,Food - dining & delivery,True
@@ -2912,13 +2912,13 @@ False,24/01/2025,tx_0000AqPBf0OeTyxQg4msZm,Regular Savings Pot,40.0,GBP,Credit,D
 False,24/01/2025,tx_0000AqPBldKcdVJmHQ5itd,Candlelight Bes,37.8,GBP,Debit,Debit Card,Uncategorised,False
 False,24/01/2025,tx_0000AqPJuM0PDsSn9LE1rd,Regular Savings Pot,25.0,GBP,Credit,Debit Card,Pot Transfer,True
 False,24/01/2025,tx_0000AqPJw8TGVxqjbbEHTu,Morrisons,10.61,GBP,Debit,Debit Card,Groceries & Home Needs,True
-False,24/01/2025,tx_0000AqPXPtVM1RUfWDSvnG,Tesco Petrol,1.95,GBP,Debit,Debit Card,Uncategorised,False
+False,24/01/2025,tx_0000AqPXPtVM1RUfWDSvnG,Tesco Petrol,1.95,GBP,Debit,Debit Card,Groceries & Home Needs,True
 False,25/01/2025,tx_0000AqR5tZrjCCz5AGiHEv,Morrisons,3.0,GBP,Debit,Debit Card,Groceries & Home Needs,True
 False,25/01/2025,tx_0000AqRfs14wdxad8T60Zd,Transport for Greater Manchester,2.0,GBP,Debit,Debit Card,Local Transport,True
 False,25/01/2025,tx_0000AqRmYI0mg3fPHy8oCo,Regular Savings Pot,50.0,GBP,Credit,Debit Card,Pot Transfer,True
 False,25/01/2025,tx_0000AqRmwBZkG42wGfY6SX,Regular Savings Pot,50.0,GBP,Credit,Debit Card,Pot Transfer,True
 False,25/01/2025,tx_0000AqRnMP0sv3tDXsjC9B,Mnk Chit N Chaat,57.91,GBP,Debit,Debit Card,Uncategorised,False
-False,25/01/2025,tx_0000AqRs4EWhfbxXTRGL5f,Tesco Petrol,3.4,GBP,Debit,Debit Card,Uncategorised,False
+False,25/01/2025,tx_0000AqRs4EWhfbxXTRGL5f,Tesco Petrol,3.4,GBP,Debit,Debit Card,Groceries & Home Needs,True
 False,25/01/2025,tx_0000AqRzF1Xwy78a2xxgBN,BHARDWAJ D,17.22,GBP,Credit,Debit Card,Uncategorised,False
 False,25/01/2025,tx_0000AqRzqfMHuarn99LjaE,Dipaknashi Patel,43.72,GBP,Credit,Debit Card,Uncategorised,False
 False,25/01/2025,tx_0000AqRzuED2nFOHG6HSMb,Regular Savings Pot,100.0,GBP,Debit,Debit Card,Pot Transfer,True
@@ -2938,7 +2938,7 @@ False,27/01/2025,tx_0000AqW0dpW5i5S8OybBTv,Regular Savings Pot,50.0,GBP,Debit,De
 False,27/01/2025,tx_0000AqW0pQEvVxt2jaA3yT,Morrisons,3.35,GBP,Debit,Debit Card,Groceries & Home Needs,True
 False,28/01/2025,tx_0000AqXeRkcSHcOKR1TTaD,THE UNI OF MANCHES,78.22,GBP,Credit,Debit Card,Uncategorised,False
 False,28/01/2025,tx_0000AqXfQatD4YHA5wjF90,Cobhheritag Co,11.09,GBP,Debit,Debit Card,Uncategorised,False
-False,28/01/2025,tx_0000AqXx5riB8DCmkw3dZZ,The University of Manchester,440.81,GBP,Credit,Debit Card,Income - Stipend,False
+False,28/01/2025,tx_0000AqXx5riB8DCmkw3dZZ,The University of Manchester,440.81,GBP,Credit,Bank Transfer,Income - Stipend,False
 False,28/01/2025,tx_0000AqXx835Dp5caP2AI8P,Regular Savings Pot,150.0,GBP,Debit,Debit Card,Pot Transfer,True
 False,28/01/2025,tx_0000AqXx8qP6RxDBKpUtCz,Vault Pot,250.0,GBP,Debit,Debit Card,Pot Transfer,True
 False,28/01/2025,tx_0000AqXxA0vWoM8GiZNa1x,Regular Savings Pot,100.0,GBP,Debit,Debit Card,Pot Transfer,True
@@ -2954,14 +2954,14 @@ False,30/01/2025,tx_0000AqaoPXVncvBctv2eFX,Regular Savings Pot,15.0,GBP,Credit,D
 False,30/01/2025,tx_0000AqcGpQcer6js0Zvsyv,Morrisons,4.56,GBP,Debit,Debit Card,Groceries & Home Needs,True
 False,31/01/2025,tx_0000Aqdg4473WK8uvnIBlJ,Ritwick Sen,4.33,GBP,Debit,Debit Card,Uncategorised,False
 False,01/02/2025,tx_0000Aqg3yvC62TAxFgVWnR,Regular Savings Pot,15.0,GBP,Credit,Debit Card,Pot Transfer,True
-False,01/02/2025,tx_0000Aqg3zVTN9iHsufJaIT,Tesco Petrol,11.0,GBP,Debit,Debit Card,Uncategorised,False
+False,01/02/2025,tx_0000Aqg3zVTN9iHsufJaIT,Tesco Petrol,11.0,GBP,Debit,Debit Card,Groceries & Home Needs,True
 False,01/02/2025,tx_0000Aqg5jW1FYYq30yR6cD,Regular Savings Pot,15.0,GBP,Credit,Debit Card,Pot Transfer,True
 False,01/02/2025,tx_0000Aqg5lJKZhax3vddLov,Morrisons,12.53,GBP,Debit,Debit Card,Groceries & Home Needs,True
 False,02/02/2025,tx_0000AqiCll8nOR4UO35nVp,Greggs,2.6,GBP,Debit,Debit Card,Food - dining & delivery,True
 False,02/02/2025,tx_0000AqiDJCQWxtwlBo3xFB,The Bridgewater Hall,6.0,GBP,Debit,Debit Card,Uncategorised,False
 False,02/02/2025,tx_0000AqiOQAhqrMdIbb6yhd,Regular Savings Pot,10.0,GBP,Credit,Debit Card,Pot Transfer,True
 False,02/02/2025,tx_0000AqiOQagKHejIS10VOb,Icestone Gelato M,7.98,GBP,Debit,Debit Card,Food - dining & delivery,True
-False,02/02/2025,tx_0000Aqia0Q5eEueBnA6iY5,Tesco Petrol,6.5,GBP,Debit,Debit Card,Uncategorised,False
+False,02/02/2025,tx_0000Aqia0Q5eEueBnA6iY5,Tesco Petrol,6.5,GBP,Debit,Debit Card,Groceries & Home Needs,True
 False,03/02/2025,tx_0000Aqk5SKZxc9tnrJre77,Regular Savings Pot,20.0,GBP,Credit,Debit Card,Pot Transfer,True
 False,03/02/2025,tx_0000Aqk5TKyZclAx0VJIRP,Sumup Seitan S Kebab,6.2,GBP,Debit,Debit Card,Uncategorised,False
 False,03/02/2025,tx_0000Aqk5ZLbmBak6DDUd6n,House Of Habes,6.0,GBP,Debit,Debit Card,Food - dining & delivery,True
@@ -3039,17 +3039,17 @@ False,24/02/2025,tx_0000ArRn0Z9yYnP0VBy5dB,Dipaknashi Patel,299.0,GBP,Debit,Debi
 False,24/02/2025,tx_0000ArRpYYmcfPQhmqJ46L,Morrisons,0.9,GBP,Debit,Debit Card,Groceries & Home Needs,True
 False,24/02/2025,tx_0000ArS4PiZYOrUZN9XvNZ,Black Sheep Coffee,2.0,GBP,Debit,Debit Card,Uncategorised,False
 False,24/02/2025,tx_0000ArS7TrOVqGsIs3Pxas,Wallet Pot,10.0,GBP,Credit,Debit Card,Pot Transfer,True
-False,24/02/2025,tx_0000ArS8VtZmniYsXWWI9h,Tesco Petrol,3.2,GBP,Debit,Debit Card,Uncategorised,False
+False,24/02/2025,tx_0000ArS8VtZmniYsXWWI9h,Tesco Petrol,3.2,GBP,Debit,Debit Card,Groceries & Home Needs,True
 False,25/02/2025,tx_0000ArTg26GWeIVh8264Nm,Wallet Pot,5.0,GBP,Credit,Debit Card,Pot Transfer,True
 False,25/02/2025,tx_0000ArTg3fK5n8dQBxEnDt,Morrisons,9.15,GBP,Debit,Debit Card,Groceries & Home Needs,True
 False,25/02/2025,tx_0000ArTlxkH14ZEkoZOyp7,Vault Pot,1000.0,GBP,Credit,Debit Card,Pot Transfer,True
 False,25/02/2025,tx_0000ArTly11gmnv1QcbC8f,Vault Pot,1000.0,GBP,Credit,Debit Card,Pot Transfer,True
-False,25/02/2025,tx_0000ArU1imDHB2rTkIJWzp,Tesco Petrol,2.94,GBP,Debit,Debit Card,Uncategorised,False
+False,25/02/2025,tx_0000ArU1imDHB2rTkIJWzp,Tesco Petrol,2.94,GBP,Debit,Debit Card,Groceries & Home Needs,True
 False,25/02/2025,tx_0000ArUOuh1ka84bQ2IRbI,Rahul Subbaraman,2000.0,GBP,Debit,Debit Card,Pot Transfer,True
 False,25/02/2025,tx_0000ArUPHbiOUyUJXc7Bw1,Wallet Pot,15.98,GBP,Credit,Debit Card,Pot Transfer,True
 False,25/02/2025,tx_0000ArUPvXgYtpd7pg8AyH,Vue,15.98,GBP,Debit,Debit Card,Uncategorised,False
 False,25/02/2025,tx_0000ArUXquAgfZHxKmPGNt,Vue,7.99,GBP,Credit,Debit Card,Uncategorised,False
-False,26/02/2025,tx_0000ArW1TGtRjJ6QTwhIu1,The University of Manchester,689.45,GBP,Credit,Debit Card,Income - Stipend,False
+False,26/02/2025,tx_0000ArW1TGtRjJ6QTwhIu1,The University of Manchester,689.45,GBP,Credit,Bank Transfer,Income - Stipend,False
 False,26/02/2025,tx_0000ArW1ahB4P6ft4DqSEz,Rahul Subbaraman,250.0,GBP,Debit,Debit Card,Pot Transfer,True
 False,26/02/2025,tx_0000ArW1cjrHPLBpE6Q3aj,Wallet Pot,35.98,GBP,Debit,Debit Card,Pot Transfer,True
 False,26/02/2025,tx_0000ArW1eLNHPR1y0VvBHF,Vault Pot,2110.0,GBP,Debit,Debit Card,Pot Transfer,True
@@ -3062,7 +3062,7 @@ False,26/02/2025,tx_0000ArWJLQJuazGnK3V8KH,Siv Sachin Shaji Deepa,6.29,GBP,Credi
 False,26/02/2025,tx_0000ArWJNH3E1rAjDsxisL,Wallet Pot,5.0,GBP,Debit,Debit Card,Pot Transfer,True
 False,26/02/2025,tx_0000ArWVq5z1SN07hT6pDF,Transport for Greater Manchester,2.0,GBP,Debit,Debit Card,Local Transport,True
 False,01/03/2025,tx_0000Arbdr0Gvwkgi3HMx0M,Wallet Pot,7.9,GBP,Credit,Debit Card,Pot Transfer,True
-False,01/03/2025,tx_0000ArbdsssAQdTxVXvO42,Northern Trains,7.9,GBP,Debit,Debit Card,Uncategorised,False
+False,01/03/2025,tx_0000ArbdsssAQdTxVXvO42,Northern Trains,7.9,GBP,Debit,Debit Card,Local Transport,True
 False,01/03/2025,tx_0000ArbkaK7faYZfevZ4Rl,Sainsbury’s,3.15,GBP,Debit,Debit Card,Groceries & Home Needs,True
 False,01/03/2025,tx_0000ArcJDFHIvooPHgXHrm,Wallet Pot,20.0,GBP,Credit,Debit Card,Pot Transfer,True
 False,01/03/2025,tx_0000ArcMhepan3NVutqYtN,Mr Su's,2.9,GBP,Debit,Debit Card,Uncategorised,False
@@ -3082,14 +3082,14 @@ False,05/03/2025,tx_0000ArkdhzWf6IctN3slWb,Rahul Subbaraman,200.0,GBP,Debit,Debi
 False,05/03/2025,tx_0000Arke8sEYJwbZbQNf3R,Rahul Subbaraman,23.62,GBP,Credit,Debit Card,Pot Transfer,True
 False,05/03/2025,tx_0000ArkuYcKff8Mv87t0XB,Maricarmen,22.8,GBP,Debit,Debit Card,Uncategorised,False
 False,06/03/2025,tx_0000ArmjqBtI03l1P6ZjUZ,Boots,4.4,GBP,Debit,Debit Card,Groceries & Home Needs,True
-False,06/03/2025,tx_0000ArmngxNayyiHBhdmnB,Northern Trains,0.99,GBP,Credit,Debit Card,Uncategorised,False
+False,06/03/2025,tx_0000ArmngxNayyiHBhdmnB,Northern Trains,0.99,GBP,Credit,Debit Card,Local Transport,True
 False,06/03/2025,tx_0000ArmnkjJRE2DbPdl9Ll,Morrisons,3.29,GBP,Debit,Debit Card,Groceries & Home Needs,True
 False,06/03/2025,tx_0000Armw4ioPawqVY0m73h,Wallet Pot,20.0,GBP,Credit,Debit Card,Pot Transfer,True
 False,06/03/2025,tx_0000ArmwBdfN7pex1rq0B7,Irish Rail,6.28,GBP,Debit,Debit Card,Uncategorised,False
 False,07/03/2025,tx_0000ArnZ8b0yQKfXgK5ADR,Transport for Greater Manchester,2.0,GBP,Debit,Debit Card,Local Transport,True
 False,07/03/2025,tx_0000Arns8apb0Juxv8UHZK,Irish Rail 74575796-Ix,6.3,GBP,Credit,Debit Card,Uncategorised,False
 False,09/03/2025,tx_0000ArszrHWFK83CTRzNfG,Wallet Pot,15.0,GBP,Debit,Debit Card,Pot Transfer,True
-False,09/03/2025,tx_0000ArtNBN7oULv16ORbz0,Northern Trains,2.5,GBP,Debit,Debit Card,Uncategorised,False
+False,09/03/2025,tx_0000ArtNBN7oULv16ORbz0,Northern Trains,2.5,GBP,Debit,Debit Card,Local Transport,True
 False,09/03/2025,tx_0000ArtR4pl61xz6HzW3gR,Transport for Greater Manchester,2.0,GBP,Debit,Debit Card,Local Transport,True
 False,10/03/2025,tx_0000AruWQM5RixAjQjNY1Z,Wallet Pot,10.0,GBP,Credit,Debit Card,Pot Transfer,True
 False,10/03/2025,tx_0000AruXEE4zll7GJ8DjP7,Morrisons,3.6,GBP,Debit,Debit Card,Groceries & Home Needs,True
@@ -3099,8 +3099,8 @@ False,11/03/2025,tx_0000Arwxq3kTc8KWKPPeXS,Morrisons,13.32,GBP,Debit,Debit Card,
 False,12/03/2025,tx_0000ArzDF4RC4obc2YpDAQ,Morrisons,0.99,GBP,Debit,Debit Card,Groceries & Home Needs,True
 False,12/03/2025,tx_0000ArzF1EMOaUY80VoUXj,Transport for Greater Manchester,2.0,GBP,Debit,Debit Card,Local Transport,True
 False,12/03/2025,tx_0000ArzfP1RMs8rx19OYtu,Rahul Subbaraman,200.0,GBP,Credit,Debit Card,Pot Transfer,True
-False,12/03/2025,tx_0000ArzfQNAbZFLBcVlCvB,Northern Trains,62.8,GBP,Debit,Debit Card,Uncategorised,False
-False,12/03/2025,tx_0000Arzfy5JOTECrfbTL8r,Northern Trains,56.95,GBP,Debit,Debit Card,Uncategorised,False
+False,12/03/2025,tx_0000ArzfQNAbZFLBcVlCvB,Northern Trains,62.8,GBP,Debit,Debit Card,Trip Expenses,False
+False,12/03/2025,tx_0000Arzfy5JOTECrfbTL8r,Northern Trains,56.95,GBP,Debit,Debit Card,Trip Expenses,False
 False,12/03/2025,tx_0000ArzhXJ7RE9txcx4G2t,BHARDWAJ D,123.9,GBP,Credit,Debit Card,Uncategorised,False
 False,12/03/2025,tx_0000Arzhdsk9goB4o4U4kz,Scotlands Top Hostels,54.0,GBP,Debit,Debit Card,Uncategorised,False
 False,13/03/2025,tx_0000Arzlwl4Sq5nros9TjF,Wallet Pot,150.0,GBP,Debit,Debit Card,Pot Transfer,True
@@ -3118,7 +3118,7 @@ False,14/03/2025,tx_0000As2bxHCIyfzZqfxiK1,Morrisons,5.05,GBP,Debit,Debit Card,G
 False,14/03/2025,tx_0000As3Qnus9huct0CoUVO,Bunsik,12.8,GBP,Debit,Debit Card,Uncategorised,False
 False,14/03/2025,tx_0000As3gKwZVuPnW3SpRcP,Transport for Greater Manchester,2.0,GBP,Debit,Debit Card,Local Transport,True
 False,15/03/2025,tx_0000As4e9NIKiqYdntQ6i1,Bee Network,5.0,GBP,Debit,Debit Card,Local Transport,True
-False,15/03/2025,tx_0000As4eM7gQ4pNsbyAkUr,Northern Trains,7.15,GBP,Debit,Debit Card,Uncategorised,False
+False,15/03/2025,tx_0000As4eM7gQ4pNsbyAkUr,Northern Trains,7.15,GBP,Debit,Debit Card,Local Transport,True
 False,15/03/2025,tx_0000As4f6hDCJXxZCGxrU1,Bamburgh Castle Viewin,37.5,GBP,Debit,Debit Card,Uncategorised,False
 False,15/03/2025,tx_0000As4fwfYBjjpK1mTkO1,Sainsbury’s,2.75,GBP,Debit,Debit Card,Groceries & Home Needs,True
 False,16/03/2025,tx_0000As6qukTjvj73mds7vP,Split My Fare,47.41,GBP,Debit,Debit Card,Uncategorised,False
@@ -3145,7 +3145,7 @@ False,22/03/2025,tx_0000AsIOHr4B2Onvit99A9,Wallet Pot,50.0,GBP,Debit,Debit Card,
 False,22/03/2025,tx_0000AsJC9dL5Bdu2w3JntJ,Transport for Greater Manchester,2.0,GBP,Debit,Debit Card,Local Transport,True
 False,22/03/2025,tx_0000AsJPokqFUnfyIeRQNV,Transport for Greater Manchester,2.0,GBP,Debit,Debit Card,Local Transport,True
 False,22/03/2025,tx_0000AsJSCtlCBjUgA2St6o,Wallet Pot,10.0,GBP,Credit,Debit Card,Pot Transfer,True
-False,22/03/2025,tx_0000AsJSFSUM2XQfhxI7rG,Tesco Petrol,3.45,GBP,Debit,Debit Card,Uncategorised,False
+False,22/03/2025,tx_0000AsJSFSUM2XQfhxI7rG,Tesco Petrol,3.45,GBP,Debit,Debit Card,Groceries & Home Needs,True
 False,24/03/2025,tx_0000AsNVXr48TipJivMyQc,Wallet Pot,13.0,GBP,Credit,Debit Card,Pot Transfer,True
 False,24/03/2025,tx_0000AsNVaEwoenDJwKoSvJ,Khalil Mohamad,13.0,GBP,Debit,Debit Card,Uncategorised,False
 False,24/03/2025,tx_0000AsOBcdv6ydjHvSwjJZ,Wallet Pot,12.0,GBP,Credit,Debit Card,Pot Transfer,True
@@ -3157,18 +3157,18 @@ False,26/03/2025,tx_0000AsS5aYtwqLq3LeSGKh,Wallet Pot,100.0,GBP,Debit,Debit Card
 False,26/03/2025,tx_0000AsS5aa0Mjy7Kof801q,Vault Pot,1253.08,GBP,Debit,Debit Card,Pot Transfer,True
 False,26/03/2025,tx_0000AsS5dZ8ERXCyTLpbUH,Rahul Subbaraman,350.0,GBP,Debit,Debit Card,Pot Transfer,True
 False,26/03/2025,tx_0000AsSHIKNXIbCq5ay7k1,Morrisons,6.5,GBP,Debit,Debit Card,Groceries & Home Needs,True
-False,27/03/2025,tx_0000AsUJR0vvYOqlm9VijJ,The University of Manchester,711.5,GBP,Credit,Debit Card,Income - Stipend,False
+False,27/03/2025,tx_0000AsUJR0vvYOqlm9VijJ,The University of Manchester,711.5,GBP,Credit,Bank Transfer,Income - Stipend,False
 False,27/03/2025,tx_0000AsUJS4X3etsIEajlmD,Vault Pot,711.5,GBP,Debit,Debit Card,Pot Transfer,True
 False,27/03/2025,tx_0000AsUV3U2St6SKPTt0CY,Wallet Pot,40.0,GBP,Debit,Debit Card,Pot Transfer,True
 False,28/03/2025,tx_0000AsWK9WzU7BcMQcDcXq,Wallet Pot,20.0,GBP,Credit,Debit Card,Pot Transfer,True
 False,28/03/2025,tx_0000AsWKBin7DDgyaVkaIM,Morrisons,19.97,GBP,Debit,Debit Card,Groceries & Home Needs,True
 False,29/03/2025,tx_0000AsYfOBk1t8liQMKlkX,Wallet Pot,10.0,GBP,Credit,Debit Card,Pot Transfer,True
-False,29/03/2025,tx_0000AsYgBub5u5wgm6wooD,Tesco Petrol,3.05,GBP,Debit,Debit Card,Uncategorised,False
+False,29/03/2025,tx_0000AsYgBub5u5wgm6wooD,Tesco Petrol,3.05,GBP,Debit,Debit Card,Groceries & Home Needs,True
 False,29/03/2025,tx_0000AsYwUv47z9W67GhBAX,Wallet Pot,10.0,GBP,Debit,Debit Card,Pot Transfer,True
 False,30/03/2025,tx_0000AsZnLisfDLvHDeXxpa,Bee Network,2.0,GBP,Debit,Debit Card,Local Transport,True
 False,30/03/2025,tx_0000AsZtyQZHpizI98eDi5,Wallet Pot,10.0,GBP,Credit,Debit Card,Pot Transfer,True
 False,30/03/2025,tx_0000AsZuM5ucHcsSdjNl0D,McDonald’s,5.29,GBP,Debit,Debit Card,Food - dining & delivery,True
-False,30/03/2025,tx_0000AsaSLCXzWdub3kkP5O,Tesco Petrol,5.7,GBP,Debit,Debit Card,Uncategorised,False
+False,30/03/2025,tx_0000AsaSLCXzWdub3kkP5O,Tesco Petrol,5.7,GBP,Debit,Debit Card,Groceries & Home Needs,True
 False,31/03/2025,tx_0000AscNQ2bFpHKWDNdgqf,Wallet Pot,10.0,GBP,Credit,Debit Card,Pot Transfer,True
 False,31/03/2025,tx_0000AscNQuHGFpgPq0Z8Xx,Circuit Laundry,3.6,GBP,Debit,Debit Card,Bills & Utilities,True
 False,31/03/2025,tx_0000AscTnSWIDocjOw0tso,Circuit Laundry,2.1,GBP,Debit,Debit Card,Bills & Utilities,True
@@ -3196,9 +3196,9 @@ False,10/04/2025,tx_0000AsxJDauKdk4smqpjo9,Morrisons,3.65,GBP,Debit,Debit Card,G
 False,10/04/2025,tx_0000AsxJDvLedrobFM3Fjt,Wallet Pot,10.0,GBP,Credit,Debit Card,Pot Transfer,True
 False,10/04/2025,tx_0000AsxJv7nwCq1ZiFiz7D,Wallet Pot,6.0,GBP,Debit,Debit Card,Pot Transfer,True
 False,11/04/2025,tx_0000AsyuboT7lKe8PGBOs6,Jaswinder Sing,2.5,GBP,Debit,Debit Card,Uncategorised,False
-False,11/04/2025,tx_0000AszFk5iDdLsZUnUOQr,Tesco Petrol,0.55,GBP,Debit,Debit Card,Uncategorised,False
+False,11/04/2025,tx_0000AszFk5iDdLsZUnUOQr,Tesco Petrol,0.55,GBP,Debit,Debit Card,Groceries & Home Needs,True
 False,13/04/2025,tx_0000At3UNQOGrW8Z3h07O8,Wallet Pot,15.0,GBP,Credit,Debit Card,Pot Transfer,True
-False,13/04/2025,tx_0000At3Utycv6lC6uKm6i1,Tesco Petrol,15.89,GBP,Debit,Debit Card,Uncategorised,False
+False,13/04/2025,tx_0000At3Utycv6lC6uKm6i1,Tesco Petrol,15.89,GBP,Debit,Debit Card,Groceries & Home Needs,True
 False,13/04/2025,tx_0000At3VwI7bhGxnNcKJTG,Dipaknashi Patel,9.29,GBP,Credit,Debit Card,Uncategorised,False
 False,14/04/2025,tx_0000At4ldKmlMTrAGycf3J,Uber,4.98,GBP,Debit,Debit Card,Local Transport,True
 False,16/04/2025,tx_0000At9sbJBC24r4DMgSq9,Wallet Pot,25.0,GBP,Credit,Debit Card,Pot Transfer,True
@@ -3219,13 +3219,13 @@ False,20/04/2025,tx_0000AtGk5e0FdWlEifLXCk,Wallet Pot,30.0,GBP,Credit,Debit Card
 False,20/04/2025,tx_0000AtGkRmmDhGjRT0tEn3,Temu,19.99,GBP,Debit,Debit Card,Uncategorised,False
 False,20/04/2025,tx_0000AtGlYTbVTlP4or5IYP,Stasher.com,6.53,GBP,Debit,Debit Card,Uncategorised,False
 False,20/04/2025,tx_0000AtHNQaf59SUUjJdGOP,Bee Network,4.0,GBP,Debit,Debit Card,Local Transport,True
-False,20/04/2025,tx_0000AtI2YTOKA8KDtRDwQb,Northern Trains,3.3,GBP,Debit,Debit Card,Uncategorised,False
+False,20/04/2025,tx_0000AtI2YTOKA8KDtRDwQb,Northern Trains,3.3,GBP,Debit,Debit Card,Local Transport,True
 False,21/04/2025,tx_0000AtJPi6amHAsaGjbF8k,Rahul Subbaraman,40.55,GBP,Credit,Debit Card,Pot Transfer,True
 False,21/04/2025,tx_0000AtJPlQqVQhtVecUXib,Wallet Pot,35.0,GBP,Debit,Debit Card,Pot Transfer,True
 False,21/04/2025,tx_0000AtJe49r6DrX0g5qyjx,Wallet Pot,15.0,GBP,Credit,Debit Card,Pot Transfer,True
 False,21/04/2025,tx_0000AtJgLofluyI2pIteO9,Morrisons,15.11,GBP,Debit,Debit Card,Groceries & Home Needs,True
 False,21/04/2025,tx_0000AtJsqv21WZiqhx1GpX,Dipaknashi Patel,5.25,GBP,Credit,Debit Card,Uncategorised,False
-False,21/04/2025,tx_0000AtKDWatkli0iHa0XDu,Tesco Petrol,9.25,GBP,Debit,Debit Card,Uncategorised,False
+False,21/04/2025,tx_0000AtKDWatkli0iHa0XDu,Tesco Petrol,9.25,GBP,Debit,Debit Card,Groceries & Home Needs,True
 False,22/04/2025,tx_0000AtLMmmdpy69KVmRysr,Stasher.com,3.27,GBP,Credit,Debit Card,Uncategorised,False
 False,22/04/2025,tx_0000AtLXtlcPGm3KQsBH1t,Vault Pot,2672.0,GBP,Credit,Debit Card,Pot Transfer,True
 False,22/04/2025,tx_0000AtLgqAeh8kieN9xIBt,StuRents Ltd,2672.0,GBP,Debit,Debit Card,Rent,True
@@ -3250,7 +3250,7 @@ False,27/04/2025,tx_0000AtWSAY28ZLg1lfPAJO,Wallet Pot,25.0,GBP,Credit,Debit Card
 False,27/04/2025,tx_0000AtWWbvrsSc8fjzZTPf,Sainsbury’s,1.6,GBP,Debit,Debit Card,Groceries & Home Needs,True
 False,27/04/2025,tx_0000AtWobdyMnEo7jLRM4P,Bee Network,2.0,GBP,Debit,Debit Card,Local Transport,True
 False,28/04/2025,tx_0000AtXmfm10pLhkbqOhEH,Transport for London,5.3,GBP,Debit,Debit Card,Trip Expenses,True
-False,28/04/2025,tx_0000AtYRDiQ0hdwUt5sCAb,The University of Manchester,500.35,GBP,Credit,Debit Card,Income - Stipend,False
+False,28/04/2025,tx_0000AtYRDiQ0hdwUt5sCAb,The University of Manchester,500.35,GBP,Credit,Bank Transfer,Income - Stipend,False
 False,28/04/2025,tx_0000AtYRLtC2WiwPHY5lwY,Vault Pot,500.2,GBP,Debit,Debit Card,Pot Transfer,True
 False,28/04/2025,tx_0000AtYRNxt231G8UjrTk2,Wallet Pot,9.99,GBP,Debit,Debit Card,Pot Transfer,True
 False,29/04/2025,tx_0000AtadH7fkqxWgjiyLGE,Wallet Pot,10.0,GBP,Credit,Debit Card,Pot Transfer,True
@@ -3275,7 +3275,7 @@ False,03/05/2025,tx_0000AtjGHWRGDvoVIixta6,Yaduvanshi Indian Rest,32.74,GBP,Debi
 False,04/05/2025,tx_0000AtkCp59zwfn1lTkxaT,Working Balance Pot,50.0,GBP,Credit,Debit Card,Pot Transfer,True
 False,04/05/2025,tx_0000AtkE6er8aAEVykSrj8,Greggs,4.0,GBP,Debit,Debit Card,Food - dining & delivery,True
 False,04/05/2025,tx_0000AtkEoGwypBM1mQGCQb,Sainsbury’s,3.63,GBP,Debit,Debit Card,Groceries & Home Needs,True
-False,04/05/2025,tx_0000AtkG5j2ziJ9AuAJH73,Northern Trains,9.95,GBP,Debit,Debit Card,Uncategorised,False
+False,04/05/2025,tx_0000AtkG5j2ziJ9AuAJH73,Northern Trains,9.95,GBP,Debit,Debit Card,Local Transport,True
 False,04/05/2025,tx_0000AtkWA5gx3wI6LgFUIb,Inchcolm Abbey,4.0,GBP,Debit,Debit Card,Uncategorised,False
 False,04/05/2025,tx_0000AtkWSZp3m9huHHVF9W,Inchcolm Abbey,2.0,GBP,Debit,Debit Card,Uncategorised,False
 False,04/05/2025,tx_0000AtkoH1ORF1Fwgmcyxt,M&S,2.65,GBP,Debit,Debit Card,Uncategorised,False
@@ -3286,7 +3286,7 @@ False,04/05/2025,tx_0000Atl8vj9LyLen44G8UU,Crest Of Edinburgh,3.99,GBP,Debit,Deb
 False,04/05/2025,tx_0000AtlG5gzrX26FId2ll3,Working Balance Pot,22.0,GBP,Credit,Debit Card,Pot Transfer,True
 False,04/05/2025,tx_0000AtlG6FGi6u2AAXu9Hl,Noodle N Rice,22.0,GBP,Debit,Debit Card,Uncategorised,False
 False,04/05/2025,tx_0000AtlKGFtR2h2dWRMfuD,Working Balance Pot,8.0,GBP,Credit,Debit Card,Pot Transfer,True
-False,04/05/2025,tx_0000AtlKHwtOeoeltI7Ruz,Northern Trains,14.3,GBP,Debit,Debit Card,Uncategorised,False
+False,04/05/2025,tx_0000AtlKHwtOeoeltI7Ruz,Northern Trains,14.3,GBP,Debit,Debit Card,Local Transport,True
 False,04/05/2025,tx_0000AtlNvPVeUelpGh45TQ,Working Balance Pot,20.0,GBP,Credit,Debit Card,Pot Transfer,True
 False,05/05/2025,tx_0000AtmBo3pxfTKonUNYnK,Cafe Edinburgh,13.0,GBP,Debit,Debit Card,Uncategorised,False
 False,05/05/2025,tx_0000AtmBrcJJx7s7mAF58M,Working Balance Pot,50.0,GBP,Credit,Debit Card,Pot Transfer,True
@@ -3299,7 +3299,7 @@ False,05/05/2025,tx_0000Atn0d6A5mPeHqaXdlB,Arriva North East,5.0,GBP,Debit,Debit
 False,05/05/2025,tx_0000AtnBENR7Vzn9Vb8hE2,Sainsbury’s,7.0,GBP,Debit,Debit Card,Groceries & Home Needs,True
 False,06/05/2025,tx_0000Atp3dyaW73iFjVA0Tx,Working Balance Pot,10.0,GBP,Credit,Debit Card,Pot Transfer,True
 False,06/05/2025,tx_0000Atp3fiyL8voHwPQJCD,Morrisons,7.06,GBP,Debit,Debit Card,Groceries & Home Needs,True
-False,06/05/2025,tx_0000Atp4sioX8ryEnyDjN3,Tesco Petrol,3.0,GBP,Debit,Debit Card,Uncategorised,False
+False,06/05/2025,tx_0000Atp4sioX8ryEnyDjN3,Tesco Petrol,3.0,GBP,Debit,Debit Card,Groceries & Home Needs,True
 False,06/05/2025,tx_0000Atp9hVVwkXGCRWVndZ,BHARDWAJ D,61.85,GBP,Credit,Debit Card,Uncategorised,False
 False,06/05/2025,tx_0000AtpEyodjOUQFhhMnr9,Working Balance Pot,60.0,GBP,Debit,Debit Card,Pot Transfer,True
 False,07/05/2025,tx_0000AtrLk88hhVlZLAFTW5,Working Balance Pot,10.0,GBP,Credit,Debit Card,Pot Transfer,True
@@ -3353,10 +3353,10 @@ False,22/05/2025,tx_0000AuLSulM3HZXojVYszZ,Working Balance Pot,28.9,GBP,Debit,De
 False,22/05/2025,tx_0000AuLSwN5WTYsrIzq1BZ,Working Balance Pot,10.0,GBP,Debit,Debit Card,Pot Transfer,True
 False,22/05/2025,tx_0000AuMHiC3RnRubGLCGhd,Transport for Greater Manchester,5.0,GBP,Debit,Debit Card,Local Transport,True
 False,23/05/2025,tx_0000AuNQhosf3BnHHR0eTB,Working Balance Pot,10.0,GBP,Credit,Debit Card,Pot Transfer,True
-False,23/05/2025,tx_0000AuNuDFisCQS1RfR3Dt,The University of Manchester,4.5,GBP,Debit,Debit Card,Income - Stipend,False
+False,23/05/2025,tx_0000AuNuDFisCQS1RfR3Dt,The University of Manchester,4.5,GBP,Debit,Debit Card,Food - dining & delivery,False
 False,23/05/2025,tx_0000AuNyMbSb9IS2Si8tZh,Bickram,4.0,GBP,Debit,Debit Card,Uncategorised,False
 False,23/05/2025,tx_0000AuOXmQB7DLbJComRc1,Working Balance Pot,25.0,GBP,Credit,Debit Card,Pot Transfer,True
-False,23/05/2025,tx_0000AuOXp31rjrNOCFxXYf,Tesco Petrol,22.77,GBP,Debit,Debit Card,Uncategorised,False
+False,23/05/2025,tx_0000AuOXp31rjrNOCFxXYf,Tesco Petrol,22.77,GBP,Debit,Debit Card,Groceries & Home Needs,True
 False,24/05/2025,tx_0000AuPRs2yPzrgGKYiI65,Working Balance Pot,25.0,GBP,Credit,Debit Card,Pot Transfer,True
 False,24/05/2025,tx_0000AuPTwgRDPWJxnIWOgu,Bee Network,2.0,GBP,Debit,Debit Card,Local Transport,True
 False,24/05/2025,tx_0000AuPUWkP493Qeaw6GaS,Costa Coffee,4.45,GBP,Debit,Debit Card,Food - dining & delivery,True
@@ -3377,8 +3377,8 @@ False,27/05/2025,tx_0000AuVytGoaU0e0qCxx2n,Rahul Subbaraman,22.42,GBP,Credit,Deb
 False,27/05/2025,tx_0000AuVyudsQE1Do4ghKzZ,Working Balance Pot,20.0,GBP,Debit,Debit Card,Pot Transfer,True
 False,27/05/2025,tx_0000AuW3ofuIGOplaCqx50,Working Balance Pot,12.0,GBP,Credit,Debit Card,Pot Transfer,True
 False,27/05/2025,tx_0000AuW3r2Fy8gEriFA2ZV,Khalil Mohamad,12.0,GBP,Debit,Debit Card,Uncategorised,False
-False,27/05/2025,tx_0000AuW47l1zR6Cd9mO0Cv,Tesco Petrol,3.05,GBP,Debit,Debit Card,Uncategorised,False
-False,28/05/2025,tx_0000AuYbmEE5zg0Vtjj0yn,The University of Manchester,426.96,GBP,Credit,Debit Card,Income - Stipend,False
+False,27/05/2025,tx_0000AuW47l1zR6Cd9mO0Cv,Tesco Petrol,3.05,GBP,Debit,Debit Card,Groceries & Home Needs,True
+False,28/05/2025,tx_0000AuYbmEE5zg0Vtjj0yn,The University of Manchester,426.96,GBP,Credit,Bank Transfer,Income - Stipend,False
 False,28/05/2025,tx_0000AuYbpIYuKXUYdfdw4g,Working Balance Pot,22.0,GBP,Debit,Debit Card,Pot Transfer,True
 False,28/05/2025,tx_0000AuYbs7YFiwY6343dCs,Rahul Subbaraman,2100.0,GBP,Debit,Debit Card,Pot Transfer,True
 False,29/05/2025,tx_0000AuadGINFcsJucS0tyV,Transport For Wales,6.75,GBP,Credit,Debit Card,Uncategorised,False
@@ -3415,7 +3415,7 @@ False,07/06/2025,tx_0000AusdcehylVHVTfzP1N,Spar,3.25,GBP,Debit,Debit Card,Uncate
 False,07/06/2025,tx_0000Ausq2mSflEhb821HST,Lancaster City Museum,5.0,GBP,Debit,Debit Card,Uncategorised,False
 False,07/06/2025,tx_0000AusqjG0OJ8WAIH4zr8,Working Balance Pot,15.0,GBP,Credit,Debit Card,Pot Transfer,True
 False,07/06/2025,tx_0000AutbCGDZBzvaQ6NrDW,Stagecoach,2.0,GBP,Debit,Debit Card,Local Transport,True
-False,08/06/2025,tx_0000AuumAQbWtkAE8QZX61,Northern Trains,6.05,GBP,Debit,Debit Card,Uncategorised,False
+False,08/06/2025,tx_0000AuumAQbWtkAE8QZX61,Northern Trains,6.05,GBP,Debit,Debit Card,Local Transport,True
 False,08/06/2025,tx_0000AuumOPFWjSihzFwhfd,Working Balance Pot,10.0,GBP,Credit,Debit Card,Pot Transfer,True
 False,08/06/2025,tx_0000AuumcPvN1HatQPabpb,Train Pal,14.7,GBP,Debit,Debit Card,Uncategorised,False
 False,08/06/2025,tx_0000AuvKcLBS2fU4joyki1,Working Balance Pot,20.0,GBP,Credit,Debit Card,Pot Transfer,True
@@ -3442,7 +3442,7 @@ False,14/06/2025,tx_0000Av7dtIK6A1KYqkBiiX,Working Balance Pot,13.36,GBP,Credit,
 False,14/06/2025,tx_0000Av7duaifFVhbZeQAeP,Morrisons,13.36,GBP,Debit,Debit Card,Groceries & Home Needs,True
 False,14/06/2025,tx_0000Av7zw51gFkCmnQtOzM,Rahul Subbaraman,50.0,GBP,Credit,Debit Card,Pot Transfer,True
 False,14/06/2025,tx_0000Av8154CUn9SATLFJb7,Working Balance Pot,46.27,GBP,Debit,Debit Card,Pot Transfer,True
-False,14/06/2025,tx_0000Av8A0VutDSZXJ3uQqq,Tesco Petrol,0.92,GBP,Debit,Debit Card,Uncategorised,False
+False,14/06/2025,tx_0000Av8A0VutDSZXJ3uQqq,Tesco Petrol,0.92,GBP,Debit,Debit Card,Groceries & Home Needs,True
 False,16/06/2025,tx_0000AvCCLnaHhTRaBVs1NB,Morrisons,3.63,GBP,Debit,Debit Card,Groceries & Home Needs,True
 False,17/06/2025,tx_0000AvDuqBEIwRHKhyj8pH,Rahul Subbaraman,0.2,GBP,Credit,Debit Card,Pot Transfer,True
 False,19/06/2025,tx_0000AvIYXtQl9XXadqgJXf,Working Balance Pot,30.0,GBP,Credit,Debit Card,Pot Transfer,True
@@ -3450,7 +3450,7 @@ False,19/06/2025,tx_0000AvIZRUasgNCK7LLxsv,Rudys Portland Street,19.0,GBP,Debit,
 False,20/06/2025,tx_0000AvKI3bZLmr2kCZ29yu,Bee Network,4.0,GBP,Debit,Debit Card,Local Transport,True
 False,20/06/2025,tx_0000AvKItGTlRdOnLvQRkH,Working Balance Pot,10.0,GBP,Debit,Debit Card,Pot Transfer,True
 False,20/06/2025,tx_0000AvKiocv7BAX0Uw46i2,Working Balance Pot,5.0,GBP,Credit,Debit Card,Pot Transfer,True
-False,20/06/2025,tx_0000AvKiqVdREgxnFUS3Ck,Tesco Petrol,6.05,GBP,Debit,Debit Card,Uncategorised,False
+False,20/06/2025,tx_0000AvKiqVdREgxnFUS3Ck,Tesco Petrol,6.05,GBP,Debit,Debit Card,Groceries & Home Needs,True
 False,21/06/2025,tx_0000AvMBZoeaMciefV4khl,Working Balance Pot,10.0,GBP,Credit,Debit Card,Pot Transfer,True
 False,22/06/2025,tx_0000AvNiMIRgIFAmicpUTy,Working Balance Pot,20.0,GBP,Credit,Debit Card,Pot Transfer,True
 False,22/06/2025,tx_0000AvNiMx5nAX03GA3J5u,Bolt,12.9,GBP,Debit,Debit Card,Local Transport,True
@@ -3463,15 +3463,15 @@ False,23/06/2025,tx_0000AvPiGnBVTu6zzA3xOT,Lebara,6.95,GBP,Debit,Debit Card,Bill
 False,23/06/2025,tx_0000AvQNSkKg0XJ2MuEFpR,Working Balance Pot,5.0,GBP,Credit,Debit Card,Pot Transfer,True
 False,23/06/2025,tx_0000AvQNUaZrFR8PbdwePL,Co-op,1.38,GBP,Debit,Debit Card,Groceries & Home Needs,True
 False,23/06/2025,tx_0000AvQgrApr1KNhxokiun,Working Balance Pot,15.0,GBP,Credit,Debit Card,Pot Transfer,True
-False,23/06/2025,tx_0000AvQhSRbvc3W4p4AkNe,Tesco Petrol,6.47,GBP,Debit,Debit Card,Uncategorised,False
-False,23/06/2025,tx_0000AvQhgXSwdlh3tGqTWD,Tesco Petrol,2.6,GBP,Debit,Debit Card,Uncategorised,False
+False,23/06/2025,tx_0000AvQhSRbvc3W4p4AkNe,Tesco Petrol,6.47,GBP,Debit,Debit Card,Groceries & Home Needs,True
+False,23/06/2025,tx_0000AvQhgXSwdlh3tGqTWD,Tesco Petrol,2.6,GBP,Debit,Debit Card,Groceries & Home Needs,True
 False,24/06/2025,tx_0000AvSyE8UC0a9HXnJxCL,Bee Network,2.0,GBP,Debit,Debit Card,Local Transport,True
 False,25/06/2025,tx_0000AvUHEq7nqvrX5CUVRB,Working Balance Pot,10.0,GBP,Credit,Debit Card,Pot Transfer,True
 False,25/06/2025,tx_0000AvUHO6xkcRfK986ldZ,Collctiv Jeeban Panigr,10.0,GBP,Debit,Debit Card,Uncategorised,False
 False,25/06/2025,tx_0000AvUeCm6w6TpZFrojg3,Rahul Subbaraman,1703.08,GBP,Debit,Debit Card,Pot Transfer,True
 False,26/06/2025,tx_0000AvWak2QKSl2yjCbDij,Rahul Subbaraman,38.45,GBP,Credit,Debit Card,Pot Transfer,True
 False,26/06/2025,tx_0000AvWapb01L3znPVwa6z,Split My Fare,38.45,GBP,Debit,Debit Card,Uncategorised,False
-False,26/06/2025,tx_0000AvWiX7WH0LA6OwjNj7,The University of Manchester,722.35,GBP,Credit,Debit Card,Income - Stipend,False
+False,26/06/2025,tx_0000AvWiX7WH0LA6OwjNj7,The University of Manchester,722.35,GBP,Credit,Bank Transfer,Income - Stipend,False
 False,26/06/2025,tx_0000AvWiYNO9UOL0scp7QI,Working Balance Pot,30.0,GBP,Debit,Debit Card,Pot Transfer,True
 False,26/06/2025,tx_0000AvWiajoR5YpFU5JdD9,Working Balance Pot,5.0,GBP,Credit,Debit Card,Pot Transfer,True
 False,26/06/2025,tx_0000AvWigA0n6kIqwFuWMz,Rahul Subbaraman,700.0,GBP,Debit,Debit Card,Pot Transfer,True
@@ -3485,11 +3485,11 @@ False,30/06/2025,tx_0000AveQKKBCNZwn0fMENO,Morrisons,0.8,GBP,Debit,Debit Card,Gr
 False,01/07/2025,tx_0000AvhC5clSBRmTDwnr1t,Morrisons,9.13,GBP,Debit,Debit Card,Groceries & Home Needs,True
 False,01/07/2025,tx_0000AvhCJOKMeljyy8ZBh4,Morrisons,0.6,GBP,Debit,Debit Card,Groceries & Home Needs,True
 False,01/07/2025,tx_0000AvhJMDxoLQMOJ6VwXK,Working Balance Pot,15.0,GBP,Credit,Debit Card,Pot Transfer,True
-False,01/07/2025,tx_0000AvhJgMdnnAUpABKoJH,Northern Trains,4.7,GBP,Debit,Debit Card,Uncategorised,False
+False,01/07/2025,tx_0000AvhJgMdnnAUpABKoJH,Northern Trains,4.7,GBP,Debit,Debit Card,Local Transport,True
 False,03/07/2025,tx_0000AvlDYM4wB1kuY1siLS,Florida Fried Chicken,6.7,GBP,Debit,Debit Card,Uncategorised,False
-False,03/07/2025,tx_0000AvlDyvamlD2NHSpipm,Tesco Petrol,1.85,GBP,Debit,Debit Card,Uncategorised,False
+False,03/07/2025,tx_0000AvlDyvamlD2NHSpipm,Tesco Petrol,1.85,GBP,Debit,Debit Card,Groceries & Home Needs,True
 False,04/07/2025,tx_0000Avmb3FpfwSXXbuticr,Bee Network,2.0,GBP,Debit,Debit Card,Local Transport,True
-False,04/07/2025,tx_0000Avn2wwHGX1lCWdGTH2,Northern Trains,4.05,GBP,Debit,Debit Card,Uncategorised,False
+False,04/07/2025,tx_0000Avn2wwHGX1lCWdGTH2,Northern Trains,4.05,GBP,Debit,Debit Card,Local Transport,True
 False,04/07/2025,tx_0000Avn3GlwudpRu9OZhZJ,Working Balance Pot,10.0,GBP,Credit,Debit Card,Pot Transfer,True
 False,04/07/2025,tx_0000Avn4dIETOTe9v1BSRl,Taco Bell,6.97,GBP,Debit,Debit Card,Uncategorised,False
 False,04/07/2025,tx_0000Avn5a0pBl853pWtJlh,Tesco,1.75,GBP,Debit,Debit Card,Uncategorised,False
@@ -3499,27 +3499,27 @@ False,05/07/2025,tx_0000Avok22TBQWdlj4i5lD,WHSmith,3.99,GBP,Debit,Debit Card,Unc
 False,22/07/2025,tx_0000AwO45xOB3cEKdbCcQG,Rahul Subbaraman,50.0,GBP,Credit,Debit Card,Pot Transfer,True
 False,22/07/2025,tx_0000AwO473MQL90cNJn0mP,Working Balance Pot,40.0,GBP,Debit,Debit Card,Pot Transfer,True
 False,23/07/2025,tx_0000AwPsfmnT6bJ15GBReT,Lebara,6.95,GBP,Debit,Debit Card,Bills & Utilities,True
-False,29/07/2025,tx_0000AwdGwIgFFqHNgzpO9x,The University of Manchester,331.94,GBP,Credit,Debit Card,Income - Stipend,False
+False,29/07/2025,tx_0000AwdGwIgFFqHNgzpO9x,The University of Manchester,331.94,GBP,Credit,Bank Transfer,Income - Stipend,False
 False,29/07/2025,tx_0000AwdGx72zzXGIYRURpx,Working Balance Pot,60.0,GBP,Debit,Debit Card,Pot Transfer,True
 False,29/07/2025,tx_0000AwdH1dA6X3JWwGfTdb,Rahul Subbaraman,1970.0,GBP,Debit,Debit Card,Pot Transfer,True
-False,30/07/2025,tx_0000Awf74Hp1ieq1u3jIZt,Northern Trains,4.45,GBP,Debit,Debit Card,Uncategorised,False
+False,30/07/2025,tx_0000Awf74Hp1ieq1u3jIZt,Northern Trains,4.45,GBP,Debit,Debit Card,Local Transport,True
 False,30/07/2025,tx_0000AwfAk0IFa3VVpkFhP0,Bee Network,2.0,GBP,Debit,Debit Card,Local Transport,True
 False,30/07/2025,tx_0000AwfHSk33QR4dWBQmhx,Working Balance Pot,25.0,GBP,Credit,Debit Card,Pot Transfer,True
 False,30/07/2025,tx_0000AwfJvE8xKG2WIAqdhy,Khalil Mohamad,20.0,GBP,Debit,Debit Card,Uncategorised,False
 False,30/07/2025,tx_0000AwfK8bT9ubipPpLNIY,Gaza Fried Chi,6.5,GBP,Debit,Debit Card,Uncategorised,False
 False,31/07/2025,tx_0000AwgXO4x44YzcRwlPFp,Working Balance Pot,10.0,GBP,Credit,Debit Card,Pot Transfer,True
 False,01/08/2025,tx_0000AwiBKc8WwNmfyAyKDD,THE UNI OF MANCHES,41.98,GBP,Credit,Debit Card,Uncategorised,False
-False,01/08/2025,tx_0000AwiDPxUn9gX6YGhLDV,THE UNI OF MANCHES,73.58,GBP,Credit,Debit Card,Uncategorised,False
+False,01/08/2025,tx_0000AwiDPxUn9gX6YGhLDV,THE UNI OF MANCHES,73.58,GBP,Credit,Debit Card,Others,False
 False,01/08/2025,tx_0000AwjPQnaerVBirNL29c,Rahul Subbaraman,120.0,GBP,Debit,Debit Card,Pot Transfer,True
 False,02/08/2025,tx_0000AwkudgwcApUr3Mxydt,Working Balance Pot,50.0,GBP,Credit,Debit Card,Pot Transfer,True
 False,02/08/2025,tx_0000Awkxox7SfxK3nLJyFO,Appna Cash And Carry M,40.08,GBP,Debit,Debit Card,Uncategorised,False
-False,02/08/2025,tx_0000Awl0gWPWOUToWsXXk1,Tesco Petrol,8.15,GBP,Debit,Debit Card,Uncategorised,False
+False,02/08/2025,tx_0000Awl0gWPWOUToWsXXk1,Tesco Petrol,8.15,GBP,Debit,Debit Card,Groceries & Home Needs,True
 False,03/08/2025,tx_0000AwnWj1lwLhCrF7Gvuz,Working Balance Pot,15.05,GBP,Credit,Debit Card,Pot Transfer,True
 False,03/08/2025,tx_0000AwnWmdcS5iTTJrIOAL,Rahul Subbaraman,100.0,GBP,Credit,Debit Card,Pot Transfer,True
 False,03/08/2025,tx_0000AwnXPjDRDWzU1GdnIv,Rahul Subbaraman,31.07,GBP,Debit,Debit Card,Pot Transfer,True
 False,03/08/2025,tx_0000AwnXZ2g6E5rBgYKMoE,Working Balance Pot,85.0,GBP,Debit,Debit Card,Pot Transfer,True
 False,04/08/2025,tx_0000AwpRFYWBvP9xat1Ltr,Working Balance Pot,15.0,GBP,Credit,Debit Card,Pot Transfer,True
-False,04/08/2025,tx_0000AwpVodPe7QIgCVvrrl,Tesco Petrol,9.49,GBP,Debit,Debit Card,Uncategorised,False
+False,04/08/2025,tx_0000AwpVodPe7QIgCVvrrl,Tesco Petrol,9.49,GBP,Debit,Debit Card,Groceries & Home Needs,True
 False,04/08/2025,tx_0000AwpYDdIHtfaUKD6fmU,Circuit Laundry,3.6,GBP,Debit,Debit Card,Bills & Utilities,True
 False,04/08/2025,tx_0000Awpd8YrNSFvxSP7nXd,Circuit Laundry,2.1,GBP,Debit,Debit Card,Bills & Utilities,True
 False,06/08/2025,tx_0000AwtDw6dwoj4no2lluD,Working Balance Pot,10.0,GBP,Credit,Debit Card,Pot Transfer,True
@@ -3547,7 +3547,7 @@ False,13/08/2025,tx_0000Ax8NlOE51BOD67Zj1t,Working Balance Pot,48.99,GBP,Debit,D
 False,13/08/2025,tx_0000Ax8Nly7bYjNRl82XFB,Working Balance Pot,5.0,GBP,Credit,Debit Card,Pot Transfer,True
 False,16/08/2025,tx_0000AxEj8u3O7742TlthoX,Florida Fried Chicken,6.4,GBP,Debit,Debit Card,Uncategorised,False
 False,17/08/2025,tx_0000AxGfaUgo03veUKW7es,Working Balance Pot,15.0,GBP,Credit,Debit Card,Pot Transfer,True
-False,17/08/2025,tx_0000AxGfbEvy41KQ0SXePR,Tesco Petrol,12.08,GBP,Debit,Debit Card,Uncategorised,False
+False,17/08/2025,tx_0000AxGfbEvy41KQ0SXePR,Tesco Petrol,12.08,GBP,Debit,Debit Card,Groceries & Home Needs,True
 False,18/08/2025,tx_0000AxINGoTLKQLXLnhlQY,Working Balance Pot,15.0,GBP,Credit,Debit Card,Pot Transfer,True
 False,18/08/2025,tx_0000AxIfi6afs5pCv6CO16,Rahul Subbaraman,96.0,GBP,Credit,Debit Card,Pot Transfer,True
 False,18/08/2025,tx_0000AxIg6dhgPSOlM3B94G,Deepti Bhardwaj,96.0,GBP,Debit,Debit Card,Uncategorised,False
@@ -3578,17 +3578,17 @@ False,25/08/2025,tx_0000AxWMrSFZX5tLCIrrQf,Yuliia Anisimova,5.0,GBP,Debit,Debit 
 False,26/08/2025,tx_0000AxYlu5WZMymdFq5OuP,Working Balance Pot,15.0,GBP,Credit,Debit Card,Pot Transfer,True
 False,26/08/2025,tx_0000AxYm3Q8U6cMrrVWshm,Morrisons,4.05,GBP,Debit,Debit Card,Groceries & Home Needs,True
 False,27/08/2025,tx_0000AxbD8JRxTeDBvl1IZu,Bee Network,4.0,GBP,Debit,Debit Card,Local Transport,True
-False,27/08/2025,tx_0000AxbHjGZxVvaAgmalwQ,The University of Manchester,35.95,GBP,Credit,Debit Card,Income - Stipend,False
+False,27/08/2025,tx_0000AxbHjGZxVvaAgmalwQ,The University of Manchester,35.95,GBP,Credit,Bank Transfer,Others,False
 False,27/08/2025,tx_0000AxbHxOrdVTd5lFZyDr,Rahul Subbaraman,1700.0,GBP,Debit,Debit Card,Pot Transfer,True
 False,27/08/2025,tx_0000AxbICIav6DN0nSmA9D,Working Balance Pot,45.0,GBP,Debit,Debit Card,Pot Transfer,True
 False,27/08/2025,tx_0000AxbKlifyJx5EA7mXJr,Co-op,3.35,GBP,Debit,Debit Card,Groceries & Home Needs,True
 False,27/08/2025,tx_0000AxbaJwfeIGRkgUd2VG,Working Balance Pot,5.0,GBP,Credit,Debit Card,Pot Transfer,True
 False,27/08/2025,tx_0000AxbiMBia7Of78KE23l,ANISIMOVA Y,14.22,GBP,Credit,Debit Card,Uncategorised,False
 False,27/08/2025,tx_0000AxbiaDAdVyRpgz2Cw5,Working Balance Pot,10.0,GBP,Debit,Debit Card,Pot Transfer,True
-False,28/08/2025,tx_0000Axd74ASCltc74VscG9,Tesco Petrol,5.2,GBP,Debit,Debit Card,Uncategorised,False
+False,28/08/2025,tx_0000Axd74ASCltc74VscG9,Tesco Petrol,5.2,GBP,Debit,Debit Card,Groceries & Home Needs,True
 False,29/08/2025,tx_0000Axf4Zn6ZCtSVIn3ir3,Co-op,2.93,GBP,Debit,Debit Card,Groceries & Home Needs,True
 False,30/08/2025,tx_0000AxhgfpFuJCkB1YtEiP,Working Balance Pot,10.0,GBP,Credit,Debit Card,Pot Transfer,True
-False,30/08/2025,tx_0000AxhhhQWvJCbFWYf1vN,Tesco Petrol,1.77,GBP,Debit,Debit Card,Uncategorised,False
+False,30/08/2025,tx_0000AxhhhQWvJCbFWYf1vN,Tesco Petrol,1.77,GBP,Debit,Debit Card,Groceries & Home Needs,True
 False,30/08/2025,tx_0000Axhi16c54IkGFz0xbl,Gaza Fried Chicken -,6.5,GBP,Debit,Debit Card,Food - dining & delivery,True
 False,30/08/2025,tx_0000Axi7qKOs4Af4AFeYIj,Working Balance Pot,5.0,GBP,Credit,Debit Card,Pot Transfer,True
 False,30/08/2025,tx_0000Axi7vjKWnxTMRnEIIU,Thomas Pierce-Jones,4.2,GBP,Debit,Debit Card,Uncategorised,False
@@ -3610,11 +3610,11 @@ False,03/09/2025,tx_0000AxpWyjYmGRtEmBJsTB,Temu,0.65,GBP,Debit,Debit Card,Uncate
 False,03/09/2025,tx_0000AxpcFEAwhgV8wJdhwI,Morrisons,5.24,GBP,Debit,Debit Card,Groceries & Home Needs,True
 False,03/09/2025,tx_0000AxpcPKhXIQZsxqIj46,Working Balance Pot,15.0,GBP,Credit,Debit Card,Pot Transfer,True
 False,03/09/2025,tx_0000AxpfGGJ2ZETitPpNnl,Moonlight,4.0,GBP,Debit,Debit Card,Uncategorised,False
-False,03/09/2025,tx_0000Axpm9b4beknWx9qTEQ,Tesco Petrol,3.55,GBP,Debit,Debit Card,Uncategorised,False
+False,03/09/2025,tx_0000Axpm9b4beknWx9qTEQ,Tesco Petrol,3.55,GBP,Debit,Debit Card,Groceries & Home Needs,True
 False,04/09/2025,tx_0000AxrvZM4FMFzC25eOt0,Bee Network,2.0,GBP,Debit,Debit Card,Local Transport,True
 False,04/09/2025,tx_0000AxsDvBEi6hKEEsYap7,Transport for London,3.4,GBP,Debit,Debit Card,Trip Expenses,True
 False,05/09/2025,tx_0000AxtT8nL3RpWyqwLk7V,M Pereira,10.0,GBP,Credit,Debit Card,Uncategorised,False
-False,05/09/2025,tx_0000Axtm04gxSRjfw9ocKH,Northern Trains,6.5,GBP,Debit,Debit Card,Uncategorised,False
+False,05/09/2025,tx_0000Axtm04gxSRjfw9ocKH,Northern Trains,6.5,GBP,Debit,Debit Card,Local Transport,True
 False,06/09/2025,tx_0000AxvS5jME58TZesUFTG,Transport for London,6.8,GBP,Debit,Debit Card,Trip Expenses,True
 False,06/09/2025,tx_0000AxvSFIc0NM9f1hBtbu,Working Balance Pot,20.0,GBP,Credit,Debit Card,Pot Transfer,True
 False,06/09/2025,tx_0000Axw0yrNnLHvGuugDbe,Working Balance Pot,10.0,GBP,Debit,Debit Card,Pot Transfer,True
@@ -3644,7 +3644,7 @@ False,16/09/2025,tx_0000AyG3rhHcgBCT0podxx,M Pereira,10.0,GBP,Credit,Debit Card,
 False,16/09/2025,tx_0000AyGEuhjkY2HG8P6jYn,Working Balance Pot,10.0,GBP,Debit,Debit Card,Pot Transfer,True
 False,16/09/2025,tx_0000AyGafPm9F9xJCIXTJR,Working Balance Pot,9.0,GBP,Credit,Debit Card,Pot Transfer,True
 False,16/09/2025,tx_0000AyGafurtdqqnosMHw1,Morrisons,5.95,GBP,Debit,Debit Card,Groceries & Home Needs,True
-False,17/09/2025,tx_0000AyIkON6VJMBtPAkAlf,The University of Manchester,1735.15,GBP,Credit,Debit Card,Income - Stipend,False
+False,17/09/2025,tx_0000AyIkON6VJMBtPAkAlf,The University of Manchester,1735.15,GBP,Credit,Bank Transfer,Income - Stipend,False
 False,17/09/2025,tx_0000AyIkUNizuqlKVpOaDx,Rahul Subbaraman,1735.15,GBP,Debit,Debit Card,Pot Transfer,True
 False,17/09/2025,tx_0000AyIuTSlcgMJNefY90T,Tesco,6.5,GBP,Debit,Debit Card,Uncategorised,False
 False,17/09/2025,tx_0000AyJ92MdMsLMJEQDtKL,Working Balance Pot,2.0,GBP,Credit,Debit Card,Pot Transfer,True
@@ -3699,7 +3699,7 @@ False,11/10/2025,tx_0000Az774TgT9L17oUuuKf,Bee Network,2.0,GBP,Debit,Debit Card,
 False,12/10/2025,tx_0000Az7vTXGVxzNYXDb71W,Working Balance Pot,10.0,GBP,Credit,Debit Card,Pot Transfer,True
 False,12/10/2025,tx_0000Az7vULqjtalymJpU5x,Bolt,4.6,GBP,Debit,Debit Card,Local Transport,True
 False,12/10/2025,tx_0000Az8HbF1Vs6JAWR2HwI,Bee Network,2.0,GBP,Debit,Debit Card,Local Transport,True
-False,14/10/2025,tx_0000AzBNF1yCuCNp8G31ik,Northern Trains,0.64,GBP,Credit,Debit Card,Uncategorised,False
+False,14/10/2025,tx_0000AzBNF1yCuCNp8G31ik,Northern Trains,0.64,GBP,Credit,Debit Card,Local Transport,True
 False,15/10/2025,tx_0000AzEfipg7YElqUu1ojS,Working Balance Pot,10.0,GBP,Credit,Debit Card,Pot Transfer,True
 False,15/10/2025,tx_0000AzEfs2O7fMeC0p77Wl,Cafe Manchester Museum,4.0,GBP,Debit,Debit Card,Uncategorised,False
 False,16/10/2025,tx_0000AzFYdcLpAa93A7DqsL,ANISIMOVA Y,12.9,GBP,Credit,Debit Card,Uncategorised,False
@@ -3718,8 +3718,8 @@ False,22/10/2025,tx_0000AzSWc8KhcIClQ6uXtD,Working Balance Pot,15.0,GBP,Debit,De
 False,22/10/2025,tx_0000AzSWrsnr7jRltA3bpi,Rahul Subbaraman,100.0,GBP,Debit,Debit Card,Pot Transfer,True
 False,25/10/2025,tx_0000AzZaMsZ1itE3zs1EQ8,Morrisons,1.75,GBP,Debit,Debit Card,Groceries & Home Needs,True
 False,25/10/2025,tx_0000AzZzg9f8s9pPDlLHDm,Tesco,1.15,GBP,Debit,Debit Card,Uncategorised,False
-False,29/10/2025,tx_0000AzhtNmLRmbh4pKurAX,The University of Manchester,435.78,GBP,Credit,Debit Card,Income - Stipend,False
-False,29/10/2025,tx_0000AzhtOinSSdNpkKs5ac,The University of Manchester,1730.97,GBP,Credit,Debit Card,Income - Stipend,False
+False,29/10/2025,tx_0000AzhtNmLRmbh4pKurAX,The University of Manchester,435.78,GBP,Credit,Bank Transfer,Income - Stipend,False
+False,29/10/2025,tx_0000AzhtOinSSdNpkKs5ac,The University of Manchester,1730.97,GBP,Credit,Bank Transfer,Income - Stipend,False
 False,29/10/2025,tx_0000AzhuWZNJTSsGnQwrdB,Rahul Subbaraman,2166.75,GBP,Debit,Debit Card,Pot Transfer,True
 False,29/10/2025,tx_0000AzhvCnW1I5qZQ0pSm9,Working Balance Pot,10.0,GBP,Credit,Debit Card,Pot Transfer,True
 False,29/10/2025,tx_0000AzhvpUQID3VQ7iCjBZ,Working Balance Pot,5.0,GBP,Debit,Debit Card,Pot Transfer,True
@@ -3757,14 +3757,14 @@ False,15/11/2025,tx_0000B0FhwvXT01q55N7jQg,Transport for Greater Manchester,4.6,
 False,15/11/2025,tx_0000B0GYCzMbk3mwVn7smH,Rahul Subbaraman,4.6,GBP,Debit,Debit Card,Pot Transfer,True
 False,17/11/2025,tx_0000B0L4XxHud2oFAgLdWk,Train Pal,5.3,GBP,Credit,Debit Card,Uncategorised,False
 False,17/11/2025,tx_0000B0LQAiMOA5gXF6autm,Rahul Subbaraman,5.3,GBP,Debit,Debit Card,Pot Transfer,True
-False,18/11/2025,tx_0000B0NPCMGDaSbRMwuKYN,Northern Trains,1.18,GBP,Credit,Debit Card,Uncategorised,False
+False,18/11/2025,tx_0000B0NPCMGDaSbRMwuKYN,Northern Trains,1.18,GBP,Credit,Debit Card,Local Transport,True
 False,18/11/2025,tx_0000B0NR38pMMUBCay0X7C,Rahul Subbaraman,1.18,GBP,Debit,Debit Card,Pot Transfer,True
 False,19/11/2025,tx_0000B0PorxiQ7aySlchdTv,Rahul Subbaraman,21.61,GBP,Credit,Debit Card,Pot Transfer,True
 False,19/11/2025,tx_0000B0Pot6tXTj3TWfS1AY,Siv Shaji Deepa,21.61,GBP,Debit,Debit Card,Uncategorised,False
 False,23/11/2025,tx_0000B0XpoLBcZNQTTljHIw,Morrisons,6.04,GBP,Credit,Debit Card,Groceries & Home Needs,True
 False,23/11/2025,tx_0000B0Xq4wLoA31VDROKfq,Rahul Subbaraman,6.04,GBP,Debit,Debit Card,Pot Transfer,True
-False,26/11/2025,tx_0000B0e0JOdhwiOTEj943o,The University of Manchester,1730.97,GBP,Credit,Debit Card,Income - Stipend,False
-False,26/11/2025,tx_0000B0e0SJi5dtpNLBit0r,The University of Manchester,529.25,GBP,Credit,Debit Card,Income - Stipend,False
+False,26/11/2025,tx_0000B0e0JOdhwiOTEj943o,The University of Manchester,1730.97,GBP,Credit,Bank Transfer,Income - Stipend,False
+False,26/11/2025,tx_0000B0e0SJi5dtpNLBit0r,The University of Manchester,529.25,GBP,Credit,Bank Transfer,Income - Stipend,False
 False,26/11/2025,tx_0000B0e0VZvBpFaS3CWbT8,Rahul Subbaraman,2260.22,GBP,Debit,Debit Card,Pot Transfer,True
 False,27/11/2025,tx_0000B0gCPQvtv4UxaIhWte,Siv Shaji Deepa,6.9,GBP,Credit,Debit Card,Uncategorised,False
 False,27/11/2025,tx_0000B0gCTVHDi9jtoC70IT,,6.9,GBP,Debit,Debit Card,Uncategorised,False
@@ -3786,18 +3786,18 @@ False,15/12/2025,tx_0000B1Ga5RTLb3HhytG8sT,Rahul Subbaraman,15.0,GBP,Credit,Debi
 False,15/12/2025,tx_0000B1GaB8UH5yCM9EJzgw,,15.0,GBP,Debit,Debit Card,Uncategorised,False
 False,16/12/2025,tx_0000B1HzJpbDNjzfmU61pq,Ritwick Sen,13.74,GBP,Credit,Debit Card,Uncategorised,False
 False,16/12/2025,tx_0000B1IZ5yikGiPIgLTzvN,,13.74,GBP,Debit,Debit Card,Uncategorised,False
-False,17/12/2025,tx_0000B1LUa4DuSRIVRfkbzd,The University of Manchester,417.8,GBP,Credit,Debit Card,Income - Stipend,False
-False,17/12/2025,tx_0000B1LUc2WZkGLHK4DKN7,The University of Manchester,1730.97,GBP,Credit,Debit Card,Income - Stipend,False
+False,17/12/2025,tx_0000B1LUa4DuSRIVRfkbzd,The University of Manchester,417.8,GBP,Credit,Bank Transfer,Income - Stipend,False
+False,17/12/2025,tx_0000B1LUc2WZkGLHK4DKN7,The University of Manchester,1730.97,GBP,Credit,Bank Transfer,Income - Stipend,False
 False,17/12/2025,tx_0000B1LUle21fCWce9G1QY,Rahul Subbaraman,2148.77,GBP,Debit,Debit Card,Pot Transfer,True
 False,17/12/2025,tx_0000B1LV53juJ5IgVLZQW2,Rahul Subbaraman,2524.84,GBP,Credit,Debit Card,Pot Transfer,True
 False,17/12/2025,tx_0000B1LV6A20OnsJGKwf8z,Working Balance Pot,2524.84,GBP,Debit,Debit Card,Pot Transfer,True
 False,18/12/2025,tx_0000B1Nd0iCpc7Z6DihKWh,Working Balance Pot,87.87,GBP,Credit,Debit Card,Pot Transfer,True
 False,18/12/2025,tx_0000B1Nd3pp7kRmqQTOIGB,Rahul Subbaraman,87.87,GBP,Debit,Debit Card,Pot Transfer,True
 False,18/12/2025,tx_0000B1NeScJdCuyg0wkSzT,Working Balance Pot,2.35,GBP,Credit,Debit Card,Pot Transfer,True
-False,18/12/2025,tx_0000B1NeTpKcIeStY3ccrJ,Northern Trains,2.35,GBP,Debit,Debit Card,Uncategorised,False
+False,18/12/2025,tx_0000B1NeTpKcIeStY3ccrJ,Northern Trains,2.35,GBP,Debit,Debit Card,Local Transport,True
 False,19/12/2025,tx_0000B1P70zrd9YyTm2Qka1,Working Balance Pot,31.85,GBP,Credit,Debit Card,Pot Transfer,True
 False,19/12/2025,tx_0000B1P72kFSBP5MYyxGjq,,31.85,GBP,Debit,Debit Card,Uncategorised,False
-False,19/12/2025,tx_0000B1P8lGXBbbulNR4xqD,Northern Trains,2.35,GBP,Credit,Debit Card,Uncategorised,False
+False,19/12/2025,tx_0000B1P8lGXBbbulNR4xqD,Northern Trains,2.35,GBP,Credit,Debit Card,Local Transport,True
 False,19/12/2025,tx_0000B1P8n6KMWdOSIfxKgD,Working Balance Pot,2.35,GBP,Debit,Debit Card,Pot Transfer,True
 False,24/12/2025,tx_0000B1aHqIn9fxlrgTVs7V,Working Balance Pot,5.1,GBP,Credit,Debit Card,Pot Transfer,True
 False,24/12/2025,tx_0000B1aHt3n3uKIm1hmiDT,,4.49,GBP,Debit,Debit Card,Uncategorised,False
@@ -3845,9 +3845,9 @@ False,23/01/2026,tx_0000B2aECjauLtcLhTdTbV,Subsistence No Pay Pot,540.88,GBP,Deb
 False,25/01/2026,tx_0000B2e8b2Su1JNJ5Fw6D3,Working Balance Pot,8.0,GBP,Credit,Debit Card,Pot Transfer,True
 False,25/01/2026,tx_0000B2e8f53kJhOMHv63LW,Khalil Mohamad,8.0,GBP,Debit,Debit Card,Uncategorised,False
 False,26/01/2026,tx_0000B2ftngkex4K1JC7jaj,Working Balance Pot,4.49,GBP,Credit,Debit Card,Pot Transfer,True
-False,28/01/2026,tx_0000B2j67BmtZAtBgFZECB,The University of Manchester,1730.97,GBP,Credit,Debit Card,Income - Stipend,False
+False,28/01/2026,tx_0000B2j67BmtZAtBgFZECB,The University of Manchester,1730.97,GBP,Credit,Bank Transfer,Income - Stipend,False
 False,28/01/2026,tx_0000B2jeMwJuEsaQsQun2a,Working Balance Pot,1730.97,GBP,Debit,Debit Card,Pot Transfer,True
-False,28/01/2026,tx_0000B2kX93EvD64ZlKyRgf,The University of Manchester,719.61,GBP,Credit,Debit Card,Income - Stipend,False
+False,28/01/2026,tx_0000B2kX93EvD64ZlKyRgf,The University of Manchester,719.61,GBP,Credit,Bank Transfer,Income - Stipend,False
 False,28/01/2026,tx_0000B2kXDiJsPzCWXbMWSx,Non-Stipend Income Pot,719.61,GBP,Debit,Debit Card,Pot Transfer,True
 False,29/01/2026,tx_0000B2lCpNzmWk8WKDyMDJ,,4.49,GBP,Debit,Debit Card,Uncategorised,False
 False,30/01/2026,tx_0000B2o8jZuPVJuX2cxfec,Working Balance Pot,1.0,GBP,Credit,Debit Card,Pot Transfer,True
@@ -3877,7 +3877,7 @@ False,11/02/2026,tx_0000B3DnBsvLFnpTrHJnJD,Rent Pot Pot,634.0,GBP,Credit,Debit C
 False,12/02/2026,tx_0000B3EBW9bTLZxxuUvlGD,Sanctuary Students,634.0,GBP,Debit,Debit Card,Uncategorised,False
 False,15/02/2026,tx_0000B3M93P6VzXK9Bc6mLS,Siv Shaji Deepa,1.48,GBP,Credit,Debit Card,Uncategorised,False
 False,16/02/2026,tx_0000B3NHXd9vIGZzzvYWrD,,1.48,GBP,Debit,Debit Card,Uncategorised,False
-False,25/02/2026,tx_0000B3gYWdruYncOeB7Acj,The University of Manchester,1730.97,GBP,Credit,Debit Card,Income - Stipend,False
+False,25/02/2026,tx_0000B3gYWdruYncOeB7Acj,The University of Manchester,1730.97,GBP,Credit,Bank Transfer,Income - Stipend,False
 False,25/02/2026,tx_0000B3gYaNkUR1tblWelyT,Non-Stipend Income Pot,819.16,GBP,Debit,Debit Card,Pot Transfer,True
 False,25/02/2026,tx_0000B3gYcSSXtMZKHGUHLu,Working Balance Pot,1730.97,GBP,Debit,Debit Card,Pot Transfer,True
 False,28/02/2026,tx_0000B3nAY3j6rugKH3qWry,Working Balance Pot,90.0,GBP,Credit,Debit Card,Pot Transfer,True
@@ -3911,7 +3911,7 @@ False,18/03/2026,tx_0000B4MevtJh1OivbGivBq,Working Balance Pot,0.01,GBP,Debit,De
 False,18/03/2026,tx_0000B4MewnwcTrHcatZGrJ,Working Balance Pot,0.09,GBP,Debit,Debit Card,Pot Transfer,True
 False,18/03/2026,tx_0000B4NymPjDqwYnryzQfq,Working Balance Pot,19.0,GBP,Credit,Debit Card,Pot Transfer,True
 False,18/03/2026,tx_0000B4NyscOze3nr6axRPW,Jack Bronziet,19.0,GBP,Debit,Debit Card,Uncategorised,False
-False,27/03/2026,tx_0000B4gn7Djy6zSCAs6C7o,The University of Manchester,788.72,GBP,Credit,Debit Card,Income - Stipend,False
+False,27/03/2026,tx_0000B4gn7Djy6zSCAs6C7o,The University of Manchester,788.72,GBP,Credit,Bank Transfer,Income - UoM GTA,False
 False,27/03/2026,tx_0000B4gnBAS2HcMbD67r9u,Non-Stipend Income Pot,788.72,GBP,Debit,Debit Card,Pot Transfer,True
 False,01/04/2026,tx_0000B4qK4JL5sul9XkcP9W,Working Balance Pot,7.0,GBP,Credit,Debit Card,Pot Transfer,True
 False,01/04/2026,tx_0000B4qKT2iqnpn5AUh6G2,Subsistence No Pay Pot,1.95,GBP,Credit,Debit Card,Pot Transfer,True
@@ -3932,7 +3932,7 @@ False,13/04/2026,tx_0000B5FyyUFNN38IsXe6gj,Rent Pot Pot,633.0,GBP,Credit,Debit C
 False,18/04/2026,tx_0000B5QLIaNYQHNGf7iqFd,Sanctuary Students,633.0,GBP,Debit,Debit Card,Uncategorised,False
 False,28/04/2026,tx_0000B5kJjFUnrNYVexhYE1,Working Balance Pot,5.0,GBP,Credit,Debit Card,Pot Transfer,True
 False,28/04/2026,tx_0000B5kJrvWVUEclMeSfRr,Dharmam Chara UK,5.0,GBP,Debit,Debit Card,Others,True
-False,28/04/2026,tx_0000B5l3S23VAnrNUfvPHv,The University of Manchester,325.09,GBP,Credit,Debit Card,Income - Stipend,False
+False,28/04/2026,tx_0000B5l3S23VAnrNUfvPHv,The University of Manchester,325.09,GBP,Credit,Bank Transfer,Income - Stipend,False
 False,28/04/2026,tx_0000B5l3UU480GGDBvagrp,Non-Stipend Income Pot,325.09,GBP,Debit,Debit Card,Pot Transfer,True
 False,01/05/2026,tx_0000B5qP03cwuDA3Hp3u1j,Working Balance Pot,7.0,GBP,Credit,Debit Card,Pot Transfer,True
 False,01/05/2026,tx_0000B5qUIWktqV1ywRqIl7,Working Balance Pot,1.59,GBP,Credit,Debit Card,Pot Transfer,True
@@ -3977,7 +3977,7 @@ False,24/05/2026,tx_0000B6cwG5hxYmf0AF8wPX,Rahul Subbaraman,0.19,GBP,Credit,Debi
 False,24/05/2026,tx_0000B6dI3nECdkdxeZUuuJ,Subsistence No Pay Pot,0.19,GBP,Debit,Debit Card,Pot Transfer,True
 False,26/05/2026,tx_0000B6gElcgZNh8kSzP7Fz,Split My Fare,35.3,GBP,Credit,Debit Card,Uncategorised,False
 False,26/05/2026,tx_0000B6gHVQRLRSc2e9yawu,,35.3,GBP,Debit,Debit Card,Uncategorised,False
-False,27/05/2026,tx_0000B6j68C8RwcmpNNoZZy,The University of Manchester,282.51,GBP,Credit,Debit Card,Income - Stipend,False
+False,27/05/2026,tx_0000B6j68C8RwcmpNNoZZy,The University of Manchester,282.51,GBP,Credit,Bank Transfer,Income - UoM Extras,False
 False,27/05/2026,tx_0000B6jAfVzfX3tQD8EBQS,Non-Stipend Income Pot,282.51,GBP,Debit,Debit Card,Pot Transfer,True
 False,27/05/2026,tx_0000B6jAqjraJ0yePbnYSA,Subsistence No Pay Pot,5.21,GBP,Credit,Debit Card,Pot Transfer,True
 False,27/05/2026,tx_0000B6jAqjqsLePUNPSzLd,Non-Stipend Income Pot,5.21,GBP,Debit,Debit Card,Pot Transfer,True
@@ -4164,7 +4164,7 @@ False,05/08/2026,tx_0000B94exLedshss9pNTqV,Mangopay S.A.,1.0,GBP,Credit,Debit Ca
 False,05/08/2026,tx_0000B94f5BoiLDdihn1BmG,Rahul Subbaraman,1.0,GBP,Debit,Debit Card,Pot Transfer,True
 False,06/08/2026,tx_0000B96DHNbpum40Dvv4iY,Stipend Savings Pot,19.77,GBP,Debit,Debit Card,Pot Transfer,True
 False,06/08/2026,tx_0000B96Ms94tnsHzCNsTtz,Stipend Savings Pot,50.0,GBP,Credit,Debit Card,Pot Transfer,True
-False,06/08/2026,tx_0000B96OYJjGh27YoQqFX9,Tesco Petrol,17.91,GBP,Debit,Debit Card,Uncategorised,False
+False,06/08/2026,tx_0000B96OYJjGh27YoQqFX9,Tesco Petrol,17.91,GBP,Debit,Debit Card,Groceries & Home Needs,True
 False,06/08/2026,tx_0000B96Q9VvIQ1eepxMM09,Lidl,6.48,GBP,Debit,Debit Card,Groceries & Home Needs,True
 False,06/08/2026,tx_0000B96QuAWVnfGMU8X6yg,Stipend Savings Pot,110.0,GBP,Credit,Debit Card,Pot Transfer,True
 False,06/08/2026,tx_0000B96Qv6rQu3AOJFe1FD,Islamic Life,110.0,GBP,Debit,Debit Card,Uncategorised,False
@@ -4425,7 +4425,7 @@ False,26-06-2025,REV_26-06-2025_73.58_Exchanged ,Exchanged to EUR,73.58,GBP,Debi
 False,26-06-2025,REV_26-06-2025_1629.5_To GBP Wor,To GBP Working Balance,1629.5,GBP,Debit,Debit Card,Pot Transfer,True
 False,26-06-2025,REV_26-06-2025_38.45_From GBP W,From GBP Working Balance,38.45,GBP,Credit,Debit Card,Pot Transfer,True
 False,26-06-2025,REV_26-06-2025_38.45_To Rahul S,To Rahul Subbaraman,38.45,GBP,Debit,Debit Card,Pot Transfer,True
-False,26-06-2025,REV_26-06-2025_73.58_Payment fr,Payment from GABRIEL ADLER,73.58,GBP,Credit,Debit Card,Uncategorised,False
+False,26-06-2025,REV_26-06-2025_73.58_Payment fr,Payment from GABRIEL ADLER,73.58,GBP,Credit,Debit Card,Others,False
 False,26-06-2025,REV_26-06-2025_700.0_Payment fr,Payment from RAHUL SUBBARAMAN,700.0,GBP,Credit,Debit Card,Pot Transfer,True
 False,26-06-2025,REV_26-06-2025_700.0_To GBP Wor,To GBP Working Balance,700.0,GBP,Debit,Debit Card,Pot Transfer,True
 False,26-06-2025,REV_26-06-2025_73.5_Exchanged ,Exchanged to EUR,73.5,GBP,Debit,Debit Card,Currency Transfer,True
@@ -4826,34 +4826,34 @@ False,11-09-2026,REV_11-09-2026_22.5_Transfer f,Transfer from DISHA HEGDE,22.5,G
 False,11-10-2026,REV_11-10-2026_45.0_LoveToVisi,LoveToVisit,45.0,GBP,Debit,Debit Card,Uncategorised,False
 False,13/06/2023,tx_0000AWeVdoyLSXchuLSIV7_split1,Regular Savings Pot,1472.33,GBP,Debit,Debit Card,Income - Stipend,True
 False,13/06/2023,tx_0000AWeVdoyLSXchuLSIV7_split2,Regular Savings Pot,1472.33,GBP,Debit,Debit Card,Income - Stipend,True
-False,29/01/2025,tx_0000AqZzxq0iGDEHTQNkqf_split1,The University of Manchester,100.0,GBP,Credit,Debit Card,Income - Stipend,False
-False,29/01/2025,tx_0000AqZzxq0iGDEHTQNkqf_split2,The University of Manchester,1603.09,GBP,Credit,Debit Card,Income - Stipend,False
+False,29/01/2025,tx_0000AqZzxq0iGDEHTQNkqf_split1,The University of Manchester,100.0,GBP,Credit,Bank Transfer,Income - UoM Extras,False
+False,29/01/2025,tx_0000AqZzxq0iGDEHTQNkqf_split2,The University of Manchester,1603.09,GBP,Credit,Bank Transfer,Income - Stipend,False
 False,07-11-2026,MANUAL_1795180012.602918,Lac Bangle CHarminar,450.0,INR,Debit,Cash,Shopping,False
 False,08-11-2026,MANUAL_1795180059.363844,Swarnagiri Food,70.0,INR,Debit,Cash,Food - dining & delivery,False
 False,10-11-2026,MANUAL_1795180098.799262,Chai Train,20.0,INR,Debit,Cash,Food - dining & delivery,False
-False,08-11-2026,MANUAL_1795180131.019361,Periappa Gift,500.0,INR,Credit,Cash,Income - Others,False
+False,08-11-2026,MANUAL_1795180131.019361,Periappa Gift,500.0,INR,Credit,Cash,Family Remittances,False
 False,14-11-2026,MANUAL_1795180159.063923,Anjali Son Gift,200.0,INR,Debit,Cash,Others,False
-False,29/07/2026,tx_0000B8peujabWOFOsL4Tly_split1,The University of Manchester,417.8,GBP,Credit,Debit Card,Income - Stipend,False
-False,29/07/2026,tx_0000B8peujabWOFOsL4Tly_split2,The University of Manchester,24.09,GBP,Credit,Debit Card,Income - Stipend,False
-False,26/06/2026,tx_0000B7jIlB9ilVvUNbAhLY_split1,The University of Manchester,139.27,GBP,Credit,Debit Card,Income - Stipend,False
-False,26/06/2026,tx_0000B7jIlB9ilVvUNbAhLY_split2,The University of Manchester,692.16,GBP,Credit,Debit Card,Income - Stipend,False
-False,08/01/2025,tx_0000ApsW3m0Qi65c2O12aA_split1,The University of Manchester,100.0,GBP,Credit,Debit Card,Income - Stipend,False
-False,08/01/2025,tx_0000ApsW3m0Qi65c2O12aA_split2,The University of Manchester,100.0,GBP,Credit,Debit Card,Income - Stipend,False
-False,27/08/2025,tx_0000AxbHkFyXF9pOYymSfa_split1,The University of Manchester,100.0,GBP,Credit,Debit Card,Income - Stipend,False
-False,27/08/2025,tx_0000AxbHkFyXF9pOYymSfa_split2,The University of Manchester,1603.08,GBP,Credit,Debit Card,Income - Stipend,False
-False,26/02/2025,tx_0000ArW1U64XRplcpF0RbF_split1,The University of Manchester,100.0,GBP,Credit,Debit Card,Income - UoM Extras,False
-False,26/02/2025,tx_0000ArW1U64XRplcpF0RbF_split2,The University of Manchester,1603.08,GBP,Credit,Debit Card,Income - Stipend,False
-False,26/03/2025,tx_0000AsS5QJyFV4mmvXJXk2_split1,The University of Manchester,100.0,GBP,Credit,Debit Card,Income - UoM Extras,False
-False,26/03/2025,tx_0000AsS5QJyFV4mmvXJXk2_split2,The University of Manchester,1603.08,GBP,Credit,Debit Card,Income - Stipend,False
-False,23/04/2025,tx_0000AtO4XFDyiMSzeWmfNB_split1,The University of Manchester,100.0,GBP,Credit,Debit Card,Income - UoM Extras,False
-False,23/04/2025,tx_0000AtO4XFDyiMSzeWmfNB_split2,The University of Manchester,1603.08,GBP,Credit,Debit Card,Income - Stipend,False
-False,28/05/2025,tx_0000AuYblMo2boZiPI0bar_split1,The University of Manchester,100.0,GBP,Credit,Debit Card,Income - UoM Extras,False
-False,28/05/2025,tx_0000AuYblMo2boZiPI0bar_split2,The University of Manchester,1603.08,GBP,Credit,Debit Card,Income - Stipend,False
-False,25/06/2025,tx_0000AvUe6b2mL01jN2lomH_split1,The University of Manchester,100.0,GBP,Credit,Debit Card,Income - UoM Extras,False
-False,25/06/2025,tx_0000AvUe6b2mL01jN2lomH_split2,The University of Manchester,1603.08,GBP,Credit,Debit Card,Income - Stipend,False
-False,29/07/2025,tx_0000AwdGvRPPJj43pJOst7_split1,The University of Manchester,100.0,GBP,Credit,Debit Card,Income - UoM Extras,False
-False,29/07/2025,tx_0000AwdGvRPPJj43pJOst7_split2,The University of Manchester,1603.08,GBP,Credit,Debit Card,Income - Stipend,False
-False,26/03/2024,tx_0000AgFYaAPjhcqjYDW0Th_split1,The University of Manchester,158.1,GBP,Credit,Debit Card,Income - UoM GTA,False
-False,26/03/2024,tx_0000AgFYaAPjhcqjYDW0Th_split2,The University of Manchester,106.89,GBP,Credit,Debit Card,Income - UoM Extras,False
-False,25/02/2026,tx_0000B3gYUEkeyQ25WzIZCF_split1,The University of Manchester,232.18,GBP,Credit,Debit Card,Income - UoM GTA,False
-False,25/02/2026,tx_0000B3gYUEkeyQ25WzIZCF_split2,The University of Manchester,586.98,GBP,Credit,Debit Card,Income - UoM Extras,False
+False,29/07/2026,tx_0000B8peujabWOFOsL4Tly_split1,The University of Manchester,417.8,GBP,Credit,Bank Transfer,Income - Stipend,False
+False,29/07/2026,tx_0000B8peujabWOFOsL4Tly_split2,The University of Manchester,24.09,GBP,Credit,Bank Transfer,Income - Stipend,False
+False,26/06/2026,tx_0000B7jIlB9ilVvUNbAhLY_split1,The University of Manchester,139.27,GBP,Credit,Bank Transfer,Income - UoM GTA,False
+False,26/06/2026,tx_0000B7jIlB9ilVvUNbAhLY_split2,The University of Manchester,692.16,GBP,Credit,Bank Transfer,Income - Stipend,False
+False,08/01/2025,tx_0000ApsW3m0Qi65c2O12aA_split1,The University of Manchester,100.0,GBP,Credit,Bank Transfer,Income - UoM Extras,False
+False,08/01/2025,tx_0000ApsW3m0Qi65c2O12aA_split2,The University of Manchester,100.0,GBP,Credit,Bank Transfer,Income - UoM Extras,False
+False,27/08/2025,tx_0000AxbHkFyXF9pOYymSfa_split1,The University of Manchester,100.0,GBP,Credit,Bank Transfer,Income - UoM Extras,False
+False,27/08/2025,tx_0000AxbHkFyXF9pOYymSfa_split2,The University of Manchester,1603.08,GBP,Credit,Bank Transfer,Income - Stipend,False
+False,26/02/2025,tx_0000ArW1U64XRplcpF0RbF_split1,The University of Manchester,100.0,GBP,Credit,Bank Transfer,Income - UoM Extras,False
+False,26/02/2025,tx_0000ArW1U64XRplcpF0RbF_split2,The University of Manchester,1603.08,GBP,Credit,Bank Transfer,Income - Stipend,False
+False,26/03/2025,tx_0000AsS5QJyFV4mmvXJXk2_split1,The University of Manchester,100.0,GBP,Credit,Bank Transfer,Income - UoM Extras,False
+False,26/03/2025,tx_0000AsS5QJyFV4mmvXJXk2_split2,The University of Manchester,1603.08,GBP,Credit,Bank Transfer,Income - Stipend,False
+False,23/04/2025,tx_0000AtO4XFDyiMSzeWmfNB_split1,The University of Manchester,100.0,GBP,Credit,Bank Transfer,Income - UoM Extras,False
+False,23/04/2025,tx_0000AtO4XFDyiMSzeWmfNB_split2,The University of Manchester,1603.08,GBP,Credit,Bank Transfer,Income - Stipend,False
+False,28/05/2025,tx_0000AuYblMo2boZiPI0bar_split1,The University of Manchester,100.0,GBP,Credit,Bank Transfer,Income - UoM Extras,False
+False,28/05/2025,tx_0000AuYblMo2boZiPI0bar_split2,The University of Manchester,1603.08,GBP,Credit,Bank Transfer,Income - Stipend,False
+False,25/06/2025,tx_0000AvUe6b2mL01jN2lomH_split1,The University of Manchester,100.0,GBP,Credit,Bank Transfer,Income - UoM Extras,False
+False,25/06/2025,tx_0000AvUe6b2mL01jN2lomH_split2,The University of Manchester,1603.08,GBP,Credit,Bank Transfer,Income - Stipend,False
+False,29/07/2025,tx_0000AwdGvRPPJj43pJOst7_split1,The University of Manchester,100.0,GBP,Credit,Bank Transfer,Income - UoM Extras,False
+False,29/07/2025,tx_0000AwdGvRPPJj43pJOst7_split2,The University of Manchester,1603.08,GBP,Credit,Bank Transfer,Income - Stipend,False
+False,26/03/2024,tx_0000AgFYaAPjhcqjYDW0Th_split1,The University of Manchester,158.1,GBP,Credit,Bank Transfer,Income - UoM GTA,False
+False,26/03/2024,tx_0000AgFYaAPjhcqjYDW0Th_split2,The University of Manchester,106.89,GBP,Credit,Bank Transfer,Income - UoM Extras,False
+False,25/02/2026,tx_0000B3gYUEkeyQ25WzIZCF_split1,The University of Manchester,232.18,GBP,Credit,Bank Transfer,Income - UoM GTA,False
+False,25/02/2026,tx_0000B3gYUEkeyQ25WzIZCF_split2,The University of Manchester,586.98,GBP,Credit,Bank Transfer,Income - UoM Extras,False
