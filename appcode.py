@@ -21,7 +21,7 @@ CATEGORIES = [
     "Food - dining & delivery",
     "Groceries & Home Needs",
     "Income - UoM GTA",
-    "Income - UoM Extras",,
+    "Income - UoM Extras",
     "Income - Stipend",
     "Income - SNTPS",
     "Income - Others",
