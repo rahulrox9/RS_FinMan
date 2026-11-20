@@ -4612,7 +4612,7 @@ False,19-10-2025,REV_19-10-2025_19.26_Uber Eats,Uber Eats,19.26,GBP,Debit,Debit 
 False,19-10-2025,REV_19-10-2025_16.35_From GBP W,From GBP Working Balance,16.35,GBP,Credit,Debit Card,Pot Transfer,True
 False,19-10-2025,REV_19-10-2025_7.75_From GBP W,From GBP Working Balance,7.75,GBP,Credit,Debit Card,Pot Transfer,True
 False,19-10-2025,REV_19-10-2025_7.74_From GBP W,From GBP Working Balance,7.74,GBP,Credit,Debit Card,Pot Transfer,True
-False,20-10-2025,REV_20-10-2025_7.74_Trainpal,Trainpal,7.74,GBP,Debit,Debit Card,Trip Expenses,True
+False,20-10-2025,REV_20-10-2025_7.74_Trainpal,Trainpal,7.74,GBP,Debit,Debit Card,Local Transport,False
 False,20-10-2025,REV_20-10-2025_16.35_The Tung A,The Tung Auditorium,16.35,GBP,Debit,Debit Card,Uncategorised,False
 False,20-10-2025,REV_20-10-2025_7.75_To GBP Wor,To GBP Working Balance,7.75,GBP,Debit,Debit Card,Pot Transfer,True
 False,22-10-2025,REV_22-10-2025_100.0_Payment fr,Payment from RAHUL SUBBARAMAN,100.0,GBP,Credit,Debit Card,Pot Transfer,True
@@ -4630,14 +4630,14 @@ False,25-10-2025,REV_25-10-2025_19.0_To GBP Wor,To GBP Working Balance,19.0,GBP,
 False,26-10-2025,REV_26-10-2025_12.1_From GBP W,From GBP Working Balance,12.1,GBP,Credit,Debit Card,Pot Transfer,True
 False,26-10-2025,REV_26-10-2025_10.0_From GBP W,From GBP Working Balance,10.0,GBP,Credit,Debit Card,Pot Transfer,True
 False,26-10-2025,REV_26-10-2025_12.1_Liverpool ,Liverpool Philharmonic,12.1,GBP,Debit,Debit Card,Entertainment,True
-False,26-10-2025,REV_26-10-2025_6.45_Trainpal,Trainpal,6.45,GBP,Debit,Debit Card,Trip Expenses,True
+False,26-10-2025,REV_26-10-2025_6.45_Trainpal,Trainpal,6.45,GBP,Debit,Debit Card,Local Transport,False
 False,26-10-2025,REV_26-10-2025_10.0_Airwallet,Airwallet,10.0,GBP,Debit,Debit Card,Uncategorised,False
 False,27-10-2025,REV_27-10-2025_10.9_Trainpal,Trainpal,10.9,GBP,Debit,Debit Card,Trip Expenses,True
 False,27-10-2025,REV_27-10-2025_12.0_From GBP W,From GBP Working Balance,12.0,GBP,Credit,Debit Card,Pot Transfer,True
 False,27-10-2025,REV_27-10-2025_0.18_To GBP Wor,To GBP Working Balance,0.18,GBP,Debit,Debit Card,Pot Transfer,True
 False,28-10-2025,REV_28-10-2025_9.6_From GBP W,From GBP Working Balance,9.6,GBP,Credit,Debit Card,Pot Transfer,True
 False,28-10-2025,REV_28-10-2025_8.64_From GBP W,From GBP Working Balance,8.64,GBP,Credit,Debit Card,Pot Transfer,True
-False,28-10-2025,REV_28-10-2025_1.84_Trainpal,Trainpal,1.84,GBP,Debit,Debit Card,Trip Expenses,True
+False,28-10-2025,REV_28-10-2025_1.84_Trainpal,Trainpal,1.84,GBP,Debit,Debit Card,Local Transport,False
 False,28-10-2025,REV_28-10-2025_12.63_Morrisons,Morrisons,12.63,GBP,Debit,Debit Card,Groceries & Home Needs,False
 False,29-10-2025,REV_29-10-2025_2.1_To GBP Wor,To GBP Working Balance,2.1,GBP,Debit,Debit Card,Pot Transfer,True
 False,29-10-2025,REV_29-10-2025_8.64_Fever Mach,Fever Machu Picchu Jo,8.64,GBP,Debit,Debit Card,Uncategorised,False
