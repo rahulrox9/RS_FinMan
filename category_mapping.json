@@ -181,7 +181,7 @@
     "chaiiwala oxford road": "Food - dining & delivery",
     "chennai dosa": "Food - dining & delivery",
     "chatime": "Food - dining & delivery",
-    "chester zoo web shop": "Distance Travel",
+    "chester zoo web shop": "Trip Expenses",
     "chimaek": "Food - dining & delivery",
     "co-op": "Groceries & Home Needs",
     "costa coffee": "Food - dining & delivery",
@@ -222,5 +222,9 @@
     "umami | \u3046\u307e\u307f": "Food - dining & delivery",
     "transport for greater manchester": "Local Transport",
     "trainpal": "Trip Expenses",
-    "university of manchester students' union": "Income - UoM Extras"
+    "university of manchester students' union": "Income - UoM Extras",
+    "airbnb": "Rent",
+    "sfm ltd rent q3": "Rent",
+    "tesco petrol": "Groceries & Home Needs",
+    "northern trains": "Local Transport"
 }
