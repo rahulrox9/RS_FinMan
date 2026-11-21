@@ -151,6 +151,24 @@ def push_to_github():
     except Exception as e:
         st.error(f"GitHub Sync failed. Verify your Streamlit secrets. Error: {e}")
 
+def reset_table_controls():
+    st.session_state["tbl_search"] = ""
+    st.session_state["tbl_filter_curr"] = []
+    st.session_state["tbl_filter_type"] = []
+    st.session_state["tbl_filter_method"] = []
+    st.session_state["tbl_filter_cat"] = []
+    st.session_state["tbl_filter_remember"] = "All"
+    st.session_state["tbl_filter_min_amt"] = None
+    st.session_state["tbl_filter_max_amt"] = None
+    st.session_state["tbl_filter_date_from"] = None
+    st.session_state["tbl_filter_date_to"] = None
+    st.session_state["tbl_sort_col_1"] = "None"
+    st.session_state["tbl_sort_dir_1"] = "Descending"
+    st.session_state["tbl_sort_col_2"] = "None"
+    st.session_state["tbl_sort_dir_2"] = "Ascending"
+    st.session_state["tbl_sort_col_3"] = "None"
+    st.session_state["tbl_sort_dir_3"] = "Ascending"
+
 if "transactions" not in st.session_state:
     st.session_state.transactions = load_db()
 else:
@@ -588,12 +606,133 @@ with tab1:
     if not st.session_state.transactions.empty:
         st.subheader("Review and Manage Transactions")
 
-        search_query = st.text_input("Search / Filter by Keyword (Description, Reference, etc.)")
+        top_bar_col1, top_bar_col2 = st.columns([4, 1])
+        with top_bar_col1:
+            search_query = st.text_input(
+                "Search / Filter by Keyword (Description, Reference, etc.)",
+                key="tbl_search"
+            )
+        with top_bar_col2:
+            st.markdown("<div style='height: 28px;'></div>", unsafe_allow_html=True)
+            st.button("Reset Filters & Sort", on_click=reset_table_controls, use_container_width=True)
+
+        with st.expander("Column Filters (Excel-Style)", expanded=False):
+            f_col1, f_col2, f_col3, f_col4 = st.columns(4)
+            avail_currencies = sorted(st.session_state.transactions["Currency"].dropna().astype(str).str.strip().unique().tolist())
+            avail_types = sorted(st.session_state.transactions["Type"].dropna().astype(str).str.strip().unique().tolist())
+            avail_methods = sorted(st.session_state.transactions["Payment Method"].dropna().astype(str).str.strip().unique().tolist())
+            avail_categories = sorted(st.session_state.transactions["Category"].dropna().astype(str).str.strip().unique().tolist())
+
+            filter_curr = f_col1.multiselect("Currency", options=avail_currencies, key="tbl_filter_curr")
+            filter_type = f_col2.multiselect("Type", options=avail_types, key="tbl_filter_type")
+            filter_method = f_col3.multiselect("Payment Method", options=avail_methods, key="tbl_filter_method")
+            filter_cat = f_col4.multiselect("Category", options=avail_categories, key="tbl_filter_cat")
+
+            f_col5, f_col6, f_col7, f_col8, f_col9 = st.columns(5)
+            filter_date_from = f_col5.date_input("Date From", value=None, format="DD-MM-YYYY", key="tbl_filter_date_from")
+            filter_date_to = f_col6.date_input("Date To", value=None, format="DD-MM-YYYY", key="tbl_filter_date_to")
+            filter_min_amt = f_col7.number_input("Min Amount", value=None, min_value=0.0, step=1.0, key="tbl_filter_min_amt")
+            filter_max_amt = f_col8.number_input("Max Amount", value=None, min_value=0.0, step=1.0, key="tbl_filter_max_amt")
+            filter_remember = f_col9.selectbox(
+                "Remember Mapping",
+                options=["All", "Remembered Only", "Exceptions / Unremembered"],
+                key="tbl_filter_remember"
+            )
+
+        with st.expander("Multi-Column Sort", expanded=False):
+            sortable_columns = [
+                "None",
+                "Date",
+                "Amount",
+                "Category",
+                "Description",
+                "Payment Method",
+                "Currency",
+                "Type",
+                "Transaction ID"
+            ]
+            s_col1, s_dir1, s_col2, s_dir2, s_col3, s_dir3 = st.columns([2, 1.3, 2, 1.3, 2, 1.3])
+            sort_col_1 = s_col1.selectbox("Sort By (Priority 1)", options=sortable_columns, index=0, key="tbl_sort_col_1")
+            sort_dir_1 = s_dir1.selectbox("Order 1", options=["Descending", "Ascending"], index=0, key="tbl_sort_dir_1")
+            sort_col_2 = s_col2.selectbox("Then By (Priority 2)", options=sortable_columns, index=0, key="tbl_sort_col_2")
+            sort_dir_2 = s_dir2.selectbox("Order 2", options=["Ascending", "Descending"], index=0, key="tbl_sort_dir_2")
+            sort_col_3 = s_col3.selectbox("Then By (Priority 3)", options=sortable_columns, index=0, key="tbl_sort_col_3")
+            sort_dir_3 = s_dir3.selectbox("Order 3", options=["Ascending", "Descending"], index=0, key="tbl_sort_dir_3")
 
         display_df = st.session_state.transactions.copy()
+
         if search_query:
-            mask = display_df.astype(str).apply(lambda x: x.str.contains(search_query, case=False)).any(axis=1)
+            mask = display_df.astype(str).apply(lambda x: x.str.contains(search_query, case=False, na=False)).any(axis=1)
             display_df = display_df[mask]
+
+        if filter_curr:
+            display_df = display_df[display_df["Currency"].astype(str).str.strip().isin(filter_curr)]
+
+        if filter_type:
+            display_df = display_df[display_df["Type"].astype(str).str.strip().isin(filter_type)]
+
+        if filter_method:
+            display_df = display_df[display_df["Payment Method"].astype(str).str.strip().isin(filter_method)]
+
+        if filter_cat:
+            display_df = display_df[display_df["Category"].astype(str).str.strip().isin(filter_cat)]
+
+        if filter_remember == "Remembered Only":
+            display_df = display_df[display_df["Remember Mapping"] == True]
+        elif filter_remember == "Exceptions / Unremembered":
+            display_df = display_df[display_df["Remember Mapping"] == False]
+
+        if filter_min_amt is not None:
+            display_df = display_df[pd.to_numeric(display_df["Amount"], errors="coerce") >= float(filter_min_amt)]
+
+        if filter_max_amt is not None:
+            display_df = display_df[pd.to_numeric(display_df["Amount"], errors="coerce") <= float(filter_max_amt)]
+
+        if filter_date_from is not None or filter_date_to is not None:
+            parsed_dates = pd.to_datetime(display_df["Date"], dayfirst=True, errors="coerce")
+            date_mask = pd.Series(True, index=display_df.index)
+            if filter_date_from is not None:
+                date_mask = date_mask & (parsed_dates >= pd.Timestamp(filter_date_from))
+            if filter_date_to is not None:
+                date_mask = date_mask & (parsed_dates <= pd.Timestamp(filter_date_to))
+            display_df = display_df[date_mask]
+
+        sort_specs = [
+            (sort_col_1, sort_dir_1 == "Ascending"),
+            (sort_col_2, sort_dir_2 == "Ascending"),
+            (sort_col_3, sort_dir_3 == "Ascending")
+        ]
+        active_sort_cols = []
+        active_sort_orders = []
+        seen_sort_cols = set()
+        for col_name, is_asc in sort_specs:
+            if col_name != "None" and col_name not in seen_sort_cols:
+                seen_sort_cols.add(col_name)
+                if col_name == "Date":
+                    display_df["_sort_date"] = pd.to_datetime(display_df["Date"], dayfirst=True, errors="coerce")
+                    active_sort_cols.append("_sort_date")
+                else:
+                    active_sort_cols.append(col_name)
+                active_sort_orders.append(is_asc)
+
+        if active_sort_cols:
+            display_df = display_df.sort_values(
+                by=active_sort_cols,
+                ascending=active_sort_orders,
+                na_position="last",
+                kind="mergesort"
+            )
+            if "_sort_date" in display_df.columns:
+                display_df = display_df.drop(columns=["_sort_date"])
+
+        total_rows = len(st.session_state.transactions)
+        shown_rows = len(display_df)
+        shown_debits = display_df[display_df["Type"].astype(str).str.strip() == "Debit"]["Amount"].sum()
+        shown_credits = display_df[display_df["Type"].astype(str).str.strip() == "Credit"]["Amount"].sum()
+        st.caption(
+            f"Showing **{shown_rows}** of **{total_rows}** transactions | "
+            f"Filtered Debits: **{shown_debits:,.2f}** | Filtered Credits: **{shown_credits:,.2f}**"
+        )
 
         st.session_state.filtered_indices = display_df.index.tolist()
 
