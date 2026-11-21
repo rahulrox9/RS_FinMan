@@ -3049,7 +3049,7 @@ False,25/02/2025,tx_0000ArUOuh1ka84bQ2IRbI,Rahul Subbaraman,2000.0,GBP,Debit,Deb
 False,25/02/2025,tx_0000ArUPHbiOUyUJXc7Bw1,Wallet Pot,15.98,GBP,Credit,Debit Card,Pot Transfer,True
 False,25/02/2025,tx_0000ArUPvXgYtpd7pg8AyH,Vue,15.98,GBP,Debit,Debit Card,Entertainment,True
 False,25/02/2025,tx_0000ArUXquAgfZHxKmPGNt,Vue,7.99,GBP,Credit,Debit Card,Entertainment,True
-True,26/02/2025,tx_0000ArW1TGtRjJ6QTwhIu1,The University of Manchester,689.45,GBP,Credit,Bank Transfer,Income - UoM GTA,False
+False,26/02/2025,tx_0000ArW1TGtRjJ6QTwhIu1,The University of Manchester,689.45,GBP,Credit,Bank Transfer,Income - UoM GTA,False
 False,26/02/2025,tx_0000ArW1ahB4P6ft4DqSEz,Rahul Subbaraman,250.0,GBP,Debit,Debit Card,Bank Transfer,True
 False,26/02/2025,tx_0000ArW1cjrHPLBpE6Q3aj,Wallet Pot,35.98,GBP,Debit,Debit Card,Pot Transfer,True
 False,26/02/2025,tx_0000ArW1eLNHPR1y0VvBHF,Vault Pot,2110.0,GBP,Debit,Debit Card,Pot Transfer,True
@@ -4857,3 +4857,64 @@ False,26/03/2024,tx_0000AgFYaAPjhcqjYDW0Th_split1,The University of Manchester,1
 False,26/03/2024,tx_0000AgFYaAPjhcqjYDW0Th_split2,The University of Manchester,106.89,GBP,Credit,Bank Transfer,Income - UoM Extras,False
 False,25/02/2026,tx_0000B3gYUEkeyQ25WzIZCF_split1,The University of Manchester,232.18,GBP,Credit,Bank Transfer,Income - UoM GTA,False
 False,25/02/2026,tx_0000B3gYUEkeyQ25WzIZCF_split2,The University of Manchester,586.98,GBP,Credit,Bank Transfer,Income - UoM Extras,False
+False,15-11-2026,MANUAL_1795284148.122519,Swiggy Ltd,422.0,INR,Debit,UPI,Food - dining & delivery,True
+False,17-11-2026,MANUAL_1795284197.912768,Honey Masala Takk,20.0,INR,Debit,UPI,Groceries & Home Needs,True
+False,09-08-2026,MANUAL_1795286279.389225,Airport trolley,1.0,GBP,Debit,Cash,Others,False
+False,30-07-2026,MANUAL_1795286838.414199,Barber,9.0,GBP,Debit,Cash,Bills & Utilities,False
+False,01-01-2024,REV_01-01-2024_1056.77_Exchanged _1,Exchanged to INR,1056.77,INR,Credit,Debit Card,Currency Transfer,True
+False,01-01-2024,REV_01-01-2024_1056.77_Exchanged _2,Exchanged to GBP,1056.77,INR,Debit,Debit Card,Currency Transfer,True
+False,17-10-2024,REV_17-10-2024_2172.04_Exchanged _1,Exchanged to INR,2172.04,INR,Credit,Debit Card,Currency Transfer,True
+False,19-10-2024,REV_19-10-2024_186.0_Murugan Me_1,Murugan Medicals,186.0,INR,Debit,Debit Card,Others,True
+False,21-10-2024,REV_21-10-2024_1086.72_Exchanged _1,Exchanged to INR,1086.72,INR,Credit,Debit Card,Currency Transfer,True
+False,23-10-2024,REV_23-10-2024_660.0_Chn Wow Mo_1,Chn Wow Momo T4,660.0,INR,Debit,Debit Card,Food - dining & delivery,True
+False,11-07-2024,REV_11-07-2024_180.0_Health And_1,Health And Glow,180.0,INR,Debit,Debit Card,Groceries & Home Needs,True
+False,11-07-2024,REV_11-07-2024_380.0_Sri Sivanm_1,Sri Sivanmalai Andavar,380.0,INR,Debit,Debit Card,Shopping,False
+False,11-11-2024,REV_11-11-2024_1852.76_Exchanged _1,Exchanged to GBP,1852.76,INR,Debit,Debit Card,Currency Transfer,True
+False,24-05-2026,REV_24-05-2026_2558.71_Exchanged _1,Exchanged to INR,2558.71,INR,Credit,Debit Card,Currency Transfer,True
+False,24-05-2026,REV_24-05-2026_2533.12_Exchanged _1,Exchanged to GBP,2533.12,INR,Debit,Debit Card,Currency Transfer,True
+False,07-02-2025,REV_07-02-2025_1000.0_Exchanged _1,Exchanged to CZK,1000.0,CZK,Credit,Debit Card,Currency Transfer,True
+False,07-05-2025,REV_07-05-2025_120.0_Lítačka_1,Lítačka,120.0,CZK,Debit,Debit Card,Local Transport,False
+False,07-05-2025,REV_07-05-2025_1000.0_Exchanged _1,Exchanged to CZK,1000.0,CZK,Credit,Debit Card,Currency Transfer,True
+False,07-06-2025,REV_07-06-2025_99.0_Belizart_1,Belizart,99.0,CZK,Debit,Debit Card,Shopping,False
+False,07-07-2025,REV_07-07-2025_60.0_Riverside _1,Riverside Boat Bar,60.0,CZK,Debit,Debit Card,Food - dining & delivery,False
+False,07-07-2025,REV_07-07-2025_225.0_Pizza Roma_1,Pizza Roma,225.0,CZK,Debit,Debit Card,Food - dining & delivery,False
+False,07-07-2025,REV_07-07-2025_150.0_Hana Atar _1,Hana Atar s.r.o,150.0,CZK,Debit,Debit Card,Food - dining & delivery,False
+False,07-08-2025,REV_07-08-2025_225.0_Na Hradbác_1,Na Hradbách,225.0,CZK,Debit,Debit Card,Food - dining & delivery,False
+False,07-09-2025,REV_07-09-2025_713.04_Exchanged _1,Exchanged to CZK,713.04,CZK,Credit,Debit Card,Currency Transfer,True
+False,07-09-2025,REV_07-09-2025_228.0_Enjoy Pizz_1,Enjoy Pizza,228.0,CZK,Debit,Debit Card,Food - dining & delivery,False
+False,07-09-2025,REV_07-09-2025_375.0_Transfer t_1,Transfer to ANANYA SINGH,375.0,CZK,Debit,Debit Card,Food - dining & delivery,False
+False,07-10-2025,REV_07-10-2025_643.64_Getyourgui_1,Getyourguide,643.64,CZK,Debit,Debit Card,Trip Expenses,True
+False,07-10-2025,REV_07-10-2025_108.0_Enjoy Pizz_1,Enjoy Pizza,108.0,CZK,Debit,Debit Card,Food - dining & delivery,False
+False,07-10-2025,REV_07-10-2025_60.0_Staropražs_1,Staropražské Tradiční Trdlo,60.0,CZK,Debit,Debit Card,Food - dining & delivery,False
+False,07-11-2025,REV_07-11-2025_1000.0_Exchanged _1,Exchanged to CZK,1000.0,CZK,Credit,Debit Card,Currency Transfer,True
+False,07-12-2025,REV_07-12-2025_6.4_Exchanged _1,Exchanged to GBP,6.4,CZK,Debit,Debit Card,Currency Transfer,True
+False,07-12-2025,REV_07-12-2025_450.0_IAM Illusi_1,IAM Illusion Art Museum,450.0,CZK,Debit,Debit Card,Entertainment,False
+False,07-12-2025,REV_07-12-2025_663.0_Café Imper_1,Café Imperial,663.0,CZK,Debit,Debit Card,Food - dining & delivery,False
+False,07-12-2025,REV_07-12-2025_300.0_Sex Machin_1,Sex Machines Museum Praha,300.0,CZK,Debit,Debit Card,Entertainment,False
+False,16-07-2025,REV_16-07-2025_3000.0_Exchanged _1,Exchanged to CZK,3000.0,CZK,Credit,Debit Card,Currency Transfer,True
+False,17-07-2025,REV_17-07-2025_100.0_Dopravní p_1,Dopravní podnik města Brna - DPMB,100.0,CZK,Debit,Debit Card,Local Transport,True
+False,17-07-2025,REV_17-07-2025_19.9_Albert_1,Albert,19.9,CZK,Debit,Debit Card,Groceries & Home Needs,True
+False,17-07-2025,REV_17-07-2025_200.0_Moravske Z_1,Moravske Zemske Muzeum,200.0,CZK,Debit,Debit Card,Entertainment,False
+False,18-07-2025,REV_18-07-2025_2081.1_Exchanged _1,Exchanged to EUR,2081.1,CZK,Debit,Debit Card,Currency Transfer,True
+False,18-07-2025,REV_18-07-2025_60.0_Integrovan_1,Integrovaný dopravní systém Jihomoravského kraje,60.0,CZK,Debit,Debit Card,Local Transport,False
+False,18-07-2025,REV_18-07-2025_200.0_Národní mu_1,Národní muzeum,200.0,CZK,Debit,Debit Card,Entertainment,False
+False,18-07-2025,REV_18-07-2025_110.0_Costa Coff_1,Costa Coffee,110.0,CZK,Debit,Debit Card,Food - dining & delivery,True
+False,18-07-2025,REV_18-07-2025_40.0_To Je Brno_1,To Je Brno 1,40.0,CZK,Debit,Debit Card,Food - dining & delivery,False
+False,18-07-2025,REV_18-07-2025_65.0_Bistro Nár_1,Bistro Národní muzeum,65.0,CZK,Debit,Debit Card,Cashbacks,False
+False,19-07-2025,REV_19-07-2025_124.0_Costa Coff_1,Costa Coffee,124.0,CZK,Debit,Debit Card,Food - dining & delivery,True
+False,20-07-2025,REV_20-07-2025_1675.85_Exchanged _1,Exchanged to CZK,1675.85,CZK,Credit,Debit Card,Currency Transfer,True
+False,20-07-2025,REV_20-07-2025_1258.25_Exchanged _1,Exchanged to CZK,1258.25,CZK,Credit,Debit Card,Currency Transfer,True
+False,20-07-2025,REV_20-07-2025_2896.96_Vasudevan _1,Vasudevan Sundararaman,2896.96,CZK,Debit,Debit Card,Trip Expenses,False
+False,07-12-2025,REV_07-12-2025_22966.12_Exchanged _1,Exchanged to HUF,22966.12,HUF,Credit,Debit Card,Currency Transfer,True
+False,07-12-2025,REV_07-12-2025_20000.0_Exchanged _1,Exchanged to HUF,20000.0,HUF,Credit,Debit Card,Currency Transfer,True
+False,07-12-2025,REV_07-12-2025_14000.0_Exchanged _1,Exchanged to HUF,14000.0,HUF,Credit,Debit Card,Currency Transfer,True
+False,13-07-2025,REV_13-07-2025_500.0_Simix Prin_1,Simix Print,500.0,HUF,Debit,Debit Card,Trip Expenses,False
+False,13-07-2025,REV_13-07-2025_13588.0_Sziklakórh_1,Sziklakórház Atombunker Múzeum,13588.0,HUF,Debit,Debit Card,Entertainment,False
+False,13-07-2025,REV_13-07-2025_3600.0_Gelarto Ro_1,Gelarto Rosa,3600.0,HUF,Debit,Debit Card,Food - dining & delivery,True
+False,13-07-2025,REV_13-07-2025_990.0_Kőbüfé_1,Kőbüfé,990.0,HUF,Debit,Debit Card,Food - dining & delivery,False
+False,13-07-2025,REV_13-07-2025_5500.0_BUDAPEST G_1,BUDAPEST GO,5500.0,HUF,Debit,Debit Card,Local Transport,False
+False,13-07-2025,REV_13-07-2025_9420.0_Retro Láng_1,Retro Lángos Budapest,9420.0,HUF,Debit,Debit Card,Food - dining & delivery,False
+False,13-07-2025,REV_13-07-2025_2500.0_Goulash An_1,Goulash And Langos Ter,2500.0,HUF,Debit,Debit Card,Food - dining & delivery,False
+False,13-07-2025,REV_13-07-2025_16430.0_Champs Szi_1,Champs Sziget,16430.0,HUF,Debit,Debit Card,Food - dining & delivery,False
+False,14-07-2025,REV_14-07-2025_3879.88_Exchanged _1,Exchanged to EUR,3879.88,HUF,Debit,Debit Card,Currency Transfer,True
+False,14-07-2025,REV_14-07-2025_325.33_Integrovan_1,Integrovaný dopravní systém Jihomoravského kraje,325.33,HUF,Debit,Debit Card,Trip Expenses,True
