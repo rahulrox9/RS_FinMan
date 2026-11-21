@@ -74,6 +74,23 @@ MAPPING_FILE = "category_mapping.json"
 DB_FILE = "transactions_db.csv"
 EXCLUDED_TERMS = ["top-uptoupilite", "selftransfer"]
 
+def get_available_currencies(df):
+    available = list(CURRENCIES)
+    if not df.empty and "Currency" in df.columns:
+        db_currs = (
+            df["Currency"]
+            .dropna()
+            .astype(str)
+            .str.strip()
+            .str.upper()
+            .unique()
+            .tolist()
+        )
+        for curr in sorted(db_currs):
+            if curr and curr != "NAN" and curr not in available:
+                available.append(curr)
+    return available
+
 def load_mappings():
     if os.path.exists(MAPPING_FILE):
         with open(MAPPING_FILE, "r") as f:
@@ -414,7 +431,7 @@ with tab1:
                 else:
                     desc = type_val if type_val else "Monzo Tx"
 
-                currency = str(row.get("Currency", "GBP")).strip()
+                currency = str(row.get("Currency", "GBP")).strip().upper()
                 tx_type = "Credit" if amount > 0 else "Debit"
                 if "the university of manchester" in desc.lower() and tx_type == "Credit":
                     payment_method = "Bank Transfer"
@@ -513,7 +530,7 @@ with tab1:
                     continue
 
                 currency_val = row.get("Currency")
-                currency = str(currency_val).strip() if pd.notna(currency_val) and str(currency_val).strip() != "" else "GBP"
+                currency = str(currency_val).strip().upper() if pd.notna(currency_val) and str(currency_val).strip() != "" else "GBP"
 
                 state_val = row.get("State")
                 state = str(state_val).strip().upper() if pd.notna(state_val) else "COMPLETED"
@@ -566,6 +583,8 @@ with tab1:
         else:
             st.error(f"No valid transactions extracted. ({debug_info})")
 
+    available_currencies = get_available_currencies(st.session_state.transactions)
+
     st.subheader("Manual Entry")
     with st.form("manual_entry_form"):
         col1, col2, col3 = st.columns(3)
@@ -574,7 +593,7 @@ with tab1:
         m_amount = col3.number_input("Amount", min_value=0.0, step=1.0)
 
         col4, col5, col6, col7 = st.columns(4)
-        m_curr = col4.selectbox("Currency", CURRENCIES)
+        m_curr = col4.selectbox("Currency", available_currencies)
         m_type = col5.selectbox("Type", ["Debit", "Credit"])
         m_method = col6.selectbox("Payment Method", PAYMENT_METHODS, index=0)
         m_cat = col7.selectbox("Category", CATEGORIES)
@@ -744,7 +763,7 @@ with tab1:
                 "Select": st.column_config.CheckboxColumn("Select", default=False),
                 "Category": st.column_config.SelectboxColumn("Category", options=CATEGORIES, required=True),
                 "Type": st.column_config.SelectboxColumn("Type", options=["Debit", "Credit"], required=True),
-                "Currency": st.column_config.SelectboxColumn("Currency", options=CURRENCIES, required=True),
+                "Currency": st.column_config.SelectboxColumn("Currency", options=available_currencies, required=True),
                 "Payment Method": st.column_config.SelectboxColumn("Payment Method", options=PAYMENT_METHODS, required=True),
                 "Remember Mapping": st.column_config.CheckboxColumn("Remember Mapping", default=False)
             },
@@ -870,16 +889,17 @@ with tab2:
     if st.session_state.transactions.empty:
         st.info("No data available.")
     else:
-        curr_counts = st.session_state.transactions["Currency"].dropna().astype(str).str.strip().value_counts()
+        available_currencies = get_available_currencies(st.session_state.transactions)
+        curr_counts = st.session_state.transactions["Currency"].dropna().astype(str).str.strip().str.upper().value_counts()
         default_curr_idx = 0
-        if not curr_counts.empty and curr_counts.index[0] in CURRENCIES:
-            default_curr_idx = CURRENCIES.index(curr_counts.index[0])
+        if not curr_counts.empty and curr_counts.index[0] in available_currencies:
+            default_curr_idx = available_currencies.index(curr_counts.index[0])
 
         with col_top1:
-            selected_dashboard_curr = st.selectbox("Select Currency Filter for Dashboard", CURRENCIES, index=default_curr_idx)
+            selected_dashboard_curr = st.selectbox("Select Currency Filter for Dashboard", available_currencies, index=default_curr_idx)
 
         dash_df = st.session_state.transactions[
-            st.session_state.transactions["Currency"].astype(str).str.strip() == selected_dashboard_curr
+            st.session_state.transactions["Currency"].astype(str).str.strip().str.upper() == selected_dashboard_curr
         ].copy()
 
         if dash_df.empty:
@@ -891,19 +911,16 @@ with tab2:
             dash_df["Payment Method"] = dash_df["Payment Method"].astype(str).str.strip()
             dash_df["Date_DT"] = pd.to_datetime(dash_df["Date"], dayfirst=True, errors="coerce")
 
-            # 1. Real Expenditure (Debit adds, Credit refunds/splits subtract)
             expenses_df = dash_df[dash_df["Category"].isin(EXPENDITURE_CATEGORIES)].copy()
             expenses_df["Net_Amount"] = expenses_df.apply(
                 lambda r: r["Amount"] if r["Type"] == "Debit" else -r["Amount"], axis=1
             )
 
-            # 2. Income (Strictly specified income categories)
             income_df = dash_df[dash_df["Category"].isin(INCOME_CATEGORIES)].copy()
             income_df["Net_Income"] = income_df.apply(
                 lambda r: r["Amount"] if r["Type"] == "Credit" else -r["Amount"], axis=1
             )
 
-            # 3. Wealth Building (Investments & Pension)
             wealth_df = dash_df[dash_df["Category"].isin(WEALTH_CATEGORIES)].copy()
             wealth_df["Net_Wealth"] = wealth_df.apply(
                 lambda r: r["Amount"] if r["Type"] == "Debit" else -r["Amount"], axis=1
@@ -922,7 +939,6 @@ with tab2:
 
             st.divider()
 
-            # Expenditure Pie Chart
             st.subheader("Expenditure Breakdown (%)")
             if not expenses_df.empty:
                 cat_group = expenses_df.groupby("Category", as_index=False)["Net_Amount"].sum()
@@ -938,7 +954,6 @@ with tab2:
 
             st.divider()
 
-            # Daily Real Expenditure Trend
             st.subheader("Daily Expenditure Trend")
             valid_trend_df = expenses_df.dropna(subset=["Date_DT"])
             if not valid_trend_df.empty:
@@ -949,7 +964,6 @@ with tab2:
 
             st.divider()
 
-            # Credit Card Usage Tracker (Daily vs. Cumulative Toggle)
             cc_header_col1, cc_header_col2 = st.columns([3, 1])
             with cc_header_col1:
                 st.subheader(f"Credit Card Usage Tracker ({selected_dashboard_curr})")
@@ -969,7 +983,6 @@ with tab2:
                     lambda r: r["Amount"] if r["Type"] == "Debit" else -r["Amount"], axis=1
                 )
 
-                # Summary metrics per credit card
                 card_totals = cc_df.groupby("Payment Method")["Usage_Amount"].sum()
                 cc_metric_cols = st.columns(len(credit_card_methods) + 1)
                 cc_metric_cols[0].metric("All Credit Cards Total", f"{cc_df['Usage_Amount'].sum():,.2f}")
